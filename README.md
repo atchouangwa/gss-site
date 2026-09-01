@@ -8,8 +8,9 @@ every fact, override, and content-safety rule this site follows. Read it before 
 
 ## Stack
 
-- [Astro](https://astro.build) (static output by default; the contact form's API route runs on
-  Node via `@astrojs/node`, everything else prerenders)
+- [Astro](https://astro.build), deployed to **Vercel** via `@astrojs/vercel` (everything
+  prerenders to static HTML except the contact form's `/api/contact` route, which runs as a
+  Vercel serverless function)
 - Content collections (`src/content.config.ts`) for the ~45 capability pages and Insights
   articles — content lives as data (JSON), not hardcoded in templates
 - No UI framework — interactivity (mega menu, reveal-on-scroll, method-toggle, globe, contact
@@ -22,7 +23,7 @@ every fact, override, and content-safety rule this site follows. Read it before 
 ```bash
 npm install
 npm run dev       # http://localhost:4321
-npm run build     # type-checks (astro check) then builds to dist/
+npm run build     # type-checks (astro check) then builds to .vercel/output/
 npm run preview   # serve the production build locally
 ```
 
@@ -55,12 +56,16 @@ docs/content-audit.md       Governance doc — read this first
   itself until that domain is verified with Resend — use a Resend-verified sender until then.
 
 This integration could not be tested end-to-end from the build environment (its outbound network
-policy blocks `api.resend.com`), so verify a real submission end-to-end once deployed somewhere
-with normal network access, before relying on it.
+policy blocks `api.resend.com`), so verify a real submission end-to-end once deployed, before
+relying on it.
+
+**On Vercel:** add `RESEND_API_KEY` (and `CONTACT_FROM_EMAIL` if not using the default) under
+Project Settings → Environment Variables. `.env` is never committed, so nothing is set there
+automatically — the deploy will 500 on form submission until this is added.
 
 **The API key was shared in this conversation in plaintext.** It's stored only in the
-gitignored `.env` (never commit it), but since it passed through chat, consider rotating it in
-the Resend dashboard once the current one is confirmed working.
+gitignored `.env` locally (never commit it), but since it passed through chat, consider rotating
+it in the Resend dashboard once the current one is confirmed working.
 
 ## Known gaps (tracked, not silent)
 
@@ -74,11 +79,22 @@ These are called out explicitly in `docs/content-audit.md` §9–10 as well:
   transcript references eight drafted articles pending technical review; once approved, add them
   as additional `src/content/insights/*.json` files following the existing shape.
 
-## Before deploying
+## Deploying (Vercel)
+
+Import the repo in Vercel — it auto-detects Astro and the `@astrojs/vercel` adapter, no build
+settings need to be changed. Two things to do in the Vercel dashboard before the contact form
+will actually deliver mail:
+
+1. **Environment Variables** (Project Settings → Environment Variables): add `RESEND_API_KEY`
+   (required) and `CONTACT_FROM_EMAIL` (optional, see above).
+2. Re-deploy after adding them — env vars set after a build don't apply retroactively to that
+   build.
+
+If moving off Vercel: swap the adapter in `astro.config.mjs` (e.g. `@astrojs/netlify`,
+`@astrojs/node`) — nothing else needs to change.
+
+Other things to check before deploying:
 
 - Point `astro.config.mjs`'s `site` at the real domain if it ever changes from
   `https://gsscorporate.com`.
 - Re-run the QA checklist in `docs/content-audit.md` §12 after any content edit.
-- Deploy target: `@astrojs/node` (`mode: 'standalone'`) is configured, which runs anywhere Node
-  runs. Swap the adapter (e.g. `@astrojs/vercel`, `@astrojs/netlify`) if deploying to a platform
-  with its own adapter — only `astro.config.mjs` needs to change.
