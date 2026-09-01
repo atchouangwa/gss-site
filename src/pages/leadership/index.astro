@@ -50,7 +50,16 @@ const jsonLd = [
 
   <section class="team">
     <div class="rule-row"><span class="mono dim">WHO DOES THE WORK</span><span class="rule"></span></div>
-    <p>{LEADERSHIP.teamNote}</p>
+    <p class="team-intro">{LEADERSHIP.teamIntro}</p>
+    <div class="roster">
+      {LEADERSHIP.teamRoster.map((r, i) => (
+        <div class="roster-row">
+          <span class="mono roster-n">{String(i + 1).padStart(2, '0')}</span>
+          <span class="roster-label">{r.label}</span>
+          <span class="roster-detail">{r.detail}</span>
+        </div>
+      ))}
+    </div>
   </section>
 
   <section class="founder-link">
@@ -80,7 +89,18 @@ const jsonLd = [
   .rule-row .rule { flex: 1; height: 1px; background: var(--paper-border-soft); }
   .rule-row .mono { font-size: 10px; letter-spacing: .18em; }
   .team { padding: 56px var(--page-pad) 60px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
-  .team p { margin: 0; max-width: 68ch; font: 400 15px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .team-intro { margin: 0 0 30px; max-width: 68ch; font: 400 17px/1.6 var(--font-body); color: var(--text-on-paper-secondary); }
+  .roster { display: flex; flex-direction: column; }
+  .roster-row { display: grid; grid-template-columns: 60px 280px 1fr; gap: 22px; padding: 20px 0; border-top: 1px solid var(--paper-border-soft); }
+  .roster-row:first-child { border-top-color: var(--ink); }
+  .roster-row:last-child { border-bottom: 1px solid var(--ink); }
+  .roster-n { font-size: 10px; color: var(--accent-ink); }
+  .roster-label { font: 700 18px/1.25 var(--font-display); letter-spacing: -.01em; text-transform: uppercase; color: var(--ink); }
+  .roster-detail { font: 400 14px/1.65 var(--font-body); color: var(--text-on-paper-tertiary); max-width: 60ch; }
+
+  @media (max-width: 720px) {
+    .roster-row { grid-template-columns: 1fr; gap: 6px; }
+  }
 
   .founder-link { padding: 56px var(--page-pad) 64px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
   .founder-link p { margin: 0; max-width: 60ch; font: 400 15px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }

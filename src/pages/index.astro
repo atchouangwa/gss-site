@@ -266,7 +266,16 @@ const jsonLd = [
       </div>
       <div class="who-does-work">
         <div class="who-title">Who does the work</div>
-        <p>{LEADERSHIP.teamNote}</p>
+        <p class="who-intro">{LEADERSHIP.teamIntro}</p>
+        <div class="who-roster">
+          {LEADERSHIP.teamRoster.map((r, i) => (
+            <div class="who-row">
+              <span class="mono who-n">{String(i + 1).padStart(2, '0')}</span>
+              <span class="who-label">{r.label}</span>
+              <span class="who-detail">{r.detail}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -490,9 +499,16 @@ const jsonLd = [
   .lead-title { font-size: 10px; letter-spacing: .16em; color: var(--accent-ink); }
   .lead-copy p { margin: 0; max-width: 52ch; font: 400 14px/1.7 var(--font-body); color: var(--text-on-paper-secondary); }
   .lead-note { margin-top: 4px; font-size: 10.5px; letter-spacing: .14em; color: var(--text-on-paper-quiet); }
-  .who-does-work { padding: 30px 0 34px 36px; display: flex; flex-direction: column; gap: 14px; justify-content: center; }
+  .who-does-work { padding: 30px 0 34px 36px; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
   .who-title { font: 700 24px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
-  .who-does-work p { margin: 0; font: 400 13.5px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .who-intro { margin: 0; font: 400 14.5px/1.6 var(--font-body); color: var(--text-on-paper-secondary); }
+  .who-roster { display: flex; flex-direction: column; }
+  .who-row { display: grid; grid-template-columns: 24px 1fr; gap: 4px 12px; padding: 14px 0; border-top: 1px solid var(--paper-border-soft); }
+  .who-row:first-child { border-top-color: var(--ink); }
+  .who-row:last-child { border-bottom: 1px solid var(--paper-border-soft); }
+  .who-n { font-size: 10px; color: var(--accent-ink); padding-top: 2px; }
+  .who-label { grid-column: 2; font: 700 14.5px/1.3 var(--font-body); color: var(--ink); }
+  .who-detail { grid-column: 2; font: 400 13px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
 
   /* GLOBAL */
   .global { background: var(--ink); display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink-border); }

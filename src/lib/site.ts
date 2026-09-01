@@ -53,7 +53,21 @@ export const LEADERSHIP = {
     'Wade grew up inside this work. He now leads GSS as President, carrying forward the standard his father set: security judged by what it actually delays, detects, and answers — not by what it satisfies on paper.',
     'The same team, the same methodology, the same expectation of Best-in-Class. Continuity of leadership, not a change of direction.',
   ],
-  teamNote: 'Former U.S. special forces operators, engineers, and executives with C-level industry experience. The cyber-physical division is led by former U.S. NRC inspectors who authored the cyber security regulations governing U.S. plants today.',
+  teamIntro: 'GSS is staffed by people who did this work before they did it for GSS — not consultants who studied it.',
+  teamRoster: [
+    {
+      label: 'Special Operations',
+      detail: 'Former U.S. special forces operators who have run physical security and tactical response in the field — the standard the rest of the practice is measured against.',
+    },
+    {
+      label: 'Security Engineering & Executive Leadership',
+      detail: 'Engineers and executives who have held C-level roles running security programs at scale, before bringing that judgment to GSS engagements.',
+    },
+    {
+      label: 'Nuclear Regulatory — Cyber-Physical',
+      detail: 'The cyber-physical division is led by former U.S. NRC inspectors who authored the cybersecurity regulations U.S. nuclear plants operate under today.',
+    },
+  ],
 } as const;
 
 export type NavChild = { label: string; slug: string };
