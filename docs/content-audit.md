@@ -137,6 +137,12 @@ several that can drift out of sync.
 
 Generated automatically as an XML sitemap at build time (`@astrojs/sitemap`); see `robots.txt`.
 
+Note: the v2 mockup's homepage included a "Capability Index" section (§03) that listed every
+capability page with its raw URL slug in monospace — useful as a build-time IA reference, not as
+public-facing sales content. Per client instruction it was removed from the live homepage; the
+underlying pages, sitemap, and navigation (header mega menu, footer, family hub pages) are
+unaffected and remain fully crawlable/linked.
+
 ## 8. Keyword Mapping (primary theme per top-level page)
 
 | Page | Primary theme |
