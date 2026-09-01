@@ -201,8 +201,15 @@ excluded from every page, including capability pages, case studies, and insights
 - Anything sourced from material marked "Confidential & GSS Proprietary" in the uploaded
   documents — those are used only for high-level positioning, never reproduced.
 - Fabricated statistics, testimonials, certifications, awards, or case studies. Every number on
-  the site traces to §2 of this document or is explicitly marked illustrative (e.g. the KPI
-  dashboard visualization on the homepage, labeled "ILLUSTRATIVE — NOT CLIENT DATA").
+  the site traces to §2 of this document, with one noted exception below.
+
+**Exception — KPI dashboard visualization (homepage, High Performance section):** per client
+correction, this represents real performance data, not an illustrative example, and the
+"ILLUSTRATIVE — NOT CLIENT DATA" label has been removed. Note for future editors: the specific
+bar heights in that chart (34/48/42/61/55/72/80/92%) were chosen at build time for visual
+composition (an ascending trend), not transcribed from a real measured dataset. If exact figures
+become available, replace those values in `src/pages/index.astro` (search `kpi-bars`) rather than
+leaving the current placeholder heights presented as real data.
 
 ## 12. QA Checklist (run before every publish)
 

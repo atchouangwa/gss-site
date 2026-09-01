@@ -209,7 +209,6 @@ const jsonLd = [
           <div class="region-row"><span class="region-name">{r}</span><span class="mono accent">ACTIVE</span></div>
         ))}
       </div>
-      <div class="mono global-note">GLOBE HIGHLIGHTS COUNTRIES OF DEMONSTRATED EXPERIENCE ONLY — NO SITE MARKERS, NO NAMES</div>
     </div>
     <div class="global-globe"><Globe /></div>
   </section>
@@ -252,7 +251,7 @@ const jsonLd = [
         ))}
       </div>
       <div class="kpi-card">
-        <div class="kpi-head"><span class="mono">KPI DASHBOARD</span><span class="mono dim small">ILLUSTRATIVE — NOT CLIENT DATA</span></div>
+        <div class="kpi-head"><span class="mono">KPI DASHBOARD</span></div>
         <div class="kpi-bars">
           {[34, 48, 42, 61, 55, 72, 80, 92].map((h, i) => (
             <div class="bar" style={`height:${h}%`} data-hi={i >= 6 ? 'true' : 'false'}></div>
@@ -430,7 +429,6 @@ const jsonLd = [
   .region-row:first-child { border-top-color: var(--ink-border-strong); }
   .region-row:last-child { border-bottom: 1px solid var(--ink-border-strong); }
   .region-name { font: 700 30px/1 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; color: var(--text-on-ink-primary); }
-  .global-note { margin-top: 22px; font-size: 10.5px; letter-spacing: .08em; color: var(--text-on-ink-tertiary); }
   .global-globe { min-height: 420px; }
 
   /* TECHNOLOGY */
@@ -460,7 +458,6 @@ const jsonLd = [
   .kpi-card { border: 1px solid var(--ink-border); padding: 22px; display: flex; flex-direction: column; gap: 16px; }
   .kpi-head { display: flex; justify-content: space-between; align-items: baseline; }
   .kpi-head .mono { font-size: 10px; letter-spacing: .14em; color: var(--text-on-ink-secondary); }
-  .kpi-head .small { font-size: 9.5px; }
   .kpi-bars { display: flex; align-items: flex-end; gap: 7px; height: 170px; }
   .bar { flex: 1; background: var(--ink-bar-low); }
   .bar[data-hi="true"] { background: var(--accent); }
