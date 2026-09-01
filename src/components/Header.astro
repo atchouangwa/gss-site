@@ -217,24 +217,25 @@ function chunk<T>(arr: T[], parts: number): T[][] {
   .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 0 28px;
+    gap: 10px;
+    padding: 18px 20px;
     border-right: 1px solid var(--ink-border);
     flex: none;
   }
-  .brand img { width: 30px; height: 30px; object-fit: contain; filter: invert(1) brightness(1.4); }
+  .brand img { width: 28px; height: 28px; object-fit: contain; filter: invert(1) brightness(1.4); flex: none; }
   .brand span {
-    font: 700 13px/1.1 var(--font-display);
-    letter-spacing: .06em;
+    font: 700 12px/1.15 var(--font-display);
+    letter-spacing: .05em;
     color: var(--text-on-ink-primary);
+    white-space: nowrap;
   }
 
   .primary-nav {
     flex: 1;
     display: flex;
     align-items: stretch;
-    font: 500 11px/1 var(--font-body);
-    letter-spacing: .1em;
+    font: 500 10.5px/1 var(--font-body);
+    letter-spacing: .06em;
     text-transform: uppercase;
     color: var(--text-on-ink-secondary);
     min-width: 0;
@@ -242,7 +243,7 @@ function chunk<T>(arr: T[], parts: number): T[][] {
   .nav-item {
     display: flex;
     align-items: center;
-    padding: 0 18px;
+    padding: 0 13px;
     border-right: 1px solid var(--ink-border-soft);
     color: inherit;
     transition: color var(--dur-hover) var(--ease-out-strong), background var(--dur-hover) var(--ease-out-strong);
@@ -256,7 +257,7 @@ function chunk<T>(arr: T[], parts: number): T[][] {
     all: unset;
     display: flex;
     align-items: center;
-    padding: 0 18px;
+    padding: 0 13px;
     cursor: pointer;
     color: inherit;
     font: inherit;
@@ -268,16 +269,17 @@ function chunk<T>(arr: T[], parts: number): T[][] {
 
   .side { display: flex; align-items: center; flex: none; }
   .phone {
-    font: 500 11px/1 var(--font-mono);
+    font: 500 10.5px/1 var(--font-mono);
     color: var(--text-on-ink-secondary);
-    padding: 0 20px;
+    padding: 0 16px;
     border-left: 1px solid var(--ink-border);
     border-right: 1px solid var(--ink-border);
     align-self: stretch;
     display: flex;
     align-items: center;
+    white-space: nowrap;
   }
-  .cta { border-radius: 0; padding: 24px 26px; }
+  .cta { border-radius: 0; padding: 20px 20px; font-size: 10.5px; white-space: nowrap; }
   .hamburger {
     display: none;
     flex-direction: column;
@@ -379,8 +381,15 @@ function chunk<T>(arr: T[], parts: number): T[][] {
   .mobile-cta { margin-top: 24px; padding: 17px; }
   .mobile-phone { margin-top: 16px; text-align: center; font: 500 12px/1 var(--font-mono); color: var(--text-on-ink-secondary); padding: 12px; }
 
-  @media (max-width: 1080px) {
-    .primary-nav, .side .phone { display: none; }
+  @media (max-width: 1300px) {
+    .primary-nav, .side .phone, .side .cta { display: none; }
     .hamburger { display: flex; }
+  }
+
+  @media (max-width: 480px) {
+    .brand { padding: 14px; gap: 8px; }
+    .brand img { width: 24px; height: 24px; }
+    .brand span { font-size: 10.5px; }
+    .hamburger { padding: 0 14px; }
   }
 </style>
