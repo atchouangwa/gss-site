@@ -48,9 +48,9 @@ export const FOUNDER = {
 export const LEADERSHIP = {
   name: 'Wade Wilson',
   title: 'President',
-  eyebrow: "PRESIDENT · SON OF FOUNDER ERIC F. WILSON",
+  eyebrow: "PRESIDENT, GLOBAL SECURITY SOLUTIONS",
   bio: [
-    'Wade grew up inside this work. He now leads GSS as President, carrying forward the standard his father set: security judged by what it actually delays, detects, and answers — not by what it satisfies on paper.',
+    'Wade Wilson leads GSS as President, holding the company to the standard it was built on: security judged by what it actually delays, detects, and answers — not by what it satisfies on paper.',
     'The same team, the same methodology, the same expectation of Best-in-Class. Continuity of leadership, not a change of direction.',
   ],
   teamIntro: 'GSS is staffed by people who did this work before they did it for GSS — not consultants who studied it.',

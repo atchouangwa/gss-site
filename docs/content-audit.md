@@ -40,14 +40,20 @@ roster. This was an explicit action item from the call ("Rework capabilities ima
 globe/nations; remove client names").
 
 A later design-session instruction added one more constraint: **no other executive (e.g. "Dennis")
-is named.** Only Wade Wilson (President) and Eric F. Wilson (Founder) appear as named leadership,
-with Wade's framing leaning into being Eric's son and successor rather than a change of direction.
+is named.** Only Wade Wilson (President) and Eric F. Wilson (Founder) appear as named leadership.
+
+A subsequent client instruction reversed an earlier design-session direction: the site no longer
+frames Wade as "Eric's son," and does not describe GSS as "family-led." Wade and Eric are
+presented as President and Founder respectively — related by the standard and methodology GSS
+was built on, not by family relationship. No page should reintroduce "son of," "father," or
+"family-led" language; this was an explicit, deliberate removal.
 
 ## 3. Current Leadership
 
-**Wade Wilson — President.** Son of founder Eric F. Wilson. Positioned as continuity of
-leadership: same team, same methodology, same standard. Full biography and LinkedIn URL were
-not supplied at build time — the homepage and leadership page mark this explicitly
+**Wade Wilson — President.** Positioned as continuity of leadership: same team, same
+methodology, same standard as the company was founded on — not framed through a family
+relationship to the founder. Full biography and LinkedIn URL were not supplied at build time —
+the homepage and leadership page mark this explicitly
 (`FULL BIOGRAPHY AND LINKEDIN TO BE SUPPLIED`) rather than inventing detail.
 
 Team note (approved, from the v2 mockup): the working team includes former U.S. special forces
@@ -197,6 +203,7 @@ excluded from every page, including capability pages, case studies, and insights
 - [ ] No instance of "Eric Wilson CEO" or "Eric Wilson President" (Founder only).
 - [ ] No instance of "100+" or "over 100" facilities (50+ only).
 - [ ] No mention of "Dennis" or any second current executive.
+- [ ] No "son of," "father," or "family-led" language anywhere (removed by explicit client instruction).
 - [ ] No named client, site, or utility anywhere in copy, alt text, or schema.
 - [ ] No Lorem Ipsum, no broken internal links, no unfilled template placeholders left un-labeled.
 - [ ] No fabricated testimonials, logos, certifications, awards, or case studies.
