@@ -1,0 +1,19 @@
+---
+import FamilyOverviewLayout from '@/layouts/FamilyOverviewLayout.astro';
+import { NAV } from '@/lib/site';
+
+const family = NAV.find((n) => n.path === '/cybersecurity/')!;
+---
+<FamilyOverviewLayout
+  eyebrow="CYBERSECURITY"
+  title="Cyber-Physical Security"
+  dek="A lifecycle offering spanning design, implementation, authority to operate, and maintenance — led by former U.S. NRC inspectors who authored the cybersecurity regulations now governing U.S. plants."
+  path="/cybersecurity/"
+  metaDescription="GSS cybersecurity: cyber-physical security, risk-based controls, penetration testing, vulnerability management, compliance advisory, threat hunting, and incident response for nuclear and critical infrastructure."
+  paragraphs={[
+    "GSS treats cyber and physical security as one program, not two departments that happen to share a building. A converged IT/OT environment fails the same way a physical protective strategy fails when it's assessed in pieces: gaps show up exactly where the two halves stopped talking to each other.",
+    'The eight capabilities below span the full lifecycle — governance and control selection through operations, monitoring, and incident response — for organizations where a cybersecurity gap and a physical-security gap can produce the same consequence.',
+  ]}
+  children={family.children}
+  ctaHeading="Bring cyber and physical security into one program."
+/>

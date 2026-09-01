@@ -1,0 +1,52 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 18,
+  "title": "Security Policy Development & Optimization",
+  "shortTitle": "Security Policy Development",
+  "metaDescription": "Security policy and procedure development and optimization that aligns written documentation with what actually happens on site.",
+  "eyebrow": "SECURITY SOLUTIONS — 18",
+  "heroDek": "A procedure nobody follows is worse than no procedure at all. GSS develops and reconciles policy against actual field practice, so the written program is one the site can operate to.",
+  "contextHeading": "A procedure nobody follows is worse than no procedure at all",
+  "contextParagraphs": [
+    "Written policy and procedure are supposed to describe how the protective strategy is actually executed. When documentation drifts from practice, both compliance exposure and operational risk grow together — and the gap is usually discovered during an incident or an inspection, which is the worst possible time to find it.",
+    "GSS develops new policy where none exists and optimizes existing documentation by reconciling it directly against field practice, audit findings, and the underlying protective-strategy analysis, so the result is something the site can actually operate to rather than a document that describes an idealized version of the program.",
+    "This work is coordinated with training, so procedure and instruction stay consistent with each other, and with program audits, so findings translate into documented change rather than informal fixes that quietly drift again over time."
+  ],
+  "methodology": [
+    { "label": "Current-State Review", "body": "Existing policy, procedure, and governing documentation reviewed against current practice." },
+    { "label": "Practice Reconciliation", "body": "Field observation and audit findings used to identify where documentation and practice diverge." },
+    { "label": "Policy & Procedure Drafting", "body": "New or revised documentation drafted to reflect the intended and actual protective strategy." },
+    { "label": "Stakeholder Review", "body": "Draft documentation reviewed with site operations, security, and training stakeholders." },
+    { "label": "Implementation & Training Alignment", "body": "Rollout coordinated with training so procedure and instruction stay consistent." },
+    { "label": "Periodic Optimization", "body": "Documentation revisited on a defined cycle rather than left static." }
+  ],
+  "coreCapabilities": [
+    "Policy & procedure development",
+    "Practice-to-documentation reconciliation",
+    "Stakeholder-reviewed drafting",
+    "Training alignment",
+    "Periodic optimization cycle",
+    "Audit-finding translation into documented change"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Security program audits", "href": "/security-solutions/security-program-audits/" },
+    { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" },
+    { "label": "Access control assessment", "href": "/security-solutions/access-control-assessment/" },
+    { "label": "Systematic Approach to Training", "href": "/security-solutions/systematic-approach-to-training/" },
+    { "label": "Leadership & cultural transformation", "href": "/high-performance/leadership-cultural-transformation/" }
+  ],
+  "faq": [
+    { "q": "Do you write policy from scratch, or only revise what already exists?", "a": "Both, depending on program maturity — some engagements build a documentation structure from nothing, others optimize an existing one." },
+    { "q": "How do you find where practice has drifted from procedure?", "a": "Field observation and audit findings are reconciled directly against the written documentation, rather than assuming the document reflects reality." },
+    { "q": "How often should policy be revisited?", "a": "On a defined periodic cycle — not left static until an audit or an incident forces the issue." }
+  ],
+  "ctaHeading": "Write the procedure the site actually operates to",
+  "imageCaption": "Technical photo — policy manual or procedure document under review with tracked-changes markup, office setting"
+}

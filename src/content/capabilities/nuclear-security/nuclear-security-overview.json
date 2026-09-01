@@ -1,0 +1,53 @@
+{
+  "family": "nuclear-security",
+  "familyLabel": "Nuclear & SMR",
+  "familyPath": "/nuclear-security/",
+  "order": 1,
+  "title": "Nuclear Security",
+  "shortTitle": "Nuclear Security",
+  "metaDescription": "Physical, procedural, and electronic security assessed together against the Design Basis Threat — GSS's core nuclear security consulting practice.",
+  "eyebrow": "NUCLEAR & SMR — 01",
+  "heroDek": "Physical security, procedural security, and electronic security do not operate in isolation at an operating nuclear facility. They should not be assessed that way either — GSS evaluates all three together, against the Design Basis Threat.",
+  "contextHeading": "Security that is only as strong as its weakest layer",
+  "contextParagraphs": [
+    "Most protective strategies are not built badly — they are built in pieces. One vendor sizes the fence line and delay barriers. Another specifies cameras and intrusion sensors. A separate team writes the response procedures and staffs the complement. Each piece can pass its own review and the system can still fail, because the gaps that matter most sit at the seams between disciplines, not inside any one of them. GSS was founded in 2012 on the premise that nuclear security has to be delivered holistically rather than as a set of isolated services, and that is still the operating model.",
+    "Our assessments start from the Design Basis Threat, not from a facility's existing equipment list. Physical measures — barriers, hardening, standoff, delay — are evaluated against what the DBT actually grants an adversary in tools, numbers, and capability. Electronic measures — sensors, assessment, communications, systems integration — are evaluated under real operating conditions, not vendor specification sheets. Procedural measures — protective strategy, response, complement — are evaluated against the timeline the other two layers actually produce, not the timeline someone assumed when the plan was written.",
+    "The team doing this work includes former U.S. special operations operators, engineers, and executives who have run security organizations at the C-level, alongside a cyber-physical practice led by former U.S. NRC inspectors who helped author the cybersecurity regulations that govern U.S. plants today. That mix — operational, engineering, and regulatory experience in the same room — is what lets an assessment speak to how a facility actually defends itself, not just how its documentation says it does."
+  ],
+  "methodology": [
+    { "label": "Threat Basis Review", "body": "The applicable Design Basis Threat is established before any layer of the site is assessed against it." },
+    { "label": "Layered Assessment", "body": "Physical, electronic, and procedural security evaluated together, from the controlled area boundary inward." },
+    { "label": "Pathway & Vital Area Analysis", "body": "Adversary routes and vital areas identified and cross-checked against target sets." },
+    { "label": "Protective Strategy Development", "body": "Response, complement, and procedures sized to the delay and detection the site actually provides." },
+    { "label": "Documentation & Regulatory Alignment", "body": "Findings translated into licensing-basis documentation a regulator can review." },
+    { "label": "Sustainment", "body": "Periodic reassessment as the threat basis, the facility, or the regulatory posture changes." }
+  ],
+  "coreCapabilities": [
+    "Design Basis Threat-based assessment",
+    "Physical, procedural & electronic security integration",
+    "Vital area & target set analysis",
+    "Protective strategy development",
+    "Licensing-basis documentation support",
+    "Regulatory engagement"
+  ],
+  "industries": [
+    "Operating nuclear power plants",
+    "Small modular reactors",
+    "Fuel cycle & research facilities",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Security assessment & design", "href": "/security-solutions/security-assessment-design/" },
+    { "label": "Vital area analysis", "href": "/security-solutions/vital-area-analysis/" },
+    { "label": "Small modular reactor security", "href": "/nuclear-security/small-modular-reactor-security/" },
+    { "label": "Cyber-physical security", "href": "/cybersecurity/cyber-physical-security/" },
+    { "label": "Nuclear regulatory support", "href": "/nuclear-security/nuclear-regulatory-support/" }
+  ],
+  "faq": [
+    { "q": "Is this the same as a physical security assessment?", "a": "It includes one, but the scope is wider — physical, procedural, and electronic security are assessed as a single system, not three separate deliverables." },
+    { "q": "Do you work from a facility's existing DBT or help establish one?", "a": "Both. Where a Design Basis Threat is already defined by the applicable regulator, we assess against it; where it needs to be interpreted for a specific site or design, we support that work directly." },
+    { "q": "How is this different from a generic industrial security review?", "a": "Nuclear security is threat-informed rather than risk-generic — every recommendation is sized against a defined adversary capability, not a general best-practice checklist." }
+  ],
+  "ctaHeading": "Get a security posture assessed against the threat it actually faces",
+  "imageCaption": "Photo — protected area fence line at dusk, lighting mast and CCTV camera in the foreground, plant containment structure silhouetted beyond"
+}

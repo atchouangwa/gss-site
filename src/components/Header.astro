@@ -1,0 +1,386 @@
+---
+import { NAV, SITE } from '@/lib/site';
+
+const SECURITY_GROUPS: { heading: string; items: { label: string; slug: string }[] }[] = [
+  {
+    heading: 'ASSESS & DESIGN',
+    items: [
+      { label: 'Security assessment & design', slug: 'security-assessment-design' },
+      { label: 'Avenues of approach analysis', slug: 'avenues-of-approach-analysis' },
+      { label: 'Adversary pathway & timeline analysis', slug: 'adversary-pathway-analysis' },
+      { label: 'Vital area analysis', slug: 'vital-area-analysis' },
+      { label: 'Target set identification', slug: 'target-set-identification' },
+      { label: 'New build security design', slug: 'new-build-security-design' },
+    ],
+  },
+  {
+    heading: 'HARDEN & DELAY',
+    items: [
+      { label: 'Perimeter security & intrusion detection', slug: 'perimeter-security-intrusion-detection' },
+      { label: 'Vehicle & personnel barrier systems', slug: 'barrier-systems' },
+      { label: 'Explosive validation & blast-resistant design', slug: 'explosive-validation' },
+      { label: 'Access control assessment', slug: 'access-control-assessment' },
+      { label: 'Response strategy development', slug: 'response-strategy-development' },
+    ],
+  },
+  {
+    heading: 'PROGRAM & PEOPLE',
+    items: [
+      { label: 'Regulatory compliance & basis documentation', slug: 'regulatory-compliance' },
+      { label: 'Security program audits', slug: 'security-program-audits' },
+      { label: 'Systematic Approach to Training', slug: 'systematic-approach-to-training' },
+      { label: 'Tactical training & train-the-trainer', slug: 'tactical-training' },
+      { label: 'Force-on-force readiness', slug: 'force-on-force-readiness' },
+      { label: 'Human factors / minimum complement', slug: 'human-factors-minimum-complement' },
+    ],
+  },
+];
+
+const familyIntro: Record<string, string> = {
+  '/security-solutions/': 'Physical, procedural, and electronic protection assessed as one system against the Design Basis Threat.',
+  '/technology/': 'Technology selected to remove recurring cost and close real gaps, not to fill a product catalog.',
+  '/cybersecurity/': 'A lifecycle offering spanning design, implementation, authority to operate, and maintenance.',
+  '/nuclear-security/': 'Security integrated into the design lifecycle of operating and new-build nuclear facilities.',
+  '/high-performance/': 'Automated indicators that surface a negative trend before it becomes an event.',
+};
+
+function chunk<T>(arr: T[], parts: number): T[][] {
+  const out: T[][] = Array.from({ length: parts }, () => []);
+  arr.forEach((item, i) => out[i % parts].push(item));
+  return out;
+}
+---
+<header class="site-header">
+  <div class="bar">
+    <a href="/" class="brand">
+      <img src="/assets/gss-logo.png" alt="GSS" width="30" height="30" />
+      <span>Global Security<br />Solutions</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      {NAV.map((item) => (
+        item.children.length ? (
+          <div class="nav-item has-mega" data-nav-group={item.path}>
+            <button class="nav-trigger" aria-expanded="false" aria-controls={`mega-${item.path}`}>
+              {item.label}
+            </button>
+          </div>
+        ) : (
+          <a class="nav-item" href={item.path}>{item.label}</a>
+        )
+      ))}
+    </nav>
+
+    <div class="side">
+      <a class="phone" href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a>
+      <a class="btn btn-accent cta" href="/contact/">Request a Consultation</a>
+      <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  {NAV.filter((i) => i.children.length).map((item) => (
+    <div class="mega" id={`mega-${item.path}`} data-mega={item.path} hidden>
+      <div class="mega-inner">
+        <div class="mega-lead">
+          <div class="mega-lead-title">{item.label}</div>
+          <p>{familyIntro[item.path]}</p>
+          <a class="mega-lead-link" href={item.path}>{item.path.toUpperCase()} →</a>
+        </div>
+        {item.path === '/security-solutions/' ? (
+          SECURITY_GROUPS.map((group) => (
+            <div class="mega-col">
+              <div class="mega-col-heading">{group.heading}</div>
+              {group.items.map((child) => (
+                <a href={`${item.path}${child.slug}/`}>{child.label}</a>
+              ))}
+            </div>
+          ))
+        ) : (
+          chunk(item.children, 2).map((col) => (
+            <div class="mega-col">
+              {col.map((child) => (
+                <a href={`${item.path}${child.slug}/`}>{child.label}</a>
+              ))}
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  ))}
+</header>
+
+<div class="mobile-nav" id="mobile-nav" hidden>
+  <div class="mobile-nav-scroll">
+    {NAV.map((item) => (
+      item.children.length ? (
+        <details class="mobile-group">
+          <summary>
+            <span>{item.label}</span>
+            <span class="mobile-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="mobile-children">
+            <a href={item.path} class="mobile-view-all">View all {item.label.toLowerCase()} →</a>
+            {item.children.map((child) => (
+              <a href={`${item.path}${child.slug}/`}>{child.label}</a>
+            ))}
+          </div>
+        </details>
+      ) : (
+        <a class="mobile-top-link" href={item.path}>{item.label}</a>
+      )
+    ))}
+    <a class="btn btn-accent mobile-cta" href="/contact/">Request a Consultation</a>
+    <a class="mobile-phone" href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a>
+  </div>
+</div>
+
+<script>
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const groups = Array.from(header.querySelectorAll<HTMLElement>('[data-nav-group]'));
+    const megas = new Map<string, HTMLElement>();
+    header.querySelectorAll<HTMLElement>('[data-mega]').forEach((el) => {
+      megas.set(el.dataset.mega!, el);
+    });
+
+    let closeTimer: number | undefined;
+    let openKey: string | null = null;
+
+    const open = (key: string) => {
+      window.clearTimeout(closeTimer);
+      if (openKey === key) return;
+      megas.forEach((el, k) => {
+        el.hidden = k !== key;
+      });
+      groups.forEach((g) => {
+        const trigger = g.querySelector('.nav-trigger');
+        trigger?.setAttribute('aria-expanded', String(g.dataset.navGroup === key));
+      });
+      openKey = key;
+    };
+    const scheduleClose = () => {
+      window.clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(() => {
+        megas.forEach((el) => { el.hidden = true; });
+        groups.forEach((g) => g.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false'));
+        openKey = null;
+      }, 140);
+    };
+
+    groups.forEach((group) => {
+      const key = group.dataset.navGroup!;
+      group.addEventListener('mouseenter', () => open(key));
+      group.addEventListener('mouseleave', scheduleClose);
+      group.querySelector('.nav-trigger')?.addEventListener('click', () => {
+        openKey === key ? scheduleClose() : open(key);
+      });
+      group.querySelector('.nav-trigger')?.addEventListener('focus', () => open(key));
+    });
+    megas.forEach((el) => {
+      el.addEventListener('mouseenter', () => window.clearTimeout(closeTimer));
+      el.addEventListener('mouseleave', scheduleClose);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') scheduleClose();
+    });
+    document.addEventListener('click', (e) => {
+      if (!(e.target instanceof Node)) return;
+      if (!header.contains(e.target)) scheduleClose();
+    });
+  }
+
+  const hamburger = document.querySelector<HTMLButtonElement>('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger?.addEventListener('click', () => {
+    const willOpen = mobileNav?.hasAttribute('hidden');
+    if (mobileNav) mobileNav.hidden = !willOpen;
+    hamburger.setAttribute('aria-expanded', String(!!willOpen));
+    document.body.style.overflow = willOpen ? 'hidden' : '';
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    border-bottom: 1px solid var(--ink-border);
+  }
+  .bar {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 28px;
+    border-right: 1px solid var(--ink-border);
+    flex: none;
+  }
+  .brand img { width: 30px; height: 30px; object-fit: contain; filter: invert(1) brightness(1.4); }
+  .brand span {
+    font: 700 13px/1.1 var(--font-display);
+    letter-spacing: .06em;
+    color: var(--text-on-ink-primary);
+  }
+
+  .primary-nav {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    font: 500 11px/1 var(--font-body);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-on-ink-secondary);
+    min-width: 0;
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    border-right: 1px solid var(--ink-border-soft);
+    color: inherit;
+    transition: color var(--dur-hover) var(--ease-out-strong), background var(--dur-hover) var(--ease-out-strong);
+    white-space: nowrap;
+  }
+  a.nav-item:hover, .has-mega:hover .nav-trigger, .nav-trigger[aria-expanded="true"] {
+    color: var(--text-on-ink-primary);
+    background: var(--ink-raised);
+  }
+  .nav-trigger {
+    all: unset;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    height: 100%;
+  }
+  .has-mega { border-right: 1px solid var(--ink-border-soft); display: flex; }
+
+  .side { display: flex; align-items: center; flex: none; }
+  .phone {
+    font: 500 11px/1 var(--font-mono);
+    color: var(--text-on-ink-secondary);
+    padding: 0 20px;
+    border-left: 1px solid var(--ink-border);
+    border-right: 1px solid var(--ink-border);
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+  }
+  .cta { border-radius: 0; padding: 24px 26px; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 0 18px;
+    cursor: pointer;
+  }
+  .hamburger span { width: 22px; height: 2px; background: var(--text-on-ink-primary); display: block; }
+
+  .mega {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: var(--ink-raised);
+    border-bottom: 1px solid var(--ink-border);
+  }
+  .mega-inner {
+    display: grid;
+    grid-template-columns: 280px repeat(3, 1fr);
+    max-width: var(--max-content);
+    margin: 0 auto;
+  }
+  .mega-lead {
+    padding: 30px 28px 34px;
+    border-right: 1px solid var(--ink-border-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mega-lead-title {
+    font: 700 26px/1.02 var(--font-display);
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    color: var(--text-on-ink-primary);
+  }
+  .mega-lead p { margin: 0; font: 400 12.5px/1.6 var(--font-body); color: var(--text-on-ink-secondary); }
+  .mega-lead-link { margin-top: auto; font: 500 11px/1 var(--font-mono); letter-spacing: .1em; color: var(--accent); }
+  .mega-col {
+    padding: 30px 26px 34px;
+    border-right: 1px solid var(--ink-border-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  .mega-col:last-child { border-right: none; }
+  .mega-col-heading { font: 500 10px/1 var(--font-mono); letter-spacing: .16em; color: var(--text-on-ink-tertiary); }
+  .mega-col a {
+    font: 400 13px/1.4 var(--font-body);
+    color: #dcdedf;
+    transition: color 140ms ease;
+  }
+  .mega-col a:hover { color: var(--accent); }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 0;
+    top: 0;
+    z-index: 200;
+    background: var(--ink);
+    overflow-y: auto;
+  }
+  .mobile-nav-scroll { padding: 84px 18px 40px; display: flex; flex-direction: column; }
+  .mobile-top-link {
+    font: 700 17px/1 var(--font-display);
+    text-transform: uppercase;
+    color: var(--text-on-ink-primary);
+    padding: 16px 0;
+    border-top: 1px solid var(--ink-border-soft);
+  }
+  .mobile-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-top: 1px solid var(--ink-border-soft);
+    font: 700 17px/1 var(--font-display);
+    text-transform: uppercase;
+    color: var(--text-on-ink-primary);
+    cursor: pointer;
+    list-style: none;
+  }
+  .mobile-group summary::-webkit-details-marker { display: none; }
+  .mobile-toggle { position: relative; width: 14px; height: 14px; }
+  .mobile-toggle::before, .mobile-toggle::after {
+    content: ''; position: absolute; background: var(--text-on-ink-secondary);
+  }
+  .mobile-toggle::before { top: 6px; left: 0; width: 14px; height: 2px; }
+  .mobile-toggle::after { top: 0; left: 6px; width: 2px; height: 14px; transition: transform 160ms ease; }
+  .mobile-group[open] .mobile-toggle::after { transform: scaleY(0); }
+  .mobile-children { display: flex; flex-direction: column; padding-bottom: 10px; }
+  .mobile-children a {
+    font: 400 13px/1 var(--font-body);
+    color: var(--text-on-ink-secondary);
+    padding: 12px 0 12px 14px;
+  }
+  .mobile-view-all { color: var(--accent) !important; font-weight: 600; }
+  .mobile-cta { margin-top: 24px; padding: 17px; }
+  .mobile-phone { margin-top: 16px; text-align: center; font: 500 12px/1 var(--font-mono); color: var(--text-on-ink-secondary); padding: 12px; }
+
+  @media (max-width: 1080px) {
+    .primary-nav, .side .phone { display: none; }
+    .hamburger { display: flex; }
+  }
+</style>

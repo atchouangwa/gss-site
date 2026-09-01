@@ -1,0 +1,53 @@
+{
+  "family": "technology",
+  "familyLabel": "Technology Solutions",
+  "familyPath": "/technology/",
+  "order": 1,
+  "title": "Secure Wireless Communications",
+  "shortTitle": "Secure Wireless Communications",
+  "metaDescription": "Encrypted mesh communications with frequency hopping and dynamic routing, deployable interim or permanent for critical-infrastructure security forces.",
+  "eyebrow": "TECHNOLOGY SOLUTIONS — 01",
+  "heroDek": "A response force is only as coordinated as its link. GSS designs and fields encrypted mesh communications that keep working when a single node, repeater, or path doesn't.",
+  "contextHeading": "Comms is the layer every other system depends on",
+  "contextParagraphs": [
+    "Detection, assessment, and response all collapse to the same failure mode if the radio link between them is weak: the alarm is real, the responder is close, and the outcome still turns on whether the call got through. Fixed-infrastructure networks — single base station, single repeater path — carry that risk quietly until the day a node goes down mid-event.",
+    "GSS designs and deploys encrypted mesh networks built around AES-256 encryption and FIPS 140-3 validated hardware, with frequency hopping and dynamic routing so the network reroutes around a degraded or jammed node instead of failing with it. The result behaves less like a radio system with a single point of failure and more like a network: peer-to-peer, self-healing, and hardened against both interception and interference.",
+    "Deployment is scoped to the actual need. Some sites use mesh comms as a compensatory measure during a fixed-network outage or a construction phase; others adopt it as the permanent architecture. The engineering and the accreditation package are the same either way."
+  ],
+  "methodology": [
+    { "label": "Coverage Assessment", "body": "RF propagation and terrain analysis across the protected area and response routes." },
+    { "label": "Threat & Interference Review", "body": "Jamming, interception, and RF-congestion risk evaluated against the local environment." },
+    { "label": "Architecture Design", "body": "Node placement, mesh topology, and redundant path planning for self-healing coverage." },
+    { "label": "Encryption & Validation", "body": "AES-256 encryption on FIPS 140-3 validated hardware, configured to site security requirements." },
+    { "label": "Field Deployment", "body": "Installation and commissioning as an interim compensatory measure or a permanent system." },
+    { "label": "Performance Validation", "body": "Link testing under degraded-node and interference scenarios before acceptance." }
+  ],
+  "coreCapabilities": [
+    "AES-256 encrypted mesh networks",
+    "Frequency hopping & dynamic routing",
+    "FIPS 140-3 validated hardware",
+    "Interim compensatory deployment",
+    "Permanent network architecture",
+    "RF coverage & interference analysis"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Rapidly deployable intrusion detection", "href": "/technology/intrusion-detection/" },
+    { "label": "Security systems integration", "href": "/technology/systems-integration/" },
+    { "label": "Remote security operations & SOC design", "href": "/technology/remote-security-operations/" },
+    { "label": "Response strategy development", "href": "/security-solutions/response-strategy-development/" },
+    { "label": "Force-on-force readiness", "href": "/security-solutions/force-on-force-readiness/" }
+  ],
+  "faq": [
+    { "q": "Can mesh comms serve as a compensatory measure while a fixed system is repaired?", "a": "Yes — that is one of the more common deployment scenarios. The network is scoped, fielded, and documented as an interim measure and can be stood down once the permanent system is restored, or retained if it performs better." },
+    { "q": "Does frequency hopping interfere with existing site radio traffic?", "a": "Coverage and interference analysis is performed against the site's existing RF environment before deployment, and channel plans are set to avoid conflict with existing systems." },
+    { "q": "What happens to the network if a single node is lost or jammed?", "a": "Dynamic routing reroutes traffic around the affected node in real time, which is the core design difference from a single-repeater radio system." }
+  ],
+  "ctaHeading": "Don't find out your comms have a single point of failure during an event",
+  "imageCaption": "Technical photo — mesh radio node mounted at a perimeter position, hardware detail rather than a stock handset shot"
+}

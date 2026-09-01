@@ -1,0 +1,53 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 8,
+  "title": "Vehicle & Personnel Barrier Systems",
+  "shortTitle": "Barrier Systems",
+  "metaDescription": "Barrier engineering for vehicle and personnel delay — standoff, crash rating, and integration with detection and response, validated rather than assumed.",
+  "eyebrow": "SECURITY SOLUTIONS — 08",
+  "heroDek": "A crash rating printed on a spec sheet describes a product, not an installation. GSS selects, integrates, and — where it matters most — validates barrier performance against what the protective strategy actually requires.",
+  "contextHeading": "A crash rating on a spec sheet is a starting point, not a delay guarantee",
+  "contextParagraphs": [
+    "Vehicle barriers — bollards, wedge barriers, gates — and personnel delay structures are selected for standoff and crash rating appropriate to the vehicle and explosive threat defined in the Design Basis Threat. That selection is where most barrier programs stop.",
+    "It shouldn't be. A manufacturer's rating describes the product tested in controlled conditions; the delay it actually provides depends on foundation, terrain, and installation, and on whether it's integrated with the detection and response elements around it. GSS reviews barrier selection against as-installed conditions and, where the barrier is protecting a target set worth the certainty, validates performance directly rather than relying on the rating alone — see Explosive Validation & Blast-Resistant Design.",
+    "A barrier without coordinated detection simply delays an adversary a response force never sees coming. Placement, detection coverage, and response positioning are specified together, not procured as separate line items."
+  ],
+  "methodology": [
+    { "label": "Standoff & Threat Definition", "body": "Vehicle weight, speed, and explosive threat parameters established from the design basis." },
+    { "label": "Barrier Type Selection", "body": "Bollards, wedge barriers, gates, or fencing selected against site geometry and operational traffic needs." },
+    { "label": "Crash & Delay Rating Review", "body": "Manufacturer ratings reviewed against actual installation conditions, foundation, and terrain." },
+    { "label": "Installation & Integration", "body": "Barrier placement coordinated with detection coverage and response positioning." },
+    { "label": "Performance Validation", "body": "Installed performance confirmed through engineering analysis, and explosive testing where warranted." },
+    { "label": "Maintenance & Lifecycle Planning", "body": "Inspection and maintenance requirements defined to preserve rated performance over time." }
+  ],
+  "coreCapabilities": [
+    "Standoff & threat-based barrier selection",
+    "Crash-rating review against as-installed conditions",
+    "Vehicle & personnel barrier integration",
+    "Detection & response coordination",
+    "Performance validation",
+    "Maintenance & lifecycle planning"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Explosive validation & blast-resistant design", "href": "/security-solutions/explosive-validation/" },
+    { "label": "Perimeter security & intrusion detection", "href": "/security-solutions/perimeter-security-intrusion-detection/" },
+    { "label": "Adversary pathway & timeline analysis", "href": "/security-solutions/adversary-pathway-analysis/" },
+    { "label": "Access control assessment", "href": "/security-solutions/access-control-assessment/" },
+    { "label": "New build security design", "href": "/security-solutions/new-build-security-design/" }
+  ],
+  "faq": [
+    { "q": "Is a manufacturer's crash rating enough on its own?", "a": "It's a starting point. Installed performance depends on foundation, terrain, and integration — validated performance is the standard GSS designs to, not the rating alone." },
+    { "q": "Do you handle both vehicle and pedestrian barriers?", "a": "Yes — vehicle barriers and personnel delay structures are addressed together, since they're typically deployed as one integrated system." },
+    { "q": "Can barrier selection happen before the site layout is finalized?", "a": "Yes, and it should — see New Build Security Design for how barrier requirements are integrated at the concept stage." }
+  ],
+  "ctaHeading": "Know what the barrier actually buys, installed, not on the spec sheet",
+  "imageCaption": "Technical photo — vehicle bollard or wedge-barrier installation under inspection in daylight, engineering rather than tactical context"
+}

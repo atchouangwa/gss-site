@@ -1,0 +1,52 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 4,
+  "title": "Vital Area Analysis",
+  "shortTitle": "Vital Area Analysis",
+  "metaDescription": "Sabotage and area-logic modeling used to identify the vital areas within a facility that require dedicated protection, and no more than that.",
+  "eyebrow": "SECURITY SOLUTIONS — 04",
+  "heroDek": "Not every room is a vital area, and treating them all as one spends the protective budget on the wrong doors. GSS traces consequence back to its source to identify the areas that actually require it.",
+  "contextHeading": "Not every room is a vital area, and treating them all as one wastes the protective budget",
+  "contextParagraphs": [
+    "A vital area is a location containing structures, systems, or components whose sabotage could cause an unacceptable consequence — radiological, safety, or mission. Determining which locations meet that bar, and which do not, is a modeling exercise, not a walkthrough judgment call.",
+    "GSS traces sabotage logic from equipment failure through to consequence, screening systems and structures against a defined consequence threshold and aggregating the locations that contribute into a minimum candidate set of vital areas. The goal is precision: enough area protected to eliminate the consequence pathway, not more than that.",
+    "The resulting vital area set is the direct input to target set identification at the equipment level, and to the protective strategy — barriers, detection, response — built around it."
+  ],
+  "methodology": [
+    { "label": "Consequence Threshold Definition", "body": "Radiological, safety, or mission-consequence criteria established as the basis for \"unacceptable.\"" },
+    { "label": "System & Structure Screening", "body": "Facility systems and structures screened for sabotage potential against that threshold." },
+    { "label": "Sabotage Logic Modeling", "body": "Fault paths traced from equipment failure to consequence to identify contributing locations." },
+    { "label": "Area Aggregation", "body": "Locations grouped into candidate vital areas, minimizing footprint while preserving protection." },
+    { "label": "Independent Review", "body": "Candidate vital area set checked against operations and licensing-basis documentation for completeness." }
+  ],
+  "coreCapabilities": [
+    "Consequence threshold definition",
+    "System & structure sabotage screening",
+    "Sabotage logic / fault-path modeling",
+    "Vital area aggregation & footprint minimization",
+    "Licensing-basis alignment",
+    "Independent review"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Target set identification & development", "href": "/security-solutions/target-set-identification/" },
+    { "label": "Security assessment & design", "href": "/security-solutions/security-assessment-design/" },
+    { "label": "New build security design", "href": "/security-solutions/new-build-security-design/" },
+    { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" },
+    { "label": "Nuclear security overview", "href": "/nuclear-security/nuclear-security-overview/" }
+  ],
+  "faq": [
+    { "q": "How is a vital area different from a target set?", "a": "A vital area is a location; a target set is the specific equipment, system, or material within it whose loss or sabotage causes the consequence. See Target Set Identification & Development." },
+    { "q": "Does the vital area set change over a facility's life?", "a": "Yes — it is re-run whenever the equipment configuration or consequence basis changes, not treated as fixed at commissioning." },
+    { "q": "Who reviews the resulting vital area boundaries?", "a": "They are checked against the site's licensing basis and operational documentation, and GSS supports that documentation directly." }
+  ],
+  "ctaHeading": "Protect the areas that matter, not all of them equally",
+  "imageCaption": "Technical photo — facility floor plan with vital-area boundaries marked, reviewed on a drafting table or large monitor"
+}

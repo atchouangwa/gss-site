@@ -1,0 +1,19 @@
+---
+import FamilyOverviewLayout from '@/layouts/FamilyOverviewLayout.astro';
+import { NAV } from '@/lib/site';
+
+const family = NAV.find((n) => n.path === '/high-performance/')!;
+---
+<FamilyOverviewLayout
+  eyebrow="HIGH PERFORMANCE"
+  title="High Performance"
+  dek="From compliance to best-in-class: automated indicators that show a negative trend before it becomes an event, aligned to INPO, WANO, and IAEA principles."
+  path="/high-performance/"
+  metaDescription="GSS high-performance operations: culture, optimization assessment, KPI development, risk-based decision making, and leadership transformation for security and operations organizations."
+  paragraphs={[
+    "A protective strategy that passes its next audit is not the same thing as an organization operating at Best-in-Class. GSS built the High Performance practice because compliance is a floor, not a target — and because a security program's performance decays the moment leadership stops measuring it.",
+    'The model is simple to state and hard to sustain: track performance automatically, separate leading indicators from lagging ones, measure against a defined Best-in-Class standard, and improve on a roadmap rather than a reaction. The five capabilities below are how GSS builds and sustains that model inside a client organization.',
+  ]}
+  children={family.children}
+  ctaHeading="Move from compliant to best-in-class."
+/>

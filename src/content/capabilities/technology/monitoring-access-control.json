@@ -1,0 +1,53 @@
+{
+  "family": "technology",
+  "familyLabel": "Technology Solutions",
+  "familyPath": "/technology/",
+  "order": 3,
+  "title": "Monitoring, Alarms & Access Control",
+  "shortTitle": "Monitoring & Access Control",
+  "metaDescription": "Integrating monitoring, alarm management, and access control into a single operating picture for nuclear and critical-infrastructure security forces.",
+  "eyebrow": "TECHNOLOGY SOLUTIONS — 03",
+  "heroDek": "Three systems, three vendors, three screens, one operator trying to correlate all of it in real time — that's not monitoring, that's a workload problem. GSS designs it as one picture.",
+  "contextHeading": "Separate systems create a correlation problem for the human in the loop",
+  "contextParagraphs": [
+    "Monitoring, alarm management, and access control are frequently procured, installed, and operated as three separate systems, each with its own interface, its own alarm logic, and its own vendor relationship. An operator watching all three is doing the correlation work manually — deciding whether a door alarm, a badge read, and a camera event fifteen seconds apart are the same story or three unrelated ones.",
+    "GSS designs monitoring, alarm management, and access control as one integrated capability rather than three adjacent systems. Access events, alarm state, and video assessment are tied together so an operator sees a correlated picture instead of three independent feeds, and alarm logic is tuned so genuine events are distinguishable from nuisance activity at the point they're raised, not fifteen minutes later during shift review.",
+    "The design work covers both ends of the system: the credentialing and access-control policy that determines who can go where, and the monitoring architecture that determines what the operator actually sees when something happens."
+  ],
+  "methodology": [
+    { "label": "Current-State Assessment", "body": "Existing monitoring, alarm, and access-control systems and how operators actually use them." },
+    { "label": "Access Control Policy Design", "body": "Credentialing, privilege levels, and area-access rules mapped to operational need." },
+    { "label": "Alarm Logic Tuning", "body": "Alarm thresholds and correlation rules set to separate real events from nuisance activity." },
+    { "label": "Integration Architecture", "body": "Access, alarm, and monitoring data unified into a single operator interface." },
+    { "label": "Operator Workflow Design", "body": "Console layout and escalation procedures built around how alarms actually arrive." },
+    { "label": "Validation & Handover", "body": "System tested against real scenarios before turnover to the operating organization." }
+  ],
+  "coreCapabilities": [
+    "Access control policy & credentialing design",
+    "Alarm management & correlation logic",
+    "Integrated monitoring architecture",
+    "Operator console & workflow design",
+    "Nuisance-alarm reduction",
+    "System validation & handover"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Security systems integration", "href": "/technology/systems-integration/" },
+    { "label": "Remote security operations & SOC design", "href": "/technology/remote-security-operations/" },
+    { "label": "Access control assessment", "href": "/security-solutions/access-control-assessment/" },
+    { "label": "Rapidly deployable intrusion detection", "href": "/technology/intrusion-detection/" },
+    { "label": "KPI / performance monitoring technology", "href": "/technology/kpi-performance-monitoring/" }
+  ],
+  "faq": [
+    { "q": "Does this require replacing our existing access control system?", "a": "Not necessarily. Integration is scoped against what's already in place; the design goal is a unified operating picture, which can mean new integration middleware rather than a wholesale system replacement." },
+    { "q": "How is nuisance-alarm rate actually reduced without missing real events?", "a": "Alarm logic is tuned using correlation across sensors, access events, and video rather than any single feed in isolation, so a nuisance source has to clear more than one check before it reaches the operator." },
+    { "q": "Who ends up defining access privilege levels — GSS or the client?", "a": "The client organization owns the policy decisions; GSS designs the system architecture and workflow that enforces and audits whatever policy the client sets." }
+  ],
+  "ctaHeading": "Give your operators one picture instead of three screens to reconcile",
+  "imageCaption": "Technical photo — security operations console showing correlated access, alarm, and video feeds, operator's-eye view"
+}

@@ -1,0 +1,53 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 3,
+  "title": "Adversary Pathway & Timeline Analysis",
+  "shortTitle": "Pathway & Timeline Analysis",
+  "metaDescription": "Intrusion-route and timeline analysis measuring adversary progression against response time, sizing both delay requirements and response-force needs.",
+  "eyebrow": "SECURITY SOLUTIONS — 03",
+  "heroDek": "Delay only means something relative to response. GSS builds the timeline that connects the two — the analysis every barrier decision and every staffing decision downstream should trace back to.",
+  "contextHeading": "Delay only matters relative to response",
+  "contextParagraphs": [
+    "Pathway analysis identifies every plausible intrusion route from the site boundary to a given target set, accounting for the barriers and detection points an adversary would encounter along it. Timeline analysis then estimates the time required to defeat each obstacle on that route and sums it into a progression curve — how far an adversary gets, and when.",
+    "That curve is only useful set against the site's own response time: detection, communication, and response-force arrival and engagement. Where the two lines cross is the critical detection point — the moment by which the response force must be alerted for the protective strategy to hold. Everything else in the protective strategy is sized against that point.",
+    "GSS runs this analysis across the full set of pathways a facility presents, not a single assumed route, and re-tests it against variant adversary capability and response posture so the result reflects a range of realistic conditions rather than one convenient case."
+  ],
+  "methodology": [
+    { "label": "Pathway Enumeration", "body": "All plausible intrusion routes identified from the site boundary to each target set." },
+    { "label": "Barrier & Task-Time Estimation", "body": "Time required to defeat each barrier or obstacle along a pathway, grounded in engineering analysis or validated test data." },
+    { "label": "Cumulative Timeline Construction", "body": "Task times summed along each pathway to build an adversary progression curve." },
+    { "label": "Response Time Comparison", "body": "Progression curve compared against measured detection, communication, and response-force arrival time." },
+    { "label": "Critical Detection Point Identification", "body": "The point along each pathway where response force must be alerted for an adequate response." },
+    { "label": "Sensitivity & Scenario Testing", "body": "Pathways re-run against variant adversary capability and response posture." }
+  ],
+  "coreCapabilities": [
+    "Intrusion-pathway modeling",
+    "Barrier & task-time estimation",
+    "Timeline construction & analysis",
+    "Response-time comparison",
+    "Critical-detection-point identification",
+    "Scenario sensitivity testing"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Explosive validation & blast-resistant design", "href": "/security-solutions/explosive-validation/" },
+    { "label": "Vehicle & personnel barrier systems", "href": "/security-solutions/barrier-systems/" },
+    { "label": "Response strategy development", "href": "/security-solutions/response-strategy-development/" },
+    { "label": "Force-on-force readiness", "href": "/security-solutions/force-on-force-readiness/" },
+    { "label": "Avenues of approach analysis", "href": "/security-solutions/avenues-of-approach-analysis/" }
+  ],
+  "faq": [
+    { "q": "Is this the same as a force-on-force exercise?", "a": "No — this is analytical modeling done at a desk. Force-on-force later validates the analysis under realistic, controlled conditions." },
+    { "q": "What inputs does the analysis require?", "a": "Site layout, barrier and obstacle characteristics — ideally validated performance data rather than spec-sheet assumptions — and current response procedures." },
+    { "q": "How does this connect to complement sizing?", "a": "The critical detection point and required response time it produces feed directly into minimum complement and response-strategy determination." }
+  ],
+  "ctaHeading": "Measure the race before you run it",
+  "imageCaption": "Technical photo — timeline or Gantt-style pathway chart displayed on screen in an engineering-analysis workspace"
+}

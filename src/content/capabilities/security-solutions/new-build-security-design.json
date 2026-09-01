@@ -1,0 +1,53 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 6,
+  "title": "New Build Security Design",
+  "shortTitle": "New Build Security Design",
+  "metaDescription": "Security-by-design for facilities still in the design phase — integrating protective strategy, barriers, and detection before construction begins.",
+  "eyebrow": "SECURITY SOLUTIONS — 06",
+  "heroDek": "Security is cheapest and most effective while it is still a drawing. GSS integrates the protective strategy into a new build program from the concept stage, before layout and structure are fixed.",
+  "contextHeading": "Security is cheapest when it's still a drawing",
+  "contextParagraphs": [
+    "Once concrete is poured, a protective strategy is constrained by whatever already exists — standoff that can't be recovered, vital areas boxed in by a layout that was never designed around them. Retrofitting security after the fact is possible, but it is rarely as effective, and it is never as cheap, as building it in.",
+    "GSS applies the inside-out methodology directly at the design stage: vital areas and target sets are identified from the design basis before siting or layout is finalized, so standoff, avenues of approach, and response positioning can still be adjusted rather than accepted as fixed constraints.",
+    "This applies to conventional new build and, with particular value, to small modular reactor programs, where compressed construction schedules make a late security retrofit especially costly to both budget and schedule."
+  ],
+  "methodology": [
+    { "label": "Inside-Out Design Basis", "body": "Vital areas and target sets identified from the design basis before siting or layout is finalized." },
+    { "label": "Concept-Stage Integration", "body": "Protective strategy concepts incorporated alongside architectural and structural design, not after it." },
+    { "label": "Standoff & Layout Optimization", "body": "Site layout evaluated for standoff, avenues of approach, and response positioning while it is still adjustable." },
+    { "label": "Barrier & Detection Specification", "body": "Delay and detection requirements specified to design engineering directly, rather than retrofit specification later." },
+    { "label": "Licensing-Basis Coordination", "body": "Security design basis developed alongside the facility's licensing submissions." },
+    { "label": "Constructability Review", "body": "Design reviewed against construction sequencing and cost before commitment." }
+  ],
+  "coreCapabilities": [
+    "Inside-out design-basis development",
+    "Concept-stage protective-strategy integration",
+    "Standoff & site-layout optimization",
+    "Barrier & detection specification",
+    "Licensing-basis coordination",
+    "Constructability review"
+  ],
+  "industries": [
+    "Small modular reactors",
+    "New nuclear build",
+    "Operating nuclear facilities (major modification)",
+    "Other new critical-infrastructure build"
+  ],
+  "related": [
+    { "label": "Security assessment & design", "href": "/security-solutions/security-assessment-design/" },
+    { "label": "New nuclear build security", "href": "/nuclear-security/new-nuclear-build-security/" },
+    { "label": "Small modular reactor security", "href": "/nuclear-security/small-modular-reactor-security/" },
+    { "label": "Vital area analysis", "href": "/security-solutions/vital-area-analysis/" },
+    { "label": "Vehicle & personnel barrier systems", "href": "/security-solutions/barrier-systems/" }
+  ],
+  "faq": [
+    { "q": "How early should GSS be involved in a new build program?", "a": "As early as concept and siting — before layout is fixed is when standoff and vital-area placement are still genuinely open decisions." },
+    { "q": "Does this apply specifically to SMR programs?", "a": "Yes, and it applies with particular value there, since compressed SMR construction schedules make a late retrofit unusually costly." },
+    { "q": "What if design work is already underway?", "a": "Integration is still possible, though the available options narrow as the design matures — earlier engagement preserves more choices." }
+  ],
+  "ctaHeading": "Design it in before you have to build it back in",
+  "imageCaption": "Technical photo — architectural or site-layout drawings marked up with security overlays on a design-review table"
+}

@@ -1,0 +1,59 @@
+:root {
+  /* ink */
+  --ink: #0A0B0C;
+  --ink-raised: #16191C;
+  --ink-raised-2: #22282e;
+  --ink-border: rgba(242, 240, 235, 0.14);
+  --ink-border-soft: rgba(242, 240, 235, 0.08);
+  --ink-border-strong: rgba(242, 240, 235, 0.24);
+  --ink-bar-low: #2b3035;
+  --ink-bar-mid: #3d444b;
+
+  /* paper */
+  --paper: #F2F0EB;
+  --paper-border: #d3cfc7;
+  --paper-border-soft: #c9c5bd;
+  --paper-hover: #e7e4de;
+  --paper-image-bg: #e2ded7;
+
+  /* accent */
+  --accent: #FF7A1A;
+  --accent-hover: #ff8c38;
+  --accent-ink: #c85700;
+
+  /* text on ink */
+  --text-on-ink-primary: #F2F0EB;
+  --text-on-ink-secondary: #8B9298;
+  --text-on-ink-tertiary: #5f666d;
+  --text-on-ink-quiet: #7b8087;
+
+  /* text on paper */
+  --text-on-paper-primary: #0A0B0C;
+  --text-on-paper-secondary: #3d4249;
+  --text-on-paper-tertiary: #4a4f55;
+  --text-on-paper-quiet: #8a8f96;
+  --text-on-paper-label: #5b6167;
+  --text-on-paper-body-alt: #22262b;
+
+  /* type */
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* motion */
+  --ease-out-strong: cubic-bezier(.23, 1, .32, 1);
+  --dur-reveal: 420ms;
+  --dur-hover: 160ms;
+  --dur-press: 120ms;
+
+  /* layout */
+  --page-pad: 44px;
+  --page-pad-mobile: 18px;
+  --max-content: 1440px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-pad: 18px;
+  }
+}

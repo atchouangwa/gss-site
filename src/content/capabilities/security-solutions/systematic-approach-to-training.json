@@ -1,0 +1,51 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 14,
+  "title": "Systematic Approach to Training (SAT)",
+  "shortTitle": "Systematic Approach to Training",
+  "metaDescription": "The Analyze, Design, Develop, Implement, Evaluate training methodology — from classroom instruction through scenario-based performance assessment.",
+  "eyebrow": "SECURITY SOLUTIONS — 14",
+  "heroDek": "Training that isn't measured against performance is attendance, not readiness. GSS builds programs on the Systematic Approach to Training so instruction traces back to the job it's actually preparing someone for.",
+  "contextHeading": "Training that isn't measured against performance is just attendance",
+  "contextParagraphs": [
+    "The Systematic Approach to Training runs five phases — Analyze, Design, Develop, Implement, Evaluate — as a closed loop rather than a one-way process. Analysis defines what the protective force actually needs to be able to do; every phase after it is built to produce that, and the evaluation phase feeds back into the next round of analysis.",
+    "Implementation itself progresses in stages: classroom instruction establishes knowledge, site walkdowns and discussions connect that knowledge to the actual facility, and scenario-based drills apply it under conditions that approach realistic operation. Performance assessment at the end measures whether it worked, individually and at the program level.",
+    "The same structure supports both initial qualification and ongoing requalification, so continuing training stays anchored to the site's current protective strategy rather than repeating a fixed curriculum indefinitely."
+  ],
+  "methodology": [
+    { "label": "Analyze", "body": "Job and task requirements analyzed against the protective strategy to define what training must produce." },
+    { "label": "Design", "body": "Learning objectives and curriculum structure designed against those requirements." },
+    { "label": "Develop", "body": "Classroom materials, walkdown guides, and scenario packages developed." },
+    { "label": "Implement", "body": "Classroom instruction, site walkdowns and discussions, and scenario-based drills delivered in sequence." },
+    { "label": "Evaluate", "body": "Individual and program performance assessed against objectives, feeding back into the analysis phase." }
+  ],
+  "coreCapabilities": [
+    "Job / task analysis",
+    "Curriculum design & development",
+    "Classroom & walkdown-based instruction",
+    "Scenario-based drill design",
+    "Performance evaluation",
+    "Continuing / requalification program design"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Tactical training & train-the-trainer", "href": "/security-solutions/tactical-training/" },
+    { "label": "Force-on-force readiness", "href": "/security-solutions/force-on-force-readiness/" },
+    { "label": "Human factors / minimum complement", "href": "/security-solutions/human-factors-minimum-complement/" },
+    { "label": "Training & education", "href": "/cybersecurity/training-education/" },
+    { "label": "Leadership & cultural transformation", "href": "/high-performance/leadership-cultural-transformation/" }
+  ],
+  "faq": [
+    { "q": "Is SAT only for new hires?", "a": "No — it structures continuing and requalification training as well, sized to actual task requirements rather than a fixed annual curriculum." },
+    { "q": "How do scenario-based drills relate to force-on-force exercises?", "a": "They're smaller-scale application exercises that build toward full force-on-force readiness, not a substitute for it." },
+    { "q": "How is training tied back to the protective strategy?", "a": "The analysis phase is grounded in job and task requirements derived from the site's own protective strategy, not a generic industry curriculum." }
+  ],
+  "ctaHeading": "Train to the job the protective strategy actually requires",
+  "imageCaption": "Technical photo — classroom instruction session or a site walkdown discussion in progress, instructional rather than tactical framing"
+}

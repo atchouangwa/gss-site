@@ -1,0 +1,53 @@
+{
+  "family": "technology",
+  "familyLabel": "Technology Solutions",
+  "familyPath": "/technology/",
+  "order": 7,
+  "title": "KPI / Performance Monitoring Technology",
+  "shortTitle": "KPI & Performance Monitoring",
+  "metaDescription": "Automated KPI capture technology tracking leading and lagging indicators, feeding the Track, Trend, Measure, Improve model toward Best-in-Class performance.",
+  "eyebrow": "TECHNOLOGY SOLUTIONS — 07",
+  "heroDek": "A negative trend that only shows up in the annual report already cost you a year. GSS builds the technology that surfaces it while there's still time to act.",
+  "contextHeading": "A performance model is only as good as its data pipeline",
+  "contextParagraphs": [
+    "Track, Trend, Measure, Improve works as a management model regardless of how the data gets collected — but in practice, most of it breaks down at collection. Indicators pulled together manually from logs, incident reports, and spreadsheets arrive late, arrive inconsistently, and arrive too aggregated to show a negative trend before it's already an event.",
+    "GSS builds the technology layer underneath that model: automated KPI capture drawing directly from the systems already generating the data — access control, alarm management, training records, incident logs — rather than a manual reporting cycle bolted on after the fact. Leading and lagging indicators are captured separately, on a cadence tight enough that decline is visible while it's still a trend and not yet a finding.",
+    "The output is built to be read, not just stored: dashboards structured around defined Best-in-Class benchmarks, so a metric's meaning is immediately clear against baseline and target rather than requiring a separate analysis step every reporting cycle."
+  ],
+  "methodology": [
+    { "label": "Indicator Definition", "body": "Leading and lagging KPIs defined from benchmarking and subject-matter expertise." },
+    { "label": "Source System Mapping", "body": "Data sources identified across access control, alarms, training, and incident systems." },
+    { "label": "Automated Capture Design", "body": "Collection pipelines built to pull data directly rather than through manual reporting." },
+    { "label": "Trend & Threshold Logic", "body": "Decline thresholds set so a negative trend surfaces before it becomes an event." },
+    { "label": "Dashboard Design", "body": "Metrics presented against defined Best-in-Class benchmarks, not raw numbers alone." },
+    { "label": "Roadmap Integration", "body": "Dashboard output tied to the improvement roadmap and milestone tracking." }
+  ],
+  "coreCapabilities": [
+    "Automated KPI data capture",
+    "Leading & lagging indicator design",
+    "Best-in-Class benchmark dashboards",
+    "Trend and threshold alerting",
+    "Multi-source data integration",
+    "Roadmap & milestone tracking"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "Multi-site nuclear operators",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "KPI development & performance metrics", "href": "/high-performance/kpi-development/" },
+    { "label": "Security systems integration", "href": "/technology/systems-integration/" },
+    { "label": "High-performance culture", "href": "/high-performance/high-performance-culture/" },
+    { "label": "Risk-based decision making", "href": "/high-performance/risk-based-decision-making/" },
+    { "label": "Security program audits", "href": "/security-solutions/security-program-audits/" }
+  ],
+  "faq": [
+    { "q": "Does this replace our existing reporting process or sit alongside it?", "a": "It's designed to replace the manual collection step specifically — pulling data automatically from source systems rather than through spreadsheets — while feeding the same reporting structure the organization already uses." },
+    { "q": "How are Best-in-Class benchmarks determined?", "a": "Benchmarks are set from industry-standard frameworks and subject-matter expertise, then calibrated to the organization's own baseline so the dashboard reflects a realistic improvement path rather than an arbitrary target." },
+    { "q": "Can this integrate with systems that predate the KPI program?", "a": "Yes — data source mapping is done against whatever systems are actually in place, and capture is built to pull from legacy systems as readily as newer ones." }
+  ],
+  "ctaHeading": "See the trend before it becomes the next finding",
+  "imageCaption": "Technical photo — KPI dashboard on a wall display showing tracked leading and lagging indicators, operations-center setting"
+}

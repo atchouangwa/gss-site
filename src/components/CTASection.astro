@@ -1,0 +1,77 @@
+---
+import { SITE } from '@/lib/site';
+
+interface Props {
+  variant?: 'orange' | 'dark';
+  heading: string;
+  body?: string;
+}
+const { variant = 'orange', heading, body } = Astro.props;
+---
+{variant === 'orange' ? (
+  <section class="cta orange">
+    <div class="inner">
+      <h2>{heading}</h2>
+      <div class="right">
+        {body && <p>{body}</p>}
+        <a class="btn btn-ink" href="/contact/">Request a Consultation</a>
+        <span class="mono contact-line">{SITE.email} · {SITE.phone}</span>
+      </div>
+    </div>
+  </section>
+) : (
+  <section class="cta dark">
+    <h2>{heading}</h2>
+    <a class="btn btn-accent" href="/contact/">Request a Consultation</a>
+  </section>
+)}
+
+<style>
+  .cta.orange {
+    background: var(--accent);
+    padding: 88px var(--page-pad);
+  }
+  .cta.orange .inner {
+    max-width: var(--max-content);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: end;
+  }
+  .cta.orange h2 {
+    margin: 0;
+    font: 700 clamp(38px, 6vw, 90px)/.9 var(--font-display);
+    letter-spacing: -.045em;
+    text-transform: uppercase;
+    color: var(--ink);
+    max-width: 20ch;
+  }
+  .cta.orange .right { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .cta.orange .right p { margin: 0; font: 500 15px/1.6 var(--font-body); color: rgba(10,11,12,.72); max-width: 34ch; }
+  .contact-line { font-size: 11px; color: rgba(10,11,12,.7); }
+
+  .cta.dark {
+    background: var(--ink);
+    padding: 56px var(--page-pad);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: var(--max-content);
+    margin: 0 auto;
+  }
+  .cta.dark h2 {
+    margin: 0;
+    font: 700 clamp(28px, 4vw, 48px)/.98 var(--font-display);
+    letter-spacing: -.04em;
+    text-transform: uppercase;
+    color: var(--text-on-ink-primary);
+    max-width: 28ch;
+  }
+
+  @media (max-width: 700px) {
+    .cta.orange .inner { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,53 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 10,
+  "title": "Access Control Assessment",
+  "shortTitle": "Access Control Assessment",
+  "metaDescription": "Evaluation of credentialing, access authorization, and access control programs, with explicit attention to insider-threat exposure.",
+  "eyebrow": "SECURITY SOLUTIONS — 10",
+  "heroDek": "Access control rarely fails loudly. GSS assesses the technology and the procedures behind it against what actually happens on site, including the exposure created by the people the program is built to trust.",
+  "contextHeading": "Access control fails quietly, long before an alarm ever sounds",
+  "contextParagraphs": [
+    "An access control program is the combination of credentialing, authorization, badge or biometric technology, and escort and visitor procedure that governs who is allowed where. Most failures in these programs aren't technology failures — they're administrative drift: authorizations that outlive their justification, escort practice that has quietly become informal, exceptions that became the rule.",
+    "GSS assesses both the technology and the governing procedure, and checks each against observed practice on site rather than against the written policy alone. The evaluation is explicitly insider-threat aware: the population with trusted access is also the population best positioned to defeat the controls meant to check them, and an assessment that ignores that isn't measuring the actual risk.",
+    "Findings translate into both technology recommendations and policy updates, coordinated with GSS's own policy development and program audit work rather than delivered as a standalone finding set."
+  ],
+  "methodology": [
+    { "label": "Program & Procedure Review", "body": "Credentialing, authorization, and escort procedures reviewed against governing documentation." },
+    { "label": "Technology Assessment", "body": "Badge, biometric, and access-control system performance evaluated against site requirements." },
+    { "label": "Practice Observation", "body": "Actual site practice observed against written procedure to identify drift." },
+    { "label": "Insider-Threat Consideration", "body": "Access population and authorization scope reviewed explicitly for insider-threat exposure." },
+    { "label": "Authorization Audit", "body": "Sample of active authorizations checked for currency and justification." },
+    { "label": "Findings & Remediation Plan", "body": "Gaps prioritized into a remediation plan with owners and timelines." }
+  ],
+  "coreCapabilities": [
+    "Credentialing & authorization program review",
+    "Access control technology assessment",
+    "Practice-vs-procedure observation",
+    "Insider-threat-aware evaluation",
+    "Authorization currency audit",
+    "Remediation planning"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Monitoring, alarms & access control", "href": "/technology/monitoring-access-control/" },
+    { "label": "Security policy development & optimization", "href": "/security-solutions/security-policy-development/" },
+    { "label": "Threat hunting & incident response", "href": "/cybersecurity/threat-hunting-incident-response/" },
+    { "label": "Human factors / minimum complement", "href": "/security-solutions/human-factors-minimum-complement/" },
+    { "label": "Security program audits", "href": "/security-solutions/security-program-audits/" }
+  ],
+  "faq": [
+    { "q": "Does this assessment cover cyber access controls too?", "a": "The core assessment is physical access; where systems are digitally controlled, the work coordinates directly with cyber-physical and threat-hunting capability." },
+    { "q": "How do you find drift between written procedure and actual practice?", "a": "Direct observation, sampling, and interviews on site — a paper review alone rarely surfaces where practice has quietly diverged from policy." },
+    { "q": "What does \"insider-threat-aware\" mean here specifically?", "a": "The assessment evaluates whether trusted-access holders could themselves defeat the controls, not only whether the controls stop an outsider." }
+  ],
+  "ctaHeading": "Trust the badge only as far as the program behind it",
+  "imageCaption": "Technical photo — badge or credential reader and access-control panel being inspected at a facility entry point"
+}

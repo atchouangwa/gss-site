@@ -1,0 +1,53 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 11,
+  "title": "Response Strategy Development",
+  "shortTitle": "Response Strategy Development",
+  "metaDescription": "Protective and response strategy design — response positions and force sizing built directly from timeline analysis and minimum complement.",
+  "eyebrow": "SECURITY SOLUTIONS — 11",
+  "heroDek": "A response strategy is a set of decisions made before the alarm sounds, not during it. GSS sizes response positions and force posture to the timeline the site actually has, not the one it assumed.",
+  "contextHeading": "A response strategy is a set of decisions made before the alarm, not during it",
+  "contextParagraphs": [
+    "A response strategy is the predetermined set of response positions, engagement doctrine, and force allocation designed to interdict an adversary before the critical detection point that pathway and timeline analysis identifies. Decided well in advance, it turns a chaotic first few minutes into a rehearsed sequence of decisions rather than an improvised one.",
+    "GSS designs response positions and force posture directly from timeline analysis output, so the strategy is sized to a measured requirement rather than to a headcount that has simply always been the headcount. Command, control, and communication requirements are defined alongside it, since a strategy that assumes clean communication under stress is assuming something that isn't guaranteed.",
+    "The strategy is coordinated with minimum complement determination on the staffing side and validated against force-on-force exercise results on the performance side — designed once, but tested and revised as both change."
+  ],
+  "methodology": [
+    { "label": "Timeline Requirement Review", "body": "Critical detection points and available response time drawn from pathway and timeline analysis." },
+    { "label": "Response Position Design", "body": "Positions and coverage designed to allow interdiction within the available time window." },
+    { "label": "Force Allocation & Doctrine", "body": "Engagement doctrine and force allocation developed against the Design Basis Threat." },
+    { "label": "Communication & Command Integration", "body": "Command, control, and communication requirements defined to support the strategy under stress." },
+    { "label": "Minimum Complement Coordination", "body": "Strategy checked against minimum complement and human-factors findings." },
+    { "label": "Exercise Validation", "body": "Strategy validated through force-on-force exercise and revised against results." }
+  ],
+  "coreCapabilities": [
+    "Response-position design",
+    "Force allocation & engagement doctrine",
+    "Command & communication integration",
+    "Timeline-based sizing",
+    "Minimum-complement coordination",
+    "Exercise-based validation"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Adversary pathway & timeline analysis", "href": "/security-solutions/adversary-pathway-analysis/" },
+    { "label": "Force-on-force readiness", "href": "/security-solutions/force-on-force-readiness/" },
+    { "label": "Human factors / minimum complement", "href": "/security-solutions/human-factors-minimum-complement/" },
+    { "label": "Tactical training & train-the-trainer", "href": "/security-solutions/tactical-training/" },
+    { "label": "Secure wireless communications", "href": "/technology/secure-wireless-communications/" }
+  ],
+  "faq": [
+    { "q": "Is response strategy the same thing as guard-force staffing?", "a": "Staffing — minimum complement — is one input to it. The strategy also covers positions, engagement doctrine, and command and communication requirements." },
+    { "q": "How is the strategy validated once it's designed?", "a": "Through force-on-force exercise under controlled conditions, with results feeding back into revision — see Force-on-Force Readiness." },
+    { "q": "Can this be developed before a facility is built?", "a": "Yes — at the new-build design stage, using inside-out target sets and projected timeline analysis rather than measured field data." }
+  ],
+  "ctaHeading": "Decide the response before the clock is running",
+  "imageCaption": "Technical photo — response-position map or tabletop exercise materials on a planning table, analytical rather than tactical setting"
+}

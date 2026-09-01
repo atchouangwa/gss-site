@@ -1,0 +1,53 @@
+{
+  "family": "technology",
+  "familyLabel": "Technology Solutions",
+  "familyPath": "/technology/",
+  "order": 2,
+  "title": "Rapidly Deployable Intrusion Detection",
+  "shortTitle": "Rapidly Deployable IDS",
+  "metaDescription": "Thermal and CCD assessment with buried, fence-mounted, microwave, and taut-wire detection, deployed interim or permanent and configured to site requirements.",
+  "eyebrow": "TECHNOLOGY SOLUTIONS — 02",
+  "heroDek": "Detection that has to wait for a permanent design phase isn't protecting anything in the meantime. GSS fields intrusion detection fast, then holds it to a permanent standard.",
+  "contextHeading": "The gap between the vulnerability and the fix is where risk lives",
+  "contextParagraphs": [
+    "A vulnerability identified in an assessment, a construction laydown area, a temporary boundary, a system down for maintenance — each creates a window where detection coverage doesn't match the site's actual risk. That window is usually closed with a compensatory measure, and the quality of that measure is rarely questioned the way a permanent system's design is.",
+    "GSS treats rapidly deployable IDS as an engineered system, not a stopgap. Detection technology is matched to the terrain and the threat: buried line sensors and fence-mounted sensors for the perimeter itself, microwave and taut-wire for open ground and constrained approaches, thermal and CCD cameras for assessment once an alarm activates. The combination is selected for the site, not issued from a standard kit.",
+    "The same systems that go in fast can stay in permanently, up to and including PIDAS-capable configurations, or come down cleanly once the underlying condition is resolved. Either way, the detection probability and nuisance-alarm rate are documented against the regulatory requirement the deployment is standing in for."
+  ],
+  "methodology": [
+    { "label": "Vulnerability & Terrain Review", "body": "The gap driving the deployment, and the ground it has to be detected across." },
+    { "label": "Sensor Selection", "body": "Buried, fence-mounted, microwave, and taut-wire technology matched to terrain and threat." },
+    { "label": "Assessment Design", "body": "Thermal and CCD camera coverage aligned to sensor zones for alarm assessment." },
+    { "label": "Rapid Deployment", "body": "Installation and commissioning on a compressed timeline as an interim measure." },
+    { "label": "Performance Testing", "body": "Detection probability and nuisance-alarm rate validated against requirements." },
+    { "label": "Transition Decision", "body": "System is stood down, held as interim, or converted to a permanent installation." }
+  ],
+  "coreCapabilities": [
+    "Buried & fence-mounted line sensors",
+    "Microwave & taut-wire detection",
+    "Thermal & CCD assessment",
+    "PIDAS-capable configuration",
+    "Interim or permanent deployment",
+    "Regulatory-basis documentation"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Perimeter security & intrusion detection", "href": "/security-solutions/perimeter-security-intrusion-detection/" },
+    { "label": "Vehicle & personnel barrier systems", "href": "/security-solutions/barrier-systems/" },
+    { "label": "Security systems integration", "href": "/technology/systems-integration/" },
+    { "label": "Monitoring, alarms & access control", "href": "/technology/monitoring-access-control/" },
+    { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" }
+  ],
+  "faq": [
+    { "q": "How fast can an interim detection system actually be fielded?", "a": "Timelines are set by the specific gap and terrain rather than a fixed number, but the systems are selected and pre-configured specifically to compress the design-to-commissioning cycle for an interim need." },
+    { "q": "Is an interim system held to a lower detection standard than a permanent one?", "a": "No. Detection probability and nuisance-alarm rate are validated against the same regulatory requirement the deployment exists to satisfy, whether it stays in for a week or becomes permanent." },
+    { "q": "Can this scale up to a full PIDAS-capable perimeter?", "a": "Yes — the same technology set and design approach support a PIDAS-capable configuration when the site requires isolation-zone detection rather than a single sensor line." }
+  ],
+  "ctaHeading": "Close the detection gap before it shows up in an audit finding",
+  "imageCaption": "Technical photo — fence-mounted sensor line with a thermal assessment camera in frame, daylight, working perimeter"
+}

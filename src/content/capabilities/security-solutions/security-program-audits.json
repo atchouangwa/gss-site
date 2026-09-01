@@ -1,0 +1,52 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 13,
+  "title": "Security Program Audits",
+  "shortTitle": "Security Program Audits",
+  "metaDescription": "Independent security program audits measured against both regulatory requirements and Best-in-Class criteria, not compliance alone.",
+  "eyebrow": "SECURITY SOLUTIONS — 13",
+  "heroDek": "Passing an inspection and running a Best-in-Class program are not the same bar. GSS audits against both, and hands back a prioritized set of findings rather than a pass/fail letter.",
+  "contextHeading": "Passing an inspection and running a Best-in-Class program are not the same bar",
+  "contextParagraphs": [
+    "Regulatory compliance is a floor. A GSS program audit measures a site against that floor and, separately, against a Best-in-Class standard drawn from operating experience across the industry — the gap between the two is often where the most consequential findings live.",
+    "Independent, outside review surfaces things a program's own staff are least likely to see, precisely because they operate inside the program every day. The audit combines document and record review with direct field observation and structured personnel interviews at multiple levels, rather than relying on paperwork alone.",
+    "The result is a prioritized finding set — ranked by consequence and by effort to close — with support through corrective-action planning and closure verification, so the audit produces action rather than a report that sits on a shelf."
+  ],
+  "methodology": [
+    { "label": "Scope & Criteria Definition", "body": "Audit scope and criteria set against applicable regulation and Best-in-Class benchmarks." },
+    { "label": "Document & Record Review", "body": "Governing procedures, training records, and prior audit findings reviewed." },
+    { "label": "Field Observation", "body": "Direct observation of program execution in the field, not documentation alone." },
+    { "label": "Personnel Interviews", "body": "Structured interviews with program staff at multiple levels." },
+    { "label": "Finding Development & Prioritization", "body": "Findings developed and prioritized by consequence and effort to close." },
+    { "label": "Corrective Action Support", "body": "Support through corrective-action planning and closure verification." }
+  ],
+  "coreCapabilities": [
+    "Independent program audit",
+    "Best-in-Class benchmark comparison",
+    "Field observation & document review",
+    "Structured personnel interviews",
+    "Finding prioritization",
+    "Corrective-action support"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" },
+    { "label": "Systematic Approach to Training", "href": "/security-solutions/systematic-approach-to-training/" },
+    { "label": "KPI & performance monitoring", "href": "/technology/kpi-performance-monitoring/" },
+    { "label": "Optimization assessment", "href": "/high-performance/optimization-assessment/" },
+    { "label": "Security policy development & optimization", "href": "/security-solutions/security-policy-development/" }
+  ],
+  "faq": [
+    { "q": "How is this different from a regulatory inspection?", "a": "An inspection checks compliance against regulation. This audit does that and also measures the program against a Best-in-Class standard beyond the regulatory floor." },
+    { "q": "Who gets interviewed during an audit?", "a": "Program staff across multiple levels, not management alone — structured interviews are part of the method, not a formality." },
+    { "q": "What happens with the findings afterward?", "a": "They're prioritized and supported through corrective-action planning and verification of closure, not left as a static list." }
+  ],
+  "ctaHeading": "Know where the program stands before the regulator tells you",
+  "imageCaption": "Technical photo — auditor reviewing procedure binders alongside a field observation checklist, on-site setting"
+}

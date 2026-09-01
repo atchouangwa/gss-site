@@ -1,0 +1,52 @@
+{
+  "family": "cybersecurity",
+  "familyLabel": "Cybersecurity",
+  "familyPath": "/cybersecurity/",
+  "order": 5,
+  "title": "Compliance Advisory & Governance",
+  "shortTitle": "Compliance & Governance",
+  "metaDescription": "Governance and compliance advisory that keeps a cybersecurity program demonstrably aligned to the regulatory framework it operates under, over time.",
+  "eyebrow": "CYBERSECURITY — 05",
+  "heroDek": "A program that was compliant at the last audit and a program that is compliant today are not automatically the same program. Governance is what keeps the two in sync.",
+  "contextHeading": "Compliant and defensible are related, not identical",
+  "contextParagraphs": [
+    "A cybersecurity program can pass an audit and still be poorly governed — controls implemented to satisfy a specific finding, with no process behind them for staying current as systems, personnel, and the regulatory framework itself change. That gap tends to surface at the worst time: the next audit cycle, or an incident that reveals a control existed on paper but not in practice.",
+    "GSS builds governance structures that keep pace with the program rather than trailing it: clear ownership for each control, documentation that reflects the system as it actually operates, and a review cadence that catches drift before a regulator does. For nuclear and adjacent critical-infrastructure environments, that means governance built by people who have sat on the regulator's side of the table — the cyber-physical division includes former U.S. NRC inspectors who authored the cybersecurity regulations now governing U.S. plants, so the advisory reflects what a review will actually test for.",
+    "This work is distinct from a one-time compliance assessment. It's the ongoing structure — policy, roles, documentation, and reporting — that makes a program's compliant status something the organization can demonstrate on any given day, not just reconstruct under pressure before an audit."
+  ],
+  "methodology": [
+    { "label": "Framework Mapping", "body": "Applicable regulatory and standards requirements mapped against the program's current state." },
+    { "label": "Governance Structure Design", "body": "Roles, ownership, and decision authority defined for each control area." },
+    { "label": "Policy & Documentation", "body": "Policies and evidence brought into alignment with how systems actually operate." },
+    { "label": "Gap Remediation Planning", "body": "Deviations from the framework prioritized and assigned for correction." },
+    { "label": "Audit & Review Readiness", "body": "Documentation packaged for regulator, licensee, or third-party review." },
+    { "label": "Ongoing Governance", "body": "Review cadence established to keep the program aligned as it evolves." }
+  ],
+  "coreCapabilities": [
+    "Regulatory framework mapping",
+    "Governance structure design",
+    "Policy and evidence development",
+    "Audit and licensing-review readiness",
+    "Program sustainment advisory"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Risk-based security controls", "href": "/cybersecurity/risk-based-controls/" },
+    { "label": "Cyber-physical security", "href": "/cybersecurity/cyber-physical-security/" },
+    { "label": "Nuclear regulatory support", "href": "/nuclear-security/nuclear-regulatory-support/" },
+    { "label": "Regulatory compliance", "href": "/security-solutions/regulatory-compliance/" },
+    { "label": "Security policy development", "href": "/security-solutions/security-policy-development/" }
+  ],
+  "faq": [
+    { "q": "Is this a one-time compliance assessment or an ongoing service?", "a": "Both are available, but the governance structure itself is designed to operate on an ongoing basis so alignment doesn't lapse between reviews." },
+    { "q": "Does the team have direct regulatory-inspection experience?", "a": "Yes — the cyber-physical division includes former U.S. NRC inspectors who authored the cybersecurity regulations now governing U.S. plants." },
+    { "q": "How does this relate to the physical-security regulatory compliance capability?", "a": "They're coordinated. Physical security compliance and cybersecurity compliance are handled as related but distinct workstreams, reflecting how most regulatory frameworks actually treat them." }
+  ],
+  "ctaHeading": "Build a program that stays defensible between audits, not just during them",
+  "imageCaption": "Two people reviewing a compliance documentation binder and a screen of control mappings in a conference room"
+}

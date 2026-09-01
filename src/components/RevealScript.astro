@@ -1,0 +1,46 @@
+<script>
+  // Reveal-on-scroll: matches the mockup's stagger/ease-out behavior; respects prefers-reduced-motion.
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function initReveal() {
+    if (reducedMotion) return;
+    const nodes = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    if (!nodes.length) return;
+    const vh = () => window.innerHeight || 900;
+
+    nodes.forEach((n) => {
+      if (n.getBoundingClientRect().top > vh() * 1.1) n.classList.add('gss-hide');
+    });
+
+    let queued = false;
+    const sweep = () => {
+      queued = false;
+      let i = 0;
+      document.querySelectorAll<HTMLElement>('[data-reveal].gss-hide').forEach((n) => {
+        if (n.getBoundingClientRect().top < vh() * 0.92) {
+          const el = n;
+          const d = i++ * 60;
+          setTimeout(() => el.classList.remove('gss-hide'), d);
+        }
+      });
+    };
+    const queueSweep = () => {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(sweep);
+      }
+    };
+    document.addEventListener('scroll', queueSweep, true);
+    window.addEventListener('resize', queueSweep);
+    queueSweep();
+    // failsafe: nothing may stay invisible because a scroll event never arrived
+    setInterval(sweep, 900);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReveal);
+  } else {
+    initReveal();
+  }
+  document.addEventListener('astro:page-load', initReveal);
+</script>

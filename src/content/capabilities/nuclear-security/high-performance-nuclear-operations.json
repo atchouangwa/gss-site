@@ -1,0 +1,53 @@
+{
+  "family": "nuclear-security",
+  "familyLabel": "Nuclear & SMR",
+  "familyPath": "/nuclear-security/",
+  "order": 5,
+  "title": "High Performance Nuclear Operations",
+  "shortTitle": "High Performance Operations",
+  "metaDescription": "Automated KPI tracking and leading/lagging indicators aligned to INPO, WANO, and IAEA principles — moving a nuclear site from compliant to best-in-class.",
+  "eyebrow": "NUCLEAR & SMR — 05",
+  "heroDek": "Compliant and best-in-class are not the same standard. GSS applies its High-Performance Culture model to nuclear operations to close that gap with data, not opinion.",
+  "contextHeading": "Compliance is a floor, not a target",
+  "contextParagraphs": [
+    "Nuclear operations are already among the most rigorously managed in any industry, which is exactly why the next increment of improvement is hard to find by inspection alone. The signals that separate a compliant site from a best-in-class one tend to be small, early, and easy to miss without instrumentation built for the purpose — a trend moving the wrong direction long before it becomes a finding, an event, or a number on a performance indicator that everyone already knows to watch.",
+    "GSS's High-Performance Culture model is built to surface those signals: automated KPI capture drawn from benchmarking and subject-matter expertise, leading and lagging indicators tracked separately so decline is visible while it is still a trend rather than an event, and performance measured against defined best-in-class criteria rather than against the site's own history. The model is deliberately aligned to INPO, WANO, and IAEA principles, so the resulting indicators speak the same language operations, oversight, and the regulator already use.",
+    "None of this holds without leadership and culture moving with it. A dashboard that flags a negative trend changes nothing if the organization around it isn't built to act on the flag. The engagement pairs the KPI and benchmarking work with leadership and cultural transformation support, and produces a roadmap with milestones and phased implementation toward the target state — not a one-time report that sits in a binder."
+  ],
+  "methodology": [
+    { "label": "Baseline & Benchmark", "body": "Current performance measured against defined best-in-class criteria for comparable operations." },
+    { "label": "Track", "body": "Automated KPI capture built from benchmarking and subject-matter expertise." },
+    { "label": "Trend", "body": "Leading and lagging indicators separated so decline is visible early." },
+    { "label": "Measure", "body": "Performance measured against best-in-class criteria, aligned to INPO, WANO, and IAEA principles." },
+    { "label": "Improve", "body": "Roadmap, milestones, and phased implementation toward the target state." },
+    { "label": "Leadership Alignment", "body": "Leadership and culture work paired with the KPI program so indicators translate into action." }
+  ],
+  "coreCapabilities": [
+    "Automated KPI tracking",
+    "Leading & lagging indicator development",
+    "INPO / WANO / IAEA-aligned benchmarking",
+    "Best-in-class performance measurement",
+    "Phased improvement roadmaps",
+    "Leadership & cultural transformation"
+  ],
+  "industries": [
+    "Operating nuclear power plants",
+    "Multi-unit nuclear fleets",
+    "SMR operators approaching commercial operation",
+    "Fuel cycle facilities"
+  ],
+  "related": [
+    { "label": "High-performance culture", "href": "/high-performance/high-performance-culture/" },
+    { "label": "KPI development & performance metrics", "href": "/high-performance/kpi-development/" },
+    { "label": "Leadership & cultural transformation", "href": "/high-performance/leadership-cultural-transformation/" },
+    { "label": "Risk-based decision making", "href": "/high-performance/risk-based-decision-making/" },
+    { "label": "Nuclear security", "href": "/nuclear-security/nuclear-security-overview/" }
+  ],
+  "faq": [
+    { "q": "How is this different from a standard compliance audit?", "a": "An audit checks against a requirement at a point in time. This program tracks trends continuously, so a negative trajectory is visible well before it would show up as an audit finding." },
+    { "q": "What does 'automated KPI tracking' mean in practice?", "a": "Indicators built from benchmarking and subject-matter expertise, captured on an ongoing basis rather than compiled manually for a periodic report." },
+    { "q": "Does this require new software systems on site?", "a": "It's scoped to the site's existing data sources wherever possible — the goal is better indicators and a working roadmap, not a mandated platform." }
+  ],
+  "ctaHeading": "See the trend before it becomes an event",
+  "imageCaption": "Photo — control room shift supervisor reviewing a KPI trend dashboard on a wall-mounted display; illustrative data only, not client data"
+}

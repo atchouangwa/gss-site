@@ -1,0 +1,125 @@
+---
+import { SITE } from '@/lib/site';
+
+const columns = [
+  {
+    heading: 'SECURITY',
+    links: [
+      { label: 'Assessment & design', href: '/security-solutions/security-assessment-design/' },
+      { label: 'Pathway analysis', href: '/security-solutions/adversary-pathway-analysis/' },
+      { label: 'Explosive validation', href: '/security-solutions/explosive-validation/' },
+      { label: 'Vital area analysis', href: '/security-solutions/vital-area-analysis/' },
+      { label: 'FoF readiness', href: '/security-solutions/force-on-force-readiness/' },
+    ],
+  },
+  {
+    heading: 'TECHNOLOGY',
+    links: [
+      { label: 'Secure wireless', href: '/technology/secure-wireless-communications/' },
+      { label: 'Intrusion detection', href: '/technology/intrusion-detection/' },
+      { label: 'Drone security', href: '/technology/drone-security/' },
+      { label: 'Systems integration', href: '/technology/systems-integration/' },
+    ],
+  },
+  {
+    heading: 'NUCLEAR',
+    links: [
+      { label: 'Nuclear security', href: '/nuclear-security/nuclear-security-overview/' },
+      { label: 'SMR security', href: '/nuclear-security/small-modular-reactor-security/' },
+      { label: 'New build security', href: '/nuclear-security/new-nuclear-build-security/' },
+      { label: 'Regulatory support', href: '/nuclear-security/nuclear-regulatory-support/' },
+    ],
+  },
+  {
+    heading: 'PERFORMANCE',
+    links: [
+      { label: 'High-performance culture', href: '/high-performance/high-performance-culture/' },
+      { label: 'Optimization assessment', href: '/high-performance/optimization-assessment/' },
+      { label: 'KPI development', href: '/high-performance/kpi-development/' },
+    ],
+  },
+  {
+    heading: 'COMPANY',
+    links: [
+      { label: 'About GSS', href: '/about/' },
+      { label: 'Founder & legacy', href: '/founder/' },
+      { label: 'Leadership', href: '/leadership/' },
+      { label: 'Global experience', href: '/global-experience/' },
+      { label: 'Insights', href: '/insights/' },
+      { label: 'Contact', href: '/contact/' },
+    ],
+  },
+];
+---
+<footer class="site-footer">
+  <div class="grid">
+    <div class="brand-col">
+      <img src="/assets/gss-logo.png" alt="GSS" width="48" height="48" />
+      <div class="brand-name">Global Security<br />Solutions, LLC</div>
+      <div class="contact mono">
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />
+        <a href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a>
+      </div>
+    </div>
+    {columns.map((col) => (
+      <div class="col">
+        <span class="heading">{col.heading}</span>
+        {col.links.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+    ))}
+  </div>
+  <div class="bottom">
+    <span>© {new Date().getFullYear()} GLOBAL SECURITY SOLUTIONS, LLC</span>
+    <span class="brandline">{SITE.brandLine.toUpperCase()}</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ink);
+    padding: 56px var(--page-pad) 34px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1.1fr repeat(5, 1fr);
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--ink-border);
+    max-width: var(--max-content);
+    margin: 0 auto;
+  }
+  .brand-col { display: flex; flex-direction: column; gap: 14px; }
+  .brand-col img { width: 48px; height: 48px; object-fit: contain; filter: invert(1) brightness(1.4); }
+  .brand-name {
+    font: 700 15px/1.2 var(--font-display);
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: var(--text-on-ink-primary);
+  }
+  .contact { font: 400 11px/1.7 var(--font-mono); color: var(--text-on-ink-tertiary); }
+  .contact a { color: inherit; }
+  .contact a:hover { color: var(--accent); }
+  .col { display: flex; flex-direction: column; gap: 9px; }
+  .col .heading { font: 500 10px/1 var(--font-mono); letter-spacing: .16em; color: var(--accent); margin-bottom: 4px; }
+  .col a { font: 400 12px/1.4 var(--font-body); color: var(--text-on-ink-secondary); }
+  .col a:hover { color: var(--text-on-ink-primary); }
+  .bottom {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font: 400 10.5px/1 var(--font-mono);
+    letter-spacing: .1em;
+    color: var(--text-on-ink-tertiary);
+    max-width: var(--max-content);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .brandline { color: var(--accent); }
+
+  @media (max-width: 1080px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .brand-col { grid-column: 1 / -1; }
+  }
+</style>

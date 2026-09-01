@@ -1,0 +1,53 @@
+{
+  "family": "cybersecurity",
+  "familyLabel": "Cybersecurity",
+  "familyPath": "/cybersecurity/",
+  "order": 1,
+  "title": "Cyber-Physical Security",
+  "shortTitle": "Cyber-Physical Security",
+  "metaDescription": "Cyber and physical security assessed as one program across OT/ICS environments in nuclear and critical infrastructure — design through authority to operate.",
+  "eyebrow": "CYBERSECURITY — 01",
+  "heroDek": "A digital access control panel and the door it operates are one attack surface, not two. GSS assesses cyber and physical security together, across the full lifecycle from design through authority to operate.",
+  "contextHeading": "Two programs that don't talk to each other leave the gap between them undefended",
+  "contextParagraphs": [
+    "Most facilities run physical security and cybersecurity as separate functions with separate budgets, separate assessments, and separate reporting lines. That division made sense when a facility's control systems were analog and its network was an office IT problem. It stops making sense the moment a digitally controlled barrier, sensor, or access panel becomes part of the protective strategy — because an adversary does not respect the org chart that separates the two teams.",
+    "GSS treats cyber-physical security as a single discipline. The same engagement that assesses a barrier's delay time or a sensor's detection probability also assesses the network, credentials, and control logic that operate it, because a compromised controller can defeat a well-designed physical countermeasure without anyone breaching a fence line.",
+    "The team leading this work includes former U.S. NRC inspectors who authored the cybersecurity regulations now governing U.S. plants. That background matters for a specific reason: it means the program is built to the standard a regulator will actually apply, not a generic industry framework retrofitted to a nuclear or critical-infrastructure environment after the fact."
+  ],
+  "methodology": [
+    { "label": "System Mapping", "body": "Physical protection elements and their digital control paths inventoried together, not as separate lists." },
+    { "label": "Convergence Assessment", "body": "Points where a cyber compromise would defeat a physical countermeasure, or vice versa, identified explicitly." },
+    { "label": "Risk-Based Scoping", "body": "Controls selected against consequence to the protected function, not a generic checklist." },
+    { "label": "Design Integration", "body": "Cyber requirements built into new-build and upgrade physical security design from the outset." },
+    { "label": "Authority to Operate", "body": "Documentation and evidence packaged to support regulator or authorizing-official review." },
+    { "label": "Sustainment", "body": "Ongoing maintenance of the converged program as systems, threats, and regulation change." }
+  ],
+  "coreCapabilities": [
+    "Converged cyber/physical assessment",
+    "OT/ICS security architecture",
+    "New-build cyber-physical design",
+    "Authority-to-operate support",
+    "Regulatory alignment (NRC and adjacent frameworks)",
+    "Program sustainment"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Risk-based security controls", "href": "/cybersecurity/risk-based-controls/" },
+    { "label": "Compliance advisory & governance", "href": "/cybersecurity/compliance-governance/" },
+    { "label": "New-build security design", "href": "/security-solutions/new-build-security-design/" },
+    { "label": "Perimeter security & intrusion detection", "href": "/security-solutions/perimeter-security-intrusion-detection/" },
+    { "label": "Nuclear regulatory support", "href": "/nuclear-security/nuclear-regulatory-support/" }
+  ],
+  "faq": [
+    { "q": "Does this replace our existing physical security assessment?", "a": "No. It extends it, adding the digital control layer to an assessment that would otherwise stop at the fence line and the barrier." },
+    { "q": "Can this be scoped for a facility still in design?", "a": "Yes, and it is more effective there — cyber-physical requirements are far cheaper to build in during design than to retrofit after physical security is already installed." },
+    { "q": "Who on the team has regulatory-facing experience?", "a": "The cyber-physical division includes former U.S. NRC inspectors who authored the cybersecurity regulations now governing U.S. plants." }
+  ],
+  "ctaHeading": "Assess cyber and physical security as the one system they actually are",
+  "imageCaption": "Engineer at a workstation reviewing a facility control-system schematic alongside a physical barrier diagram, control room setting"
+}

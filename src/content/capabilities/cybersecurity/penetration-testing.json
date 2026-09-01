@@ -1,0 +1,51 @@
+{
+  "family": "cybersecurity",
+  "familyLabel": "Cybersecurity",
+  "familyPath": "/cybersecurity/",
+  "order": 3,
+  "title": "Penetration Testing",
+  "shortTitle": "Penetration Testing",
+  "metaDescription": "OT/IT-aware penetration testing scoped and constrained for environments where an untested assumption, or a careless test, can affect safety systems.",
+  "eyebrow": "CYBERSECURITY — 03",
+  "heroDek": "In an OT environment, the test itself can be the incident. Scoping and safety constraints get as much attention here as the test methods do.",
+  "contextHeading": "A test that affects the system it's meant to protect has failed regardless of what it finds",
+  "contextParagraphs": [
+    "Penetration testing methods developed for enterprise IT do not transfer cleanly to operational technology. A technique that safely probes a web server can crash a programmable logic controller that has never been patched, was never designed to handle malformed traffic, and is presently running a safety-related function. In a nuclear or critical-infrastructure environment, that is not an acceptable risk to take in the name of finding one.",
+    "GSS scopes every engagement around what the environment can safely absorb before deciding what the test will attempt. That means excluding certain systems from active testing entirely, substituting passive analysis or a representative test-bed where live testing carries unacceptable risk, and agreeing in advance — with operations, not just with security — on what is and isn't in bounds.",
+    "The objective is the same as any penetration test: find what an adversary could actually exploit, under realistic constraints, and report it in terms operations and engineering can act on. The difference is that the path to that finding is built around the environment's tolerances first, not around a standard test playbook applied without regard for what it's being applied to."
+  ],
+  "methodology": [
+    { "label": "Scoping & Constraints", "body": "Systems classified by test tolerance; safety-related and fragile OT excluded or handled passively." },
+    { "label": "Rules of Engagement", "body": "Boundaries agreed with security and operations before any testing begins." },
+    { "label": "Reconnaissance", "body": "Network, system, and credential exposure mapped without active exploitation." },
+    { "label": "Controlled Testing", "body": "Exploitation attempted only within agreed scope, on approved systems or representative test-beds." },
+    { "label": "Impact Validation", "body": "Findings confirmed without triggering the consequence being demonstrated." },
+    { "label": "Reporting & Remediation Support", "body": "Findings prioritized by exploitability and consequence, with remediation guidance operations can execute." }
+  ],
+  "coreCapabilities": [
+    "OT/ICS-aware test scoping",
+    "IT and converged network testing",
+    "Safety-constrained methodology",
+    "Representative test-bed evaluation",
+    "Consequence-prioritized reporting"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Risk & vulnerability management", "href": "/cybersecurity/vulnerability-management/" },
+    { "label": "Threat hunting & incident response", "href": "/cybersecurity/threat-hunting-incident-response/" },
+    { "label": "Risk-based security controls", "href": "/cybersecurity/risk-based-controls/" },
+    { "label": "Security program audits", "href": "/security-solutions/security-program-audits/" }
+  ],
+  "faq": [
+    { "q": "Will testing be performed directly against live safety systems?", "a": "Not against systems where an unintended effect could touch safety functions. Those are handled through passive analysis or a representative test-bed, agreed in scoping." },
+    { "q": "Who signs off on what's in scope before testing starts?", "a": "Both security and operations, in writing, before any active testing begins — not security alone." },
+    { "q": "What does a finding look like when it can't be safely demonstrated live?", "a": "It's documented with the technical basis for the finding and the evidence supporting it, without requiring the consequence to actually be produced on production equipment." }
+  ],
+  "ctaHeading": "Test what an adversary could exploit, without becoming the incident yourself",
+  "imageCaption": "Analyst at a workstation running network diagnostics against an isolated OT test-bed, cables and a PLC visible on the bench"
+}

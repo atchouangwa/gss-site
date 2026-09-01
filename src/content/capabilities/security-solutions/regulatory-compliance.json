@@ -1,0 +1,51 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 12,
+  "title": "Regulatory Compliance & Basis Documentation",
+  "shortTitle": "Regulatory Compliance",
+  "metaDescription": "Licensing-basis documentation and regulatory support that demonstrates the protective strategy to regulators, in the form they require.",
+  "eyebrow": "SECURITY SOLUTIONS — 12",
+  "heroDek": "A protective strategy that isn't documented to the regulator's standard isn't finished. GSS translates the underlying technical analysis into a basis a regulator can actually review.",
+  "contextHeading": "A protective strategy that isn't documented to the regulator's standard isn't finished",
+  "contextParagraphs": [
+    "Regulators require the protective strategy to be demonstrated in a specific documented form — physical security plans, safeguards contingency plans, licensing basis submittals — not simply implemented in practice. A site can be genuinely well protected and still fail review because the documentation doesn't demonstrate it in the required structure.",
+    "GSS translates the underlying technical work — vital area and target set analysis, timeline analysis, response strategy — into documentation built to satisfy that review, and supports the site directly through the regulator's inspection and question-and-response process rather than handing over a document and stepping back.",
+    "The same capability applies at both ends of a facility's life: operating sites managing and revising an existing basis, and new-build or SMR programs establishing one from a green field."
+  ],
+  "methodology": [
+    { "label": "Basis Document Review", "body": "Existing licensing-basis and security-plan documentation reviewed against current analysis and regulation." },
+    { "label": "Gap Identification", "body": "Discrepancies between documented basis and demonstrated protective strategy identified." },
+    { "label": "Documentation Development", "body": "Basis documents, plans, and supporting analysis drafted or revised to close identified gaps." },
+    { "label": "Regulatory Engagement Support", "body": "Direct support through regulator review, inspection, and question-and-response cycles." },
+    { "label": "Change Control Integration", "body": "Documentation update process integrated into the site's configuration and change-control program." }
+  ],
+  "coreCapabilities": [
+    "Licensing-basis document development",
+    "Physical security plan support",
+    "Gap identification against regulation",
+    "Regulatory engagement & inspection support",
+    "Change-control integration",
+    "New-program basis establishment"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build"
+  ],
+  "related": [
+    { "label": "Vital area analysis", "href": "/security-solutions/vital-area-analysis/" },
+    { "label": "Target set identification & development", "href": "/security-solutions/target-set-identification/" },
+    { "label": "Security program audits", "href": "/security-solutions/security-program-audits/" },
+    { "label": "Nuclear regulatory support", "href": "/nuclear-security/nuclear-regulatory-support/" },
+    { "label": "Compliance & governance", "href": "/cybersecurity/compliance-governance/" }
+  ],
+  "faq": [
+    { "q": "Does GSS interact directly with regulators?", "a": "Yes — support extends through direct engagement and inspection response, not just document preparation." },
+    { "q": "Is this only for operating facilities?", "a": "No — new-build and SMR programs establishing a licensing basis from scratch are a significant part of this work." },
+    { "q": "How often does basis documentation need updating?", "a": "Whenever the underlying analysis or applicable regulation changes; it's integrated into change control rather than treated as a one-time deliverable." }
+  ],
+  "ctaHeading": "Document the strategy the way the regulator needs to see it",
+  "imageCaption": "Technical photo — licensing-basis documents and binders spread across a conference table during a review session"
+}

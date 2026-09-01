@@ -1,0 +1,19 @@
+---
+import FamilyOverviewLayout from '@/layouts/FamilyOverviewLayout.astro';
+import { NAV } from '@/lib/site';
+
+const family = NAV.find((n) => n.path === '/security-solutions/')!;
+---
+<FamilyOverviewLayout
+  eyebrow="SECURITY SOLUTIONS"
+  title="Security Solutions"
+  dek="Physical, procedural, and electronic protection assessed as one system against the Design Basis Threat — not sold as separate line items."
+  path="/security-solutions/"
+  metaDescription="GSS security solutions: assessment and design, adversary pathway analysis, barrier and detection systems, training, and regulatory support for nuclear and critical infrastructure."
+  paragraphs={[
+    "GSS treats physical security as an integrated protective strategy, not a product catalog. Every engagement starts with the same question, asked in one of two directions: for an existing facility, what does the site look like from outside in — controlled area, physical security, electronic security, procedural security, down to the vital areas themselves? For a new build, what does it look like from inside out — starting from the assets that must not be reached and designing the perimeter last, sized by everything inside it.",
+    'The eighteen capabilities below are the individual disciplines that make up that strategy: assessment methodologies, hardening and detection technology choices, and the training and documentation that keep the protective strategy real once the assessment is finished.',
+  ]}
+  children={family.children}
+  ctaHeading="Start with an assessment, or bring us in on a build already underway."
+/>

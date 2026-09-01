@@ -1,0 +1,19 @@
+---
+import FamilyOverviewLayout from '@/layouts/FamilyOverviewLayout.astro';
+import { NAV } from '@/lib/site';
+
+const family = NAV.find((n) => n.path === '/nuclear-security/')!;
+---
+<FamilyOverviewLayout
+  eyebrow="NUCLEAR & SMR"
+  title="Nuclear Security"
+  dek="Advanced nuclear security consulting, physical protection, technology, cybersecurity, and regulatory solutions for high-value, high-risk nuclear and critical infrastructure."
+  path="/nuclear-security/"
+  metaDescription="GSS nuclear security: consulting, SMR security, new nuclear build security, and regulatory support, backed by 50+ nuclear facilities supported and 20+ years of experience."
+  paragraphs={[
+    'Nuclear security is the discipline GSS was built around. Every other family on this site — Security Solutions, Technology, Cybersecurity, High Performance — exists in service of the same standard nuclear facilities operate under: protective strategies that are engineered, tested, and defensible to a regulator, not just documented.',
+    'The five pages below cover the nuclear-specific application of that standard: general nuclear security consulting, SMR-specific security-by-design, new-build security architecture, regulatory support, and the High-Performance model applied to nuclear operations.',
+  ]}
+  children={family.children}
+  ctaHeading="Bring nuclear-specific security expertise into your program."
+/>

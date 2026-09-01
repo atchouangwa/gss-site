@@ -1,0 +1,30 @@
+{
+  "title": "Designing Protective Strategy for Minimum-Complement Staffing",
+  "category": "SMR",
+  "readMinutes": 9,
+  "publishDate": "2026-06-16",
+  "metaDescription": "SMRs change the minimum-complement math. GSS explains why staffing should be designed alongside the protective strategy, not fitted to it afterward.",
+  "dek": "A small modular reactor's footprint and staffing model change the minimum-complement math that operating nuclear facilities take for granted. Getting the sequencing wrong is expensive to fix later.",
+  "body": [
+    {
+      "heading": "Minimum complement isn't a headcount exercise",
+      "paragraphs": [
+        "Minimum complement is the smallest response force that can execute a facility's protective strategy against its Design Basis Threat, with margin for realistic conditions — shift gaps, response-force fatigue, and simultaneous events. It's derived from the protective strategy, not the other way around. Treating it as a staffing-budget question that gets solved after the protective strategy is finalized produces a number that looks defensible on paper and doesn't hold up under exercise conditions."
+      ]
+    },
+    {
+      "heading": "Why SMRs change the equation",
+      "paragraphs": [
+        "A conventional plant's minimum complement is built around a large, single-unit footprint with response positions sized to established vital-area geometry. SMRs are smaller, often modular or fleet-deployed, and in many proposed designs staffed leaner than a conventional unit by intent — the economic case for SMRs partly depends on it.",
+        "That means the protective strategy can't be scaled down from a conventional plant's playbook. Vital area identification, target set development, and response-position design all have to be reworked for a facility where the assumptions about distance, staffing depth, and even multi-unit mutual aid may not transfer directly."
+      ]
+    },
+    {
+      "heading": "Designing complement in, not fitting it in",
+      "paragraphs": [
+        "GSS's approach for SMR and new-build work is to develop vital area and target set analysis, protective strategy, and minimum-complement requirements together, early in design — while barrier, detection, and layout decisions are still open. That sequencing is the difference between a staffing model that supports the design and one the design has to be excused around."
+      ]
+    }
+  ],
+  "relatedCapability": { "label": "Small Modular Reactor Security", "href": "/nuclear-security/small-modular-reactor-security/" }
+}

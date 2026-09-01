@@ -1,0 +1,53 @@
+{
+  "family": "technology",
+  "familyLabel": "Technology Solutions",
+  "familyPath": "/technology/",
+  "order": 5,
+  "title": "Security Systems Integration",
+  "shortTitle": "Security Systems Integration",
+  "metaDescription": "Integrating intrusion detection, access control, video, and communications into one coherent operating picture for the response force.",
+  "eyebrow": "TECHNOLOGY SOLUTIONS — 05",
+  "heroDek": "Most sites don't have a technology gap — they have an integration gap. GSS makes the systems already on site talk to each other, and to the people who have to respond.",
+  "contextHeading": "A rack of vendor boxes is not a security system",
+  "contextParagraphs": [
+    "It's common for a mature site to own good technology and still operate with a fragmented capability: intrusion detection from one vendor, access control from another, video management from a third, communications on a separate network entirely, each purchased and upgraded on its own schedule. Individually capable, collectively incoherent — and the response force is the one that has to reconcile it in real time, during an event, when reconciliation is the last thing they should be doing.",
+    "GSS integrates what's already there before recommending what isn't. Systems integration starts with an inventory of existing technology and data interfaces, then builds the architecture that ties detection, access, video, and communications into a single operating picture the response force actually uses — not a dashboard built for a demo, but a working tool built for a shift.",
+    "Where a genuine capability gap exists, replacement or addition is scoped as part of the same architecture rather than as an isolated procurement, so the next system added doesn't recreate the fragmentation the integration was meant to fix."
+  ],
+  "methodology": [
+    { "label": "System Inventory", "body": "Existing IDS, access control, video, and communications systems and their interfaces catalogued." },
+    { "label": "Gap & Interoperability Analysis", "body": "What's genuinely missing versus what exists but isn't connected." },
+    { "label": "Integration Architecture", "body": "Data flows and interfaces designed to unify systems into one operating picture." },
+    { "label": "Operator Workflow Design", "body": "Interface and escalation logic built around how the response force actually works." },
+    { "label": "Phased Implementation", "body": "Integration staged to avoid a coverage gap during transition." },
+    { "label": "Validation & Handover", "body": "Integrated system tested against real scenarios before turnover." }
+  ],
+  "coreCapabilities": [
+    "System inventory & interoperability analysis",
+    "Cross-vendor integration architecture",
+    "Unified operator interface design",
+    "Response-force workflow design",
+    "Phased implementation planning",
+    "Legacy system integration"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Monitoring, alarms & access control", "href": "/technology/monitoring-access-control/" },
+    { "label": "Remote security operations & SOC design", "href": "/technology/remote-security-operations/" },
+    { "label": "Rapidly deployable intrusion detection", "href": "/technology/intrusion-detection/" },
+    { "label": "Security program audits", "href": "/security-solutions/security-program-audits/" },
+    { "label": "KPI / performance monitoring technology", "href": "/technology/kpi-performance-monitoring/" }
+  ],
+  "faq": [
+    { "q": "Do we need to replace our current vendors to integrate our systems?", "a": "Usually not. Integration is architected around what's already installed wherever it's technically sound; replacement is scoped only where a genuine capability gap exists, not as a default." },
+    { "q": "How long does an integration project typically run?", "a": "Timeline depends on the number of systems, their age, and site complexity. Implementation is staged so the site is never left with a coverage gap during transition, which is usually the larger driver of schedule than the integration work itself." },
+    { "q": "Can this integrate systems from different generations of technology?", "a": "Yes — a common driver for this work is exactly that: a newer system that can't natively talk to an older one still in service. The architecture is built to bridge that gap rather than force a wholesale replacement." }
+  ],
+  "ctaHeading": "Stop asking your response force to integrate your systems for you",
+  "imageCaption": "Technical photo — integration rack with IDS, access control, and video feeds tied into a single operator display"
+}

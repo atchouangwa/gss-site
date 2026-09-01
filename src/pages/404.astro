@@ -1,0 +1,23 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+<Layout title="Page Not Found | GSS" description="The page you requested could not be found." path="/404/" noindex>
+  <section class="wrap">
+    <span class="mono eyebrow accent-ink">404</span>
+    <h1>Page not found</h1>
+    <p>The page you're looking for doesn't exist or has moved.</p>
+    <div class="links">
+      <a class="btn btn-ink" href="/">Return home</a>
+      <a class="btn btn-outline-on-paper" href="/contact/">Request a Consultation</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .accent-ink { color: var(--accent-ink); }
+  .wrap { max-width: var(--max-content); margin: 0 auto; padding: 120px var(--page-pad) 140px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+  .eyebrow { letter-spacing: .2em; font-size: 10px; }
+  h1 { margin: 0; font: 700 clamp(40px, 7vw, 90px)/.95 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; color: var(--ink); }
+  p { margin: 0; font: 400 16px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .links { display: flex; gap: 14px; margin-top: 10px; }
+</style>

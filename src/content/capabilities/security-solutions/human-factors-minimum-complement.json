@@ -1,0 +1,52 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 17,
+  "title": "Human Factors / Minimum Complement Evaluations",
+  "shortTitle": "Human Factors & Minimum Complement",
+  "metaDescription": "Minimum-complement determination sized to protective-strategy requirements, with human-factors and fatigue considerations built into the analysis.",
+  "eyebrow": "SECURITY SOLUTIONS — 17",
+  "heroDek": "The right staffing number is a calculation, not a headcount someone remembers from years ago. GSS sizes minimum complement to the response strategy, with fatigue and shift-pattern effects built in rather than assumed away.",
+  "contextHeading": "The right number of people is a calculation, not a headcount someone remembers",
+  "contextParagraphs": [
+    "Minimum complement is the smallest protective-force staffing level that can execute the response strategy across every shift and posture — derived from the response positions and force allocation the timeline analysis requires, not from whatever the site has traditionally staffed.",
+    "Human factors are built into that calculation, not treated as a separate concern layered on afterward: shift rotation, fatigue, and cognitive-load effects are evaluated directly, because a complement that is numerically sufficient but chronically fatigued will not actually perform to the timeline it was sized against.",
+    "The determination is re-run whenever the underlying protective strategy, staffing model, or facility configuration changes, and results are documented to support both staffing decisions and licensing-basis submissions."
+  ],
+  "methodology": [
+    { "label": "Response Requirement Review", "body": "Response positions and force allocation drawn from the response strategy." },
+    { "label": "Task & Workload Analysis", "body": "Duties, concurrent-task demands, and shift coverage requirements analyzed per position." },
+    { "label": "Fatigue & Shift-Pattern Evaluation", "body": "Shift rotation and fatigue factors evaluated against sustained performance requirements." },
+    { "label": "Complement Calculation", "body": "Minimum staffing level calculated to cover all positions and postures across the full schedule." },
+    { "label": "Sensitivity Testing", "body": "Complement tested against absence, leave, and contingency scenarios." },
+    { "label": "Documentation & Basis Support", "body": "Findings documented to support staffing and licensing-basis decisions." }
+  ],
+  "coreCapabilities": [
+    "Response-position workload analysis",
+    "Fatigue & shift-pattern evaluation",
+    "Minimum-complement calculation",
+    "Contingency & absence sensitivity testing",
+    "Human-factors integration",
+    "Licensing-basis support"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Response strategy development", "href": "/security-solutions/response-strategy-development/" },
+    { "label": "Adversary pathway & timeline analysis", "href": "/security-solutions/adversary-pathway-analysis/" },
+    { "label": "Systematic Approach to Training", "href": "/security-solutions/systematic-approach-to-training/" },
+    { "label": "Risk-based decision making", "href": "/high-performance/risk-based-decision-making/" },
+    { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" }
+  ],
+  "faq": [
+    { "q": "Is minimum complement just the smallest number that satisfies regulation?", "a": "No — it's sized to what the response strategy actually requires, with human-factors margin built in, not set at a bare regulatory floor." },
+    { "q": "How often should this be re-evaluated?", "a": "Whenever the protective strategy, staffing model, or facility configuration changes, rather than treated as fixed once determined." },
+    { "q": "Does fatigue really change the calculated number?", "a": "Yes — sustained-performance and shift-pattern effects are built directly into the calculation, not addressed as a separate policy question afterward." }
+  ],
+  "ctaHeading": "Size the complement to the strategy, not the tradition",
+  "imageCaption": "Technical photo — shift-schedule and staffing-model spreadsheet reviewed on a whiteboard or monitor in an analytical office setting"
+}

@@ -1,0 +1,82 @@
+---
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import RevealScript from '@/components/RevealScript.astro';
+import { SITE } from '@/lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title, description, path, noindex = false, jsonLd = [] } = Astro.props;
+const canonical = new URL(path, SITE.url).toString();
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${SITE.url}/#organization`,
+  name: SITE.name,
+  alternateName: SITE.shortName,
+  url: SITE.url,
+  logo: `${SITE.url}/assets/gss-logo.png`,
+  description:
+    'Nuclear security consulting, physical protection, technology, cybersecurity, and operational-performance solutions for high-value, high-risk critical infrastructure.',
+  telephone: SITE.phone,
+  email: SITE.email,
+  areaServed: ['North America', 'Europe', 'Middle East'],
+  founder: {
+    '@type': 'Person',
+    name: 'Eric F. Wilson',
+    jobTitle: 'Founder',
+  },
+  employee: {
+    '@type': 'Person',
+    name: 'Wade Wilson',
+    jobTitle: 'President',
+  },
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={`${SITE.url}/assets/gss-logo.png`} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
+  <link rel="icon" href="/assets/gss-logo.png" type="image/png" />
+  <meta name="theme-color" content="#0A0B0C" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
+  {jsonLd.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+  ))}
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <Header />
+  <main id="main">
+    <slot />
+  </main>
+  <Footer />
+  <RevealScript />
+</body>
+</html>

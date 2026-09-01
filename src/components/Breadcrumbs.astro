@@ -1,0 +1,26 @@
+---
+interface Crumb { label: string; href?: string }
+interface Props { items: Crumb[] }
+const { items } = Astro.props;
+---
+<nav class="crumbs mono" aria-label="Breadcrumb">
+  {items.map((item, i) => (
+    <>
+      {i > 0 && <span> / </span>}
+      {item.href ? <a href={item.href}>{item.label.toUpperCase()}</a> : <span class="current">{item.label.toUpperCase()}</span>}
+    </>
+  ))}
+</nav>
+
+<style>
+  .crumbs {
+    padding: 14px var(--page-pad);
+    border-bottom: 1px solid var(--paper-border);
+    font: 400 10.5px/1 var(--font-mono);
+    letter-spacing: .1em;
+    color: var(--text-on-paper-quiet);
+  }
+  .crumbs a { color: var(--text-on-paper-quiet); }
+  .crumbs a:hover { color: var(--accent-ink); }
+  .crumbs .current { color: var(--accent-ink); }
+</style>

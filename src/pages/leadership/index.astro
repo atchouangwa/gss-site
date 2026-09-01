@@ -1,0 +1,92 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ImagePlaceholder from '@/components/ImagePlaceholder.astro';
+import CTASection from '@/components/CTASection.astro';
+import { LEADERSHIP, SITE } from '@/lib/site';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Wade Wilson',
+    jobTitle: 'President',
+    affiliation: { '@type': 'ProfessionalService', name: 'Global Security Solutions, LLC' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: SITE.url + '/about/' },
+      { '@type': 'ListItem', position: 3, name: 'Leadership', item: SITE.url + '/leadership/' },
+    ],
+  },
+];
+---
+<Layout
+  title="Leadership | Wade Wilson, President | GSS"
+  description="Wade Wilson leads Global Security Solutions as President, continuing the standard set by founder Eric F. Wilson."
+  path="/leadership/"
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about/' }, { label: 'Leadership' }]} />
+
+  <section class="hero">
+    <span class="mono eyebrow accent-ink">LEADERSHIP TODAY</span>
+    <h1>Continuity of leadership</h1>
+  </section>
+
+  <section class="lead-card">
+    <div class="photo"><ImagePlaceholder caption="Wade Wilson — professional portrait" /></div>
+    <div class="copy">
+      <div class="name">{LEADERSHIP.name}</div>
+      <div class="mono title">{LEADERSHIP.eyebrow}</div>
+      {LEADERSHIP.bio.map((p) => <p>{p}</p>)}
+      <span class="mono note">FULL BIOGRAPHY AND LINKEDIN TO BE SUPPLIED</span>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="rule-row"><span class="mono dim">WHO DOES THE WORK</span><span class="rule"></span></div>
+    <p>{LEADERSHIP.teamNote}</p>
+  </section>
+
+  <section class="founder-link">
+    <p>Wade Wilson is the son of GSS founder Eric F. Wilson. Read the full founder story for the career and standard that GSS was built on.</p>
+    <a class="link" href="/founder/">Read the Founder Story →</a>
+  </section>
+
+  <CTASection heading="Bring us in early. Or bring us in now." body="Assessment, design, technology, training, or performance. Tell us the environment and we will tell you where to start." />
+</Layout>
+
+<style>
+  .accent-ink { color: var(--accent-ink); }
+  .dim { color: var(--text-on-paper-quiet); }
+  .hero { padding: 64px var(--page-pad) 40px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
+  .eyebrow { letter-spacing: .2em; font-size: 10px; margin-bottom: 24px; display: block; }
+  .hero h1 { margin: 0; font: 700 clamp(34px, 5.5vw, 64px)/1 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; color: var(--ink); }
+
+  .lead-card { display: flex; gap: 40px; padding: 56px var(--page-pad) 60px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
+  .photo { width: 260px; height: 320px; flex: none; }
+  .copy { display: flex; flex-direction: column; gap: 14px; }
+  .name { font: 700 48px/1 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); }
+  .title { font-size: 11px; letter-spacing: .16em; color: var(--accent-ink); }
+  .copy p { margin: 0; max-width: 60ch; font: 400 15px/1.75 var(--font-body); color: var(--text-on-paper-secondary); }
+  .note { font-size: 10.5px; letter-spacing: .14em; color: var(--text-on-paper-quiet); margin-top: 4px; }
+
+  .rule-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 20px; }
+  .rule-row .rule { flex: 1; height: 1px; background: var(--paper-border-soft); }
+  .rule-row .mono { font-size: 10px; letter-spacing: .18em; }
+  .team { padding: 56px var(--page-pad) 60px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
+  .team p { margin: 0; max-width: 68ch; font: 400 15px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  .founder-link { padding: 56px var(--page-pad) 64px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .founder-link p { margin: 0; max-width: 60ch; font: 400 15px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .link { font: 600 12px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
+
+  @media (max-width: 720px) {
+    .lead-card { flex-direction: column; }
+    .photo { width: 100%; height: 260px; }
+  }
+</style>

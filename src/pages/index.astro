@@ -1,0 +1,603 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ImagePlaceholder from '@/components/ImagePlaceholder.astro';
+import Globe from '@/components/Globe.astro';
+import CTASection from '@/components/CTASection.astro';
+import { SITE, FOUNDER, LEADERSHIP } from '@/lib/site';
+
+const architectureLayers = [
+  { n: 'L1', label: 'Physical', items: ['Barrier systems', 'Access control', 'Intrusion detection', 'Surveillance', 'Hardening'] },
+  { n: 'L2', label: 'Procedural', items: ['Protective strategy', 'Response planning', 'Training', 'Force-on-force', 'Policy & basis documentation'] },
+  { n: 'L3', label: 'Technology', items: ['Secure wireless comms', 'Rapidly deployable IDS', 'Monitoring & alarms', 'Drone programs', 'Systems integration'] },
+  { n: 'L4', label: 'Cyber', items: ['Risk-based controls', 'Penetration testing', 'Governance', 'Threat hunting', 'Incident response'] },
+  { n: 'L5', label: 'Performance', items: ['KPI development', 'Optimization', 'Leadership', 'Culture', 'Continuous improvement'] },
+];
+
+const families = [
+  {
+    n: '01', label: 'Security Solutions', path: '/security-solutions/',
+    items: [
+      ['Security assessment & design', 'security-assessment-design'],
+      ['Adversary pathway & timeline analysis', 'adversary-pathway-analysis'],
+      ['Explosive validation & blast-resistant design', 'explosive-validation'],
+      ['Vehicle & personnel barrier systems', 'barrier-systems'],
+      ['Vital area analysis & target sets', 'vital-area-analysis'],
+      ['Force-on-force readiness', 'force-on-force-readiness'],
+      ['Systematic Approach to Training', 'systematic-approach-to-training'],
+    ],
+  },
+  {
+    n: '02', label: 'Technology Solutions', path: '/technology/',
+    items: [
+      ['Secure wireless communications', 'secure-wireless-communications'],
+      ['Rapidly deployable intrusion detection', 'intrusion-detection'],
+      ['Monitoring, alarms & access control', 'monitoring-access-control'],
+      ['Drone detection & countermeasures', 'drone-security'],
+      ['Security systems integration', 'systems-integration'],
+      ['Remote security operations & SOC design', 'remote-security-operations'],
+    ],
+  },
+  {
+    n: '03', label: 'Cybersecurity', path: '/cybersecurity/',
+    items: [
+      ['Cyber-physical security', 'cyber-physical-security'],
+      ['Risk-based security controls', 'risk-based-controls'],
+      ['Penetration testing', 'penetration-testing'],
+      ['Risk & vulnerability management', 'vulnerability-management'],
+      ['Compliance advisory & governance', 'compliance-governance'],
+      ['Threat hunting & incident response', 'threat-hunting-incident-response'],
+    ],
+  },
+  {
+    n: '04', label: 'Nuclear & SMR', path: '/nuclear-security/',
+    items: [
+      ['Nuclear security', 'nuclear-security-overview'],
+      ['Small modular reactor security', 'small-modular-reactor-security'],
+      ['New nuclear build security', 'new-nuclear-build-security'],
+      ['Nuclear regulatory support', 'nuclear-regulatory-support'],
+    ],
+  },
+  {
+    n: '05', label: 'High Performance', path: '/high-performance/',
+    items: [
+      ['High-performance culture', 'high-performance-culture'],
+      ['Optimization assessment', 'optimization-assessment'],
+      ['KPI development & performance metrics', 'kpi-development'],
+      ['Risk-based decision making', 'risk-based-decision-making'],
+    ],
+  },
+];
+
+const outsideIn = [
+  { step: '01', label: 'Controlled Area', body: 'Approach routes, standoff, and the outer boundary read the way an adversary reads them.' },
+  { step: '02', label: 'Physical Security', body: 'Barriers, delay, hardening, and detection measured against DBT capability.' },
+  { step: '03', label: 'Electronic Security', body: 'Sensors, assessment, communications, and integration under real conditions.' },
+  { step: '04', label: 'Procedural Security', body: 'Protective strategy, response, complement, and the procedures that execute them.' },
+  { step: '05', label: 'Vital Areas', body: 'Sabotage and area logic models resolved into candidate vital areas and target sets.' },
+];
+const insideOut = [
+  { step: '01', label: 'Critical Assets', body: 'What must not be reached, and what its loss would actually mean.' },
+  { step: '02', label: 'Vital Area Requirements', body: 'Target sets and area logic established before the layout is fixed.' },
+  { step: '03', label: 'Protective Strategy', body: 'Response concept and minimum complement designed into the operating model.' },
+  { step: '04', label: 'Detection & Delay', body: 'Sensor and barrier selection validated against explosive and tool capability.' },
+  { step: '05', label: 'Perimeter Architecture', body: 'The outer boundary designed last, sized by everything inside it.' },
+];
+
+const techItems = [
+  { n: '01', title: 'Secure Wireless Communications', body: 'Encrypted mesh communications with frequency hopping and dynamic routing, deployable as a compensatory measure or a permanent capability.', tags: 'AES-256 · FIPS 140-3 · MESH / PEER-TO-PEER' },
+  { n: '02', title: 'Rapidly Deployable IDS', body: 'Thermal and CCD assessment with buried, fence-mounted, microwave, and taut-wire detection, configured per site to meet regulatory requirements.', tags: 'INTERIM OR PERMANENT · PIDAS-CAPABLE' },
+  { n: '03', title: 'Drone Program Development', body: 'Threat assessment, airspace control, detection and tracking, countermeasures, and an escalation framework that stays inside regulation.', tags: 'RADAR · RF · GEO-FENCING · RESPONSE' },
+];
+
+const cyberList = ['Security assessments', 'Risk-based security controls', 'Penetration testing', 'Risk & vulnerability management', 'Compliance advisory', 'Governance', 'Threat hunting', 'Incident response', 'Security operations', 'Training & education'];
+
+const insightTeasers = [
+  { tag: 'SMR · 9 MIN', title: 'Designing protective strategy for minimum-complement staffing' },
+  { tag: 'REGULATORY · 6 MIN', title: 'The difference between compliant and defensible' },
+  { tag: 'TECHNOLOGY · 5 MIN', title: 'When a compensatory measure should become permanent' },
+  { tag: 'HIGH PERFORMANCE · 8 MIN', title: 'Leading indicators a security organization can actually act on' },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' }],
+  },
+];
+---
+<Layout
+  title="Nuclear Security Consulting, Physical Protection & Compliance | Global Security Solutions"
+  description="GSS provides integrated nuclear security consulting, physical protection, technology, cybersecurity, and regulatory solutions for high-value, high-risk critical infrastructure."
+  path="/"
+  jsonLd={jsonLd}
+>
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">
+          <span class="mono">01 — NUCLEAR &amp; CRITICAL INFRASTRUCTURE</span>
+          <span class="scan-rule"><span></span></span>
+        </div>
+        <h1 class="gss-rise">Nuclear security consulting<span class="dim">,</span> physical protection <span class="dim">&amp;</span> critical infrastructure solutions</h1>
+        <div class="hero-sub">
+          <p>Integrated security, technology, cybersecurity, regulatory, and operational-performance solutions for high-value, high-risk infrastructure.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-accent" href="/contact/">Request a Consultation</a>
+            <a class="btn btn-outline-on-ink" href="/security-solutions/">Explore Capabilities</a>
+          </div>
+        </div>
+        <div class="hero-meta mono">
+          <span>{SITE.founded}</span><span>{SITE.regionsLine}</span><span>PHYSICAL · PROCEDURAL · ELECTRONIC</span>
+          <span class="brand-line">{SITE.brandLine.toUpperCase()}</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <ImagePlaceholder caption="Hero photo — containment structure or lit perimeter at dusk, tall crop" dark />
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div data-reveal class="stat"><div class="num">{SITE.facilityCount}</div><div class="label mono">NUCLEAR FACILITIES<br />SUPPORTED</div></div>
+    <div data-reveal class="stat"><div class="num">{SITE.yearsExperience}</div><div class="label mono">YEARS OF NUCLEAR<br />SECURITY EXPERIENCE</div></div>
+    <div data-reveal class="stat"><div class="num">{SITE.regulatoryRegimes}</div><div class="label mono">NATIONAL REGULATORY<br />REGIMES WORKED UNDER</div></div>
+  </section>
+
+  <section class="architecture">
+    <div class="section-head">
+      <div class="section-idx mono">02<br />INTEGRATED<br />ARCHITECTURE</div>
+      <div>
+        <h2>Security is not a product. It is an architecture.</h2>
+        <p>GSS analyzes physical, procedural, and electronic security as one interdependent system, then stays through implementation. Five layers, assessed together, indented here in the order an adversary meets them.</p>
+      </div>
+    </div>
+    <div class="layers">
+      {architectureLayers.map((layer, i) => (
+        <div data-reveal class="layer" style={`padding-left:${i * 40}px`}>
+          <div class="layer-label"><span class="mono accent">{layer.n}</span><span class="layer-name">{layer.label}</span></div>
+          <div class="layer-items">{layer.items.map((it) => <span>{it}</span>)}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="capability-index">
+    <div class="section-head">
+      <div class="section-idx mono dim">03<br />CAPABILITY<br />INDEX</div>
+      <div class="head-row">
+        <h2>Thirty pages, five families</h2>
+        <p>Every capability resolves to its own crawlable URL with methodology, environments, and related-service links.</p>
+      </div>
+    </div>
+    <div class="index-columns">
+      {[families.slice(0, 3), families.slice(3)].map((col) => (
+        <div class="index-col">
+          {col.map((fam) => (
+            <>
+              <div class="fam-head"><span class="mono accent">{fam.n}</span><span class="fam-name">{fam.label}</span><span class="mono fam-path">{fam.path}</span></div>
+              {fam.items.map(([label, slug]) => (
+                <a class="fam-item" href={`${fam.path}${slug}/`}><span>{label}</span><span class="mono slug">{slug}</span></a>
+              ))}
+            </>
+          ))}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="method">
+    <div class="section-head">
+      <div class="section-idx mono">04<br />METHOD</div>
+      <div class="head-row">
+        <h2>Two directions of travel</h2>
+        <div class="tabs" role="tablist">
+          <button class="tab" data-dir="out" role="tab" aria-selected="true">Existing facility · outside → in</button>
+          <button class="tab" data-dir="in" role="tab" aria-selected="false">New build · inside → out</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-panel" data-panel="out">
+      <div class="dots" aria-hidden="true">
+        <span class="dot active"></span><span class="line"></span>
+        <span class="dot"></span><span class="line"></span>
+        <span class="dot"></span><span class="line"></span>
+        <span class="dot"></span><span class="line"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="steps">
+        {outsideIn.map((s, i) => (
+          <div class="step"><span class:list={['mono', i === 0 ? 'accent' : 'dim']}>STEP {s.step}</span><span class="step-label">{s.label}</span><span class="step-body">{s.body}</span></div>
+        ))}
+      </div>
+    </div>
+    <div class="method-panel" data-panel="in" hidden>
+      <div class="dots" aria-hidden="true">
+        <span class="dot"></span><span class="line"></span>
+        <span class="dot"></span><span class="line"></span>
+        <span class="dot"></span><span class="line"></span>
+        <span class="dot"></span><span class="line"></span>
+        <span class="dot active"></span>
+      </div>
+      <div class="steps">
+        {insideOut.map((s, i) => (
+          <div class="step"><span class:list={['mono', i === 4 ? 'accent' : 'dim']}>STEP {s.step}</span><span class="step-label">{s.label}</span><span class="step-body">{s.body}</span></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="founder">
+    <div class="founder-photo">
+      <ImagePlaceholder caption="Eric F. Wilson — professional portrait" />
+    </div>
+    <div class="founder-copy">
+      <div class="eyebrow-row"><span class="mono dim">05 — FOUNDER &amp; LEGACY</span><span class="rule"></span></div>
+      <h2>{FOUNDER.name}</h2>
+      <div class="mono founder-title">{FOUNDER.title.toUpperCase()}</div>
+      <p>GSS was founded on thirty years of work that ran from special operations to the C-suite. The integrated approach the company practices today — physical, procedural, and electronic security analyzed as one system — came directly out of that career.</p>
+      <p>His son, Wade Wilson, is President of GSS today. The company remains family-led, and the standard it was built on has not moved.</p>
+      <div class="timeline">
+        {FOUNDER.timeline.map((t) => (
+          <div data-reveal class="timeline-row">
+            <span class="mono dim">{t.n}</span>
+            <span class="timeline-label">{t.label}</span>
+            <span class="timeline-body">{t.body}</span>
+          </div>
+        ))}
+      </div>
+      <a class="founder-link" href="/founder/">Read the founder story</a>
+    </div>
+  </section>
+
+  <section class="leadership">
+    <div class="eyebrow-row"><span class="mono dim">06 — LEADERSHIP TODAY</span><span class="rule"></span></div>
+    <div class="leadership-grid">
+      <div class="lead-card">
+        <div class="lead-photo"><ImagePlaceholder caption="Wade Wilson — professional portrait" /></div>
+        <div class="lead-copy">
+          <div class="lead-name">{LEADERSHIP.name}</div>
+          <div class="mono lead-title">{LEADERSHIP.eyebrow}</div>
+          {LEADERSHIP.bio.map((p) => <p>{p}</p>)}
+          <span class="mono lead-note">FULL BIOGRAPHY AND LINKEDIN TO BE SUPPLIED</span>
+        </div>
+      </div>
+      <div class="who-does-work">
+        <div class="who-title">Who does the work</div>
+        <p>{LEADERSHIP.teamNote}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="global">
+    <div class="global-copy">
+      <div class="eyebrow-row"><span class="mono dim">07 — GLOBAL EXPERIENCE</span><span class="rule"></span></div>
+      <h2>Regions, not clients</h2>
+      <p>Nuclear facilities and critical infrastructure across three regions. Client organizations, sites, and programs are covered by non-disclosure and are never named or implied anywhere on this site.</p>
+      <div class="regions">
+        {SITE.regions.map((r) => (
+          <div class="region-row"><span class="region-name">{r}</span><span class="mono accent">ACTIVE</span></div>
+        ))}
+      </div>
+      <div class="mono global-note">GLOBE HIGHLIGHTS COUNTRIES OF DEMONSTRATED EXPERIENCE ONLY — NO SITE MARKERS, NO NAMES</div>
+    </div>
+    <div class="global-globe"><Globe /></div>
+  </section>
+
+  <section class="technology">
+    <div class="tech-band"><ImagePlaceholder caption="Full-bleed band — deployed sensor mast or secure radio in the field" /></div>
+    <div class="tech-inner">
+      <div class="eyebrow-row"><span class="mono dim">08 — TECHNOLOGY</span><span class="rule"></span></div>
+      <h2>Technology chosen to remove recurring cost, not add it</h2>
+      <div class="tech-grid">
+        {techItems.map((t) => (
+          <div data-reveal class="tech-item">
+            <span class="mono accent-ink">{t.n}</span>
+            <div class="tech-title">{t.title}</div>
+            <p>{t.body}</p>
+            <div class="mono tech-tags">{t.tags}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="hpo">
+    <div class="section-head">
+      <div class="section-idx mono dim">09<br />HIGH<br />PERFORMANCE</div>
+      <div class="head-row">
+        <h2>From compliance to best-in-class</h2>
+        <p>Automated indicators that show a negative trend before it becomes an event, aligned to INPO, WANO, and IAEA principles.</p>
+      </div>
+    </div>
+    <div class="hpo-body">
+      <div class="hpo-steps">
+        {[
+          ['01', 'Track', 'Automated KPI capture built from benchmarking and subject matter expertise.'],
+          ['02', 'Trend', 'Leading and lagging indicators separated so decline is visible early.'],
+          ['03', 'Measure', 'Performance measured against defined Best-in-Class criteria.'],
+          ['04', 'Improve', 'Roadmap, milestones, and phased implementation toward the target state.'],
+        ].map(([n, label, body]) => (
+          <div data-reveal class="hpo-row"><span class="mono accent">{n}</span><span class="hpo-label">{label}</span><span class="hpo-body">{body}</span></div>
+        ))}
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-head"><span class="mono">KPI DASHBOARD</span><span class="mono dim small">ILLUSTRATIVE — NOT CLIENT DATA</span></div>
+        <div class="kpi-bars">
+          {[34, 48, 42, 61, 55, 72, 80, 92].map((h, i) => (
+            <div class="bar" style={`height:${h}%`} data-hi={i >= 6 ? 'true' : 'false'}></div>
+          ))}
+        </div>
+        <div class="kpi-rule"></div>
+        <div class="kpi-labels mono"><span>BASELINE</span><span>ROADMAP</span><span>BEST-IN-CLASS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cyber">
+    <div class="cyber-left">
+      <div class="eyebrow-row"><span class="mono dim">10 — CYBERSECURITY</span><span class="rule"></span></div>
+      <h2>Cyber-physical security for nuclear infrastructure</h2>
+      <p>A lifecycle offering spanning design, implementation, authority to operate, and maintenance — led by former U.S. NRC inspectors who authored the regulations now governing U.S. plants.</p>
+      <div class="cyber-micro">
+        <div><div class="micro-title">Governance</div><div class="micro-body">Define needs, personalize controls</div></div>
+        <div><div class="micro-title">Compliance</div><div class="micro-body">Risk-based programs, demonstrated to regulators</div></div>
+        <div><div class="micro-title">Operational</div><div class="micro-body">SOC design, implementation, assessment</div></div>
+      </div>
+    </div>
+    <div class="cyber-list">
+      {cyberList.map((label, i) => (
+        <div class="cyber-row"><span>{label}</span><span class="mono dim">{String(i + 1).padStart(2, '0')}</span></div>
+      ))}
+    </div>
+  </section>
+
+  <section class="insights">
+    <div class="eyebrow-row"><span class="mono dim">11 — INSIGHTS</span><span class="rule"></span><a class="mono all-insights" href="/insights/">All insights</a></div>
+    <div class="insights-grid">
+      <div data-reveal class="lead-article">
+        <span class="mono accent-ink">FORCE-ON-FORCE · 7 MIN</span>
+        <h3>What a failed timeline analysis actually costs a site</h3>
+        <p>Placeholder title. Eight drafts are with the technical reviewer; the layout takes a lead article plus a ruled list of the rest.</p>
+      </div>
+      <div class="teaser-list">
+        {insightTeasers.map((t) => (
+          <div class="teaser"><span class="mono dim">{t.tag}</span><span class="teaser-title">{t.title}</span></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection heading="Bring us in early. Or bring us in now." body="Assessment, design, technology, training, or performance. Tell us the environment and we will tell you where to start." />
+</Layout>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.method .tab');
+  const panels = document.querySelectorAll<HTMLElement>('.method-panel');
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const dir = tab.dataset.dir;
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+      panels.forEach((p) => { p.hidden = p.dataset.panel !== dir; });
+    });
+  });
+</script>
+
+<style>
+  .dim { color: var(--text-on-paper-quiet); }
+  .accent { color: var(--accent) !important; }
+  .accent-ink { color: var(--accent-ink) !important; }
+
+  .section-head { display: grid; grid-template-columns: 180px 1fr; gap: 40px; margin-bottom: 44px; }
+  .section-idx { letter-spacing: .18em; color: var(--text-on-paper-quiet); line-height: 1.6; }
+  .section-idx.dim { color: var(--text-on-ink-tertiary); }
+  .head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .eyebrow-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  .rule { flex: 1; height: 1px; background: var(--paper-border-soft); }
+  .founder-copy .rule, .leadership .rule, .global-copy .rule, .tech-inner .rule, .cyber-left .rule { background: var(--paper-border-soft); }
+  .global .rule, .tech-inner .rule { background: var(--ink-border); }
+
+  h2 { margin: 0; font: 700 clamp(30px, 4.2vw, 56px)/.98 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--text-on-paper-primary); }
+
+  /* HERO */
+  .hero { background: var(--ink); }
+  .hero-grid { display: grid; grid-template-columns: 1fr 240px; }
+  .hero-copy { padding: 70px 0 40px 44px; border-right: 1px solid var(--ink-border); }
+  .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 34px; margin-right: 44px; }
+  .hero-eyebrow .mono { color: var(--accent); letter-spacing: .22em; font-size: 10px; white-space: nowrap; }
+  .hero h1 { margin: 0 44px 0 0; max-width: 20ch; font: 700 clamp(34px, 5.2vw, 68px)/.98 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--text-on-ink-primary); }
+  .hero-sub { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 46px 44px 0 0; padding-top: 30px; border-top: 1px solid var(--ink-border); }
+  .hero-sub p { margin: 0; font: 400 17px/1.6 var(--font-body); color: #a9afb5; }
+  .hero-ctas { display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
+  .hero-meta { margin: 54px 44px 0 0; padding: 14px 0; border-top: 1px solid var(--ink-border); display: flex; gap: 34px; font-size: 10.5px; letter-spacing: .12em; color: var(--text-on-ink-tertiary); flex-wrap: wrap; }
+  .brand-line { margin-left: auto; color: var(--accent); }
+  .hero-image { position: relative; min-height: 560px; }
+
+  /* STATS */
+  .stats { background: var(--paper); display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--paper-border); }
+  .stat { padding: 44px var(--page-pad) 46px 0; border-right: 1px solid var(--paper-border); }
+  .stat:last-child { border-right: none; }
+  .stat:first-child { padding-left: var(--page-pad); }
+  .num { font: 700 clamp(48px, 8vw, 92px)/.86 var(--font-display); letter-spacing: -.05em; color: var(--ink); }
+  .stat .label { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--paper-border); font-size: 11px; letter-spacing: .14em; color: var(--text-on-paper-label); }
+
+  /* ARCHITECTURE */
+  .architecture { background: var(--paper); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); }
+  .architecture .section-head p { margin: 0; max-width: 62ch; font: 400 15.5px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .layers { display: flex; flex-direction: column; }
+  .layer { display: grid; grid-template-columns: 180px 1fr; gap: 40px; padding: 22px 0; border-top: 1px solid var(--paper-border-soft); transition: background 200ms var(--ease-out-strong); }
+  .layer:first-child { border-top-color: var(--ink); }
+  .layer:last-child { border-bottom: 1px solid var(--ink); }
+  .layer:hover { background: var(--paper-hover); }
+  .layer-label { display: flex; align-items: baseline; gap: 12px; }
+  .layer-name { font: 700 26px/1 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
+  .layer-items { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 400 14px/1.4 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  /* CAPABILITY INDEX */
+  .capability-index { background: var(--ink); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--ink-border); }
+  .capability-index h2 { color: var(--text-on-ink-primary); }
+  .capability-index .head-row p { margin: 0; max-width: 34ch; font: 400 14px/1.7 var(--font-body); color: var(--text-on-ink-secondary); }
+  .index-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+  .index-col { display: flex; flex-direction: column; }
+  .fam-head { display: flex; align-items: baseline; gap: 12px; padding: 26px 0 14px; border-bottom: 1px solid var(--ink-border-strong); }
+  .index-col:first-child .fam-head:first-child { padding-top: 14px; }
+  .fam-name { font: 700 20px/1 var(--font-display); letter-spacing: -.01em; text-transform: uppercase; color: var(--text-on-ink-primary); }
+  .fam-path { margin-left: auto; font-size: 10px; color: var(--text-on-ink-tertiary); }
+  .fam-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--ink-border-soft); transition: padding-left 180ms var(--ease-out-strong), color 160ms ease; font: 400 13.5px/1.4 var(--font-body); color: #dcdedf; }
+  .fam-item:hover { padding-left: 10px; color: var(--accent); }
+  .fam-item .slug { font-size: 10px; color: var(--text-on-ink-tertiary); }
+
+  /* METHOD */
+  .method { background: var(--paper); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); }
+  .method .head-row p { display: none; }
+  .tabs { display: flex; border: 1px solid var(--ink); }
+  .tab { font: 600 11.5px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; padding: 14px 18px; cursor: pointer; border: none; background: transparent; color: var(--text-on-paper-tertiary); transition: background 160ms var(--ease-out-strong), color 160ms ease; }
+  .tab[aria-selected="true"] { background: var(--ink); color: var(--text-on-ink-primary); }
+  .dots { display: flex; align-items: center; margin: 0 0 26px; }
+  .dot { width: 7px; height: 7px; background: var(--ink); }
+  .dot.active { width: 11px; height: 11px; background: var(--accent); }
+  .line { flex: 1; height: 1px; background: var(--ink); }
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; }
+  .step { display: flex; flex-direction: column; gap: 10px; }
+  .step .mono { font-size: 10px; letter-spacing: .14em; }
+  .step-label { font: 700 22px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
+  .step-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  /* FOUNDER */
+  .founder { background: var(--paper); border-bottom: 1px solid var(--paper-border); display: grid; grid-template-columns: 300px 1fr; }
+  .founder-photo { border-right: 1px solid var(--paper-border); min-height: 520px; }
+  .founder-copy { padding: 78px var(--page-pad) 84px; }
+  .founder-copy h2 { margin: 0 0 10px; font-size: clamp(32px, 5vw, 68px); line-height: .94; letter-spacing: -.04em; }
+  .founder-title { font-size: 11px; letter-spacing: .16em; color: var(--accent-ink); margin-bottom: 26px; }
+  .founder-copy p { margin: 0 0 20px; max-width: 66ch; font: 400 16px/1.7 var(--font-body); color: var(--text-on-paper-secondary); }
+  .timeline { display: flex; flex-direction: column; margin-top: 14px; }
+  .timeline-row { display: grid; grid-template-columns: 90px 200px 1fr; gap: 24px; padding: 18px 0; border-top: 1px solid var(--paper-border-soft); }
+  .timeline-row:first-child { border-top-color: var(--ink); }
+  .timeline-row:last-child { border-bottom: 1px solid var(--ink); }
+  .timeline-label { font: 700 19px/1.1 var(--font-display); letter-spacing: -.015em; text-transform: uppercase; color: var(--ink); }
+  .timeline-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .founder-link { display: inline-block; margin-top: 26px; font: 600 12px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); border-bottom: 1px solid var(--accent-ink); padding-bottom: 4px; }
+
+  /* LEADERSHIP */
+  .leadership { background: var(--paper); padding: 0 var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); }
+  .leadership-grid { display: grid; grid-template-columns: 1.35fr 1fr; border-top: 1px solid var(--ink); }
+  .lead-card { padding: 30px 40px 34px 0; border-right: 1px solid var(--paper-border-soft); display: flex; gap: 28px; }
+  .lead-photo { width: 190px; height: 238px; flex: none; }
+  .lead-copy { display: flex; flex-direction: column; gap: 11px; }
+  .lead-name { font: 700 40px/1 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); }
+  .lead-title { font-size: 10px; letter-spacing: .16em; color: var(--accent-ink); }
+  .lead-copy p { margin: 0; max-width: 52ch; font: 400 14px/1.7 var(--font-body); color: var(--text-on-paper-secondary); }
+  .lead-note { margin-top: 4px; font-size: 10.5px; letter-spacing: .14em; color: var(--text-on-paper-quiet); }
+  .who-does-work { padding: 30px 0 34px 36px; display: flex; flex-direction: column; gap: 14px; justify-content: center; }
+  .who-title { font: 700 24px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
+  .who-does-work p { margin: 0; font: 400 13.5px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  /* GLOBAL */
+  .global { background: var(--ink); display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink-border); }
+  .global-copy { padding: 78px var(--page-pad) 84px; border-right: 1px solid var(--ink-border); }
+  .global-copy h2 { color: var(--text-on-ink-primary); max-width: 18ch; margin-bottom: 18px; }
+  .global-copy p { margin: 0 0 34px; max-width: 48ch; font: 400 15px/1.7 var(--font-body); color: var(--text-on-ink-secondary); }
+  .regions { display: flex; flex-direction: column; }
+  .region-row { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--ink-border-soft); }
+  .region-row:first-child { border-top-color: var(--ink-border-strong); }
+  .region-row:last-child { border-bottom: 1px solid var(--ink-border-strong); }
+  .region-name { font: 700 30px/1 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; color: var(--text-on-ink-primary); }
+  .global-note { margin-top: 22px; font-size: 10.5px; letter-spacing: .08em; color: var(--text-on-ink-tertiary); }
+  .global-globe { min-height: 420px; }
+
+  /* TECHNOLOGY */
+  .technology { background: var(--paper); border-bottom: 1px solid var(--paper-border); }
+  .tech-band { position: relative; height: 220px; border-bottom: 1px solid var(--paper-border); }
+  .tech-inner { padding: 60px var(--page-pad) 84px; }
+  .tech-inner h2 { margin-bottom: 40px; max-width: 28ch; }
+  .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
+  .tech-item { padding: 26px 32px 0 0; border-right: 1px solid var(--paper-border-soft); display: flex; flex-direction: column; gap: 12px; }
+  .tech-item:last-child { border-right: none; padding-left: 32px; }
+  .tech-item:nth-child(2) { padding-left: 32px; }
+  .tech-title { font: 700 24px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
+  .tech-item p { margin: 0; font: 400 13.5px/1.65 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .tech-tags { margin-top: 6px; font-size: 11px; line-height: 1.9; color: var(--text-on-paper-quiet); }
+
+  /* HPO */
+  .hpo { background: var(--ink-raised); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--ink-border); }
+  .hpo h2 { color: var(--text-on-ink-primary); max-width: 20ch; }
+  .hpo .head-row p { margin: 0; max-width: 34ch; font: 400 14px/1.7 var(--font-body); color: var(--text-on-ink-secondary); }
+  .hpo-body { display: grid; grid-template-columns: 1.25fr .75fr; gap: 44px; align-items: stretch; }
+  .hpo-steps { display: flex; flex-direction: column; }
+  .hpo-row { display: grid; grid-template-columns: 64px 220px 1fr; gap: 24px; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--ink-border-soft); }
+  .hpo-row:first-child { border-top-color: var(--ink-border-strong); }
+  .hpo-row:last-child { border-bottom: 1px solid var(--ink-border-strong); }
+  .hpo-label { font: 700 30px/1 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; color: var(--text-on-ink-primary); }
+  .hpo-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-ink-secondary); }
+  .kpi-card { border: 1px solid var(--ink-border); padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+  .kpi-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .kpi-head .mono { font-size: 10px; letter-spacing: .14em; color: var(--text-on-ink-secondary); }
+  .kpi-head .small { font-size: 9.5px; }
+  .kpi-bars { display: flex; align-items: flex-end; gap: 7px; height: 170px; }
+  .bar { flex: 1; background: var(--ink-bar-low); }
+  .bar[data-hi="true"] { background: var(--accent); }
+  .kpi-bars .bar:nth-child(4), .kpi-bars .bar:nth-child(5), .kpi-bars .bar:nth-child(6) { background: var(--ink-bar-mid); }
+  .kpi-rule { height: 1px; background: var(--ink-border); }
+  .kpi-labels { display: flex; justify-content: space-between; font-size: 9.5px; color: var(--text-on-ink-tertiary); }
+
+  /* CYBER */
+  .cyber { background: var(--paper); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .cyber-left h2 { margin-bottom: 20px; max-width: 20ch; font-size: clamp(28px, 3.4vw, 48px); }
+  .cyber-left p { margin: 0 0 26px; max-width: 50ch; font: 400 15px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .cyber-micro { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
+  .cyber-micro > div { padding: 16px; border-right: 1px solid var(--paper-border-soft); }
+  .cyber-micro > div:first-child { padding-left: 0; }
+  .cyber-micro > div:last-child { border-right: none; }
+  .micro-title { font: 700 17px/1 var(--font-display); letter-spacing: -.01em; text-transform: uppercase; color: var(--ink); margin-bottom: 6px; }
+  .micro-body { font: 400 12px/1.5 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .cyber-list { display: flex; flex-direction: column; padding-top: 52px; }
+  .cyber-row { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--paper-border-soft); font: 400 14px/1.4 var(--font-body); color: var(--text-on-paper-body-alt); }
+  .cyber-row:first-child { border-top-color: var(--ink); }
+  .cyber-row:last-child { border-bottom: 1px solid var(--ink); }
+
+  /* INSIGHTS */
+  .insights { background: var(--paper); padding: 0 var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); }
+  .all-insights { margin-left: auto; font: 600 11px/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); }
+  .insights-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 44px; border-top: 1px solid var(--ink); padding-top: 26px; }
+  .lead-article { display: flex; flex-direction: column; gap: 16px; }
+  .lead-article .mono { font-size: 10px; letter-spacing: .16em; }
+  .lead-article h3 { margin: 0; font: 700 clamp(26px, 3.2vw, 42px)/1 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); max-width: 22ch; }
+  .lead-article p { margin: 0; max-width: 56ch; font: 400 14.5px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .teaser-list { display: flex; flex-direction: column; }
+  .teaser { display: flex; flex-direction: column; gap: 7px; padding: 14px 0; border-bottom: 1px solid var(--paper-border); }
+  .teaser .mono { font-size: 10px; letter-spacing: .16em; }
+  .teaser-title { font: 600 16px/1.35 var(--font-body); color: var(--ink); }
+
+  @media (max-width: 1080px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-copy { padding: 50px var(--page-pad) 40px; border-right: none; }
+    .hero-eyebrow, .hero-sub, .hero-meta { margin-right: 0; }
+    .hero h1 { margin-right: 0; }
+    .hero-sub { grid-template-columns: 1fr; }
+    .hero-image { min-height: 320px; }
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-right: none !important; border-bottom: 1px solid var(--paper-border); padding-left: var(--page-pad) !important; }
+    .section-head { grid-template-columns: 1fr; gap: 16px; }
+    .layer, .timeline-row, .hpo-row { grid-template-columns: 1fr !important; padding-left: 0 !important; gap: 8px; }
+    .index-columns { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .founder { grid-template-columns: 1fr; }
+    .founder-photo { min-height: 280px; border-right: none; border-bottom: 1px solid var(--paper-border); }
+    .founder-copy { padding: 50px var(--page-pad) 60px; }
+    .leadership-grid { grid-template-columns: 1fr; }
+    .lead-card { border-right: none; border-bottom: 1px solid var(--paper-border-soft); padding: 30px 0; flex-direction: column; }
+    .lead-photo { width: 100%; height: 220px; }
+    .who-does-work { padding: 30px 0; }
+    .global { grid-template-columns: 1fr; }
+    .global-copy { border-right: none; border-bottom: 1px solid var(--ink-border); }
+    .global-globe { min-height: 320px; }
+    .tech-grid { grid-template-columns: 1fr; }
+    .tech-item { border-right: none !important; padding-left: 0 !important; border-top: 1px solid var(--paper-border-soft); padding-top: 22px !important; }
+    .tech-item:first-child { border-top-color: var(--ink); }
+    .hpo-body { grid-template-columns: 1fr; }
+    .cyber { grid-template-columns: 1fr; }
+    .cyber-list { padding-top: 20px; }
+    .insights-grid { grid-template-columns: 1fr; }
+  }
+</style>

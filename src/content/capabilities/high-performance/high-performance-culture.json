@@ -1,0 +1,53 @@
+{
+  "family": "high-performance",
+  "familyLabel": "High Performance",
+  "familyPath": "/high-performance/",
+  "order": 1,
+  "title": "High-Performance Culture",
+  "shortTitle": "High-Performance Culture",
+  "metaDescription": "Leadership, standards, and self-assessment practices that move nuclear and critical-infrastructure organizations from compliance to best-in-class performance.",
+  "eyebrow": "HIGH PERFORMANCE — 01",
+  "heroDek": "Compliance is a floor, not a target. GSS builds the leadership behaviors, standards, and self-assessment practices that move an organization from meeting requirements to defining best-in-class performance.",
+  "contextHeading": "Most organizations manage to the standard, not past it",
+  "contextParagraphs": [
+    "Most protective and operational programs are built to satisfy a standard, not exceed it. Once a finding closes and an audit clears, the organization tends to hold at that line rather than continue past it — because nothing in the program's structure rewards improvement once compliance is achieved.",
+    "GSS builds High-Performance Culture the way INPO, WANO, and IAEA principles describe it at the industry's best-performing sites: leadership visibly owns the standard, working-level personnel self-identify decline before it becomes a finding, and every corrective action closes against root cause rather than symptom. This is the foundation the rest of the High Performance family sits on — an Optimization Assessment establishes where an organization stands against that model, KPI Development gives it the instrumentation to sustain it, and Leadership & Cultural Transformation keeps it alive after GSS leaves the site.",
+    "The shift is behavioral before it is programmatic. A written standard changes nothing on its own; a supervisor who stops a job because the standard wasn't met — and is backed by leadership for doing it — changes everything downstream of that moment."
+  ],
+  "methodology": [
+    { "label": "Leadership Alignment", "body": "Executive and site leadership define the standard in observable terms and commit publicly to being held to it first." },
+    { "label": "Standards & Expectations", "body": "Written performance standards are translated into specific, observable behaviors at the point of work, not left as abstract policy language." },
+    { "label": "Field Observation & Coaching", "body": "Leadership walkdowns and structured observation programs put supervisors in the field checking behavior against standard, not paperwork against a binder." },
+    { "label": "Self-Assessment", "body": "Site-level self-identification of performance decline is built into routine operations, so gaps surface before an external audit finds them." },
+    { "label": "Corrective Action Effectiveness", "body": "Corrective actions are tracked to root cause and their effectiveness is verified, not simply closed." },
+    { "label": "Benchmarking", "body": "Performance is measured on a recurring basis against defined Best-in-Class criteria and INPO/WANO/IAEA-aligned principles, not a single point-in-time certification." }
+  ],
+  "coreCapabilities": [
+    "Leadership alignment & accountability",
+    "Standards & expectations development",
+    "Field observation & coaching programs",
+    "Self-assessment program design",
+    "Corrective action effectiveness review",
+    "INPO/WANO/IAEA-aligned benchmarking"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Optimization Assessment", "href": "/high-performance/optimization-assessment/" },
+    { "label": "KPI Development & Performance Metrics", "href": "/high-performance/kpi-development/" },
+    { "label": "Leadership & Cultural Transformation", "href": "/high-performance/leadership-cultural-transformation/" },
+    { "label": "High-performance nuclear operations", "href": "/nuclear-security/high-performance-nuclear-operations/" },
+    { "label": "Security program audits", "href": "/security-solutions/security-program-audits/" }
+  ],
+  "faq": [
+    { "q": "Is High-Performance Culture a certification GSS awards?", "a": "No. GSS is not a credentialing body. The model aligns to the principles INPO, WANO, and IAEA use to describe high-performing organizations, and is applied as a working operational standard, not a certificate." },
+    { "q": "How is this different from a compliance audit?", "a": "An audit checks a fixed standard at a point in time and produces findings. This model is continuous: leadership and working-level staff self-identify decline before it becomes a finding, using the same indicators an auditor would eventually flag." },
+    { "q": "Where does this engagement typically start?", "a": "Most engagements begin with an Optimization Assessment that measures current state against defined Best-in-Class criteria, so the roadmap that follows is built against an actual gap rather than a generic template." }
+  ],
+  "ctaHeading": "Move the standard from compliance to best-in-class",
+  "imageCaption": "Photo — a site leader and working-level supervisor at a field observation board on the plant floor, mid-conversation, pointing at a specific line item, not a boardroom stock shot"
+}

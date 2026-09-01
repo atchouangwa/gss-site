@@ -1,0 +1,52 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 16,
+  "title": "Force-on-Force Readiness",
+  "shortTitle": "Force-on-Force Readiness",
+  "metaDescription": "Force-on-force exercise design and readiness assessment that validates the protective strategy under realistic, controlled conditions.",
+  "eyebrow": "SECURITY SOLUTIONS — 16",
+  "heroDek": "A protective strategy is a hypothesis until it's exercised. GSS designs and assesses force-on-force exercises grounded in the site's own analysis, then closes the loop on what the results show.",
+  "contextHeading": "A protective strategy is a hypothesis until it's exercised",
+  "contextParagraphs": [
+    "Force-on-force exercises test detection, delay, and response under controlled, realistic mock-adversary conditions. They exist to close the loop on the analysis performed earlier — pathway and timeline analysis, response strategy development — by confirming, or challenging, what that analysis predicted.",
+    "GSS designs exercise scenarios directly from the site's own Design Basis Threat, target sets, and timeline analysis rather than from an arbitrary or convenient scenario, and assesses protective-force readiness beforehand so the exercise measures the strategy itself, not an unprepared force standing in for it.",
+    "Results are analyzed against the original timeline and response-strategy assumptions and fed back into revision — of the response strategy, of barrier validation priorities, and of the training program that produced the force being exercised."
+  ],
+  "methodology": [
+    { "label": "Readiness Assessment", "body": "Protective force and equipment readiness evaluated before exercise design begins." },
+    { "label": "Scenario Design", "body": "Exercise scenarios developed from the site's own Design Basis Threat, target sets, and timeline analysis." },
+    { "label": "Safety & Control Planning", "body": "Exercise safety controls and umpiring protocols established before execution." },
+    { "label": "Exercise Execution", "body": "Scenario run under controlled, monitored conditions with mock-adversary and response-force participation." },
+    { "label": "Performance Data Collection", "body": "Timeline, engagement, and communication performance recorded through the exercise." },
+    { "label": "After-Action Analysis", "body": "Results analyzed against the original timeline and response-strategy assumptions and fed back into revision." }
+  ],
+  "coreCapabilities": [
+    "Pre-exercise readiness assessment",
+    "DBT-grounded scenario design",
+    "Exercise safety & control planning",
+    "Controlled exercise execution",
+    "Performance data collection",
+    "After-action analysis & feedback"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Adversary pathway & timeline analysis", "href": "/security-solutions/adversary-pathway-analysis/" },
+    { "label": "Response strategy development", "href": "/security-solutions/response-strategy-development/" },
+    { "label": "Explosive validation & blast-resistant design", "href": "/security-solutions/explosive-validation/" },
+    { "label": "Tactical training & train-the-trainer", "href": "/security-solutions/tactical-training/" },
+    { "label": "Human factors / minimum complement", "href": "/security-solutions/human-factors-minimum-complement/" }
+  ],
+  "faq": [
+    { "q": "Are exercise scenarios generic, or site-specific?", "a": "Grounded in the site's own Design Basis Threat, target sets, and timeline analysis — not an arbitrary or off-the-shelf scenario." },
+    { "q": "What happens to the results afterward?", "a": "After-action analysis feeds directly back into response strategy revision, barrier validation priorities, and the training program." },
+    { "q": "Does GSS assess readiness before the exercise, or only after?", "a": "Both — a pre-exercise readiness assessment first, then performance data collection during and after the exercise itself." }
+  ],
+  "ctaHeading": "Test the strategy under control, before something else tests it",
+  "imageCaption": "Technical photo — after-action review with exercise timeline data displayed on screen, a debrief-room setting rather than a field action shot"
+}

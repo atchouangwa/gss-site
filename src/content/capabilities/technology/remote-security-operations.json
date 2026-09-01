@@ -1,0 +1,53 @@
+{
+  "family": "technology",
+  "familyLabel": "Technology Solutions",
+  "familyPath": "/technology/",
+  "order": 6,
+  "title": "Remote Security Operations & SOC Design",
+  "shortTitle": "Remote Security Operations",
+  "metaDescription": "Remote and centralized security operations center design for multi-site organizations, including staffing model, console architecture, and escalation logic.",
+  "eyebrow": "TECHNOLOGY SOLUTIONS — 06",
+  "heroDek": "Every additional site staffed with its own dedicated monitoring desk is a cost line that scales linearly with headcount. GSS designs the centralized alternative — without centralizing the risk.",
+  "contextHeading": "Multi-site organizations shouldn't have to multiply their monitoring headcount",
+  "contextParagraphs": [
+    "An organization with more than one protected site tends to inherit its monitoring model site by site: each location staffs its own desk, runs its own procedures, and reports up through its own chain. It works, but it doesn't scale — headcount grows linearly with site count, and consistency between locations depends entirely on how well each site's procedures happen to match the others'.",
+    "GSS designs remote and centralized security operations centers built specifically for multi-site organizations: one or a small number of SOCs monitoring several protected locations, with the staffing model, shift structure, and escalation logic engineered to support that concentration without concentrating the risk. Escalation paths are designed so a degraded link to any one site fails toward a defined fallback rather than toward silence, and local response authority stays where it has to — with the people who can physically act.",
+    "The design covers the full operation, not just the console: data links between sites and the SOC, the physical and cyber hardening of the SOC itself, staffing and shift coverage, and the procedures that determine what a remote operator is authorized to decide versus what has to route to a site-level responder."
+  ],
+  "methodology": [
+    { "label": "Multi-Site Operations Review", "body": "Current site-by-site monitoring model and where consistency breaks down." },
+    { "label": "Consolidation Analysis", "body": "Which functions centralize cleanly and which must stay local to response authority." },
+    { "label": "SOC Architecture Design", "body": "Console layout, data links, and physical/cyber hardening of the operations center." },
+    { "label": "Staffing & Shift Model", "body": "Coverage structure sized to site count, alarm volume, and escalation load." },
+    { "label": "Escalation Logic", "body": "Decision authority defined between remote operators and site-level responders." },
+    { "label": "Failover & Resilience Design", "body": "Defined fallback if the link to any one site is degraded or lost." }
+  ],
+  "coreCapabilities": [
+    "Multi-site SOC architecture",
+    "Staffing & shift model design",
+    "Escalation & decision-authority logic",
+    "Remote-to-local response handoff",
+    "SOC physical & cyber hardening",
+    "Failover & link-resilience design"
+  ],
+  "industries": [
+    "Multi-site nuclear operators",
+    "Small modular reactor fleets",
+    "Distributed critical infrastructure",
+    "Utilities & regulated multi-facility organizations"
+  ],
+  "related": [
+    { "label": "Security systems integration", "href": "/technology/systems-integration/" },
+    { "label": "Monitoring, alarms & access control", "href": "/technology/monitoring-access-control/" },
+    { "label": "Secure wireless communications", "href": "/technology/secure-wireless-communications/" },
+    { "label": "Cyber-physical security", "href": "/cybersecurity/cyber-physical-security/" },
+    { "label": "Human factors & minimum complement", "href": "/security-solutions/human-factors-minimum-complement/" }
+  ],
+  "faq": [
+    { "q": "Does centralizing monitoring mean site-level response authority goes away?", "a": "No. The design keeps physical response authority with the people who can actually act at the site; centralization applies to monitoring, correlation, and escalation decisions that don't require a physical presence." },
+    { "q": "What happens if the link between a site and the SOC goes down?", "a": "Failover and fallback procedures are defined as part of the design, so a degraded link routes to a predetermined local or backup procedure rather than leaving the site unmonitored." },
+    { "q": "How many sites justify moving to a centralized SOC model?", "a": "There's no fixed threshold — it depends on site count, geographic spread, and how much procedural inconsistency already exists between locations. The consolidation analysis is where that answer comes from, not a rule of thumb." }
+  ],
+  "ctaHeading": "Scale your monitoring model without scaling your headcount",
+  "imageCaption": "Technical photo — multi-site SOC operations floor with several site feeds live on the main display wall"
+}

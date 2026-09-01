@@ -1,0 +1,19 @@
+---
+import FamilyOverviewLayout from '@/layouts/FamilyOverviewLayout.astro';
+import { NAV } from '@/lib/site';
+
+const family = NAV.find((n) => n.path === '/technology/')!;
+---
+<FamilyOverviewLayout
+  eyebrow="TECHNOLOGY SOLUTIONS"
+  title="Technology Solutions"
+  dek="Technology chosen to remove recurring cost and close real gaps in a protective strategy — not to fill a product catalog."
+  path="/technology/"
+  metaDescription="GSS technology solutions: secure wireless communications, rapidly deployable intrusion detection, drone security, systems integration, and remote security operations."
+  paragraphs={[
+    'Every technology GSS recommends has to answer to the protective strategy it supports — what it detects, what it delays, and what it costs to operate for the next ten years, not just the next installation. That discipline is why the technology practice sits alongside, not ahead of, the assessment work in Security Solutions.',
+    'The capabilities below cover the technology ecosystem GSS integrates: communications, detection, monitoring and access control, counter-drone systems, systems integration, remote operations, and the automated KPI capture that feeds the High Performance model.',
+  ]}
+  children={family.children}
+  ctaHeading="Tell us what the protective strategy still needs to detect or delay."
+/>

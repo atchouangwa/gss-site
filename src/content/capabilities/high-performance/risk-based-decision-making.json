@@ -1,0 +1,53 @@
+{
+  "family": "high-performance",
+  "familyLabel": "High Performance",
+  "familyPath": "/high-performance/",
+  "order": 4,
+  "title": "Risk-Based Decision Making",
+  "shortTitle": "Risk-Based Decision Making",
+  "metaDescription": "Risk-informed decision frameworks that prioritize security and operations investment by consequence and likelihood, not by whoever asks loudest.",
+  "eyebrow": "HIGH PERFORMANCE — 04",
+  "heroDek": "Every security and operations budget is finite, and every stakeholder believes their request is the priority. GSS builds the risk-informed framework that ranks investment by consequence and likelihood, not by the loudest voice in the room.",
+  "contextHeading": "Prioritization by advocacy is not a strategy",
+  "contextParagraphs": [
+    "Without a shared framework, competing investment requests get resolved by whichever program has the most persuasive advocate, the most recent finding, or the most political capital — not by which gap actually carries the most consequence if left unaddressed. That produces a portfolio that looks responsive but isn't necessarily rational.",
+    "GSS builds risk-based decision frameworks that rank competing priorities on a consistent basis: consequence of failure, likelihood of occurrence, and cost and schedule to close the gap. The framework doesn't remove judgment from leadership — it gives leadership a common basis to apply that judgment against, so decisions are defensible to a board, a regulator, or an oversight body after the fact, not just at the moment they're made.",
+    "This capability sits downstream of the Optimization Assessment and KPI Development work: the same Best-in-Class gap analysis and indicator trends that identify where an organization is falling short become the inputs a risk-based framework ranks against each other."
+  ],
+  "methodology": [
+    { "label": "Risk Criteria Definition", "body": "Consequence and likelihood scales are defined for the specific organization and mission before any request is scored against them." },
+    { "label": "Portfolio Intake", "body": "Competing investment requests, findings, and identified gaps are captured on a common basis, not compared informally between separate proposals." },
+    { "label": "Consequence & Likelihood Scoring", "body": "Each item is scored against the defined criteria, independent of which program or stakeholder submitted it." },
+    { "label": "Cost & Schedule Weighting", "body": "Cost and schedule to close each gap are factored against its risk score to surface the highest-value near-term actions." },
+    { "label": "Leadership Decision Framework", "body": "Results are presented in a format built for leadership decision-making — board-level or executive-level — not a raw spreadsheet." },
+    { "label": "Periodic Re-Scoring", "body": "The framework is re-run on a defined cycle so the portfolio reflects current conditions rather than a snapshot from the initial engagement." }
+  ],
+  "coreCapabilities": [
+    "Risk criteria & scoring-scale definition",
+    "Consequence/likelihood assessment",
+    "Investment portfolio prioritization",
+    "Cost/schedule-weighted ranking",
+    "Executive & board decision framing",
+    "Periodic re-scoring cadence"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Optimization Assessment", "href": "/high-performance/optimization-assessment/" },
+    { "label": "KPI Development & Performance Metrics", "href": "/high-performance/kpi-development/" },
+    { "label": "Leadership & Cultural Transformation", "href": "/high-performance/leadership-cultural-transformation/" },
+    { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" },
+    { "label": "Nuclear regulatory support", "href": "/nuclear-security/nuclear-regulatory-support/" }
+  ],
+  "faq": [
+    { "q": "Does this replace our existing budget process?", "a": "No, it feeds it. The framework produces a ranked, defensible prioritization that leadership carries into whatever budget or capital-planning process the organization already runs." },
+    { "q": "Can this framework span both security and non-security investment?", "a": "Yes — the consequence and likelihood criteria can be built to compare security, operations, and infrastructure investment on a common basis, which is often where the most value shows up." },
+    { "q": "How often should the framework be re-run?", "a": "Most organizations re-score on an annual cycle, or immediately after a material change — a new threat assessment, a significant finding, or a regulatory change." }
+  ],
+  "ctaHeading": "Rank the portfolio by consequence, not by advocacy",
+  "imageCaption": "Photo — leadership team around a table reviewing a printed risk-ranking matrix, pens and sticky flags visible, a working session rather than a posed handshake shot"
+}

@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import CTASection from '@/components/CTASection.astro';
+import { SITE } from '@/lib/site';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('insights');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const path = `/insights/${entry.id}/`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: d.title,
+    description: d.metaDescription,
+    datePublished: d.publishDate,
+    author: { '@type': 'Organization', name: SITE.name },
+    publisher: { '@type': 'Organization', name: SITE.name },
+  },
+];
+---
+<Layout title={`${d.title} | GSS Insights`} description={d.metaDescription} path={path} jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Insights', href: '/insights/' }, { label: d.title }]} />
+
+  <article class="article">
+    <header>
+      <span class="mono tag accent-ink">{d.category.toUpperCase()} · {d.readMinutes} MIN · {new Date(d.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+      <h1>{d.title}</h1>
+      <p class="dek">{d.dek}</p>
+    </header>
+
+    {d.body.map((section) => (
+      <section class="block">
+        {section.heading && <h2>{section.heading}</h2>}
+        {section.paragraphs.map((p) => <p>{p}</p>)}
+      </section>
+    ))}
+
+    {d.relatedCapability && (
+      <div class="related">
+        <span class="mono dim">RELATED CAPABILITY</span>
+        <a href={d.relatedCapability.href}>{d.relatedCapability.label} →</a>
+      </div>
+    )}
+  </article>
+
+  <CTASection variant="dark" heading="Talk to the team behind this analysis." />
+</Layout>
+
+<style>
+  .accent-ink { color: var(--accent-ink); }
+  .dim { color: var(--text-on-paper-quiet); }
+  .article { max-width: 760px; margin: 0 auto; padding: 64px var(--page-pad) 60px; }
+  header { margin-bottom: 44px; }
+  .tag { font-size: 10px; letter-spacing: .16em; display: block; margin-bottom: 22px; }
+  h1 { margin: 0 0 22px; font: 700 clamp(32px, 5.5vw, 56px)/1.02 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); }
+  .dek { margin: 0; font: 400 18px/1.6 var(--font-body); color: var(--text-on-paper-secondary); }
+  .block { margin-bottom: 36px; }
+  .block h2 { margin: 0 0 16px; font: 700 26px/1.15 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
+  .block p { margin: 0 0 16px; font: 400 16px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .related { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--paper-border); display: flex; flex-direction: column; gap: 8px; }
+  .related span { font-size: 10px; letter-spacing: .16em; }
+  .related a { font: 600 15px/1 var(--font-body); color: var(--accent-ink); }
+</style>

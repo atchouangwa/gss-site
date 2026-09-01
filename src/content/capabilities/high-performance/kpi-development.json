@@ -1,0 +1,53 @@
+{
+  "family": "high-performance",
+  "familyLabel": "High Performance",
+  "familyPath": "/high-performance/",
+  "order": 3,
+  "title": "KPI Development & Performance Metrics",
+  "shortTitle": "KPI Development",
+  "metaDescription": "Building the Track, Trend, Measure, Improve model in practice — automated KPI capture, leading and lagging indicators, and Best-in-Class benchmarking.",
+  "eyebrow": "HIGH PERFORMANCE — 03",
+  "heroDek": "A performance indicator that only shows up after the event is a record, not a metric. GSS builds the instrumentation that separates leading indicators from lagging ones, so decline is visible while there is still time to act on it.",
+  "contextHeading": "Track, trend, measure, improve — built as an operating system, not a dashboard",
+  "contextParagraphs": [
+    "Most organizations already collect performance data. The gap is rarely volume — it's structure. Data sits in disconnected logs and spreadsheets, lagging indicators such as events, findings, and near-misses get equal billing with leading indicators such as backlog trends, overdue corrective actions, and training currency that would have predicted them, and nobody owns turning the numbers into a decision before the next audit forces the conversation.",
+    "GSS builds KPI programs around the same four-part model applied across the High Performance family: automated capture built from benchmarking and subject-matter expertise, leading and lagging indicators tracked and trended separately so decline is visible before it becomes an event, performance measured against defined Best-in-Class criteria rather than an internal historical average, and a roadmap that turns the resulting gaps into scheduled improvement work.",
+    "The mechanism matters more than the dashboard it produces. A KPI program that requires a manual monthly roll-up will decay within a year; one that pulls from existing systems of record and flags threshold breaches automatically keeps functioning after the consulting engagement ends."
+  ],
+  "methodology": [
+    { "label": "Indicator Selection", "body": "Leading and lagging indicators are selected and defined against the organization's specific mission and existing data sources, not copied from a generic KPI library." },
+    { "label": "Best-in-Class Benchmarking", "body": "Target thresholds are set against defined Best-in-Class criteria, drawn from industry-standard principles, rather than the organization's own historical baseline." },
+    { "label": "Automated Capture", "body": "Data pulls are built from existing systems of record wherever possible, so ongoing collection doesn't depend on a manual roll-up." },
+    { "label": "Trend Separation", "body": "Leading and lagging indicators are trended separately, so a decline in the leading set is visible before it produces a lagging-indicator event." },
+    { "label": "Threshold & Escalation Design", "body": "Thresholds are set with defined escalation paths, so a breach reaches the right leadership level automatically instead of waiting for a quarterly review." },
+    { "label": "Roadmap Integration", "body": "Persistent gaps against Best-in-Class criteria feed directly into the improvement roadmap rather than sitting as an unresolved dashboard color." }
+  ],
+  "coreCapabilities": [
+    "Leading vs. lagging indicator design",
+    "Best-in-Class threshold benchmarking",
+    "Automated KPI capture from systems of record",
+    "Trend analysis & early-warning flagging",
+    "Escalation path design",
+    "Executive & board-level reporting formats"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "High-Performance Culture", "href": "/high-performance/high-performance-culture/" },
+    { "label": "Optimization Assessment", "href": "/high-performance/optimization-assessment/" },
+    { "label": "Risk-Based Decision Making", "href": "/high-performance/risk-based-decision-making/" },
+    { "label": "KPI & performance monitoring technology", "href": "/technology/kpi-performance-monitoring/" },
+    { "label": "High-performance nuclear operations", "href": "/nuclear-security/high-performance-nuclear-operations/" }
+  ],
+  "faq": [
+    { "q": "Does this require new software?", "a": "Not necessarily. GSS builds capture against the systems an organization already runs wherever feasible; new tooling is recommended only where the existing systems genuinely can't support automated capture." },
+    { "q": "What counts as a leading indicator in a security program?", "a": "Examples include training currency, overdue corrective actions, equipment out-of-service time, and self-assessment finding trends — indicators that move before an actual security or safety event does, not after." },
+    { "q": "Who owns the KPI program once GSS leaves?", "a": "Ownership transfers to site leadership before the engagement closes, with escalation paths and thresholds documented so the program runs without GSS in the loop day to day." }
+  ],
+  "ctaHeading": "See decline before it becomes an event",
+  "imageCaption": "Photo — control-room or SOC-style dashboard wall showing live trend lines and threshold indicators, an operator reviewing a leading-indicator panel"
+}

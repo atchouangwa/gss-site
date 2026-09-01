@@ -1,0 +1,52 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 5,
+  "title": "Target Set Identification & Development",
+  "shortTitle": "Target Set Identification",
+  "metaDescription": "Identifying the specific equipment, systems, or material within vital areas whose loss or sabotage would cause unacceptable consequence.",
+  "eyebrow": "SECURITY SOLUTIONS — 05",
+  "heroDek": "Vital areas say where. Target sets say what. GSS traces the minimum equipment, system, or material within each vital area that actually has to be protected, and scopes the strategy to it.",
+  "contextHeading": "The protective strategy is only as tight as the target set beneath it",
+  "contextParagraphs": [
+    "A target set is narrower than a vital area: it is the specific structure, system, component, or material whose loss, sabotage, or theft produces the defined unacceptable consequence. Where vital area analysis establishes location, target set identification establishes the minimum combination of equipment within that location that actually drives the outcome.",
+    "GSS cross-references vital areas against equipment and system inventories, traces consequence paths down to the component level, and groups the results into discrete target sets with documented rationale — checked against redundant or diverse systems so the scope is neither too broad nor too narrow.",
+    "The finished target set is the handoff point: it is what barriers, detection, and response are sized to protect, and everything upstream of it is groundwork for this step."
+  ],
+  "methodology": [
+    { "label": "Vital Area Cross-Reference", "body": "Candidate vital areas reviewed against system and equipment inventories." },
+    { "label": "Consequence Path Tracing", "body": "Minimum combination of components whose loss or sabotage produces the defined consequence identified within each area." },
+    { "label": "Target Set Definition", "body": "Equipment, systems, or material grouped into discrete target sets with documented rationale." },
+    { "label": "Redundancy & Diversity Check", "body": "Target sets checked against redundant or diverse systems to avoid over- or under-scoping." },
+    { "label": "Protective Strategy Handoff", "body": "Target sets translated into concrete requirements for barriers, detection, and response design." }
+  ],
+  "coreCapabilities": [
+    "Vital-area-to-equipment cross-reference",
+    "Consequence-path tracing",
+    "Target set definition & documentation",
+    "Redundancy / diversity verification",
+    "Protective-strategy scoping",
+    "Licensing-basis support"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Vital area analysis", "href": "/security-solutions/vital-area-analysis/" },
+    { "label": "Vehicle & personnel barrier systems", "href": "/security-solutions/barrier-systems/" },
+    { "label": "Response strategy development", "href": "/security-solutions/response-strategy-development/" },
+    { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" },
+    { "label": "Risk-based security controls", "href": "/cybersecurity/risk-based-controls/" }
+  ],
+  "faq": [
+    { "q": "Is this only physical, or does it cover digitally controlled systems too?", "a": "The core method addresses physical structures, systems, and material; where a target-set component is digitally controlled, the work coordinates directly with cyber-physical and risk-based control assessment." },
+    { "q": "How detailed does the documentation get?", "a": "Equipment- and system-level detail with documented rationale — held as sensitive project documentation, not published or reproduced publicly." },
+    { "q": "Does this scope requirements for perimeter and detection systems too?", "a": "Yes — target sets are the reference point that pathway analysis, barrier selection, and detection design are all sized against." }
+  ],
+  "ctaHeading": "Scope the protection to what actually has to be protected",
+  "imageCaption": "Technical photo — equipment or system schematic annotated with target-set groupings, engineering-review setting"
+}

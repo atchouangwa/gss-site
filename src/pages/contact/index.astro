@@ -1,0 +1,57 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ConsultationForm from '@/components/ConsultationForm.astro';
+import { SITE } from '@/lib/site';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: SITE.url + '/contact/' },
+    ],
+  },
+];
+---
+<Layout
+  title="Request a Consultation | GSS"
+  description="Tell GSS the environment and the question. Nuclear security, physical protection, technology, cybersecurity, and operational-performance consultations."
+  path="/contact/"
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+
+  <section class="wrap">
+    <div class="intro">
+      <span class="mono eyebrow accent-ink">CONTACT</span>
+      <h1>Request a consultation</h1>
+      <p>Tell us the environment and the question. Submissions route to <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Please do not include sensitive facility detail in this form.</p>
+      <div class="direct mono">
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a href={`tel:${SITE.phoneTel}`}>{SITE.phone}</a>
+      </div>
+    </div>
+    <div class="form-panel">
+      <ConsultationForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .accent-ink { color: var(--accent-ink); }
+  .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 0; max-width: var(--max-content); margin: 0 auto; border-top: 1px solid var(--paper-border); }
+  .intro { padding: 64px var(--page-pad) 60px; border-right: 1px solid var(--paper-border); }
+  .eyebrow { letter-spacing: .2em; font-size: 10px; margin-bottom: 24px; display: block; }
+  .intro h1 { margin: 0 0 22px; font: 700 clamp(34px, 4.6vw, 54px)/.95 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; color: var(--ink); }
+  .intro p { margin: 0 0 28px; max-width: 46ch; font: 400 15px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .direct { display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+  .direct a { color: var(--ink); }
+  .form-panel { padding: 64px var(--page-pad) 60px; }
+
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns: 1fr; }
+    .intro { border-right: none; border-bottom: 1px solid var(--paper-border); }
+  }
+</style>

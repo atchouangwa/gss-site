@@ -1,0 +1,51 @@
+{
+  "family": "cybersecurity",
+  "familyLabel": "Cybersecurity",
+  "familyPath": "/cybersecurity/",
+  "order": 8,
+  "title": "Training & Education",
+  "shortTitle": "Cybersecurity Training",
+  "metaDescription": "Cybersecurity training for facility and operations personnel, built for the roles that actually touch OT/ICS systems — not generic awareness content.",
+  "eyebrow": "CYBERSECURITY — 08",
+  "heroDek": "Generic phishing-awareness training doesn't tell a control-room operator what to do when a screen behaves strangely. This training is built for the roles that actually touch the systems.",
+  "contextHeading": "The people closest to the control systems are rarely the audience generic training was built for",
+  "contextParagraphs": [
+    "Most commercial cybersecurity training is written for office IT users — recognize a phishing email, choose a strong password, report a suspicious link. That content has a place, but it doesn't address the roles that matter most in a converged OT environment: the control-room operator who notices a system behaving unexpectedly, the engineer making a change to a control-system network, or the security team member who has to decide whether an anomaly warrants escalation.",
+    "GSS builds cybersecurity training around those roles specifically — what to notice, what to report, and how a given decision fits into the facility's broader incident response process. It's designed to complement, not duplicate, the physical-security and tactical training GSS also delivers, so personnel understand where cyber awareness fits alongside the security responsibilities they already carry.",
+    "Training is delivered at the depth the role requires: general awareness for the broader workforce, deeper technical content for engineering and IT/OT staff, and decision-focused content for the people who will actually be making a call during a live event."
+  ],
+  "methodology": [
+    { "label": "Audience & Role Analysis", "body": "Training content scoped to what each role actually needs to recognize and do." },
+    { "label": "Curriculum Design", "body": "Material built around the facility's actual systems and response process, not generic content." },
+    { "label": "Technical Track Development", "body": "Deeper OT/ICS-specific content built for engineering and IT/OT personnel." },
+    { "label": "Delivery", "body": "Training delivered in the format that fits the workforce — in person, remote, or blended." },
+    { "label": "Scenario-Based Reinforcement", "body": "Exercises and scenario walk-throughs that test recognition and reporting in practice." },
+    { "label": "Program Refresh", "body": "Content updated as systems, threats, and the regulatory environment change." }
+  ],
+  "coreCapabilities": [
+    "Role-based curriculum design",
+    "OT/ICS-specific technical training",
+    "Workforce-wide awareness training",
+    "Scenario-based reinforcement exercises",
+    "Program maintenance and refresh"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Compliance advisory & governance", "href": "/cybersecurity/compliance-governance/" },
+    { "label": "Threat hunting & incident response", "href": "/cybersecurity/threat-hunting-incident-response/" },
+    { "label": "Systematic Approach to Training", "href": "/security-solutions/systematic-approach-to-training/" },
+    { "label": "Tactical training & train-the-trainer", "href": "/security-solutions/tactical-training/" }
+  ],
+  "faq": [
+    { "q": "How is this different from the physical/tactical training GSS also offers?", "a": "That training builds physical-security and response skills. This builds the cybersecurity awareness and decision-making relevant to each role, and is designed to complement the physical-side program rather than repeat it." },
+    { "q": "Is this generic security-awareness content, or built around our systems?", "a": "It's built around the facility's actual systems, roles, and incident response process — not a generic module set." },
+    { "q": "Can training be delivered to a mixed audience of IT, OT, and operations staff?", "a": "Yes — content is tiered by role within a single program, so each audience gets material at the depth relevant to them." }
+  ],
+  "ctaHeading": "Train the people who will actually notice something first",
+  "imageCaption": "Small group training session with an instructor and control-room operators reviewing a scenario on a shared screen"
+}

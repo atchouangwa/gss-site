@@ -1,0 +1,53 @@
+{
+  "family": "nuclear-security",
+  "familyLabel": "Nuclear & SMR",
+  "familyPath": "/nuclear-security/",
+  "order": 4,
+  "title": "Nuclear Regulatory Support",
+  "shortTitle": "Regulatory Support",
+  "metaDescription": "Licensing-basis documentation, inspection readiness, and protective-strategy demonstration support for nuclear licensees engaging their regulator.",
+  "eyebrow": "NUCLEAR & SMR — 04",
+  "heroDek": "A protective strategy that works on site still has to be demonstrated in a regulator's own terms, on paper, under inspection. GSS builds that bridge.",
+  "contextHeading": "A sound protective strategy is not automatically a defensible one",
+  "contextParagraphs": [
+    "Operational effectiveness and regulatory demonstrability are related but not identical problems. A facility can run an adequate protective strategy in practice while its basis documentation has fallen behind — written for an earlier configuration, an earlier threat basis, or an earlier version of the site than the one that actually exists today. That gap rarely shows up until an inspection or an audit finds it, at which point it is a finding rather than a conversation.",
+    "GSS's cyber-physical practice is led by former U.S. NRC inspectors who helped author the cybersecurity regulations governing U.S. plants today, and that regulator-side experience shapes how the broader team approaches basis documentation and inspection readiness generally: written the way a regulator actually reads it, structured to make the connection between requirement and evidence explicit rather than assumed. Gap analysis, documentation development, and mock inspections are used to find the disconnects before a real inspection does.",
+    "Licensees operating across more than one region face an additional layer — different regulatory regimes, different documentation conventions, different expectations for how a protective strategy is demonstrated. GSS's regulatory support work spans facilities across North America, Europe, and the Middle East, and is scoped to the specific regime a given site answers to rather than treated as one template applied everywhere."
+  ],
+  "methodology": [
+    { "label": "Licensing-Basis Gap Analysis", "body": "Existing documentation compared against current requirements and current facility configuration." },
+    { "label": "Documentation Development", "body": "Basis documents written or updated to close identified gaps." },
+    { "label": "Mock Inspection", "body": "Inspection readiness exercised against realistic regulator questioning before the real one." },
+    { "label": "Regulator Engagement Support", "body": "Direct support preparing for and participating in regulator interactions." },
+    { "label": "Corrective Action Tracking", "body": "Findings tracked to closure with documented evidence of resolution." },
+    { "label": "Ongoing Basis Maintenance", "body": "Documentation kept current as the facility, threat basis, or regulation changes." }
+  ],
+  "coreCapabilities": [
+    "Licensing-basis documentation",
+    "Inspection readiness & mock inspections",
+    "Regulatory engagement support",
+    "Protective-strategy demonstration",
+    "Corrective action tracking",
+    "Multi-jurisdiction regulatory experience"
+  ],
+  "industries": [
+    "Operating nuclear licensees",
+    "SMR & advanced reactor licensees",
+    "New nuclear build programs",
+    "Fuel cycle facilities"
+  ],
+  "related": [
+    { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" },
+    { "label": "Security program audits", "href": "/security-solutions/security-program-audits/" },
+    { "label": "Nuclear security", "href": "/nuclear-security/nuclear-security-overview/" },
+    { "label": "Compliance advisory & governance", "href": "/cybersecurity/compliance-governance/" },
+    { "label": "High performance nuclear operations", "href": "/nuclear-security/high-performance-nuclear-operations/" }
+  ],
+  "faq": [
+    { "q": "Do you write documentation, or just review what we already have?", "a": "Both, depending on scope — gap analysis first, then either targeted updates or full documentation development where the existing basis can't be brought current by revision alone." },
+    { "q": "Can you support inspection preparation without redoing the whole licensing basis?", "a": "Yes. Mock inspection and targeted readiness support are commonly scoped on their own, separate from a full documentation engagement." },
+    { "q": "Do you work across different national regulatory regimes?", "a": "Yes — engagements span facilities in North America, Europe, and the Middle East, each scoped to the regime that specific site answers to." }
+  ],
+  "ctaHeading": "Walk into the next inspection with the basis already defensible",
+  "imageCaption": "Photo — licensing-basis binder open on a conference table beside a laptop and a site protected-area diagram, meeting-room setting"
+}

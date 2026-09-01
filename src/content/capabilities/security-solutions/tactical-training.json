@@ -1,0 +1,51 @@
+{
+  "family": "security-solutions",
+  "familyLabel": "Security Solutions",
+  "familyPath": "/security-solutions/",
+  "order": 15,
+  "title": "Tactical Training & Train-the-Trainer",
+  "shortTitle": "Tactical Training",
+  "metaDescription": "Hands-on tactical training and train-the-trainer programs that build a site's own capability to sustain protective-force proficiency.",
+  "eyebrow": "SECURITY SOLUTIONS — 15",
+  "heroDek": "A program that depends on an outside instructor forever hasn't actually transferred capability. GSS builds tactical proficiency and the internal instructor cadre to sustain it.",
+  "contextHeading": "A program that depends on an outside instructor forever hasn't actually transferred capability",
+  "contextParagraphs": [
+    "Hands-on tactical training builds individual and team proficiency in the specific skills a site's response strategy and engagement doctrine actually require — not a generic tactics package, but one sized to that site's own timeline analysis and doctrine.",
+    "The train-the-trainer component is what makes it durable. GSS selects internal instructor candidates in coordination with site leadership, trains and certifies them to deliver the program independently, and defines a sustainment cadence so proficiency doesn't reset to zero between outside engagements.",
+    "This work is delivered as part of, and consistent with, the site's broader Systematic Approach to Training program rather than as a standalone course disconnected from the rest of the training structure."
+  ],
+  "methodology": [
+    { "label": "Skill & Doctrine Alignment", "body": "Tactical training scope aligned to the site's own response strategy and engagement doctrine." },
+    { "label": "Hands-On Skills Training", "body": "Individual and team tactical proficiency built through direct instruction and practice." },
+    { "label": "Instructor Candidate Selection", "body": "Internal instructor candidates selected in coordination with site leadership." },
+    { "label": "Train-the-Trainer Certification", "body": "Candidates trained and evaluated to deliver the program independently." },
+    { "label": "Sustainment Planning", "body": "Ongoing qualification and refresher cadence defined so proficiency does not lapse between engagements." }
+  ],
+  "coreCapabilities": [
+    "Site-specific tactical skills training",
+    "Team & individual proficiency building",
+    "Train-the-trainer program design",
+    "Instructor certification",
+    "Sustainment & refresher planning",
+    "SAT program integration"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "Systematic Approach to Training", "href": "/security-solutions/systematic-approach-to-training/" },
+    { "label": "Force-on-force readiness", "href": "/security-solutions/force-on-force-readiness/" },
+    { "label": "Response strategy development", "href": "/security-solutions/response-strategy-development/" },
+    { "label": "Human factors / minimum complement", "href": "/security-solutions/human-factors-minimum-complement/" },
+    { "label": "Leadership & cultural transformation", "href": "/high-performance/leadership-cultural-transformation/" }
+  ],
+  "faq": [
+    { "q": "Does GSS provide ongoing training, or is this a one-time engagement?", "a": "The program is built around train-the-trainer specifically so the site can sustain it internally between GSS engagements, rather than depend on one indefinitely." },
+    { "q": "How is this tailored to a specific site?", "a": "Scope is aligned to that site's own response strategy and doctrine — it is not a generic tactics package delivered the same way everywhere." },
+    { "q": "Who gets selected as an internal instructor?", "a": "Candidates are selected in coordination with site leadership, then trained and evaluated before being certified to deliver the program independently." }
+  ],
+  "ctaHeading": "Build the instructor cadre, not just the skill",
+  "imageCaption": "Technical photo — instructor demonstrating a tactical skill to a small group in a training-yard setting, daylight, professional rather than staged"
+}

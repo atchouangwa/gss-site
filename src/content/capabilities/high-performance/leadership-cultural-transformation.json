@@ -1,0 +1,53 @@
+{
+  "family": "high-performance",
+  "familyLabel": "High Performance",
+  "familyPath": "/high-performance/",
+  "order": 5,
+  "title": "Leadership & Cultural Transformation",
+  "shortTitle": "Leadership & Cultural Transformation",
+  "metaDescription": "Leadership-development and cultural-transformation programs that sustain High-Performance Culture after the initial assessment and roadmap phase.",
+  "eyebrow": "HIGH PERFORMANCE — 05",
+  "heroDek": "A roadmap survives the consulting engagement only if leadership can run it without GSS in the room. This is the leadership practice, not a one-time workshop, that keeps a High-Performance Culture standard alive after the initial assessment closes.",
+  "contextHeading": "The roadmap fails at the same point the leadership behavior stops",
+  "contextParagraphs": [
+    "An Optimization Assessment produces a defined gap and a phased roadmap. A KPI program produces the instrumentation to track progress against it. Neither survives on its own — both depend on leadership continuing to behave the way the assessment assumed they would after the consultants leave: walking the floor, backing supervisors who stop work for standard violations, and treating a KPI breach as a leadership problem rather than a paperwork exercise.",
+    "GSS treats that leadership behavior as a program in its own right, not a byproduct of the assessment. Leadership-development work builds the specific practices — field observation, coaching, accountability conversations, and structured feedback — that sustain a High-Performance Culture standard over years, not the length of an engagement. Cultural-transformation work addresses the harder case: organizations moving from a purely reactive, compliance-driven posture to one where working-level staff self-identify and report decline without waiting to be told to.",
+    "This is deliberately positioned as the last capability in the High Performance family, and the one most engagements underinvest in. An assessment and a KPI dashboard are visible deliverables; the leadership habit that keeps both functioning eighteen months later is not — which is exactly why it's the piece most often skipped, and the reason most roadmaps quietly stall."
+  ],
+  "methodology": [
+    { "label": "Leadership Assessment", "body": "Current leadership practice — field presence, coaching behavior, accountability follow-through — is assessed against the standard the roadmap assumes." },
+    { "label": "Behavior-Based Coaching", "body": "Leaders are coached on specific, observable behaviors — walkdown frequency, how a stop-work decision gets backed, how a KPI breach gets escalated — not abstract leadership principles." },
+    { "label": "Cultural Baseline & Target", "body": "Current organizational culture is characterized against a defined target state, from reactive and compliance-driven to proactive and self-identifying." },
+    { "label": "Cascading Accountability", "body": "Standards and accountability are cascaded from executive leadership through site leadership to the working level, so the standard doesn't stop at the top." },
+    { "label": "Reinforcement Systems", "body": "Recognition, coaching, and consequence systems are built to reinforce the target behaviors consistently, not episodically." },
+    { "label": "Sustainment Review", "body": "GSS returns on a defined cadence after the initial engagement to verify the leadership behaviors and cultural shift are holding, not just the roadmap milestones." }
+  ],
+  "coreCapabilities": [
+    "Leadership behavior assessment",
+    "Behavior-based coaching programs",
+    "Cultural baseline & target-state definition",
+    "Cascading accountability design",
+    "Recognition & reinforcement systems",
+    "Post-engagement sustainment review"
+  ],
+  "industries": [
+    "Operating nuclear facilities",
+    "Small modular reactors",
+    "New nuclear build",
+    "Other high-consequence critical infrastructure"
+  ],
+  "related": [
+    { "label": "High-Performance Culture", "href": "/high-performance/high-performance-culture/" },
+    { "label": "Optimization Assessment", "href": "/high-performance/optimization-assessment/" },
+    { "label": "Risk-Based Decision Making", "href": "/high-performance/risk-based-decision-making/" },
+    { "label": "Leadership", "href": "/leadership/" },
+    { "label": "High-performance nuclear operations", "href": "/nuclear-security/high-performance-nuclear-operations/" }
+  ],
+  "faq": [
+    { "q": "Is this executive coaching or organizational culture change?", "a": "Both, deliberately linked. Individual leadership coaching without a defined cultural target tends to produce better leaders inside an unchanged system; GSS ties the two together so leadership behavior and organizational standard move together." },
+    { "q": "How long does a cultural-transformation engagement run?", "a": "Longer than an assessment. Culture shifts on the timescale of leadership habit and staff trust, not a single roadmap cycle — GSS scopes duration against the organization's starting posture rather than a fixed program length." },
+    { "q": "What happens after GSS's engagement formally ends?", "a": "A sustainment review cadence is built in before closeout, so leadership behavior and cultural indicators are checked against target on a defined schedule rather than assumed to hold." }
+  ],
+  "ctaHeading": "Build the leadership habit the roadmap depends on",
+  "imageCaption": "Photo — a leader coaching a supervisor one-on-one on the plant floor mid-walkdown, notebook in hand, a candid working moment rather than a posed portrait"
+}

@@ -1,0 +1,102 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ImagePlaceholder from '@/components/ImagePlaceholder.astro';
+import CTASection from '@/components/CTASection.astro';
+import { FOUNDER, SITE } from '@/lib/site';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Eric F. Wilson',
+    jobTitle: 'Founder',
+    affiliation: { '@type': 'ProfessionalService', name: 'Global Security Solutions, LLC' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: SITE.url + '/about/' },
+      { '@type': 'ListItem', position: 3, name: 'Founder & Legacy', item: SITE.url + '/founder/' },
+    ],
+  },
+];
+---
+<Layout
+  title="Eric F. Wilson — Founder & Legacy | GSS"
+  description="The military, nuclear-security, and executive career of Eric F. Wilson, founder of Global Security Solutions, and how it shaped the company's integrated approach to security."
+  path="/founder/"
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about/' }, { label: 'Founder & Legacy' }]} />
+
+  <section class="hero">
+    <div class="hero-photo"><ImagePlaceholder caption="Eric F. Wilson — professional portrait" /></div>
+    <div class="hero-copy">
+      <span class="mono eyebrow accent-ink">FOUNDER &amp; LEGACY</span>
+      <h1>{FOUNDER.name}</h1>
+      <div class="mono title">{FOUNDER.title.toUpperCase()}</div>
+      <p>GSS was founded on thirty years of work that ran from special operations to the C-suite. Eric F. Wilson served in two U.S. Special Operations units as an operator and explosives expert before moving into nuclear security — work that included contributing to U.S. nuclear response strategy design and the explosive validation of barriers still in use today, and testifying before Congress as a subject matter expert.</p>
+      <p>From there he moved into executive leadership, serving as Vice President and then President and CEO within the world's largest security company, with 31 nuclear facilities reporting directly to him. In 2012, he founded GSS to deliver security the way his own career had taught him it actually works: physical, procedural, and electronic protection analyzed as one interdependent system, not sold as separate line items.</p>
+      <p>That is still the standard the company is built on. His son, Wade Wilson, is President of GSS today — the same team, the same methodology, and the same expectation of Best-in-Class, carried forward rather than reinvented.</p>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <div class="rule-row"><span class="mono dim">CAREER TIMELINE</span><span class="rule"></span></div>
+    <div class="timeline">
+      {FOUNDER.timeline.map((t) => (
+        <div data-reveal class="row">
+          <span class="mono dim">{t.n}</span>
+          <span class="label">{t.label}</span>
+          <span class="body">{t.body}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="succession">
+    <h2>Continuity, not a change of direction</h2>
+    <p>The website does not need to relitigate what happened — Eric F. Wilson's standard is the throughline, not a chapter that closed. Wade Wilson grew up inside this work and leads GSS today as President, and the team, methodology, and expectations he leads are the ones his father set.</p>
+    <a class="link" href="/leadership/">Meet Leadership Today →</a>
+  </section>
+
+  <CTASection variant="dark" heading="Work with the team built on that standard." />
+</Layout>
+
+<style>
+  .accent-ink { color: var(--accent-ink); }
+  .dim { color: var(--text-on-paper-quiet); }
+  .hero { display: grid; grid-template-columns: 340px 1fr; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
+  .hero-photo { border-right: 1px solid var(--paper-border); min-height: 480px; }
+  .hero-copy { padding: 64px var(--page-pad) 60px; display: flex; flex-direction: column; gap: 20px; }
+  .eyebrow { letter-spacing: .2em; font-size: 10px; }
+  .hero-copy h1 { margin: 0; font: 700 clamp(38px, 6vw, 72px)/.94 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; color: var(--ink); }
+  .title { font-size: 11px; letter-spacing: .16em; margin-bottom: 4px; }
+  .hero-copy p { margin: 0; max-width: 68ch; font: 400 16px/1.75 var(--font-body); color: var(--text-on-paper-secondary); }
+
+  .rule-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 26px; }
+  .rule-row .rule { flex: 1; height: 1px; background: var(--paper-border-soft); }
+  .rule-row .mono { font-size: 10px; letter-spacing: .18em; }
+
+  .timeline-section { padding: 56px var(--page-pad) 64px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
+  .timeline { display: flex; flex-direction: column; }
+  .row { display: grid; grid-template-columns: 90px 220px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid var(--paper-border-soft); }
+  .row:first-child { border-top-color: var(--ink); }
+  .row:last-child { border-bottom: 1px solid var(--ink); }
+  .label { font: 700 22px/1.1 var(--font-display); letter-spacing: -.015em; text-transform: uppercase; color: var(--ink); }
+  .body { font: 400 14px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  .succession { padding: 56px var(--page-pad) 64px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
+  .succession h2 { margin: 0 0 18px; font: 700 clamp(26px, 3.6vw, 44px)/1.05 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; color: var(--ink); max-width: 22ch; }
+  .succession p { margin: 0 0 20px; max-width: 68ch; font: 400 15px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .link { font: 600 12px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-photo { min-height: 280px; border-right: none; border-bottom: 1px solid var(--paper-border); }
+    .row { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>

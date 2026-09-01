@@ -1,0 +1,184 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from './Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ImagePlaceholder from '@/components/ImagePlaceholder.astro';
+import FAQAccordion from '@/components/FAQAccordion.astro';
+import CTASection from '@/components/CTASection.astro';
+import { SITE } from '@/lib/site';
+
+interface Props {
+  entry: CollectionEntry<'capabilities'>;
+  slug: string;
+}
+const { entry, slug } = Astro.props;
+const d = entry.data;
+const path = `${d.familyPath}${slug}/`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: d.title,
+    description: d.metaDescription,
+    provider: { '@type': 'ProfessionalService', name: SITE.name, url: SITE.url },
+    areaServed: ['North America', 'Europe', 'Middle East'],
+    url: SITE.url + path,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+      { '@type': 'ListItem', position: 2, name: d.familyLabel, item: SITE.url + d.familyPath },
+      { '@type': 'ListItem', position: 3, name: d.title, item: SITE.url + path },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+<Layout
+  title={`${d.title} | ${SITE.shortName}`}
+  description={d.metaDescription}
+  path={path}
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: d.familyLabel, href: d.familyPath }, { label: d.shortTitle ?? d.title }]} />
+
+  <div class="cap-layout">
+    <div class="cap-main">
+      <section class="cap-hero">
+        <div class="mono eyebrow accent-ink">{d.eyebrow}</div>
+        <h1>{d.title}</h1>
+        <p class="dek">{d.heroDek}</p>
+        <div class="cap-ctas">
+          <a class="btn btn-ink" href="/contact/">Request a Consultation</a>
+          <a class="btn btn-outline-on-paper" href="/contact/">Capability sheet</a>
+        </div>
+      </section>
+
+      <section class="cap-context">
+        <div class="rule-row"><span class="mono dim">OPERATIONAL CONTEXT</span><span class="rule"></span></div>
+        <h2>{d.contextHeading}</h2>
+        <div class="context-cols">
+          {d.contextParagraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </section>
+
+      <section class="cap-methodology">
+        <div class="rule-row"><span class="mono dim">{d.methodologyHeading.toUpperCase()}</span><span class="rule"></span></div>
+        <div class="method-list">
+          {d.methodology.map((step, i) => (
+            <div data-reveal class="method-row">
+              <span class="mono accent-ink">{String(i + 1).padStart(2, '0')}</span>
+              <span class="method-label">{step.label}</span>
+              <span class="method-body">{step.body}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="cap-capabilities">
+        <div class="rule-row"><span class="mono dim">CORE CAPABILITIES</span><span class="rule"></span></div>
+        <div class="tags">
+          {d.coreCapabilities.map((c) => <span class="tag">{c}</span>)}
+        </div>
+      </section>
+
+      {d.industries && d.industries.length > 0 && (
+        <section class="cap-industries">
+          <div class="rule-row"><span class="mono dim">RELEVANT ENVIRONMENTS</span><span class="rule"></span></div>
+          <div class="tags">
+            {d.industries.map((c) => <span class="tag outline">{c}</span>)}
+          </div>
+        </section>
+      )}
+    </div>
+
+    <aside class="cap-aside">
+      <div class="aside-image"><ImagePlaceholder caption={d.imageCaption} /></div>
+      <div class="aside-block">
+        <div class="mono aside-heading">ON THIS PAGE</div>
+        <div class="on-page-links">
+          <span class="current">Operational context</span>
+          <span>Methodology</span>
+          <span>Related capabilities</span>
+          <span>FAQ</span>
+        </div>
+      </div>
+      <div class="aside-block">
+        <div class="mono aside-heading">RELATED CAPABILITIES</div>
+        <div class="related-list">
+          {d.related.map((r) => (
+            <a href={r.href}><span>{r.label}</span><span class="accent-ink">→</span></a>
+          ))}
+        </div>
+      </div>
+      <div class="aside-block">
+        <div class="mono aside-heading">FAQ</div>
+        <FAQAccordion items={d.faq} />
+      </div>
+    </aside>
+  </div>
+
+  <CTASection variant="dark" heading={d.ctaHeading} />
+</Layout>
+
+<style>
+  .eyebrow { letter-spacing: .2em; font-size: 10px; margin-bottom: 24px; }
+  .cap-layout { display: grid; grid-template-columns: 1fr 380px; }
+  .cap-main { border-right: 1px solid var(--paper-border); }
+  section { padding: 56px var(--page-pad) 60px; border-bottom: 1px solid var(--paper-border); }
+  .cap-hero { padding-top: 64px; padding-bottom: 60px; }
+  .cap-hero h1 { margin: 0 0 26px; font: 700 clamp(38px, 6vw, 84px)/.92 var(--font-display); letter-spacing: -.045em; text-transform: uppercase; color: var(--ink); max-width: 18ch; }
+  .dek { margin: 0 0 30px; max-width: 60ch; font: 400 17px/1.65 var(--font-body); color: var(--text-on-paper-secondary); }
+  .cap-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .rule-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 26px; }
+  .rule-row .rule { flex: 1; height: 1px; background: var(--paper-border-soft); }
+  .rule-row .mono { font-size: 10px; letter-spacing: .18em; }
+
+  .cap-context h2 { margin: 0 0 22px; font: 700 clamp(24px, 3.4vw, 40px)/1.02 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); max-width: 24ch; }
+  .context-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  .context-cols p { margin: 0; font: 400 15px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  .method-list { display: flex; flex-direction: column; }
+  .method-row { display: grid; grid-template-columns: 60px 260px 1fr; gap: 22px; padding: 16px 0; border-top: 1px solid var(--paper-border-soft); }
+  .method-row:first-child { border-top-color: var(--ink); }
+  .method-row:last-child { border-bottom: 1px solid var(--ink); }
+  .method-row .mono { font-size: 10px; }
+  .method-label { font: 700 20px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
+  .method-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  .cap-capabilities, .cap-industries { border-bottom: none; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font: 500 11.5px/1 var(--font-body); letter-spacing: .06em; text-transform: uppercase; padding: 10px 13px; }
+  .tag.outline { background: transparent; color: var(--text-on-paper-tertiary); border-color: #b8b4ad; }
+
+  .cap-aside { background: var(--paper); }
+  .aside-image { position: relative; height: 300px; border-bottom: 1px solid var(--paper-border); }
+  .aside-block { padding: 26px var(--page-pad) 30px 26px; border-bottom: 1px solid var(--paper-border); }
+  .aside-heading { font-size: 10px; letter-spacing: .18em; color: var(--text-on-paper-quiet); margin-bottom: 16px; }
+  .on-page-links { display: flex; flex-direction: column; gap: 10px; font: 400 13px/1.4 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .on-page-links .current { color: var(--ink); border-left: 2px solid var(--accent); padding-left: 10px; }
+  .on-page-links span:not(.current) { padding-left: 12px; }
+  .related-list { display: flex; flex-direction: column; }
+  .related-list a { display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid var(--paper-border); font: 400 13px/1.4 var(--font-body); color: var(--text-on-paper-body-alt); transition: padding-left 180ms var(--ease-out-strong), color 160ms ease; }
+  .related-list a:last-child { border-bottom: 1px solid var(--paper-border); }
+  .related-list a:hover { padding-left: 8px; color: var(--accent-ink); }
+
+  @media (max-width: 1080px) {
+    .cap-layout { grid-template-columns: 1fr; }
+    .cap-main { border-right: none; }
+    .context-cols { grid-template-columns: 1fr; }
+    .method-row { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
