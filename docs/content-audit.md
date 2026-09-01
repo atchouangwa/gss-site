@@ -151,12 +151,18 @@ avoid thin/duplicate metadata.
 
 ## 9. Images
 
-No photographs are embedded in this build. General web/image-CDN access was not available in the
-build environment, and the client had not supplied final photography at build time (the v2
-mockup itself left every image position as an open drop target for this reason). Every image
-position in this implementation is a labeled placeholder (`ImagePlaceholder` component) carrying
-the same shot description as the approved mockup, so real photography can be dropped in later
-without any layout rework. This is a tracked content gap, not a silent omission.
+Real photography is now in place for every non-personal image slot (`public/assets/photos/`,
+mapped per page in `src/lib/images.ts`): a nuclear facility exterior (two variants, night and
+dusk), a perimeter fence with mounted sensor/camera (two variants), a field technician servicing
+GSS equipment, a deployed secure-communications mast, a security operations center, and a
+cybersecurity analyst workstation — each assigned to capability pages by theme (see
+`capabilityImage()` in `src/lib/images.ts` for the exact family/slug mapping). Client-supplied
+headshots for Eric F. Wilson and Wade Wilson are used only on the founder/leadership sections —
+never reused as generic imagery elsewhere, per the client's instruction.
+
+Any `ImagePlaceholder` still showing the dashed-frame placeholder (rather than a photo) has not
+been assigned an image and is intentionally left that way — check `src/lib/images.ts` before
+assuming a gap.
 
 ## 10. Content Gaps
 
