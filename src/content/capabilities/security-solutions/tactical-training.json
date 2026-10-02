@@ -6,11 +6,11 @@
   "title": "Tactical Training & Train-the-Trainer",
   "shortTitle": "Tactical Training",
   "metaDescription": "Hands-on tactical training and train-the-trainer programs that build a site's own capability to sustain protective-force proficiency.",
-  "eyebrow": "SECURITY SOLUTIONS — 15",
+  "eyebrow": "SECURITY SOLUTIONS – 15",
   "heroDek": "A program that depends on an outside instructor forever hasn't actually transferred capability. GSS builds tactical proficiency and the internal instructor cadre to sustain it.",
   "contextHeading": "A program that depends on an outside instructor forever hasn't actually transferred capability",
   "contextParagraphs": [
-    "Hands-on tactical training builds individual and team proficiency in the specific skills a site's response strategy and engagement doctrine actually require — not a generic tactics package, but one sized to that site's own timeline analysis and doctrine.",
+    "Hands-on tactical training builds individual and team proficiency in the specific skills a site's response strategy and engagement doctrine actually require. It is not a generic tactics package, but one sized to that site's own timeline analysis and doctrine.",
     "The train-the-trainer component is what makes it durable. GSS selects internal instructor candidates in coordination with site leadership, trains and certifies them to deliver the program independently, and defines a sustainment cadence so proficiency doesn't reset to zero between outside engagements.",
     "This work is delivered as part of, and consistent with, the site's broader Systematic Approach to Training program rather than as a standalone course disconnected from the rest of the training structure."
   ],
@@ -43,9 +43,9 @@
   ],
   "faq": [
     { "q": "Does GSS provide ongoing training, or is this a one-time engagement?", "a": "The program is built around train-the-trainer specifically so the site can sustain it internally between GSS engagements, rather than depend on one indefinitely." },
-    { "q": "How is this tailored to a specific site?", "a": "Scope is aligned to that site's own response strategy and doctrine — it is not a generic tactics package delivered the same way everywhere." },
+    { "q": "How is this tailored to a specific site?", "a": "Scope is aligned to that site's own response strategy and doctrine. It is not a generic tactics package delivered the same way everywhere." },
     { "q": "Who gets selected as an internal instructor?", "a": "Candidates are selected in coordination with site leadership, then trained and evaluated before being certified to deliver the program independently." }
   ],
   "ctaHeading": "Build the instructor cadre, not just the skill",
-  "imageCaption": "Technical photo — instructor demonstrating a tactical skill to a small group in a training-yard setting, daylight, professional rather than staged"
+  "imageCaption": "Technical photo, instructor demonstrating a tactical skill to a small group in a training-yard setting, daylight, professional rather than staged"
 }

@@ -9,21 +9,21 @@
     {
       "heading": "Compliance is a documentation standard",
       "paragraphs": [
-        "Compliance answers a specific question: does the documentation demonstrate that a required element is present? It's necessary, and it's also, by design, backward-looking — it verifies that something was done, not that it was done in a way that holds up when tested.",
-        "A basis document can be internally consistent, fully cross-referenced, and technically compliant, while resting on an assumption — a barrier delay time, a response timeline, a complement number — that has never actually been validated against real conditions."
+        "Compliance answers a specific question. Does the documentation demonstrate that a required element is present? It's necessary, and it's also, by design, backward-looking. It verifies that something was done, not that it was done in a way that holds up when tested.",
+        "A basis document can be internally consistent, fully cross-referenced, and technically compliant, while resting on an assumption (a barrier delay time, a response timeline, a complement number) that has never actually been validated against real conditions."
       ]
     },
     {
       "heading": "Defensible is a different question",
       "paragraphs": [
         "Defensible asks whether the protective strategy holds up when a regulator, an inspector, or a force-on-force exercise actually tests the assumption behind the documentation, not just the documentation itself. It's the difference between a number that's written down and a number that's been measured.",
-        "That distinction shows up most often at exactly the assumptions covered elsewhere in this practice: barrier delay validated by engineering analysis and off-site explosive testing rather than a manufacturer's rating; complement sized to a protective strategy rather than to a budget line; timeline analysis built on validated inputs rather than optimistic ones."
+        "That distinction shows up most often at exactly the assumptions covered elsewhere in this practice. Barrier delay is validated by engineering analysis and off-site explosive testing rather than a manufacturer's rating. Complement is sized to a protective strategy rather than to a budget line. Timeline analysis is built on validated inputs rather than optimistic ones."
       ]
     },
     {
       "heading": "Building basis documentation that's meant to be tested",
       "paragraphs": [
-        "GSS writes regulatory and basis documentation from validated data, specifically so it holds up under the kind of scrutiny it's eventually going to get — from a regulator, an exercise, or an incident. That's a different starting point than writing documentation to satisfy a checklist and hoping it never gets tested harder than that."
+        "GSS writes regulatory and basis documentation from validated data, specifically so it holds up under the kind of scrutiny it's eventually going to get from a regulator, an exercise, or an incident. That's a different starting point than writing documentation to satisfy a checklist and hoping it never gets tested harder than that."
       ]
     }
   ],

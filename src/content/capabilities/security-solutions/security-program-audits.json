@@ -6,13 +6,13 @@
   "title": "Security Program Audits",
   "shortTitle": "Security Program Audits",
   "metaDescription": "Independent security program audits measured against both regulatory requirements and Best-in-Class criteria, not compliance alone.",
-  "eyebrow": "SECURITY SOLUTIONS — 13",
+  "eyebrow": "SECURITY SOLUTIONS – 13",
   "heroDek": "Passing an inspection and running a Best-in-Class program are not the same bar. GSS audits against both, and hands back a prioritized set of findings rather than a pass/fail letter.",
   "contextHeading": "Passing an inspection and running a Best-in-Class program are not the same bar",
   "contextParagraphs": [
-    "Regulatory compliance is a floor. A GSS program audit measures a site against that floor and, separately, against a Best-in-Class standard drawn from operating experience across the industry — the gap between the two is often where the most consequential findings live.",
+    "Regulatory compliance is a floor. A GSS program audit measures a site against that floor and, separately, against a Best-in-Class standard drawn from operating experience across the industry. The gap between the two is often where the most consequential findings live.",
     "Independent, outside review surfaces things a program's own staff are least likely to see, precisely because they operate inside the program every day. The audit combines document and record review with direct field observation and structured personnel interviews at multiple levels, rather than relying on paperwork alone.",
-    "The result is a prioritized finding set — ranked by consequence and by effort to close — with support through corrective-action planning and closure verification, so the audit produces action rather than a report that sits on a shelf."
+    "The result is a prioritized finding set, ranked by consequence and by effort to close, with support through corrective-action planning and closure verification, so the audit produces action rather than a report that sits on a shelf."
   ],
   "methodology": [
     { "label": "Scope & Criteria Definition", "body": "Audit scope and criteria set against applicable regulation and Best-in-Class benchmarks." },
@@ -44,9 +44,9 @@
   ],
   "faq": [
     { "q": "How is this different from a regulatory inspection?", "a": "An inspection checks compliance against regulation. This audit does that and also measures the program against a Best-in-Class standard beyond the regulatory floor." },
-    { "q": "Who gets interviewed during an audit?", "a": "Program staff across multiple levels, not management alone — structured interviews are part of the method, not a formality." },
+    { "q": "Who gets interviewed during an audit?", "a": "Program staff across multiple levels, not management alone. Structured interviews are part of the method, not a formality." },
     { "q": "What happens with the findings afterward?", "a": "They're prioritized and supported through corrective-action planning and verification of closure, not left as a static list." }
   ],
   "ctaHeading": "Know where the program stands before the regulator tells you",
-  "imageCaption": "Technical photo — auditor reviewing procedure binders alongside a field observation checklist, on-site setting"
+  "imageCaption": "Technical photo, auditor reviewing procedure binders alongside a field observation checklist, on-site setting"
 }

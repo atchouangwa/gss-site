@@ -6,13 +6,13 @@
   "title": "Security Operations",
   "shortTitle": "Security Operations (Cyber)",
   "metaDescription": "Cyber security operations center design and operation for converged IT/OT environments, built around what OT monitoring actually requires.",
-  "eyebrow": "CYBERSECURITY — 07",
+  "eyebrow": "CYBERSECURITY – 07",
   "heroDek": "A SOC built for enterprise IT watches the wrong things in an OT environment, or watches the right things through the wrong lens. This is SOC design built around what a converged environment actually generates.",
   "contextHeading": "OT doesn't generate the same signal an IT SOC is tuned to read",
   "contextParagraphs": [
-    "A cyber security operations center is the standing function that watches for, triages, and escalates the events that threat hunting and incident response plan for in the abstract. Its effectiveness depends entirely on whether it's built for the environment it's actually watching — and most commercial SOC tooling and analyst training are built around IT traffic patterns, not the comparatively quiet, highly regular traffic of an operational technology network.",
-    "GSS designs and can operate cyber SOC capability specifically for converged IT/OT environments: use cases and detection logic tuned to what abnormal actually looks like in control-system traffic, escalation paths that route an OT-relevant event to someone who understands its operational consequence, and staffing built around the environment rather than a generic analyst rotation.",
-    "This is a distinct capability from remote physical security operations — camera monitoring, alarm response, and access control oversight, which GSS also designs and can run under the Technology family. The two are complementary and are frequently stood up together, but a cyber SOC and a physical security operations center answer different questions and are built differently."
+    "A cyber security operations center is the standing function that watches for, triages, and escalates the events that threat hunting and incident response plan for in the abstract. Its effectiveness depends entirely on whether it's built for the environment it's actually watching, and most commercial SOC tooling and analyst training are built around IT traffic patterns, not the comparatively quiet, highly regular traffic of an operational technology network.",
+    "GSS designs and can operate cyber SOC capability specifically for converged IT/OT environments, with use cases and detection logic tuned to what abnormal actually looks like in control-system traffic, escalation paths that route an OT-relevant event to someone who understands its operational consequence, and staffing built around the environment rather than a generic analyst rotation.",
+    "This is a distinct capability from remote physical security operations (camera monitoring, alarm response, and access control oversight), which GSS also designs and can run under the Technology family. The two are complementary and are frequently stood up together, but a cyber SOC and a physical security operations center answer different questions and are built differently."
   ],
   "methodology": [
     { "label": "Environment Assessment", "body": "IT and OT network architecture, data sources, and existing tooling inventoried." },
@@ -42,8 +42,8 @@
     { "label": "KPI & performance monitoring", "href": "/technology/kpi-performance-monitoring/" }
   ],
   "faq": [
-    { "q": "Is this the same as your physical remote security operations service?", "a": "No — that capability covers camera monitoring, alarm response, and access control oversight. This one is a cyber SOC watching network and control-system activity. The two are often deployed together but are built and staffed differently." },
-    { "q": "Can GSS operate the SOC, or only design it?", "a": "Both are available — a design-only engagement for a client standing up their own SOC, or an ongoing operating role, depending on what's needed." },
+    { "q": "Is this the same as your physical remote security operations service?", "a": "No. That capability covers camera monitoring, alarm response, and access control oversight. This one is a cyber SOC watching network and control-system activity. The two are often deployed together but are built and staffed differently." },
+    { "q": "Can GSS operate the SOC, or only design it?", "a": "Both are available, either a design-only engagement for a client standing up their own SOC, or an ongoing operating role, depending on what's needed." },
     { "q": "How do you avoid alert fatigue in an OT environment with limited analyst bandwidth?", "a": "Detection logic is tuned to the specific environment during design, rather than deployed as a generic ruleset that generates volume the team can't triage." }
   ],
   "ctaHeading": "Build a SOC that reads OT signal correctly, not one retrofitted from IT",

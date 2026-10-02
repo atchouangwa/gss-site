@@ -2,7 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import CTASection from '@/components/CTASection.astro';
-import { SITE } from '@/lib/site';
+import { SITE, FOUNDER, LEADERSHIP } from '@/lib/site';
 
 const jsonLd = [
   {
@@ -13,11 +13,23 @@ const jsonLd = [
       { '@type': 'ListItem', position: 2, name: 'About', item: SITE.url + '/about/' },
     ],
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: LEADERSHIP.name,
+    jobTitle: LEADERSHIP.title,
+    affiliation: { '@type': 'ProfessionalService', name: SITE.name },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: FOUNDER.name,
+    jobTitle: 'Founder',
+    affiliation: { '@type': 'ProfessionalService', name: SITE.name },
+  },
 ];
 
 const links = [
-  { href: '/founder/', label: 'Founder & Legacy', body: "Eric F. Wilson's military, nuclear-security, and executive career, and how it shaped GSS's integrated approach." },
-  { href: '/leadership/', label: 'Leadership', body: "Wade Wilson, President — continuity of leadership, not a change of direction." },
   { href: '/global-experience/', label: 'Global Experience', body: 'Nuclear facilities and critical infrastructure supported across North America, Europe, and the Middle East.' },
 ];
 ---
@@ -32,14 +44,56 @@ const links = [
   <section class="hero">
     <span class="mono eyebrow accent-ink">ABOUT GSS</span>
     <h1>Security engineered as one system, not a stack of vendors</h1>
-    <p class="dek">Global Security Solutions, LLC provides nuclear security consulting, physical protection, technology, cybersecurity, and operational-performance solutions for high-value, high-risk critical infrastructure. The company combines real-world security expertise with engineering, regulatory knowledge, and business-performance discipline.</p>
+    <p class="dek">Global Security Solutions, LLC helps organizations assess, design, and strengthen security programs for critical infrastructure and other high-consequence environments. Our work spans physical protection, technology, cybersecurity, regulatory support, and operational performance, with an integrated approach to how security systems perform in practice.</p>
   </section>
 
   <section class="body">
     <div class="col">
-      <p>GSS was built on the premise that physical, procedural, electronic, and cyber security are not separate purchases — they are one protective architecture, and they have to be assessed together to mean anything. That premise came directly out of founder Eric F. Wilson's career, which ran from U.S. Special Operations to nuclear-security executive leadership, and it is still how the company works today under President Wade Wilson.</p>
-      <p>The firm's scope reflects that: security assessment and design, technology selection and integration, cybersecurity for converged IT/OT environments, nuclear and SMR-specific security architecture, and the operational-performance discipline (KPI development, optimization assessment, leadership alignment) that keeps a protective strategy from decaying once the engagement ends.</p>
-      <p>GSS stays intentionally small relative to the scope of its work — the team is former U.S. special forces operators, engineers, and executives with C-level industry experience, plus a cyber-physical division led by former U.S. NRC inspectors who authored the cybersecurity regulations governing U.S. plants today. {SITE.facilityCount} nuclear facilities and {SITE.yearsExperience} years of nuclear-security experience sit behind that team, across {SITE.regionsLine.toLowerCase()}.</p>
+      <p>GSS was built around a simple principle. Security works best when it is treated as one integrated system. That approach was shaped by founder Eric F. Wilson's career, spanning U.S. Special Operations, nuclear security, and executive leadership, and remains central to how GSS works today.</p>
+      <p>Our work includes security assessment and design, technology selection and integration, cybersecurity, nuclear and SMR security, and operational performance. We work with organizations from initial assessment and planning through implementation and long-term program improvement.</p>
+      <p>The GSS team brings firsthand experience from the environments we support, including former U.S. Special Operations personnel, engineers, security executives, and former U.S. NRC inspectors. Collectively, our team has supported more than 50 nuclear facilities and brings decades of security experience to projects across North America, Europe, the Middle East, and beyond.</p>
+    </div>
+  </section>
+
+  <section class="leadership" id="leadership">
+    <div class="eyebrow-row"><span class="mono dim">LEADERSHIP ROLES</span><span class="rule"></span></div>
+    <h2>{LEADERSHIP.name}</h2>
+    <div class="mono person-title">{LEADERSHIP.eyebrow}</div>
+    <div class="col">
+      {LEADERSHIP.bio.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="founder" id="founder">
+    <div class="eyebrow-row"><span class="mono dim">FOUNDER &amp; LEGACY</span><span class="rule"></span></div>
+    <h2>{FOUNDER.name}</h2>
+    <div class="mono person-title">{FOUNDER.title.toUpperCase()}</div>
+    <div class="col">
+      <p>GSS was built on more than thirty years of experience spanning U.S. Special Operations, nuclear security, and executive leadership. Eric Wilson's experience shaped the integrated approach GSS continues to use today, evaluating physical, procedural, and electronic security as parts of one system rather than as isolated functions.</p>
+      <p>Today, GSS is led by President Wade Wilson, supporting organizations across nuclear and critical infrastructure environments worldwide.</p>
+    </div>
+    <div class="timeline">
+      {FOUNDER.timeline.map((t) => (
+        <div data-reveal class="timeline-row">
+          <span class="mono dim">{t.n}</span>
+          <span class="timeline-label">{t.label}</span>
+          <span class="timeline-body">{t.body}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="personnel" id="personnel">
+    <div class="eyebrow-row"><span class="mono dim">OUR PERSONNEL</span><span class="rule"></span></div>
+    <p class="personnel-intro">{LEADERSHIP.teamIntro}</p>
+    <div class="roster">
+      {LEADERSHIP.teamRoster.map((r, i) => (
+        <div class="roster-row">
+          <span class="mono roster-n">{String(i + 1).padStart(2, '0')}</span>
+          <span class="roster-label">{r.label}</span>
+          <span class="roster-detail">{r.detail}</span>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -53,11 +107,12 @@ const links = [
     ))}
   </section>
 
-  <CTASection heading="Bring us in early. Or bring us in now." body="Tell us the environment and the question. We'll tell you where to start." />
+  <CTASection heading="Best-in-Class Solutions" body="Tell us the environment and the question. We'll tell you where to start." />
 </Layout>
 
 <style>
   .accent-ink { color: var(--accent-ink); }
+  .dim { color: var(--text-on-paper-quiet); }
   .hero { padding: 64px var(--page-pad) 40px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
   .eyebrow { letter-spacing: .2em; font-size: 10px; margin-bottom: 24px; display: block; }
   .hero h1 { margin: 0 0 24px; font: 700 clamp(34px, 5.5vw, 68px)/1 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; color: var(--ink); max-width: 18ch; }
@@ -65,16 +120,40 @@ const links = [
   .body { padding: 56px var(--page-pad) 60px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
   .col { max-width: 74ch; display: flex; flex-direction: column; gap: 20px; }
   .col p { margin: 0; font: 400 16px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
-  .links { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
-  .link-card { padding: 40px var(--page-pad) 44px 0; border-right: 1px solid var(--paper-border); display: flex; flex-direction: column; gap: 12px; }
-  .link-card:first-child { padding-left: var(--page-pad); }
-  .link-card:last-child { border-right: none; }
+
+  .leadership, .founder, .personnel { padding: 64px var(--page-pad) 68px; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; scroll-margin-top: 80px; }
+  .eyebrow-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  .eyebrow-row .mono { font-size: 10px; letter-spacing: .18em; }
+  .rule { flex: 1; height: 1px; background: var(--paper-border-soft); }
+  .leadership h2, .founder h2 { margin: 0 0 10px; font: 700 clamp(32px, 5vw, 60px)/.94 var(--font-display); letter-spacing: -.04em; text-transform: uppercase; color: var(--ink); }
+  .person-title { font-size: 11px; letter-spacing: .16em; color: var(--accent-ink); margin-bottom: 26px; }
+  .col p { color: var(--text-on-paper-secondary); }
+
+  .timeline { display: flex; flex-direction: column; margin-top: 34px; }
+  .timeline-row { display: grid; grid-template-columns: 90px 200px 1fr; gap: 24px; padding: 18px 0; border-top: 1px solid var(--paper-border-soft); }
+  .timeline-row:first-child { border-top-color: var(--ink); }
+  .timeline-row:last-child { border-bottom: 1px solid var(--ink); }
+  .timeline-row .mono { font-size: 10px; padding-top: 4px; }
+  .timeline-label { font: 700 19px/1.1 var(--font-display); letter-spacing: -.015em; text-transform: uppercase; color: var(--ink); }
+  .timeline-body { font: 400 14px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); max-width: 70ch; }
+
+  .personnel-intro { margin: 0 0 26px; max-width: 74ch; font: 400 16px/1.7 var(--font-body); color: var(--text-on-paper-secondary); }
+  .roster { display: flex; flex-direction: column; }
+  .roster-row { display: grid; grid-template-columns: 90px 320px 1fr; gap: 24px; padding: 18px 0; border-top: 1px solid var(--paper-border-soft); }
+  .roster-row:first-child { border-top-color: var(--ink); }
+  .roster-row:last-child { border-bottom: 1px solid var(--ink); }
+  .roster-n { font-size: 10px; color: var(--accent-ink); padding-top: 4px; }
+  .roster-label { font: 700 19px/1.1 var(--font-display); letter-spacing: -.015em; text-transform: uppercase; color: var(--ink); }
+  .roster-detail { font: 400 14px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); max-width: 70ch; }
+
+  .links { display: grid; grid-template-columns: 1fr; border-bottom: 1px solid var(--paper-border); max-width: var(--max-content); margin: 0 auto; }
+  .link-card { padding: 40px var(--page-pad) 44px; display: grid; grid-template-columns: 320px 1fr auto; gap: 24px; align-items: baseline; }
   .link-title { font: 700 22px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
   .link-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
-  .link-arrow { margin-top: auto; font: 600 16px/1 var(--font-body); }
+  .link-arrow { font: 600 16px/1 var(--font-body); }
 
   @media (max-width: 900px) {
-    .links { grid-template-columns: 1fr; }
-    .link-card { border-right: none; border-bottom: 1px solid var(--paper-border); padding-left: var(--page-pad) !important; }
+    .timeline-row, .roster-row { grid-template-columns: 1fr; gap: 6px; }
+    .link-card { grid-template-columns: 1fr; gap: 12px; }
   }
 </style>

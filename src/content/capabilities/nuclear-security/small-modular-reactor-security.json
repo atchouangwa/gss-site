@@ -5,14 +5,14 @@
   "order": 2,
   "title": "Small Modular Reactor Security",
   "shortTitle": "SMR Security",
-  "metaDescription": "Security-by-design for SMRs — protective strategy, DBT considerations, and vital area identification built into the design lifecycle, not retrofitted later.",
-  "eyebrow": "NUCLEAR & SMR — 02",
+  "metaDescription": "Security-by-design for SMRs, with protective strategy, DBT considerations, and vital area identification built into the design lifecycle, not retrofitted later.",
+  "eyebrow": "NUCLEAR & SMR – 02",
   "heroDek": "SMRs compress the footprint, the schedule, and the build model. That compression means the window for designing security in, rather than bolting it on afterward, is shorter and earlier than most utilities are used to.",
   "contextHeading": "Security-by-design only works if 'early' means early enough",
   "contextParagraphs": [
     "A smaller reactor footprint is not just a smaller version of the same security problem. Vital areas sit closer together. Fewer structures carry more of the protective function. Standoff distances that were generous on a large-site layout can disappear entirely on a compact one. Getting the protective strategy right on an SMR means treating Design Basis Threat considerations and vital area identification as inputs to the site and reactor layout, not as a review performed after the layout is already fixed.",
-    "The modular, factory-build model changes the calendar further. Decisions that would normally happen on the construction site — where a barrier sits, how cabling and conduit are routed, where an access point lands relative to a vital area — are increasingly made at the module level, in a factory, months before anything ships. Once fabrication of a module locks in, the cost and schedule impact of a late security finding is no longer a field change order; it can mean requalifying a manufacturing process. Security has to be at the engineering table before that lock-in happens, not after.",
-    "Multi-unit and co-located SMR deployments add a layer most single large-unit programs never have to resolve: shared versus dedicated protected areas, shared versus dedicated response complement, and target set analysis that has to account for one unit's status affecting the required posture at the unit next to it. Those questions are answerable, but only if they are asked during design."
+    "The modular, factory-build model changes the calendar further. Decisions that would normally happen on the construction site, such as where a barrier sits, how cabling and conduit are routed, and where an access point lands relative to a vital area, are increasingly made at the module level, in a factory, months before anything ships. Once fabrication of a module locks in, the cost and schedule impact of a late security finding is no longer a field change order. It can mean requalifying a manufacturing process. Security has to be at the engineering table before that lock-in happens, not after.",
+    "Multi-unit and co-located SMR deployments add a layer most single large-unit programs never have to resolve, including shared versus dedicated protected areas, shared versus dedicated response complement, and target set analysis that has to account for one unit's status affecting the required posture at the unit next to it. Those questions are answerable, but only if they are asked during design."
   ],
   "methodology": [
     { "label": "Security-by-Design Integration", "body": "GSS engaged during conceptual and preliminary engineering design, not after layout is fixed." },
@@ -44,10 +44,10 @@
     { "label": "Nuclear regulatory support", "href": "/nuclear-security/nuclear-regulatory-support/" }
   ],
   "faq": [
-    { "q": "How early should security be involved in an SMR program?", "a": "At conceptual design, before the reactor and site layout are fixed — the factory-build model makes late changes far more costly than in conventional construction." },
+    { "q": "How early should security be involved in an SMR program?", "a": "At conceptual design, before the reactor and site layout are fixed. The factory-build model makes late changes far more costly than in conventional construction." },
     { "q": "Does a smaller footprint mean a smaller security program?", "a": "Not automatically. Vital areas and standoff distances are more tightly packed, which can make the design problem harder to get right, not easier." },
     { "q": "How does multi-unit or co-located SMR deployment change the protective strategy?", "a": "It raises shared-versus-dedicated questions for protected areas and response complement, and requires target set analysis that accounts for interaction between units." }
   ],
   "ctaHeading": "Design the protective strategy alongside the reactor, not after it",
-  "imageCaption": "Photo — SMR module being lifted by crane at a factory fabrication yard, security fencing and a badge-controlled access point visible in the foreground"
+  "imageCaption": "Photo, SMR module being lifted by crane at a factory fabrication yard, security fencing and a badge-controlled access point visible in the foreground"
 }

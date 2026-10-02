@@ -6,12 +6,12 @@
   "title": "Access Control Assessment",
   "shortTitle": "Access Control Assessment",
   "metaDescription": "Evaluation of credentialing, access authorization, and access control programs, with explicit attention to insider-threat exposure.",
-  "eyebrow": "SECURITY SOLUTIONS — 10",
+  "eyebrow": "SECURITY SOLUTIONS – 10",
   "heroDek": "Access control rarely fails loudly. GSS assesses the technology and the procedures behind it against what actually happens on site, including the exposure created by the people the program is built to trust.",
   "contextHeading": "Access control fails quietly, long before an alarm ever sounds",
   "contextParagraphs": [
-    "An access control program is the combination of credentialing, authorization, badge or biometric technology, and escort and visitor procedure that governs who is allowed where. Most failures in these programs aren't technology failures — they're administrative drift: authorizations that outlive their justification, escort practice that has quietly become informal, exceptions that became the rule.",
-    "GSS assesses both the technology and the governing procedure, and checks each against observed practice on site rather than against the written policy alone. The evaluation is explicitly insider-threat aware: the population with trusted access is also the population best positioned to defeat the controls meant to check them, and an assessment that ignores that isn't measuring the actual risk.",
+    "An access control program is the combination of credentialing, authorization, badge or biometric technology, and escort and visitor procedure that governs who is allowed where. Most failures in these programs aren't technology failures. They're administrative drift, such as authorizations that outlive their justification, escort practice that has quietly become informal, and exceptions that became the rule.",
+    "GSS assesses both the technology and the governing procedure, and checks each against observed practice on site rather than against the written policy alone. The evaluation is explicitly insider-threat aware, because the population with trusted access is also the population best positioned to defeat the controls meant to check them, and an assessment that ignores that isn't measuring the actual risk.",
     "Findings translate into both technology recommendations and policy updates, coordinated with GSS's own policy development and program audit work rather than delivered as a standalone finding set."
   ],
   "methodology": [
@@ -45,9 +45,9 @@
   ],
   "faq": [
     { "q": "Does this assessment cover cyber access controls too?", "a": "The core assessment is physical access; where systems are digitally controlled, the work coordinates directly with cyber-physical and threat-hunting capability." },
-    { "q": "How do you find drift between written procedure and actual practice?", "a": "Direct observation, sampling, and interviews on site — a paper review alone rarely surfaces where practice has quietly diverged from policy." },
+    { "q": "How do you find drift between written procedure and actual practice?", "a": "Direct observation, sampling, and interviews on site. A paper review alone rarely surfaces where practice has quietly diverged from policy." },
     { "q": "What does \"insider-threat-aware\" mean here specifically?", "a": "The assessment evaluates whether trusted-access holders could themselves defeat the controls, not only whether the controls stop an outsider." }
   ],
   "ctaHeading": "Trust the badge only as far as the program behind it",
-  "imageCaption": "Technical photo — badge or credential reader and access-control panel being inspected at a facility entry point"
+  "imageCaption": "Technical photo, badge or credential reader and access-control panel being inspected at a facility entry point"
 }

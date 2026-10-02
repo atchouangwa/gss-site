@@ -6,13 +6,13 @@
   "title": "Threat Hunting & Incident Response",
   "shortTitle": "Threat Hunting & IR",
   "metaDescription": "Proactive threat hunting paired with incident response planning and execution for converged IT/OT environments in nuclear and critical infrastructure.",
-  "eyebrow": "CYBERSECURITY — 06",
-  "heroDek": "Waiting for an alert assumes the alert will fire. Threat hunting starts from the assumption that something is already present and unproven — and builds the response plan for when that's true.",
+  "eyebrow": "CYBERSECURITY – 06",
+  "heroDek": "Waiting for an alert assumes the alert will fire. Threat hunting starts from the assumption that something is already present and unproven, and builds the response plan for when that's true.",
   "contextHeading": "An IT incident response plan doesn't automatically work in an OT environment",
   "contextParagraphs": [
-    "Threat hunting starts from a different premise than monitoring does: rather than waiting for a tool to raise an alert, an analyst works a hypothesis about how an adversary could be present in the environment right now, undetected, and looks for the evidence that would confirm or rule it out. In a converged IT/OT environment, that hunt has to account for both sides — an indicator on the IT network and an anomaly in control-system behavior can be the same event seen from two different vantage points.",
-    "Incident response planning for these environments carries a constraint that a standard IT playbook doesn't: isolating or taking a system offline to contain an incident can itself have safety or operational consequences. A response plan that doesn't account for that isn't a plan operations can actually execute when it matters — it's a document that gets set aside in favor of improvisation.",
-    "GSS builds both capabilities together: hunting that treats IT and OT as one environment, and response plans built jointly with operations so that containment decisions are made with full knowledge of what's downstream of them, before an incident forces that decision under pressure."
+    "Threat hunting starts from a different premise than monitoring does. Rather than waiting for a tool to raise an alert, an analyst works a hypothesis about how an adversary could be present in the environment right now, undetected, and looks for the evidence that would confirm or rule it out. In a converged IT/OT environment, that hunt has to account for both sides. An indicator on the IT network and an anomaly in control-system behavior can be the same event seen from two different vantage points.",
+    "Incident response planning for these environments carries a constraint that a standard IT playbook doesn't. Isolating or taking a system offline to contain an incident can itself have safety or operational consequences. A response plan that doesn't account for that isn't a plan operations can actually execute when it matters. It's a document that gets set aside in favor of improvisation.",
+    "GSS builds both capabilities together, with hunting that treats IT and OT as one environment, and response plans built jointly with operations so that containment decisions are made with full knowledge of what's downstream of them, before an incident forces that decision under pressure."
   ],
   "methodology": [
     { "label": "Environment Baselining", "body": "Normal IT and OT behavior characterized so deviation is identifiable." },
@@ -44,7 +44,7 @@
   ],
   "faq": [
     { "q": "How is threat hunting different from what our monitoring tools already do?", "a": "Monitoring tools alert on known patterns. Hunting looks for compromise that wouldn't trigger an alert, working from a hypothesis rather than a signature." },
-    { "q": "Who decides whether to take an OT system offline during an incident?", "a": "That decision, and the threshold for it, is defined in the response plan itself and made jointly with operations — not improvised during the event." },
+    { "q": "Who decides whether to take an OT system offline during an incident?", "a": "That decision, and the threshold for it, is defined in the response plan itself and made jointly with operations, not improvised during the event." },
     { "q": "Do tabletop exercises involve operations staff, or just security?", "a": "Both. A plan that only security has practiced isn't one operations can execute when a containment decision has physical consequences." }
   ],
   "ctaHeading": "Assume presence, not absence, and build the response plan accordingly",

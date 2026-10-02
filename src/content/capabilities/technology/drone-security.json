@@ -6,13 +6,13 @@
   "title": "Drone Detection & Countermeasures",
   "shortTitle": "Drone Detection & Countermeasures",
   "metaDescription": "Threat assessment, airspace control, detection, and countermeasures for unmanned aircraft, on an escalation framework that stays inside FAA limits.",
-  "eyebrow": "TECHNOLOGY SOLUTIONS — 04",
-  "heroDek": "A drone over a protected area is a threat vector without an established doctrine at most sites. GSS builds the program — detection, decision logic, and response — inside the airspace you're actually allowed to control.",
+  "eyebrow": "TECHNOLOGY SOLUTIONS – 04",
+  "heroDek": "Unauthorized drone activity over a protected area presents a security threat that many sites are not prepared to address. GSS develops the detection, decision-making, and response program around what the organization can legally and operationally do.",
   "contextHeading": "Detecting a drone and being allowed to do something about it are different problems",
   "contextParagraphs": [
-    "Small unmanned aircraft create a threat vector that most physical protection programs weren't originally designed around: low, slow, hard to distinguish from routine air traffic on a single sensor, and legally constrained in ways a ground-based intrusion is not. A site can have every conventional protective measure in order and still have no defined answer for what an operator is supposed to do when a drone appears over the fence line.",
-    "GSS builds counter-UAS programs from threat assessment forward, not from a hardware catalog backward. That starts with what airspace the site can lawfully assert control over, what a realistic drone-borne threat actually looks like for that site, and only then which detection and tracking technology — radar, RF sensing, geo-fencing, or a combination — closes the gap between first detection and a decision an operator can act on.",
-    "The countermeasure and escalation framework is built to stay inside FAA and applicable regulatory limits at every step, which is as much of the program as the detection hardware itself: a capability the operator can't lawfully use when it matters isn't a capability."
+    "Small unmanned aircraft create a threat vector that most physical protection programs weren't originally designed around. Drones are low, slow, hard to distinguish from routine air traffic on a single sensor, and legally constrained in ways a ground-based intrusion is not. A site can have every conventional protective measure in order and still have no defined answer for what an operator is supposed to do when a drone appears over the fence line.",
+    "GSS builds counter-UAS programs from threat assessment forward, not from a hardware catalog backward. That starts with what airspace the site can lawfully assert control over, what a realistic drone-borne threat actually looks like for that site, and only then which detection and tracking technology (radar, RF sensing, geo-fencing, or a combination) closes the gap between first detection and a decision an operator can act on.",
+    "The countermeasure and escalation framework is built to stay inside FAA and applicable regulatory limits at every step, which is as much of the program as the detection hardware itself. A capability the operator can't lawfully use when it matters isn't a capability."
   ],
   "methodology": [
     { "label": "Threat Assessment", "body": "Realistic drone-borne threat scenarios defined for the specific site and airspace." },
@@ -44,10 +44,10 @@
     { "label": "Force-on-force readiness", "href": "/security-solutions/force-on-force-readiness/" }
   ],
   "faq": [
-    { "q": "Can our security force legally take action against a drone?", "a": "It depends on jurisdiction and the specific countermeasure. That's the first question the program answers, before any detection technology is selected — the escalation framework is built only around options that are actually lawful for the site." },
-    { "q": "How is a drone distinguished from routine air traffic?", "a": "Detection is layered — radar, RF sensing, and geo-fencing are combined rather than relied on individually, which is what allows the system to separate a genuine track from routine or non-threat activity." },
-    { "q": "Does this integrate with our existing security operations center?", "a": "Yes — detection and tracking data is designed to feed the same operating picture as ground-based monitoring and alarm systems, rather than standing alone as a separate console." }
+    { "q": "Can our security force legally take action against a drone?", "a": "It depends on jurisdiction and the specific countermeasure. That's the first question the program answers, before any detection technology is selected. The escalation framework is built only around options that are actually lawful for the site." },
+    { "q": "How is a drone distinguished from routine air traffic?", "a": "Detection is layered. Radar, RF sensing, and geo-fencing are combined rather than relied on individually, which is what allows the system to separate a genuine track from routine or non-threat activity." },
+    { "q": "Does this integrate with our existing security operations center?", "a": "Yes. Detection and tracking data is designed to feed the same operating picture as ground-based monitoring and alarm systems, rather than standing alone as a separate console." }
   ],
   "ctaHeading": "Build the counter-UAS doctrine before you need it in real time",
-  "imageCaption": "Technical photo — RF detection array and operator display tracking an airborne contact, daylight, security operations context"
+  "imageCaption": "Technical photo, RF detection array and operator display tracking an airborne contact, daylight, security operations context"
 }

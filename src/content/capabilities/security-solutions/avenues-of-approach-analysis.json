@@ -5,19 +5,19 @@
   "order": 2,
   "title": "Avenues of Approach Analysis",
   "shortTitle": "Avenues of Approach",
-  "metaDescription": "Identifying and hardening the routes an adversary could use to reach controlled or vital areas — standoff, terrain, and access read as an adversary reads them.",
-  "eyebrow": "SECURITY SOLUTIONS — 02",
+  "metaDescription": "Identifying and hardening the routes an adversary could use to reach controlled or vital areas, with standoff, terrain, and access read as an adversary reads them.",
+  "eyebrow": "SECURITY SOLUTIONS – 02",
   "heroDek": "A site's own map of itself is rarely the map an adversary is using. GSS analyzes approach routes, standoff, and terrain the way an intruder would read them, then closes what that reading exposes.",
   "contextHeading": "An adversary reads terrain differently than a site does",
   "contextParagraphs": [
-    "An avenue of approach is any route — vehicle, foot, waterborne, or air — that could realistically carry an adversary toward a controlled or vital area. Some are obvious from a site plan. Others only become apparent when the terrain, concealment, and existing access points are read from the outside looking in, which is exactly how they will be used.",
+    "An avenue of approach is any route (vehicle, foot, waterborne, or air) that could realistically carry an adversary toward a controlled or vital area. Some are obvious from a site plan. Others only become apparent when the terrain, concealment, and existing access points are read from the outside looking in, which is exactly how they will be used.",
     "GSS maps every viable avenue against standoff distance, natural and manmade obstacles, and observation exposure, then correlates each one against what the site can currently detect and delay along it. The routes that score well for an adversary and poorly for the site are where the analysis concentrates.",
-    "The output feeds directly into pathway and timeline analysis and into vital area scoping — an avenue that hasn't been identified can't be accounted for in either."
+    "The output feeds directly into pathway and timeline analysis and into vital area scoping. An avenue that hasn't been identified can't be accounted for in either."
   ],
   "methodology": [
     { "label": "Terrain & Access Mapping", "body": "Roads, waterways, natural cover, and existing access points catalogued across and beyond the site boundary." },
     { "label": "Standoff Evaluation", "body": "Distance from each approach route to controlled and vital areas measured against blast, weapons, and observation considerations." },
-    { "label": "Route Viability Assessment", "body": "Each avenue scored for adversary usability: concealment, speed, obstacles, and detection exposure." },
+    { "label": "Route Viability Assessment", "body": "Each avenue scored for adversary usability, including concealment, speed, obstacles, and detection exposure." },
     { "label": "Detection & Delay Correlation", "body": "Existing sensors and barriers mapped against each viable avenue to identify coverage gaps." },
     { "label": "Mitigation Recommendations", "body": "Physical, procedural, or technology measures prioritized to close or channel the avenues that matter most." }
   ],
@@ -43,10 +43,10 @@
     { "label": "Drone security", "href": "/technology/drone-security/" }
   ],
   "faq": [
-    { "q": "Does this only cover vehicle approaches?", "a": "No — foot, waterborne, and air avenues are assessed wherever the site's geography makes them viable, not only the road network." },
+    { "q": "Does this only cover vehicle approaches?", "a": "No. Foot, waterborne, and air avenues are assessed wherever the site's geography makes them viable, not only the road network." },
     { "q": "Does this require site access, or can it be done remotely?", "a": "It is strongest combining terrain and imagery analysis with an on-site walk; remote analysis alone misses concealment and access details a walk reveals." },
     { "q": "How is this different from a perimeter security assessment?", "a": "Avenues of approach extend beyond the perimeter to the routes leading to it; perimeter security addresses the boundary itself once an avenue arrives there." }
   ],
   "ctaHeading": "Know the routes before an adversary does",
-  "imageCaption": "Technical photo — aerial or satellite site map annotated with approach-route overlays on a planning table, analytical rather than tactical framing"
+  "imageCaption": "Technical photo, aerial or satellite site map annotated with approach-route overlays on a planning table, analytical rather than tactical framing"
 }

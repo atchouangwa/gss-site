@@ -6,7 +6,7 @@ interface Props {
   highlightIds?: string[];
   label?: string;
 }
-const { highlightIds = ['840', '124', '703', '784'], label = 'EXPERIENCE — NORTH AMERICA · EUROPE · MIDDLE EAST' } = Astro.props;
+const { highlightIds = ['840', '124', '703', '784'], label = 'EXPERIENCE · NORTH AMERICA · EUROPE · MIDDLE EAST' } = Astro.props;
 ---
 <div class="gss-globe" data-highlight={highlightIds.join(',')} data-label={label}>
   <canvas></canvas>

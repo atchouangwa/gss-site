@@ -5,14 +5,14 @@
   "order": 3,
   "title": "New Nuclear Build Security",
   "shortTitle": "New Build Security",
-  "metaDescription": "Security architecture designed into large new nuclear build programs from concept through construction — barriers, detection, and regulatory basis built in.",
-  "eyebrow": "NUCLEAR & SMR — 03",
+  "metaDescription": "Security architecture designed into large new nuclear build programs from concept through construction, with barriers, detection, and regulatory basis built in.",
+  "eyebrow": "NUCLEAR & SMR – 03",
   "heroDek": "Large new-build nuclear projects run for years before fuel load, and for most of that time the site is a construction zone, not yet a protected area. GSS designs security architecture into the program from the start and carries it through construction.",
   "contextHeading": "The construction phase is a threat environment of its own",
   "contextParagraphs": [
-    "A gigawatt-class new-build program is a different problem from an SMR program, not a bigger version of the same one. The unit count is often larger, the construction timeline runs years rather than months, and the workforce on site during that window can run into the thousands — most of it transient, contracted, and turning over continuously. Security architecture has to be designed at the same table as the rest of the engineering: barriers, detection, communications, cybersecurity, and the regulatory requirements each of those has to satisfy, specified into the program alongside civil, mechanical, and electrical design rather than layered on after the fact.",
-    "Construction-phase security is a distinct discipline from the operational security the site will eventually run. Vital areas exist in partially built form before they exist in final form. The protected area boundary itself can shift as construction milestones are reached. Badge population, access control, and material control all have to function under conditions no permanent system was designed for, because the permanent systems have not been commissioned yet — and won't be until well into the build.",
-    "GSS works this problem from both ends: security architecture integrated into the design package that EPC contractors build to, and a construction-phase protective strategy that covers the site for every year between groundbreaking and the point where permanent physical security systems take over. The handoff between the two is planned from the start, not improvised near the end."
+    "A gigawatt-class new-build program is a different problem from an SMR program, not a bigger version of the same one. The unit count is often larger, the construction timeline runs years rather than months, and the workforce on site during that window can run into the thousands, most of it transient, contracted, and turning over continuously. Security architecture has to be designed at the same table as the rest of the engineering. Barriers, detection, communications, cybersecurity, and the regulatory requirements each of those has to satisfy should be specified into the program alongside civil, mechanical, and electrical design rather than layered on after the fact.",
+    "Construction-phase security is a distinct discipline from the operational security the site will eventually run. Vital areas exist in partially built form before they exist in final form. The protected area boundary itself can shift as construction milestones are reached. Badge population, access control, and material control all have to function under conditions no permanent system was designed for, because the permanent systems have not been commissioned yet, and won't be until well into the build.",
+    "GSS works this problem from both ends, with security architecture integrated into the design package that EPC contractors build to, and a construction-phase protective strategy that covers the site for every year between groundbreaking and the point where permanent physical security systems take over. The handoff between the two is planned from the start, not improvised near the end."
   ],
   "methodology": [
     { "label": "Design-Phase Integration", "body": "Security architecture specified alongside civil, mechanical, and electrical design packages." },
@@ -45,9 +45,9 @@
   ],
   "faq": [
     { "q": "How is this different from securing an SMR build?", "a": "Scale and duration. Large new-build programs typically involve a bigger construction workforce over a multi-year timeline, which makes construction-phase security its own extended discipline rather than a short interim period." },
-    { "q": "Who is responsible for security while the site is still under construction?", "a": "That has to be defined explicitly in the program plan — GSS helps establish and run the construction-phase protective strategy so it isn't left ambiguous between the owner and the EPC contractor." },
+    { "q": "Who is responsible for security while the site is still under construction?", "a": "That has to be defined explicitly in the program plan. GSS helps establish and run the construction-phase protective strategy so it isn't left ambiguous between the owner and the EPC contractor." },
     { "q": "When should GSS be engaged on a new-build program?", "a": "At the design phase, so security requirements shape the engineering package instead of being reconciled against it after design is complete." }
   ],
   "ctaHeading": "Build the protective strategy into the program before ground is broken",
-  "imageCaption": "Photo — active reactor containment construction site with tower cranes and rebar cages, temporary perimeter fencing and a badge-controlled gate in the foreground"
+  "imageCaption": "Photo, active reactor containment construction site with tower cranes and rebar cages, temporary perimeter fencing and a badge-controlled gate in the foreground"
 }

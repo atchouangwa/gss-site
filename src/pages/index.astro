@@ -1,38 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import ImagePlaceholder from '@/components/ImagePlaceholder.astro';
-import { SITE_PHOTOS, PEOPLE_PHOTOS } from '@/lib/images';
+import { SITE_PHOTOS } from '@/lib/images';
 import Globe from '@/components/Globe.astro';
 import CTASection from '@/components/CTASection.astro';
-import { SITE, FOUNDER, LEADERSHIP } from '@/lib/site';
-
-const allInsights = (await getCollection('insights')).sort(
-  (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
-);
-const [leadInsight, ...restInsights] = allInsights;
+import { SITE } from '@/lib/site';
 
 const architectureLayers = [
-  { n: 'L1', label: 'Physical', items: ['Barrier systems', 'Access control', 'Intrusion detection', 'Surveillance', 'Hardening'] },
+  { n: 'L1', label: 'Physical', items: ['Barrier systems', 'Access control', 'Intrusion detection', 'Surveillance', 'Target hardening'] },
   { n: 'L2', label: 'Procedural', items: ['Protective strategy', 'Response planning', 'Training', 'Force-on-force', 'Policy & basis documentation'] },
-  { n: 'L3', label: 'Technology', items: ['Secure wireless comms', 'Rapidly deployable IDS', 'Monitoring & alarms', 'Drone programs', 'Systems integration'] },
-  { n: 'L4', label: 'Cyber', items: ['Risk-based controls', 'Penetration testing', 'Governance', 'Threat hunting', 'Incident response'] },
+  { n: 'L3', label: 'Technology', items: ['Establish comms network', 'Rapidly deployable IDS', 'Monitoring & alarms', 'Drone programs', 'Systems integration'] },
+  { n: 'L4', label: 'Cybersecurity', items: ['Risk-based controls', 'Penetration testing', 'Governance', 'Threat hunting', 'Vulnerability exposure', 'Incident response'] },
   { n: 'L5', label: 'Performance', items: ['KPI development', 'Optimization', 'Leadership', 'Culture', 'Continuous improvement'] },
-];
-
-const outsideIn = [
-  { step: '01', label: 'Controlled Area', body: 'Approach routes, standoff, and the outer boundary read the way an adversary reads them.' },
-  { step: '02', label: 'Physical Security', body: 'Barriers, delay, hardening, and detection measured against DBT capability.' },
-  { step: '03', label: 'Electronic Security', body: 'Sensors, assessment, communications, and integration under real conditions.' },
-  { step: '04', label: 'Procedural Security', body: 'Protective strategy, response, complement, and the procedures that execute them.' },
-  { step: '05', label: 'Vital Areas', body: 'Sabotage and area logic models resolved into candidate vital areas and target sets.' },
-];
-const insideOut = [
-  { step: '01', label: 'Critical Assets', body: 'What must not be reached, and what its loss would actually mean.' },
-  { step: '02', label: 'Vital Area Requirements', body: 'Target sets and area logic established before the layout is fixed.' },
-  { step: '03', label: 'Protective Strategy', body: 'Response concept and minimum complement designed into the operating model.' },
-  { step: '04', label: 'Detection & Delay', body: 'Sensor and barrier selection validated against explosive and tool capability.' },
-  { step: '05', label: 'Perimeter Architecture', body: 'The outer boundary designed last, sized by everything inside it.' },
 ];
 
 const techItems = [
@@ -52,8 +31,8 @@ const jsonLd = [
 ];
 ---
 <Layout
-  title="Nuclear Security Consulting, Physical Protection & Compliance | Global Security Solutions"
-  description="GSS provides integrated nuclear security consulting, physical protection, technology, cybersecurity, and regulatory solutions for high-value, high-risk critical infrastructure."
+  title="Global Security Solutions | Security Engineering & Critical Infrastructure"
+  description="Global Security Solutions, LLC helps organizations assess, design, and strengthen security programs for critical infrastructure and other high-consequence environments. Our work spans physical protection, technology, cybersecurity, regulatory support, and operational performance, with an integrated approach to how security systems perform in practice."
   path="/"
   jsonLd={jsonLd}
 >
@@ -61,12 +40,12 @@ const jsonLd = [
     <div class="hero-grid">
       <div class="hero-copy">
         <div class="hero-eyebrow">
-          <span class="mono">01 — NUCLEAR &amp; CRITICAL INFRASTRUCTURE</span>
+          <span class="mono">01 – SECURITY ENGINEERING &amp; CRITICAL INFRASTRUCTURE</span>
           <span class="scan-rule"><span></span></span>
         </div>
-        <h1 class="gss-rise">Nuclear security consulting<span class="dim">,</span> physical protection <span class="dim">&amp;</span> critical infrastructure solutions</h1>
+        <h1 class="gss-rise">Security engineering<span class="dim">,</span> physical protection <span class="dim">&amp;</span> critical infrastructure solutions</h1>
         <div class="hero-sub">
-          <p>Integrated security, technology, cybersecurity, regulatory, and operational-performance solutions for high-value, high-risk infrastructure.</p>
+          <p>GSS helps critical infrastructure organizations worldwide assess and strengthen their security programs. We evaluate how people, procedures, technology, and response work together as an integrated system under realistic conditions. This approach reveals gaps that separate reviews can miss and helps leadership understand how effectively their facilities are protected.</p>
           <div class="hero-ctas">
             <a class="btn btn-accent" href="/contact/">Request a Consultation</a>
             <a class="btn btn-outline-on-ink" href="/security-solutions/">Explore Capabilities</a>
@@ -78,7 +57,7 @@ const jsonLd = [
         </div>
       </div>
       <div class="hero-image">
-        <ImagePlaceholder caption="Hero photo — containment structure or lit perimeter at dusk, tall crop" dark src={SITE_PHOTOS.nuclearDusk.src} alt={SITE_PHOTOS.nuclearDusk.alt} objectPosition="center 30%" />
+        <ImagePlaceholder caption="Hero photo, containment structure or lit perimeter at dusk, tall crop" dark src={SITE_PHOTOS.nuclearDusk.src} alt={SITE_PHOTOS.nuclearDusk.alt} objectPosition="center 30%" />
       </div>
     </div>
   </section>
@@ -91,10 +70,10 @@ const jsonLd = [
 
   <section class="architecture">
     <div class="section-head">
-      <div class="section-idx mono">02<br />INTEGRATED<br />ARCHITECTURE</div>
+      <div class="section-idx mono">02<br />INTEGRATED<br />SECURITY</div>
       <div>
-        <h2>Security is not a product. It is an architecture.</h2>
-        <p>GSS analyzes physical, procedural, and electronic security as one interdependent system, then stays through implementation. Five layers, assessed together, in the order an adversary actually meets them.</p>
+        <h2>Security must work as a system.</h2>
+        <p>GSS evaluates how personnel, procedures, technology, and response work together, not how each component performs on its own. We identify gaps between those elements and help strengthen the overall security program from assessment through implementation.</p>
       </div>
     </div>
     <div class="layers">
@@ -107,103 +86,11 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="method">
-    <div class="section-head">
-      <div class="section-idx mono">03<br />METHOD</div>
-      <div class="head-row">
-        <h2>Two directions of travel</h2>
-        <div class="tabs" role="tablist">
-          <button class="tab" data-dir="out" role="tab" aria-selected="true">Existing facility · outside → in</button>
-          <button class="tab" data-dir="in" role="tab" aria-selected="false">New build · inside → out</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="method-panel" data-panel="out">
-      <div class="dots" aria-hidden="true">
-        <span class="dot active"></span><span class="line"></span>
-        <span class="dot"></span><span class="line"></span>
-        <span class="dot"></span><span class="line"></span>
-        <span class="dot"></span><span class="line"></span>
-        <span class="dot"></span>
-      </div>
-      <div class="steps">
-        {outsideIn.map((s, i) => (
-          <div class="step"><span class:list={['mono', i === 0 ? 'accent' : 'dim']}>STEP {s.step}</span><span class="step-label">{s.label}</span><span class="step-body">{s.body}</span></div>
-        ))}
-      </div>
-    </div>
-    <div class="method-panel" data-panel="in" hidden>
-      <div class="dots" aria-hidden="true">
-        <span class="dot"></span><span class="line"></span>
-        <span class="dot"></span><span class="line"></span>
-        <span class="dot"></span><span class="line"></span>
-        <span class="dot"></span><span class="line"></span>
-        <span class="dot active"></span>
-      </div>
-      <div class="steps">
-        {insideOut.map((s, i) => (
-          <div class="step"><span class:list={['mono', i === 4 ? 'accent' : 'dim']}>STEP {s.step}</span><span class="step-label">{s.label}</span><span class="step-body">{s.body}</span></div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="founder">
-    <div class="founder-photo">
-      <ImagePlaceholder caption="Eric F. Wilson — professional portrait" src={PEOPLE_PHOTOS.eric.src} alt={PEOPLE_PHOTOS.eric.alt} grayscale zoom={1.3} />
-    </div>
-    <div class="founder-copy">
-      <div class="eyebrow-row"><span class="mono dim">04 — FOUNDER &amp; LEGACY</span><span class="rule"></span></div>
-      <h2>{FOUNDER.name}</h2>
-      <div class="mono founder-title">{FOUNDER.title.toUpperCase()}</div>
-      <p>GSS was founded on thirty years of work that ran from special operations to the C-suite. The integrated approach the company practices today — physical, procedural, and electronic security analyzed as one system — came directly out of that career.</p>
-      <p>Wade Wilson leads GSS today as President. The standard the company was built on has not moved.</p>
-      <div class="timeline">
-        {FOUNDER.timeline.map((t) => (
-          <div data-reveal class="timeline-row">
-            <span class="mono dim">{t.n}</span>
-            <span class="timeline-label">{t.label}</span>
-            <span class="timeline-body">{t.body}</span>
-          </div>
-        ))}
-      </div>
-      <a class="founder-link" href="/founder/">Read the founder story</a>
-    </div>
-  </section>
-
-  <section class="leadership">
-    <div class="eyebrow-row"><span class="mono dim">05 — LEADERSHIP TODAY</span><span class="rule"></span></div>
-    <div class="leadership-grid">
-      <div class="lead-card">
-        <div class="lead-photo"><ImagePlaceholder caption="Wade Wilson — professional portrait" src={PEOPLE_PHOTOS.wade.src} alt={PEOPLE_PHOTOS.wade.alt} grayscale zoom={1.3} /></div>
-        <div class="lead-copy">
-          <div class="lead-name">{LEADERSHIP.name}</div>
-          <div class="mono lead-title">{LEADERSHIP.eyebrow}</div>
-          {LEADERSHIP.bio.map((p) => <p>{p}</p>)}
-        </div>
-      </div>
-      <div class="who-does-work">
-        <div class="who-title">Who does the work</div>
-        <p class="who-intro">{LEADERSHIP.teamIntro}</p>
-        <div class="who-roster">
-          {LEADERSHIP.teamRoster.map((r, i) => (
-            <div class="who-row">
-              <span class="mono who-n">{String(i + 1).padStart(2, '0')}</span>
-              <span class="who-label">{r.label}</span>
-              <span class="who-detail">{r.detail}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="global">
     <div class="global-copy">
-      <div class="eyebrow-row"><span class="mono dim">06 — GLOBAL EXPERIENCE</span><span class="rule"></span></div>
-      <h2>Regions, not clients</h2>
-      <p>Nuclear facilities and critical infrastructure across three regions. Client organizations, sites, and programs are covered by non-disclosure and are never named or implied anywhere on this site.</p>
+      <div class="eyebrow-row"><span class="mono dim">03 – GLOBAL EXPERIENCE</span><span class="rule"></span></div>
+      <h2>Regions Serviced</h2>
+      <p>GSS has supported major critical infrastructure facilities. Client organizations, sites, and programs are covered by non-disclosure and are never named or implied anywhere on this site.</p>
       <div class="regions">
         {SITE.regions.map((r) => (
           <div class="region-row"><span class="region-name">{r}</span><span class="mono accent">ACTIVE</span></div>
@@ -214,10 +101,10 @@ const jsonLd = [
   </section>
 
   <section class="technology">
-    <div class="tech-band"><ImagePlaceholder caption="Full-bleed band — deployed sensor mast or secure radio in the field" src={SITE_PHOTOS.commsMast.src} alt={SITE_PHOTOS.commsMast.alt} objectPosition="center 65%" /></div>
+    <div class="tech-band"><ImagePlaceholder caption="Full-bleed band, deployed sensor mast or secure radio in the field" src={SITE_PHOTOS.commsMast.src} alt={SITE_PHOTOS.commsMast.alt} objectPosition="center 65%" /></div>
     <div class="tech-inner">
-      <div class="eyebrow-row"><span class="mono dim">07 — TECHNOLOGY</span><span class="rule"></span></div>
-      <h2>Technology chosen to remove recurring cost, not add it</h2>
+      <div class="eyebrow-row"><span class="mono dim">04 – TECHNOLOGY</span><span class="rule"></span></div>
+      <h2>Streamlining Technologies</h2>
       <div class="tech-grid">
         {techItems.map((t) => (
           <div data-reveal class="tech-item">
@@ -231,43 +118,11 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="hpo">
-    <div class="section-head">
-      <div class="section-idx mono dim">08<br />HIGH<br />PERFORMANCE</div>
-      <div class="head-row">
-        <h2>From compliance to best-in-class</h2>
-        <p>Automated indicators that show a negative trend before it becomes an event, aligned to INPO, WANO, and IAEA principles.</p>
-      </div>
-    </div>
-    <div class="hpo-body">
-      <div class="hpo-steps">
-        {[
-          ['01', 'Track', 'Automated KPI capture built from benchmarking and subject matter expertise.'],
-          ['02', 'Trend', 'Leading and lagging indicators separated so decline is visible early.'],
-          ['03', 'Measure', 'Performance measured against defined Best-in-Class criteria.'],
-          ['04', 'Improve', 'Roadmap, milestones, and phased implementation toward the target state.'],
-        ].map(([n, label, body]) => (
-          <div data-reveal class="hpo-row"><span class="mono accent">{n}</span><span class="hpo-label">{label}</span><span class="hpo-body">{body}</span></div>
-        ))}
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-head"><span class="mono">KPI DASHBOARD</span></div>
-        <div class="kpi-bars">
-          {[34, 48, 42, 61, 55, 72, 80, 92].map((h, i) => (
-            <div class="bar" style={`height:${h}%`} data-hi={i >= 6 ? 'true' : 'false'}></div>
-          ))}
-        </div>
-        <div class="kpi-rule"></div>
-        <div class="kpi-labels mono"><span>BASELINE</span><span>ROADMAP</span><span>BEST-IN-CLASS</span></div>
-      </div>
-    </div>
-  </section>
-
   <section class="cyber">
     <div class="cyber-left">
-      <div class="eyebrow-row"><span class="mono dim">09 — CYBERSECURITY</span><span class="rule"></span></div>
-      <h2>Cyber-physical security for nuclear infrastructure</h2>
-      <p>A lifecycle offering spanning design, implementation, authority to operate, and maintenance — led by former U.S. NRC inspectors who authored the regulations now governing U.S. plants.</p>
+      <div class="eyebrow-row"><span class="mono dim">05 – CYBERSECURITY</span><span class="rule"></span></div>
+      <h2>Cyber-physical security</h2>
+      <p>GSS supports the design, implementation, assessment, and long-term performance of cybersecurity programs in regulated and high-consequence environments. Our team is led by former U.S. NRC inspectors with direct experience developing federal cybersecurity requirements.</p>
       <div class="cyber-micro">
         <div><div class="micro-title">Governance</div><div class="micro-body">Define needs, personalize controls</div></div>
         <div><div class="micro-title">Compliance</div><div class="micro-body">Risk-based programs, demonstrated to regulators</div></div>
@@ -281,41 +136,8 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="insights">
-    <div class="eyebrow-row"><span class="mono dim">10 — INSIGHTS</span><span class="rule"></span><a class="mono all-insights" href="/insights/">All insights</a></div>
-    <div class="insights-grid">
-      {leadInsight && (
-        <a data-reveal class="lead-article" href={`/insights/${leadInsight.id}/`}>
-          <span class="mono accent-ink">{leadInsight.data.category.toUpperCase()} · {leadInsight.data.readMinutes} MIN</span>
-          <h3>{leadInsight.data.title}</h3>
-          <p>{leadInsight.data.dek}</p>
-        </a>
-      )}
-      <div class="teaser-list">
-        {restInsights.slice(0, 4).map((a) => (
-          <a class="teaser" href={`/insights/${a.id}/`}>
-            <span class="mono dim">{a.data.category.toUpperCase()} · {a.data.readMinutes} MIN</span>
-            <span class="teaser-title">{a.data.title}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <CTASection heading="Bring us in early. Or bring us in now." body="Assessment, design, technology, training, or performance. Tell us the environment and we will tell you where to start." />
+  <CTASection heading="Best-in-Class Solutions" body="Assessment, design, technology, training, or performance. Tell us the environment and we will tell you where to start." />
 </Layout>
-
-<script>
-  const tabs = document.querySelectorAll<HTMLButtonElement>('.method .tab');
-  const panels = document.querySelectorAll<HTMLElement>('.method-panel');
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const dir = tab.dataset.dir;
-      tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
-      panels.forEach((p) => { p.hidden = p.dataset.panel !== dir; });
-    });
-  });
-</script>
 
 <style>
   .dim { color: var(--text-on-paper-quiet); }
@@ -328,7 +150,7 @@ const jsonLd = [
   .head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
   .eyebrow-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; }
   .rule { flex: 1; height: 1px; background: var(--paper-border-soft); }
-  .founder-copy .rule, .leadership .rule, .global-copy .rule, .tech-inner .rule, .cyber-left .rule { background: var(--paper-border-soft); }
+  .global-copy .rule, .tech-inner .rule, .cyber-left .rule { background: var(--paper-border-soft); }
   .global .rule, .tech-inner .rule { background: var(--ink-border); }
 
   h2 { margin: 0; font: 700 clamp(30px, 4.2vw, 56px)/.98 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--text-on-paper-primary); }
@@ -359,7 +181,7 @@ const jsonLd = [
   .architecture { background: var(--paper); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); }
   .architecture .section-head p { margin: 0; max-width: 62ch; font: 400 15.5px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
   .layers { display: flex; flex-direction: column; }
-  .layer { display: grid; grid-template-columns: 180px 1fr; gap: 40px; padding: 22px 0; border-top: 1px solid var(--paper-border-soft); transition: background 200ms var(--ease-out-strong); }
+  .layer { display: grid; grid-template-columns: 260px 1fr; gap: 40px; padding: 22px 0; border-top: 1px solid var(--paper-border-soft); transition: background 200ms var(--ease-out-strong); }
   .layer:first-child { border-top-color: var(--ink); }
   .layer:last-child { border-bottom: 1px solid var(--ink); }
   .layer:hover { background: var(--paper-hover); }
@@ -367,57 +189,6 @@ const jsonLd = [
   .layer-name { font: 700 26px/1 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
   .layer-items { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 400 14px/1.4 var(--font-body); color: var(--text-on-paper-tertiary); }
 
-
-  /* METHOD */
-  .method { background: var(--paper); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); }
-  .method .head-row p { display: none; }
-  .tabs { display: flex; border: 1px solid var(--ink); }
-  .tab { font: 600 11.5px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; padding: 14px 18px; cursor: pointer; border: none; background: transparent; color: var(--text-on-paper-tertiary); transition: background 160ms var(--ease-out-strong), color 160ms ease; }
-  .tab[aria-selected="true"] { background: var(--ink); color: var(--text-on-ink-primary); }
-  .dots { display: flex; align-items: center; margin: 0 0 26px; }
-  .dot { width: 7px; height: 7px; background: var(--ink); }
-  .dot.active { width: 11px; height: 11px; background: var(--accent); }
-  .line { flex: 1; height: 1px; background: var(--ink); }
-  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; }
-  .step { display: flex; flex-direction: column; gap: 10px; }
-  .step .mono { font-size: 10px; letter-spacing: .14em; }
-  .step-label { font: 700 22px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
-  .step-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
-
-  /* FOUNDER */
-  .founder { background: var(--paper); border-bottom: 1px solid var(--paper-border); display: grid; grid-template-columns: 300px 1fr; }
-  .founder-photo { border-right: 1px solid var(--paper-border); min-height: 520px; }
-  .founder-copy { padding: 78px var(--page-pad) 84px; }
-  .founder-copy h2 { margin: 0 0 10px; font-size: clamp(32px, 5vw, 68px); line-height: .94; letter-spacing: -.04em; }
-  .founder-title { font-size: 11px; letter-spacing: .16em; color: var(--accent-ink); margin-bottom: 26px; }
-  .founder-copy p { margin: 0 0 20px; max-width: 66ch; font: 400 16px/1.7 var(--font-body); color: var(--text-on-paper-secondary); }
-  .timeline { display: flex; flex-direction: column; margin-top: 14px; }
-  .timeline-row { display: grid; grid-template-columns: 90px 200px 1fr; gap: 24px; padding: 18px 0; border-top: 1px solid var(--paper-border-soft); }
-  .timeline-row:first-child { border-top-color: var(--ink); }
-  .timeline-row:last-child { border-bottom: 1px solid var(--ink); }
-  .timeline-label { font: 700 19px/1.1 var(--font-display); letter-spacing: -.015em; text-transform: uppercase; color: var(--ink); }
-  .timeline-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
-  .founder-link { display: inline-block; margin-top: 26px; font: 600 12px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); border-bottom: 1px solid var(--accent-ink); padding-bottom: 4px; }
-
-  /* LEADERSHIP */
-  .leadership { background: var(--paper); padding: 0 var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); }
-  .leadership-grid { display: grid; grid-template-columns: 1.35fr 1fr; border-top: 1px solid var(--ink); }
-  .lead-card { padding: 30px 40px 34px 0; border-right: 1px solid var(--paper-border-soft); display: flex; gap: 28px; }
-  .lead-photo { width: 190px; height: 238px; flex: none; }
-  .lead-copy { display: flex; flex-direction: column; gap: 11px; }
-  .lead-name { font: 700 40px/1 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); }
-  .lead-title { font-size: 10px; letter-spacing: .16em; color: var(--accent-ink); }
-  .lead-copy p { margin: 0; max-width: 52ch; font: 400 14px/1.7 var(--font-body); color: var(--text-on-paper-secondary); }
-  .who-does-work { padding: 30px 0 34px 36px; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
-  .who-title { font: 700 24px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
-  .who-intro { margin: 0; font: 400 14.5px/1.6 var(--font-body); color: var(--text-on-paper-secondary); }
-  .who-roster { display: flex; flex-direction: column; }
-  .who-row { display: grid; grid-template-columns: 24px 1fr; gap: 4px 12px; padding: 14px 0; border-top: 1px solid var(--paper-border-soft); }
-  .who-row:first-child { border-top-color: var(--ink); }
-  .who-row:last-child { border-bottom: 1px solid var(--paper-border-soft); }
-  .who-n { font-size: 10px; color: var(--accent-ink); padding-top: 2px; }
-  .who-label { grid-column: 2; font: 700 14.5px/1.3 var(--font-body); color: var(--ink); }
-  .who-detail { grid-column: 2; font: 400 13px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
 
   /* GLOBAL */
   .global { background: var(--ink); display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--ink-border); }
@@ -444,27 +215,6 @@ const jsonLd = [
   .tech-item p { margin: 0; font: 400 13.5px/1.65 var(--font-body); color: var(--text-on-paper-tertiary); }
   .tech-tags { margin-top: 6px; font-size: 11px; line-height: 1.9; color: var(--text-on-paper-quiet); }
 
-  /* HPO */
-  .hpo { background: var(--ink-raised); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--ink-border); }
-  .hpo h2 { color: var(--text-on-ink-primary); max-width: 20ch; }
-  .hpo .head-row p { margin: 0; max-width: 34ch; font: 400 14px/1.7 var(--font-body); color: var(--text-on-ink-secondary); }
-  .hpo-body { display: grid; grid-template-columns: 1.25fr .75fr; gap: 44px; align-items: stretch; }
-  .hpo-steps { display: flex; flex-direction: column; }
-  .hpo-row { display: grid; grid-template-columns: 64px 220px 1fr; gap: 24px; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--ink-border-soft); }
-  .hpo-row:first-child { border-top-color: var(--ink-border-strong); }
-  .hpo-row:last-child { border-bottom: 1px solid var(--ink-border-strong); }
-  .hpo-label { font: 700 30px/1 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; color: var(--text-on-ink-primary); }
-  .hpo-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-ink-secondary); }
-  .kpi-card { border: 1px solid var(--ink-border); padding: 22px; display: flex; flex-direction: column; gap: 16px; }
-  .kpi-head { display: flex; justify-content: space-between; align-items: baseline; }
-  .kpi-head .mono { font-size: 10px; letter-spacing: .14em; color: var(--text-on-ink-secondary); }
-  .kpi-bars { display: flex; align-items: flex-end; gap: 7px; height: 170px; }
-  .bar { flex: 1; background: var(--ink-bar-low); }
-  .bar[data-hi="true"] { background: var(--accent); }
-  .kpi-bars .bar:nth-child(4), .kpi-bars .bar:nth-child(5), .kpi-bars .bar:nth-child(6) { background: var(--ink-bar-mid); }
-  .kpi-rule { height: 1px; background: var(--ink-border); }
-  .kpi-labels { display: flex; justify-content: space-between; font-size: 9.5px; color: var(--text-on-ink-tertiary); }
-
   /* CYBER */
   .cyber { background: var(--paper); padding: 78px var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
   .cyber-left h2 { margin-bottom: 20px; max-width: 20ch; font-size: clamp(28px, 3.4vw, 48px); }
@@ -480,47 +230,32 @@ const jsonLd = [
   .cyber-row:first-child { border-top-color: var(--ink); }
   .cyber-row:last-child { border-bottom: 1px solid var(--ink); }
 
-  /* INSIGHTS */
-  .insights { background: var(--paper); padding: 0 var(--page-pad) 84px; border-bottom: 1px solid var(--paper-border); }
-  .all-insights { margin-left: auto; font: 600 11px/1 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); }
-  .insights-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 44px; border-top: 1px solid var(--ink); padding-top: 26px; }
-  .lead-article { display: flex; flex-direction: column; gap: 16px; }
-  .lead-article .mono { font-size: 10px; letter-spacing: .16em; }
-  .lead-article h3 { margin: 0; font: 700 clamp(26px, 3.2vw, 42px)/1 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); max-width: 22ch; }
-  .lead-article p { margin: 0; max-width: 56ch; font: 400 14.5px/1.7 var(--font-body); color: var(--text-on-paper-tertiary); }
-  .teaser-list { display: flex; flex-direction: column; }
-  .teaser { display: flex; flex-direction: column; gap: 7px; padding: 14px 0; border-bottom: 1px solid var(--paper-border); }
-  .teaser .mono { font-size: 10px; letter-spacing: .16em; }
-  .teaser-title { font: 600 16px/1.35 var(--font-body); color: var(--ink); }
-
   @media (max-width: 1080px) {
     .hero-grid { grid-template-columns: 1fr; }
     .hero-copy { padding: 50px var(--page-pad) 40px; border-right: none; }
     .hero-eyebrow, .hero-sub, .hero-meta { margin-right: 0; }
+    .hero-eyebrow .mono { white-space: normal; line-height: 1.6; }
     .hero h1 { margin-right: 0; }
     .hero-sub { grid-template-columns: 1fr; }
     .hero-image { min-height: 320px; }
     .stats { grid-template-columns: 1fr; }
     .stat { border-right: none !important; border-bottom: 1px solid var(--paper-border); padding-left: var(--page-pad) !important; }
     .section-head { grid-template-columns: 1fr; gap: 16px; }
-    .layer, .timeline-row, .hpo-row { grid-template-columns: 1fr !important; padding-left: 0 !important; gap: 8px; }
-    .steps { grid-template-columns: 1fr 1fr; }
-    .founder { grid-template-columns: 1fr; }
-    .founder-photo { min-height: 280px; border-right: none; border-bottom: 1px solid var(--paper-border); }
-    .founder-copy { padding: 50px var(--page-pad) 60px; }
-    .leadership-grid { grid-template-columns: 1fr; }
-    .lead-card { border-right: none; border-bottom: 1px solid var(--paper-border-soft); padding: 30px 0; flex-direction: column; }
-    .lead-photo { width: 100%; height: 220px; }
-    .who-does-work { padding: 30px 0; }
+    .layer { grid-template-columns: 1fr !important; padding-left: 0 !important; gap: 8px; }
     .global { grid-template-columns: 1fr; }
     .global-copy { border-right: none; border-bottom: 1px solid var(--ink-border); }
     .global-globe { min-height: 320px; }
     .tech-grid { grid-template-columns: 1fr; }
     .tech-item { border-right: none !important; padding-left: 0 !important; border-top: 1px solid var(--paper-border-soft); padding-top: 22px !important; }
     .tech-item:first-child { border-top-color: var(--ink); }
-    .hpo-body { grid-template-columns: 1fr; }
     .cyber { grid-template-columns: 1fr; }
     .cyber-list { padding-top: 20px; }
-    .insights-grid { grid-template-columns: 1fr; }
+    .cyber > * { min-width: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .cyber-micro { grid-template-columns: 1fr; }
+    .cyber-micro > div { padding-left: 0; border-right: none; border-bottom: 1px solid var(--paper-border-soft); }
+    .cyber-micro > div:last-child { border-bottom: none; }
   }
 </style>

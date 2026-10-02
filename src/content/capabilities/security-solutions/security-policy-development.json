@@ -6,11 +6,11 @@
   "title": "Security Policy Development & Optimization",
   "shortTitle": "Security Policy Development",
   "metaDescription": "Security policy and procedure development and optimization that aligns written documentation with what actually happens on site.",
-  "eyebrow": "SECURITY SOLUTIONS — 18",
+  "eyebrow": "SECURITY SOLUTIONS – 18",
   "heroDek": "A procedure nobody follows is worse than no procedure at all. GSS develops and reconciles policy against actual field practice, so the written program is one the site can operate to.",
   "contextHeading": "A procedure nobody follows is worse than no procedure at all",
   "contextParagraphs": [
-    "Written policy and procedure are supposed to describe how the protective strategy is actually executed. When documentation drifts from practice, both compliance exposure and operational risk grow together — and the gap is usually discovered during an incident or an inspection, which is the worst possible time to find it.",
+    "Written policy and procedure are supposed to describe how the protective strategy is actually executed. When documentation drifts from practice, both compliance exposure and operational risk grow together, and the gap is usually discovered during an incident or an inspection, which is the worst possible time to find it.",
     "GSS develops new policy where none exists and optimizes existing documentation by reconciling it directly against field practice, audit findings, and the underlying protective-strategy analysis, so the result is something the site can actually operate to rather than a document that describes an idealized version of the program.",
     "This work is coordinated with training, so procedure and instruction stay consistent with each other, and with program audits, so findings translate into documented change rather than informal fixes that quietly drift again over time."
   ],
@@ -43,10 +43,10 @@
     { "label": "Leadership & cultural transformation", "href": "/high-performance/leadership-cultural-transformation/" }
   ],
   "faq": [
-    { "q": "Do you write policy from scratch, or only revise what already exists?", "a": "Both, depending on program maturity — some engagements build a documentation structure from nothing, others optimize an existing one." },
+    { "q": "Do you write policy from scratch, or only revise what already exists?", "a": "Both, depending on program maturity. Some engagements build a documentation structure from nothing, others optimize an existing one." },
     { "q": "How do you find where practice has drifted from procedure?", "a": "Field observation and audit findings are reconciled directly against the written documentation, rather than assuming the document reflects reality." },
-    { "q": "How often should policy be revisited?", "a": "On a defined periodic cycle — not left static until an audit or an incident forces the issue." }
+    { "q": "How often should policy be revisited?", "a": "On a defined periodic cycle, not left static until an audit or an incident forces the issue." }
   ],
   "ctaHeading": "Write the procedure the site actually operates to",
-  "imageCaption": "Technical photo — policy manual or procedure document under review with tracked-changes markup, office setting"
+  "imageCaption": "Technical photo, policy manual or procedure document under review with tracked-changes markup, office setting"
 }

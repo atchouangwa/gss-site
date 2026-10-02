@@ -6,19 +6,19 @@
   "title": "Perimeter Security & Intrusion Detection",
   "shortTitle": "Perimeter Security & IDS",
   "metaDescription": "Outer-boundary design integrating detection, assessment, and delay, with interim and permanent intrusion detection technology matched to the site.",
-  "eyebrow": "SECURITY SOLUTIONS — 07",
+  "eyebrow": "SECURITY SOLUTIONS – 07",
   "heroDek": "A perimeter that only slows an adversary down, without telling anyone it's happening, isn't doing its job. GSS designs detection, assessment, and delay as one integrated layer, not three separate purchases.",
-  "contextHeading": "The perimeter has one job: buy time to know and to act",
+  "contextHeading": "The perimeter has one job. Buy time to know and to act.",
   "contextParagraphs": [
-    "Perimeter security has three functions that only work as a set: detection tells the site something is happening, assessment confirms what it is, and delay buys the time needed to respond to it. A perimeter that delays without detecting, or detects without assessment, fails the protective strategy regardless of how well any single piece performs on its own.",
-    "GSS evaluates and designs both interim — rapidly deployable — and permanent intrusion detection technology, matched to the site's terrain, its nuisance-alarm environment, and the detection requirement the Design Basis Threat actually demands. Selection is driven by that requirement, not by whichever technology is easiest to install.",
+    "Perimeter security has three functions that only work as a set. Detection tells the site something is happening, assessment confirms what it is, and delay buys the time needed to respond to it. A perimeter that delays without detecting, or detects without assessment, fails the protective strategy regardless of how well any single piece performs on its own.",
+    "GSS evaluates and designs both interim (rapidly deployable) and permanent intrusion detection technology, matched to the site's terrain, its nuisance-alarm environment, and the detection requirement the Design Basis Threat actually demands. Selection is driven by that requirement, not by whichever technology is easiest to install.",
     "Detection timing is coordinated directly with pathway and timeline analysis, so the perimeter's contribution to the timeline is validated by measurement rather than assumed from a datasheet."
   ],
   "methodology": [
     { "label": "Boundary & Terrain Assessment", "body": "Perimeter geometry, terrain, and nuisance-alarm sources catalogued." },
     { "label": "Detection Requirement Definition", "body": "Probability-of-detection and nuisance-alarm-rate requirements set against the protective strategy." },
     { "label": "Technology Selection", "body": "Sensor, video assessment, and lighting technology selected and matched to terrain and requirement, interim or permanent." },
-    { "label": "Delay Integration", "body": "Perimeter delay elements — fencing, barriers — coordinated with detection placement rather than specified separately." },
+    { "label": "Delay Integration", "body": "Perimeter delay elements, such as fencing and barriers, coordinated with detection placement rather than specified separately." },
     { "label": "Commissioning & Tuning", "body": "System commissioned and nuisance-alarm rate tuned against live site conditions." },
     { "label": "Performance Validation", "body": "Detection performance validated against the timeline requirement it was designed to meet." }
   ],
@@ -46,8 +46,8 @@
   "faq": [
     { "q": "What's the difference between interim and permanent IDS?", "a": "Interim systems are rapidly deployable for temporary or urgent-need coverage; permanent systems are engineered, commissioned installations for the long term. Sites often need both at different points." },
     { "q": "How do you keep nuisance alarms from wearing out a response force?", "a": "Through sensor selection matched to the specific terrain and environment, then tuning against live site conditions after commissioning, not a generic default configuration." },
-    { "q": "Does GSS design the perimeter, or only evaluate what's already installed?", "a": "Both — new perimeter design for facilities that need it, and independent evaluation of existing systems for sites assessing what they already have." }
+    { "q": "Does GSS design the perimeter, or only evaluate what's already installed?", "a": "Both. New perimeter design for facilities that need it, and independent evaluation of existing systems for sites assessing what they already have." }
   ],
   "ctaHeading": "A perimeter that only slows down is only half a perimeter",
-  "imageCaption": "Technical photo — perimeter fence line with sensor and camera installation in daylight, an engineering/installation context rather than guard imagery"
+  "imageCaption": "Technical photo, perimeter fence line with sensor and camera installation in daylight, an engineering/installation context rather than guard imagery"
 }

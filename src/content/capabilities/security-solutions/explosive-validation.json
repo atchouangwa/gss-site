@@ -6,12 +6,12 @@
   "title": "Explosive Validation & Blast-Resistant Design",
   "shortTitle": "Explosive Validation",
   "metaDescription": "Engineering analysis and physical explosive testing that validates barrier delay time against Design Basis Threat capability for nuclear infrastructure.",
-  "eyebrow": "SECURITY SOLUTIONS — 09",
+  "eyebrow": "SECURITY SOLUTIONS – 09",
   "heroDek": "A delay barrier is only worth the seconds it actually buys. GSS establishes those seconds by engineering analysis and physical test against the capabilities defined in the Design Basis Threat.",
   "contextHeading": "Delay assumptions are the weakest part of most protective strategies",
   "contextParagraphs": [
-    "Response plans are built on how long a barrier holds. When that number comes from a specification sheet rather than a test, the entire timeline downstream of it inherits the error — complement, response positions, and the outcome of the next force-on-force exercise.",
-    "GSS replaces the assumption with measured data: engineering analysis of the barrier, container, or structure, followed by validation against the explosive and tool capability the DBT actually grants an adversary."
+    "Response plans are built on how long a barrier holds. When that number comes from a specification sheet rather than a test, the entire timeline downstream of it inherits the error, including complement, response positions, and the outcome of the next force-on-force exercise.",
+    "GSS replaces the assumption with measured data, using engineering analysis of the barrier, container, or structure, followed by validation against the explosive and tool capability the DBT actually grants an adversary."
   ],
   "methodology": [
     { "label": "Pathway Analysis", "body": "Intrusion routes and vulnerabilities assessed across the site." },
@@ -45,8 +45,8 @@
   "faq": [
     { "q": "Does validation require destroying site equipment?", "a": "No. Testing is performed on representative assemblies at an off-site range." },
     { "q": "How does this feed a licensing basis?", "a": "Results are documented to support basis documentation and regulator review." },
-    { "q": "Can this be scoped for an SMR still in design?", "a": "Yes — earlier is cheaper, since barrier selection is still open." }
+    { "q": "Can this be scoped for an SMR still in design?", "a": "Yes. Earlier is cheaper, since barrier selection is still open." }
   ],
   "ctaHeading": "Validate the assumption before an exercise does it for you",
-  "imageCaption": "Technical photo — instrumented barrier test, engineering rather than tactical"
+  "imageCaption": "Technical photo, instrumented barrier test, engineering rather than tactical"
 }

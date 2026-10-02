@@ -6,12 +6,12 @@
   "title": "Human Factors / Minimum Complement Evaluations",
   "shortTitle": "Human Factors & Minimum Complement",
   "metaDescription": "Minimum-complement determination sized to protective-strategy requirements, with human-factors and fatigue considerations built into the analysis.",
-  "eyebrow": "SECURITY SOLUTIONS — 17",
+  "eyebrow": "SECURITY SOLUTIONS – 17",
   "heroDek": "The right staffing number is a calculation, not a headcount someone remembers from years ago. GSS sizes minimum complement to the response strategy, with fatigue and shift-pattern effects built in rather than assumed away.",
   "contextHeading": "The right number of people is a calculation, not a headcount someone remembers",
   "contextParagraphs": [
-    "Minimum complement is the smallest protective-force staffing level that can execute the response strategy across every shift and posture — derived from the response positions and force allocation the timeline analysis requires, not from whatever the site has traditionally staffed.",
-    "Human factors are built into that calculation, not treated as a separate concern layered on afterward: shift rotation, fatigue, and cognitive-load effects are evaluated directly, because a complement that is numerically sufficient but chronically fatigued will not actually perform to the timeline it was sized against.",
+    "Minimum complement is the smallest protective-force staffing level that can execute the response strategy across every shift and posture. It is derived from the response positions and force allocation the timeline analysis requires, not from whatever the site has traditionally staffed.",
+    "Human factors are built into that calculation, not treated as a separate concern layered on afterward. Shift rotation, fatigue, and cognitive-load effects are evaluated directly, because a complement that is numerically sufficient but chronically fatigued will not actually perform to the timeline it was sized against.",
     "The determination is re-run whenever the underlying protective strategy, staffing model, or facility configuration changes, and results are documented to support both staffing decisions and licensing-basis submissions."
   ],
   "methodology": [
@@ -43,10 +43,10 @@
     { "label": "Regulatory compliance & basis documentation", "href": "/security-solutions/regulatory-compliance/" }
   ],
   "faq": [
-    { "q": "Is minimum complement just the smallest number that satisfies regulation?", "a": "No — it's sized to what the response strategy actually requires, with human-factors margin built in, not set at a bare regulatory floor." },
+    { "q": "Is minimum complement just the smallest number that satisfies regulation?", "a": "No. It's sized to what the response strategy actually requires, with human-factors margin built in, not set at a bare regulatory floor." },
     { "q": "How often should this be re-evaluated?", "a": "Whenever the protective strategy, staffing model, or facility configuration changes, rather than treated as fixed once determined." },
-    { "q": "Does fatigue really change the calculated number?", "a": "Yes — sustained-performance and shift-pattern effects are built directly into the calculation, not addressed as a separate policy question afterward." }
+    { "q": "Does fatigue really change the calculated number?", "a": "Yes. Sustained-performance and shift-pattern effects are built directly into the calculation, not addressed as a separate policy question afterward." }
   ],
   "ctaHeading": "Size the complement to the strategy, not the tradition",
-  "imageCaption": "Technical photo — shift-schedule and staffing-model spreadsheet reviewed on a whiteboard or monitor in an analytical office setting"
+  "imageCaption": "Technical photo, shift-schedule and staffing-model spreadsheet reviewed on a whiteboard or monitor in an analytical office setting"
 }

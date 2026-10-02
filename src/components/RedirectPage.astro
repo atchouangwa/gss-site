@@ -1,0 +1,23 @@
+---
+// Static redirect for a URL whose content moved. Works on any host and for both /path and /path/,
+// which Astro's config-level redirects do not cover on Vercel.
+interface Props {
+  to: string;
+  label: string;
+}
+const { to, label } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{label} | GSS</title>
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href={new URL(to, Astro.site).toString()} />
+  <meta http-equiv="refresh" content={`0; url=${to}`} />
+  <script is:inline define:vars={{ to }}>location.replace(to);</script>
+</head>
+<body>
+  <p>{label} has moved to the <a href={to}>About page</a>.</p>
+</body>
+</html>

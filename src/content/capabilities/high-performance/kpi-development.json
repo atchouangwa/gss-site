@@ -5,14 +5,14 @@
   "order": 3,
   "title": "KPI Development & Performance Metrics",
   "shortTitle": "KPI Development",
-  "metaDescription": "Building the Track, Trend, Measure, Improve model in practice — automated KPI capture, leading and lagging indicators, and Best-in-Class benchmarking.",
-  "eyebrow": "HIGH PERFORMANCE — 03",
+  "metaDescription": "Building the Track, Trend, Measure, Improve model in practice, with automated KPI capture, leading and lagging indicators, and Best-in-Class benchmarking.",
+  "eyebrow": "HIGH PERFORMANCE – 03",
   "heroDek": "A performance indicator that only shows up after the event is a record, not a metric. GSS builds the instrumentation that separates leading indicators from lagging ones, so decline is visible while there is still time to act on it.",
-  "contextHeading": "Track, trend, measure, improve — built as an operating system, not a dashboard",
+  "contextHeading": "Measure performance before problems become events",
   "contextParagraphs": [
-    "Most organizations already collect performance data. The gap is rarely volume — it's structure. Data sits in disconnected logs and spreadsheets, lagging indicators such as events, findings, and near-misses get equal billing with leading indicators such as backlog trends, overdue corrective actions, and training currency that would have predicted them, and nobody owns turning the numbers into a decision before the next audit forces the conversation.",
-    "GSS builds KPI programs around the same four-part model applied across the High Performance family: automated capture built from benchmarking and subject-matter expertise, leading and lagging indicators tracked and trended separately so decline is visible before it becomes an event, performance measured against defined Best-in-Class criteria rather than an internal historical average, and a roadmap that turns the resulting gaps into scheduled improvement work.",
-    "The mechanism matters more than the dashboard it produces. A KPI program that requires a manual monthly roll-up will decay within a year; one that pulls from existing systems of record and flags threshold breaches automatically keeps functioning after the consulting engagement ends."
+    "Most organizations already collect performance data. The challenge is turning that data into information leadership can use. Important measures are often spread across different systems, and indicators of what has already happened can overshadow the trends that show where performance may be starting to decline.",
+    "GSS develops KPI programs that bring those measures together and distinguish between leading and lagging indicators. Performance is tracked over time and measured against defined Best-in-Class standards rather than relying only on an organization's past performance, allowing emerging issues to be identified earlier. Where possible, data collection is automated using existing systems, reducing the administrative work required to maintain the program and giving leadership a consistent view of performance.",
+    "The goal is not simply to build a dashboard. The program must remain useful after the engagement ends. GSS establishes clear thresholds, reporting processes, and improvement priorities so organizations can identify negative trends, understand where attention is needed, and take action before those trends become larger problems."
   ],
   "methodology": [
     { "label": "Indicator Selection", "body": "Leading and lagging indicators are selected and defined against the organization's specific mission and existing data sources, not copied from a generic KPI library." },
@@ -45,9 +45,9 @@
   ],
   "faq": [
     { "q": "Does this require new software?", "a": "Not necessarily. GSS builds capture against the systems an organization already runs wherever feasible; new tooling is recommended only where the existing systems genuinely can't support automated capture." },
-    { "q": "What counts as a leading indicator in a security program?", "a": "Examples include training currency, overdue corrective actions, equipment out-of-service time, and self-assessment finding trends — indicators that move before an actual security or safety event does, not after." },
+    { "q": "What counts as a leading indicator in a security program?", "a": "Examples include training currency, overdue corrective actions, equipment out-of-service time, and self-assessment finding trends. These are indicators that move before an actual security or safety event does, not after." },
     { "q": "Who owns the KPI program once GSS leaves?", "a": "Ownership transfers to site leadership before the engagement closes, with escalation paths and thresholds documented so the program runs without GSS in the loop day to day." }
   ],
   "ctaHeading": "See decline before it becomes an event",
-  "imageCaption": "Photo — control-room or SOC-style dashboard wall showing live trend lines and threshold indicators, an operator reviewing a leading-indicator panel"
+  "imageCaption": "Photo, control-room or SOC-style dashboard wall showing live trend lines and threshold indicators, an operator reviewing a leading-indicator panel"
 }

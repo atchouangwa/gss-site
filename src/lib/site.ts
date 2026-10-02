@@ -25,7 +25,7 @@ export const FOUNDER = {
     {
       n: '01',
       label: 'Military',
-      body: 'Served in two U.S. Special Operations units as an operator and explosives expert.',
+      body: 'Served with the U.S. Army Special Forces, also known as the Green Berets, and the Rangers as an operator and explosives expert.',
     },
     {
       n: '02',
@@ -35,12 +35,7 @@ export const FOUNDER = {
     {
       n: '03',
       label: 'Executive',
-      body: "Vice President, then President and CEO within the world's largest security company, with 31 nuclear facilities reporting directly.",
-    },
-    {
-      n: '04',
-      label: 'Founded GSS',
-      body: 'Established GSS in 2012 to deliver security holistically rather than as isolated services.',
+      body: "Vice President, then President and CEO within the world's largest security company, with 31 critical infrastructure facilities reporting directly.",
     },
   ],
 } as const;
@@ -50,31 +45,32 @@ export const LEADERSHIP = {
   title: 'President',
   eyebrow: "PRESIDENT, GLOBAL SECURITY SOLUTIONS",
   bio: [
-    'Wade Wilson leads GSS as President, holding the company to the standard it was built on: security judged by what it actually delays, detects, and answers — not by what it satisfies on paper.',
-    'The same team, the same methodology, the same expectation of Best-in-Class. Continuity of leadership, not a change of direction.',
+    "Wade Wilson leads GSS as President, overseeing the company's work across nuclear and critical infrastructure security. His background spans security operations, energy-sector field experience, and executive leadership, bringing an operational and engineering-focused perspective to the company's work.",
+    'At GSS, his focus includes the assessment, design, validation, and performance of security programs in complex, high-consequence environments.',
   ],
-  teamIntro: 'GSS is staffed by people who did this work before they did it for GSS — not consultants who studied it.',
+  teamIntro: 'GSS engagements are led and executed by experienced practitioners.',
   teamRoster: [
     {
       label: 'Special Operations',
-      detail: 'Former U.S. special forces operators who have run physical security and tactical response in the field — the standard the rest of the practice is measured against.',
+      detail: 'Former U.S. special forces operators who have run physical security and tactical response in the field. Theirs is the standard the rest of the practice is measured against.',
     },
     {
       label: 'Security Engineering & Executive Leadership',
       detail: 'Engineers and executives who have held C-level roles running security programs at scale, before bringing that judgment to GSS engagements.',
     },
     {
-      label: 'Nuclear Regulatory — Cyber-Physical',
-      detail: 'The cyber-physical division is led by former U.S. NRC inspectors who authored the cybersecurity regulations U.S. nuclear plants operate under today.',
+      label: 'Nuclear Regulatory, Cyber-Physical',
+      detail: 'The cyber-physical division is led by former U.S. NRC inspectors with direct experience developing federal cybersecurity requirements.',
     },
   ],
 } as const;
 
 export type NavChild = { label: string; slug: string };
 export type NavGroup = { label: string; path: string; children: NavChild[] };
+export type NavLink = { label: string; href: string };
 
-export const NAV: NavGroup[] = [
-  { label: 'About', path: '/about/', children: [] },
+/** Capability families. Each has an overview page and one page per child capability. */
+export const FAMILY_NAV: NavGroup[] = [
   {
     label: 'Security',
     path: '/security-solutions/',
@@ -148,8 +144,42 @@ export const NAV: NavGroup[] = [
       { label: 'Leadership & cultural transformation', slug: 'leadership-cultural-transformation' },
     ],
   },
-  { label: 'Insights', path: '/insights/', children: [] },
 ];
+
+const family = (path: string) => FAMILY_NAV.find((f) => f.path === path)!;
+
+/** Families listed under Solutions in the main navigation. */
+export const SOLUTIONS: NavGroup[] = ['/security-solutions/', '/technology/', '/cybersecurity/', '/high-performance/'].map(family);
+
+/** Short descriptions shown with each solution in the navigation (from the approved section copy). */
+export const SOLUTION_INTROS: Record<string, string> = {
+  '/security-solutions/': 'Physical, procedural, and electronic security designed and assessed as one integrated system.',
+  '/technology/': 'Technology selected and integrated around the needs of the security program, with consideration for performance, reliability, and long-term operating cost.',
+  '/cybersecurity/': 'GSS supports the design, implementation, assessment, and long-term performance of cybersecurity programs in regulated and high-consequence environments.',
+  '/high-performance/': 'Performance measurement designed to identify negative trends early, strengthen decision-making, and support continuous improvement.',
+};
+
+export const INDUSTRIES: NavLink[] = [
+  { label: 'Nuclear', href: '/nuclear-security/' },
+  { label: 'Oil & Gas', href: '/industries/oil-gas/' },
+  { label: 'Data Centers', href: '/industries/data-centers/' },
+  { label: 'Other Critical Infrastructure', href: '/industries/critical-infrastructure/' },
+];
+
+export type TopNavItem =
+  | { kind: 'link'; label: string; href: string }
+  | { kind: 'industries'; label: string }
+  | { kind: 'solutions'; label: string };
+
+export const TOP_NAV: TopNavItem[] = [
+  { kind: 'link', label: 'About', href: '/about/' },
+  { kind: 'industries', label: 'Industries' },
+  { kind: 'solutions', label: 'Solutions' },
+  { kind: 'link', label: 'Insights', href: '/insights/' },
+];
+
+/** Kept for the family overview pages, which look up their own capability list by path. */
+export const NAV = FAMILY_NAV;
 
 export const FAMILIES = [
   { n: '01', label: 'Security Solutions', slug: 'security-solutions', mono: '/security-solutions/' },

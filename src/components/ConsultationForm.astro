@@ -84,10 +84,10 @@ const facilityTypes = ['Operating nuclear', 'SMR', 'New build', 'Other critical 
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error('Request failed');
-      if (status) status.textContent = 'REQUEST SENT — WE WILL RESPOND SHORTLY.';
+      if (status) status.textContent = 'REQUEST SENT. WE WILL RESPOND SHORTLY.';
       form.reset();
     } catch {
-      if (status) status.textContent = "SOMETHING WENT WRONG — EMAIL US DIRECTLY AT CONTACT@GSSCORPORATE.COM.";
+      if (status) status.textContent = "SOMETHING WENT WRONG. EMAIL US DIRECTLY AT CONTACT@GSSCORPORATE.COM.";
     } finally {
       if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send request'; }
     }

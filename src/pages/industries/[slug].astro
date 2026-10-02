@@ -1,0 +1,59 @@
+---
+import FamilyOverviewLayout from '@/layouts/FamilyOverviewLayout.astro';
+import { INDUSTRIES, SOLUTIONS } from '@/lib/site';
+
+// Nuclear has its own section (/nuclear-security/); the other industries share this template.
+// Pages without approved copy use general GSS copy only and carry a visible placeholder note.
+// All industry pages stay out of search results until the client approves them for publishing.
+type IndustryCopy = { dek?: string; paragraphs: string[] };
+
+const COPY: Record<string, IndustryCopy> = {
+  'oil-gas': {
+    dek: 'Integrated security support for oil and gas facilities, with consideration for critical assets, site operations, and continuity.',
+    paragraphs: [
+      'Security in oil and gas environments must account for how facilities operate, how personnel and contractors access the site, and which assets require protection. Physical protection, monitoring, communications, cybersecurity, and response all contribute to the effectiveness of the overall program.',
+      'GSS assesses how those elements work together and supports security planning, design, and program improvement. For existing facilities, we evaluate established measures and identify gaps. For new developments or expansions, we help organizations incorporate security into facility planning and operations.',
+      "The solutions below can address individual needs or support a broader security program based on the organization's priorities.",
+    ],
+  },
+  'data-centers': {
+    dek: 'Integrated physical and cyber-physical security support for operating data centers, new developments, and expanding portfolios.',
+    paragraphs: [
+      'Data center security must account for critical equipment, controlled access, personnel and contractor activity, and the continuity of site operations. As facilities develop and portfolios grow, security programs also need to accommodate changing requirements across locations.',
+      'GSS evaluates how personnel, procedures, technology, and response work together as one integrated system. We support organizations in assessing established security programs, planning protection for new facilities, and strengthening consistency across multiple sites.',
+      "Our work spans security assessment and design, technology integration, cybersecurity, and operational performance. The solutions below can be applied individually or combined according to the organization's priorities.",
+    ],
+  },
+};
+
+const PENDING: IndustryCopy = {
+  paragraphs: [
+    'GSS evaluates how personnel, procedures, technology, and response work together, not how each component performs on its own. We identify gaps between those elements and help strengthen the overall security program from assessment through implementation.',
+    'We work with organizations from initial assessment and planning through implementation and long-term program improvement.',
+  ],
+};
+
+export function getStaticPaths() {
+  return INDUSTRIES.filter((i) => i.href.startsWith('/industries/')).map((i) => ({
+    params: { slug: i.href.split('/')[2] },
+    props: { label: i.label, path: i.href },
+  }));
+}
+
+const { label, path } = Astro.props;
+const slug = path.split('/')[2];
+const copy = COPY[slug] ?? PENDING;
+---
+<FamilyOverviewLayout
+  eyebrow="INDUSTRIES"
+  title={label}
+  dek={copy.dek}
+  pendingNote={copy.dek ? undefined : 'INDUSTRY-SPECIFIC COPY TO BE SUPPLIED'}
+  path={path}
+  metaDescription={copy.dek ?? 'Security assessment, design, technology, cybersecurity, and operational performance services from Global Security Solutions.'}
+  paragraphs={copy.paragraphs}
+  children={SOLUTIONS.map((s) => ({ label: s.label, href: s.path }))}
+  indexLabel="SOLUTIONS"
+  ctaHeading="Best-in-Class Solutions"
+  noindex
+/>

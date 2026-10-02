@@ -149,7 +149,7 @@ const jsonLd = [
   .rule-row .mono { font-size: 10px; letter-spacing: .18em; }
 
   .cap-context h2 { margin: 0 0 22px; font: 700 clamp(24px, 3.4vw, 40px)/1.02 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); max-width: 24ch; }
-  .context-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  .context-cols { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 74ch; }
   .context-cols p { margin: 0; font: 400 15px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
 
   .method-list { display: flex; flex-direction: column; }
@@ -180,7 +180,6 @@ const jsonLd = [
   @media (max-width: 1080px) {
     .cap-layout { grid-template-columns: 1fr; }
     .cap-main { border-right: none; }
-    .context-cols { grid-template-columns: 1fr; }
     .method-row { grid-template-columns: 1fr; gap: 6px; }
   }
 </style>

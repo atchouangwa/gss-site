@@ -5,19 +5,19 @@
   "order": 1,
   "title": "Security Assessment & Design",
   "shortTitle": "Assessment & Design",
-  "metaDescription": "Foundational security assessment methodology for nuclear and critical infrastructure: outside-in for existing facilities, inside-out for new build.",
-  "eyebrow": "SECURITY SOLUTIONS — 01",
+  "metaDescription": "Foundational security assessment methodology for nuclear and critical infrastructure, outside-in for existing facilities and inside-out for new build.",
+  "eyebrow": "SECURITY SOLUTIONS – 01",
   "heroDek": "Every technology purchase and staffing decision downstream of a protective strategy is only as sound as the assessment it was built on. GSS establishes requirements first, in the direction the facility actually calls for.",
   "contextHeading": "Every protective strategy starts with a direction of travel",
   "contextParagraphs": [
-    "For an existing facility, the assessment runs outside-in: it starts at the perimeter and moves inward the way an adversary would, evaluating detection, delay, and response as they are actually encountered rather than as they appear on a drawing.",
-    "For a facility still in design, the direction reverses. There is no perimeter to walk yet, so the assessment runs inside-out, starting from the vital areas and target sets that must be protected and working outward to size everything else — barriers, detection, response — to that requirement rather than retrofitting it later.",
-    "Both directions produce the same thing: a documented basis for what the site actually needs, established before a single sensor, barrier, or additional post is specified."
+    "For an existing facility, the assessment runs outside-in. It starts at the perimeter and moves inward the way an adversary would, evaluating detection, delay, and response as they are actually encountered rather than as they appear on a drawing.",
+    "For a facility still in design, the direction reverses. There is no perimeter to walk yet, so the assessment runs inside-out, starting from the vital areas and target sets that must be protected and working outward to size everything else (barriers, detection, response) to that requirement rather than retrofitting it later.",
+    "Both directions produce the same thing, a documented basis for what the site actually needs, established before a single sensor, barrier, or additional post is specified."
   ],
   "methodology": [
     { "label": "Requirements Definition", "body": "Protection objectives established against Design Basis Threat capability and consequence criteria before any design decision is made." },
-    { "label": "Outside-In Assessment", "body": "For existing facilities: analysis begins at the perimeter and works inward, evaluating detection, delay, and response as an adversary would encounter them." },
-    { "label": "Inside-Out Design", "body": "For new build: analysis begins at the vital areas and target sets and works outward, sizing protective layers to what they must protect." },
+    { "label": "Outside-In Assessment", "body": "For existing facilities, analysis begins at the perimeter and works inward, evaluating detection, delay, and response as an adversary would encounter them." },
+    { "label": "Inside-Out Design", "body": "For new build, analysis begins at the vital areas and target sets and works outward, sizing protective layers to what they must protect." },
     { "label": "Gap Analysis", "body": "Measured performance compared against the protective strategy's actual requirements, not against assumption." },
     { "label": "Design Basis Documentation", "body": "Findings translated into a defensible basis for investment, staffing, and licensing decisions." }
   ],
@@ -43,10 +43,10 @@
     { "label": "New nuclear build security", "href": "/nuclear-security/new-nuclear-build-security/" }
   ],
   "faq": [
-    { "q": "Do you assess existing facilities and new build programs the same way?", "a": "No. The direction of travel reverses — outside-in for an existing perimeter, inside-out from vital areas and target sets when there is no facility yet to walk." },
+    { "q": "Do you assess existing facilities and new build programs the same way?", "a": "No. The direction of travel reverses, outside-in for an existing perimeter and inside-out from vital areas and target sets when there is no facility yet to walk." },
     { "q": "How long does a full assessment take?", "a": "It scales with facility size and how much prior analysis already exists; scope is set at kickoff rather than assumed from a standard package." },
-    { "q": "Does this replace our existing security plan?", "a": "No — it measures the existing plan against requirement and identifies where it needs to change, which is usually more useful than starting over." }
+    { "q": "Does this replace our existing security plan?", "a": "No. It measures the existing plan against requirement and identifies where it needs to change, which is usually more useful than starting over." }
   ],
   "ctaHeading": "Start with the assessment, not the equipment list",
-  "imageCaption": "Technical photo — analyst reviewing a facility site plan and aerial imagery at a dual-monitor workstation, documents and drawings rather than posed models"
+  "imageCaption": "Technical photo, analyst reviewing a facility site plan and aerial imagery at a dual-monitor workstation, documents and drawings rather than posed models"
 }

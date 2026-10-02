@@ -5,14 +5,14 @@
   "order": 2,
   "title": "Risk-Based Security Controls",
   "shortTitle": "Risk-Based Controls",
-  "metaDescription": "Cybersecurity controls scoped to a facility's actual risk and consequence profile — not a generic checklist applied uniformly across dissimilar systems.",
-  "eyebrow": "CYBERSECURITY — 02",
-  "heroDek": "A checklist treats every system the same. A control set built on consequence does not — it spends the most effort where a compromise would matter the most.",
+  "metaDescription": "Cybersecurity controls scoped to a facility's actual risk and consequence profile, not a generic checklist applied uniformly across dissimilar systems.",
+  "eyebrow": "CYBERSECURITY – 02",
+  "heroDek": "A checklist treats every system the same. A control set built on consequence does not. It spends the most effort where a compromise would matter the most.",
   "contextHeading": "A control that costs the same everywhere shouldn't be applied everywhere",
   "contextParagraphs": [
     "Generic control frameworks are written to apply broadly, which means applied uniformly they either overprotect low-consequence systems at real operational cost or underprotect high-consequence ones because the framework had no way to know which was which. Neither outcome is defensible when a regulator, or an incident, asks why a given control was or wasn't there.",
-    "GSS starts from consequence rather than from the framework. A system whose compromise could affect safety, security, or continuity of a protected function gets a materially different control set than a system whose compromise would be an inconvenience — and that distinction is documented, not assumed.",
-    "The result is a control set that is defensible on its own terms: every control on the list traces to a specific risk it addresses, and every risk of consequence has a control addressing it. That traceability is what a regulator, an auditor, or a new security director needs to see, and it is what a checklist alone cannot produce."
+    "GSS starts from consequence rather than from the framework. A system whose compromise could affect safety, security, or continuity of a protected function gets a materially different control set than a system whose compromise would be an inconvenience, and that distinction is documented, not assumed.",
+    "The result is a control set that is defensible on its own terms. Every control on the list traces to a specific risk it addresses, and every risk of consequence has a control addressing it. That traceability is what a regulator, an auditor, or a new security director needs to see, and it is what a checklist alone cannot produce."
   ],
   "methodology": [
     { "label": "System Categorization", "body": "Systems grouped by the consequence of compromise, not by network location or vendor." },
@@ -43,7 +43,7 @@
     { "label": "Risk-based decision making", "href": "/high-performance/risk-based-decision-making/" }
   ],
   "faq": [
-    { "q": "Does a risk-based approach mean fewer controls than a checklist framework?", "a": "Not necessarily fewer — better targeted. Some systems end up with more stringent controls than a generic framework would require; others legitimately need less." },
+    { "q": "Does a risk-based approach mean fewer controls than a checklist framework?", "a": "Not necessarily fewer, but better targeted. Some systems end up with more stringent controls than a generic framework would require; others legitimately need less." },
     { "q": "How are legacy OT systems handled, if they can't support modern controls?", "a": "Compensating controls are identified and documented against the specific risk the legacy system presents, rather than left as an unaddressed gap." },
     { "q": "Does this replace a required regulatory framework, or work alongside it?", "a": "Alongside it. The control set is built to satisfy the applicable regulatory baseline and then tailored further by consequence, not built as a substitute for it." }
   ],

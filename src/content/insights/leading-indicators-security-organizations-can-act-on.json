@@ -4,26 +4,26 @@
   "readMinutes": 8,
   "publishDate": "2026-07-28",
   "metaDescription": "Most security KPI programs track lagging indicators dressed up as leading ones. GSS on choosing indicators an organization can actually act on before an event.",
-  "dek": "Most security KPI programs are built almost entirely on lagging indicators — counts of things that already happened. A leading indicator has to be something the organization can act on before the event, not just explain after it.",
+  "dek": "Most security KPI programs are built almost entirely on lagging indicators, which are counts of things that already happened. A leading indicator has to be something the organization can act on before the event, not just explain after it.",
   "body": [
     {
       "heading": "Why lagging indicators dominate most dashboards",
       "paragraphs": [
-        "Lagging indicators are easy to build a dashboard around: incident counts, audit findings, exercise pass/fail rates. They're real data, and they matter for accountability. What they don't do is give leadership time to act before the next negative event, because by definition they're measuring events that already happened.",
-        "A KPI program built entirely on lagging indicators looks rigorous and still leaves an organization finding out about decline the same way it always did — after something goes wrong."
+        "Lagging indicators, such as incident counts, audit findings, and exercise pass/fail rates, are easy to build a dashboard around. They're real data, and they matter for accountability. What they don't do is give leadership time to act before the next negative event, because by definition they're measuring events that already happened.",
+        "A KPI program built entirely on lagging indicators looks rigorous and still leaves an organization finding out about decline the same way it always did, after something goes wrong."
       ]
     },
     {
       "heading": "What makes an indicator genuinely leading",
       "paragraphs": [
-        "A useful leading indicator has two properties: it moves before the lagging outcome it's connected to, and the organization can actually do something in response to the movement. Training currency trending down before an exercise failure. Nuisance-alarm rate climbing before real-alarm response degrades from alarm fatigue. Overtime and staffing-gap trends climbing before response-force performance erodes.",
+        "A useful leading indicator has two properties. It moves before the lagging outcome it's connected to, and the organization can actually do something in response to the movement. Training currency trending down before an exercise failure. Nuisance-alarm rate climbing before real-alarm response degrades from alarm fatigue. Overtime and staffing-gap trends climbing before response-force performance erodes.",
         "None of those require sophisticated instrumentation. They require deciding in advance which metrics are actually connected to which outcomes, and then tracking them automatically enough that a negative trend surfaces to leadership before it becomes an audit finding."
       ]
     },
     {
       "heading": "Track, trend, measure, improve",
       "paragraphs": [
-        "This is the practical core of GSS's High Performance model: automated KPI capture built from benchmarking and subject-matter expertise, leading and lagging indicators kept separate so decline is visible early, performance measured against defined Best-in-Class criteria, and a roadmap for improvement rather than a reaction after the fact. The indicators are illustrative of a mechanism, not a promise of a specific result — every organization's starting baseline is different."
+        "This is the practical core of GSS's High Performance model. It combines automated KPI capture built from benchmarking and subject-matter expertise, leading and lagging indicators kept separate so decline is visible early, performance measured against defined Best-in-Class criteria, and a roadmap for improvement rather than a reaction after the fact. The indicators are illustrative of a mechanism, not a promise of a specific result. Every organization's starting baseline is different."
       ]
     }
   ],

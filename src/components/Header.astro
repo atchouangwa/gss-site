@@ -1,7 +1,10 @@
 ---
-import { NAV, SITE } from '@/lib/site';
+import { TOP_NAV, SOLUTIONS, SOLUTION_INTROS, INDUSTRIES, SITE } from '@/lib/site';
 
-const SECURITY_GROUPS: { heading: string; items: { label: string; slug: string }[] }[] = [
+type Group = { heading?: string; items: { label: string; slug: string }[] };
+
+// Security is long enough to need sub-groups; the other solutions split evenly into two columns.
+const SECURITY_GROUPS: Group[] = [
   {
     heading: 'ASSESS & DESIGN',
     items: [
@@ -32,23 +35,21 @@ const SECURITY_GROUPS: { heading: string; items: { label: string; slug: string }
       { label: 'Tactical training & train-the-trainer', slug: 'tactical-training' },
       { label: 'Force-on-force readiness', slug: 'force-on-force-readiness' },
       { label: 'Human factors / minimum complement', slug: 'human-factors-minimum-complement' },
+      { label: 'Security policy development & optimization', slug: 'security-policy-development' },
     ],
   },
 ];
 
-const familyIntro: Record<string, string> = {
-  '/security-solutions/': 'Physical, procedural, and electronic protection assessed as one system against the Design Basis Threat.',
-  '/technology/': 'Technology selected to remove recurring cost and close real gaps, not to fill a product catalog.',
-  '/cybersecurity/': 'A lifecycle offering spanning design, implementation, authority to operate, and maintenance.',
-  '/nuclear-security/': 'Security integrated into the design lifecycle of operating and new-build nuclear facilities.',
-  '/high-performance/': 'Automated indicators that surface a negative trend before it becomes an event.',
-};
-
 function chunk<T>(arr: T[], parts: number): T[][] {
-  const out: T[][] = Array.from({ length: parts }, () => []);
-  arr.forEach((item, i) => out[i % parts].push(item));
-  return out;
+  const size = Math.ceil(arr.length / parts);
+  return Array.from({ length: parts }, (_, i) => arr.slice(i * size, (i + 1) * size));
 }
+
+const solutionGroups = (path: string, children: Group['items']): Group[] =>
+  path === '/security-solutions/' ? SECURITY_GROUPS : chunk(children, 2).map((items) => ({ items }));
+
+const paneId = (path: string) => `sol-pane-${path.replace(/\//g, '')}`;
+const tabId = (path: string) => `sol-tab-${path.replace(/\//g, '')}`;
 ---
 <header class="site-header">
   <div class="bar">
@@ -58,15 +59,65 @@ function chunk<T>(arr: T[], parts: number): T[][] {
     </a>
 
     <nav class="primary-nav" aria-label="Primary">
-      {NAV.map((item) => (
-        item.children.length ? (
-          <div class="nav-item has-mega" data-nav-group={item.path}>
-            <button class="nav-trigger" aria-expanded="false" aria-controls={`mega-${item.path}`}>
-              {item.label}
-            </button>
-          </div>
+      {TOP_NAV.map((item) => (
+        item.kind === 'link' ? (
+          <a class="nav-item" href={item.href}>{item.label}</a>
         ) : (
-          <a class="nav-item" href={item.path}>{item.label}</a>
+          <div class="nav-item has-mega" data-nav-group={item.kind}>
+            <button class="nav-trigger" aria-expanded="false" aria-controls={`mega-${item.kind}`}>
+              {item.label}<span class="chev" aria-hidden="true"></span>
+            </button>
+            {item.kind === 'industries' ? (
+              <div class="mega" id="mega-industries" data-mega="industries" hidden>
+                <div class="mega-inner industries-inner">
+                  <div class="mega-lead">
+                    <div class="mega-lead-title">Industries</div>
+                  </div>
+                  <ul class="industry-list">
+                    {INDUSTRIES.map((ind) => (
+                      <li><a href={ind.href}><span>{ind.label}</span><span class="arrow" aria-hidden="true">→</span></a></li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div class="mega" id="mega-solutions" data-mega="solutions" hidden>
+                <div class="mega-inner solutions-inner">
+                  <div class="sol-rail" role="tablist" aria-orientation="vertical" aria-label="Solutions">
+                    {SOLUTIONS.map((sol, i) => (
+                      <button
+                        class="sol-tab"
+                        role="tab"
+                        id={tabId(sol.path)}
+                        aria-selected={i === 0 ? 'true' : 'false'}
+                        aria-controls={paneId(sol.path)}
+                        tabindex={i === 0 ? 0 : -1}
+                      >
+                        <span>{sol.label}</span><span class="arrow" aria-hidden="true">→</span>
+                      </button>
+                    ))}
+                  </div>
+                  {SOLUTIONS.map((sol, i) => (
+                    <div class="sol-pane" role="tabpanel" id={paneId(sol.path)} aria-labelledby={tabId(sol.path)} hidden={i !== 0}>
+                      <div class="mega-lead">
+                        <div class="mega-lead-title">{sol.label}</div>
+                        <p>{SOLUTION_INTROS[sol.path]}</p>
+                        <a class="mega-lead-link" href={sol.path}>{sol.label} overview →</a>
+                      </div>
+                      {solutionGroups(sol.path, sol.children).map((group) => (
+                        <div class="mega-col">
+                          {group.heading && <div class="mega-col-heading">{group.heading}</div>}
+                          {group.items.map((child) => (
+                            <a href={`${sol.path}${child.slug}/`}>{child.label}</a>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         )
       ))}
     </nav>
@@ -79,56 +130,46 @@ function chunk<T>(arr: T[], parts: number): T[][] {
       </button>
     </div>
   </div>
-
-  {NAV.filter((i) => i.children.length).map((item) => (
-    <div class="mega" id={`mega-${item.path}`} data-mega={item.path} hidden>
-      <div class="mega-inner">
-        <div class="mega-lead">
-          <div class="mega-lead-title">{item.label}</div>
-          <p>{familyIntro[item.path]}</p>
-          <a class="mega-lead-link" href={item.path}>{item.path.toUpperCase()} →</a>
-        </div>
-        {item.path === '/security-solutions/' ? (
-          SECURITY_GROUPS.map((group) => (
-            <div class="mega-col">
-              <div class="mega-col-heading">{group.heading}</div>
-              {group.items.map((child) => (
-                <a href={`${item.path}${child.slug}/`}>{child.label}</a>
-              ))}
-            </div>
-          ))
-        ) : (
-          chunk(item.children, 2).map((col) => (
-            <div class="mega-col">
-              {col.map((child) => (
-                <a href={`${item.path}${child.slug}/`}>{child.label}</a>
-              ))}
-            </div>
-          ))
-        )}
-      </div>
-    </div>
-  ))}
 </header>
 
 <div class="mobile-nav" id="mobile-nav" hidden>
   <div class="mobile-nav-scroll">
-    {NAV.map((item) => (
-      item.children.length ? (
+    {TOP_NAV.map((item) => (
+      item.kind === 'link' ? (
+        <a class="mobile-top-link" href={item.href}>{item.label}</a>
+      ) : item.kind === 'industries' ? (
         <details class="mobile-group">
           <summary>
             <span>{item.label}</span>
             <span class="mobile-toggle" aria-hidden="true"></span>
           </summary>
           <div class="mobile-children">
-            <a href={item.path} class="mobile-view-all">View all {item.label.toLowerCase()} →</a>
-            {item.children.map((child) => (
-              <a href={`${item.path}${child.slug}/`}>{child.label}</a>
-            ))}
+            {INDUSTRIES.map((ind) => <a href={ind.href}>{ind.label}</a>)}
           </div>
         </details>
       ) : (
-        <a class="mobile-top-link" href={item.path}>{item.label}</a>
+        <details class="mobile-group">
+          <summary>
+            <span>{item.label}</span>
+            <span class="mobile-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="mobile-children">
+            {SOLUTIONS.map((sol) => (
+              <details class="mobile-subgroup">
+                <summary>
+                  <span>{sol.label}</span>
+                  <span class="mobile-toggle small" aria-hidden="true"></span>
+                </summary>
+                <div class="mobile-subchildren">
+                  <a href={sol.path} class="mobile-view-all">{sol.label} overview →</a>
+                  {sol.children.map((child) => (
+                    <a href={`${sol.path}${child.slug}/`}>{child.label}</a>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
+        </details>
       )
     ))}
     <a class="btn btn-accent mobile-cta" href="/contact/">Request a Consultation</a>
@@ -137,58 +178,99 @@ function chunk<T>(arr: T[], parts: number): T[][] {
 </div>
 
 <script>
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector<HTMLElement>('.site-header');
   if (header) {
     const groups = Array.from(header.querySelectorAll<HTMLElement>('[data-nav-group]'));
-    const megas = new Map<string, HTMLElement>();
-    header.querySelectorAll<HTMLElement>('[data-mega]').forEach((el) => {
-      megas.set(el.dataset.mega!, el);
-    });
+    const triggerOf = (g: HTMLElement) => g.querySelector<HTMLButtonElement>('.nav-trigger')!;
+    const panelOf = (g: HTMLElement) => g.querySelector<HTMLElement>('[data-mega]')!;
 
     let closeTimer: number | undefined;
-    let openKey: string | null = null;
+    let openGroup: HTMLElement | null = null;
 
-    const open = (key: string) => {
+    const open = (group: HTMLElement) => {
       window.clearTimeout(closeTimer);
-      if (openKey === key) return;
-      megas.forEach((el, k) => {
-        el.hidden = k !== key;
-      });
+      if (openGroup === group) return;
       groups.forEach((g) => {
-        const trigger = g.querySelector('.nav-trigger');
-        trigger?.setAttribute('aria-expanded', String(g.dataset.navGroup === key));
+        const isOpen = g === group;
+        panelOf(g).hidden = !isOpen;
+        triggerOf(g).setAttribute('aria-expanded', String(isOpen));
       });
-      openKey = key;
+      openGroup = group;
+    };
+    const close = () => {
+      window.clearTimeout(closeTimer);
+      groups.forEach((g) => {
+        panelOf(g).hidden = true;
+        triggerOf(g).setAttribute('aria-expanded', 'false');
+      });
+      openGroup = null;
     };
     const scheduleClose = () => {
       window.clearTimeout(closeTimer);
-      closeTimer = window.setTimeout(() => {
-        megas.forEach((el) => { el.hidden = true; });
-        groups.forEach((g) => g.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false'));
-        openKey = null;
-      }, 140);
+      closeTimer = window.setTimeout(close, 160);
     };
+    const firstFocusable = (el: HTMLElement) =>
+      el.querySelector<HTMLElement>('[role="tab"][aria-selected="true"], a[href], button');
 
     groups.forEach((group) => {
-      const key = group.dataset.navGroup!;
-      group.addEventListener('mouseenter', () => open(key));
+      const trigger = triggerOf(group);
+      group.addEventListener('mouseenter', () => open(group));
       group.addEventListener('mouseleave', scheduleClose);
-      group.querySelector('.nav-trigger')?.addEventListener('click', () => {
-        openKey === key ? scheduleClose() : open(key);
+      trigger.addEventListener('click', () => (openGroup === group ? close() : open(group)));
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          open(group);
+          firstFocusable(panelOf(group))?.focus();
+        }
       });
-      group.querySelector('.nav-trigger')?.addEventListener('focus', () => open(key));
+      group.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && openGroup === group) {
+          e.preventDefault();
+          close();
+          trigger.focus();
+        }
+      });
+      group.addEventListener('focusout', (e) => {
+        const next = e.relatedTarget;
+        if (openGroup === group && !(next instanceof Node && group.contains(next))) close();
+      });
     });
-    megas.forEach((el) => {
-      el.addEventListener('mouseenter', () => window.clearTimeout(closeTimer));
-      el.addEventListener('mouseleave', scheduleClose);
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') scheduleClose();
-    });
+
     document.addEventListener('click', (e) => {
-      if (!(e.target instanceof Node)) return;
-      if (!header.contains(e.target)) scheduleClose();
+      if (e.target instanceof Node && !header.contains(e.target)) close();
     });
+
+    // Solutions panel: a vertical tab list that switches which solution's pages are shown.
+    const tablist = header.querySelector<HTMLElement>('.sol-rail');
+    if (tablist) {
+      const tabs = Array.from(tablist.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+      const select = (tab: HTMLButtonElement, focus = false) => {
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.setAttribute('aria-selected', String(on));
+          t.tabIndex = on ? 0 : -1;
+          const pane = document.getElementById(t.getAttribute('aria-controls')!);
+          if (pane) pane.hidden = !on;
+        });
+        if (focus) tab.focus();
+      };
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('mouseenter', () => select(tab));
+        tab.addEventListener('focus', () => select(tab));
+        tab.addEventListener('click', () => select(tab));
+        tab.addEventListener('keydown', (e) => {
+          const move = { ArrowDown: 1, ArrowUp: -1 }[e.key];
+          if (move) {
+            e.preventDefault();
+            select(tabs[(i + move + tabs.length) % tabs.length], true);
+          } else if (e.key === 'Home' || e.key === 'End') {
+            e.preventDefault();
+            select(tabs[e.key === 'Home' ? 0 : tabs.length - 1], true);
+          }
+        });
+      });
+    }
   }
 
   const hamburger = document.querySelector<HTMLButtonElement>('.hamburger');
@@ -197,6 +279,7 @@ function chunk<T>(arr: T[], parts: number): T[][] {
     const willOpen = mobileNav?.hasAttribute('hidden');
     if (mobileNav) mobileNav.hidden = !willOpen;
     hamburger.setAttribute('aria-expanded', String(!!willOpen));
+    hamburger.setAttribute('aria-label', willOpen ? 'Close menu' : 'Open menu');
     document.body.style.overflow = willOpen ? 'hidden' : '';
   });
 </script>
@@ -265,7 +348,9 @@ function chunk<T>(arr: T[], parts: number): T[][] {
     text-transform: inherit;
     height: 100%;
   }
-  .has-mega { border-right: 1px solid var(--ink-border-soft); display: flex; }
+  .has-mega { border-right: 1px solid var(--ink-border-soft); display: flex; padding: 0; }
+  .chev { width: 6px; height: 6px; margin-left: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 160ms ease; }
+  .nav-trigger[aria-expanded="true"] .chev { transform: translateY(1px) rotate(225deg); }
 
   .side { display: flex; align-items: center; flex: none; }
   .phone {
@@ -293,11 +378,17 @@ function chunk<T>(arr: T[], parts: number): T[][] {
 
   .mega {
     position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
     background: var(--ink-raised);
     border-bottom: 1px solid var(--ink-border);
+    text-transform: none;
+    letter-spacing: normal;
+    white-space: normal;
+    cursor: default;
   }
+  .mega[hidden], .sol-pane[hidden] { display: none; }
   .mega-inner {
     display: grid;
     grid-template-columns: 280px repeat(3, 1fr);
@@ -335,6 +426,33 @@ function chunk<T>(arr: T[], parts: number): T[][] {
   }
   .mega-col a:hover { color: var(--accent); }
 
+  .industries-inner { grid-template-columns: 280px 1fr; }
+  .industry-list { list-style: none; margin: 0; padding: 18px 28px 22px; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .industry-list a {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    padding: 16px 20px 16px 0; margin-right: 20px; border-bottom: 1px solid var(--ink-border-soft);
+    font: 700 17px/1.1 var(--font-display); letter-spacing: -.01em; text-transform: uppercase;
+    color: var(--text-on-ink-primary); transition: color 140ms ease;
+  }
+  .industry-list a:hover { color: var(--accent); }
+  .arrow { color: var(--accent); font: 600 14px/1 var(--font-body); }
+
+  .solutions-inner { grid-template-columns: 240px 1fr; }
+  .sol-rail { display: flex; flex-direction: column; padding: 22px 0; border-right: 1px solid var(--ink-border-soft); }
+  .sol-tab {
+    all: unset; box-sizing: border-box; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 24px; border-left: 2px solid transparent;
+    font: 700 17px/1.1 var(--font-display); letter-spacing: -.01em; text-transform: uppercase;
+    color: var(--text-on-ink-secondary); transition: color 140ms ease, background 140ms ease;
+  }
+  .sol-tab .arrow { opacity: 0; transition: opacity 140ms ease; }
+  .sol-tab[aria-selected="true"] { color: var(--text-on-ink-primary); background: var(--ink-raised-2); border-left-color: var(--accent); }
+  .sol-tab[aria-selected="true"] .arrow { opacity: 1; }
+  .sol-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .sol-pane { display: grid; grid-template-columns: 260px repeat(3, 1fr); }
+  .sol-pane .mega-col:empty { display: none; }
+
   .mobile-nav {
     position: fixed;
     inset: 0;
@@ -370,7 +488,7 @@ function chunk<T>(arr: T[], parts: number): T[][] {
   }
   .mobile-toggle::before { top: 6px; left: 0; width: 14px; height: 2px; }
   .mobile-toggle::after { top: 0; left: 6px; width: 2px; height: 14px; transition: transform 160ms ease; }
-  .mobile-group[open] .mobile-toggle::after { transform: scaleY(0); }
+  .mobile-group[open] > summary .mobile-toggle::after { transform: scaleY(0); }
   .mobile-children { display: flex; flex-direction: column; padding-bottom: 10px; }
   .mobile-children a {
     font: 400 13px/1 var(--font-body);
@@ -378,6 +496,18 @@ function chunk<T>(arr: T[], parts: number): T[][] {
     padding: 12px 0 12px 14px;
   }
   .mobile-view-all { color: var(--accent) !important; font-weight: 600; }
+  .mobile-subgroup summary {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 13px 0 13px 14px; cursor: pointer; list-style: none;
+    font: 600 14px/1.2 var(--font-body); color: var(--text-on-ink-primary);
+  }
+  .mobile-subgroup summary::-webkit-details-marker { display: none; }
+  .mobile-toggle.small { width: 10px; height: 10px; }
+  .mobile-toggle.small::before { top: 4px; width: 10px; }
+  .mobile-toggle.small::after { left: 4px; height: 10px; }
+  .mobile-subgroup[open] > summary .mobile-toggle::after { transform: scaleY(0); }
+  .mobile-subchildren { display: flex; flex-direction: column; padding-bottom: 8px; }
+  .mobile-subchildren a { font: 400 13px/1.3 var(--font-body); color: var(--text-on-ink-secondary); padding: 10px 0 10px 28px; }
   .mobile-cta { margin-top: 24px; padding: 17px; }
   .mobile-phone { margin-top: 16px; text-align: center; font: 500 12px/1 var(--font-mono); color: var(--text-on-ink-secondary); padding: 12px; }
 

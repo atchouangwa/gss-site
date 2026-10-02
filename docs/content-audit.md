@@ -42,6 +42,21 @@ globe/nations; remove client names").
 A later design-session instruction added one more constraint: **no other executive (e.g. "Dennis")
 is named.** Only Wade Wilson (President) and Eric F. Wilson (Founder) appear as named leadership.
 
+**October 2026 website-changes document** (`GSS_Website_Changes.docx`, client-supplied) made these
+further decisions, which supersede anything below that conflicts with them:
+
+- Eric F. Wilson's executive record now reads **"31 critical infrastructure facilities"** reporting
+  directly (previously "31 nuclear facilities").
+- His military service is stated specifically: **U.S. Army Special Forces (the Green Berets) and the
+  Rangers**.
+- The NRC-inspector claim is worded as **"former U.S. NRC inspectors with direct experience developing
+  federal cybersecurity requirements."** Earlier "authored the regulations" wording was retired
+  site-wide so the site makes one consistent claim.
+- Navigation is **About, Industries, Solutions, Insights**. Founder & Legacy, Leadership Roles and Our
+  Personnel live on the About page; `/founder/` and `/leadership/` redirect there.
+- Website copy uses **no em dashes**, and avoids colons in marketing copy where a period, comma or
+  rewrite reads more naturally (labels, code, URLs and similar are exempt).
+
 A subsequent client instruction reversed an earlier design-session direction: the site no longer
 frames Wade as "Eric's son," and does not describe GSS as "family-led." Wade and Eric are
 presented as President and Founder respectively — related by the standard and methodology GSS
@@ -59,7 +74,8 @@ the homepage and leadership page mark this explicitly
 Team note (approved, from the v2 mockup): the working team includes former U.S. special forces
 operators, engineers, and executives with C-level industry experience; the cyber-physical
 division is led by former U.S. NRC inspectors who authored the cybersecurity regulations
-governing U.S. plants today.
+governing U.S. plants today. **Superseded October 2026:** the approved wording is now "former U.S. NRC
+inspectors with direct experience developing federal cybersecurity requirements" (see §2).
 
 ## 4. Founder History — Eric F. Wilson
 
@@ -70,13 +86,20 @@ v2 mockup, itself derived from the source documents):
 2. **Nuclear Security** — contributed to U.S. nuclear response strategy design and the explosive
    validation of barriers still in use today; testified before Congress as a subject matter expert.
 3. **Executive** — Vice President, then President and CEO within the world's largest security
-   company, with 31 nuclear facilities reporting directly.
-4. **Founded GSS** — established GSS in 2012 to deliver security holistically rather than as
-   isolated services.
+   company, with 31 critical infrastructure facilities reporting directly (wording per the October
+   2026 change document).
+
+The separate "Founded GSS" timeline entry was removed in October 2026 at the client's request. The
+2012 founding remains on the site ("EST. 2012" on the homepage, and the Nuclear Security page).
+
+Military service (item 1) now reads: served with the U.S. Army Special Forces, also known as the Green
+Berets, and the Rangers. Legislative contributions (testimony before Congress) are kept as written
+and must not be expanded until the client supplies approved wording.
 
 Founder-era accomplishments (his personal military/executive record) are kept distinct from
 present-day GSS corporate claims — e.g. "31 nuclear facilities reporting directly" describes his
-prior employer, not GSS's own client count, and is written that way throughout the site.
+prior employer, not GSS's own client count, and is written that way throughout the site. (As of
+October 2026 the figure reads "31 critical infrastructure facilities"; see §2.)
 
 ## 5. Conflicting Claims Found, and How They Were Resolved
 
@@ -120,12 +143,18 @@ several that can drift out of sync.
 
 ## 7. Proposed Sitemap
 
+Main navigation (October 2026): **About · Industries · Solutions · Insights**. Industries lists Nuclear
+(`/nuclear-security/`), Oil & Gas, Data Centers and Other Critical Infrastructure. Solutions lists
+Security, Technology, Cybersecurity and High Performance, each with its capability pages.
+
 ```
 /                                  Home
-/about/                            About GSS
-/founder/                          Founder & Legacy
-/leadership/                       Leadership
+/about/                            About GSS, incl. #leadership, #founder, #personnel
+/founder/, /leadership/            Redirect to the matching About section
 /global-experience/                Global Experience
+/industries/oil-gas/               Industry page (copy pending, noindex, not in sitemap)
+/industries/data-centers/          Industry page (copy pending, noindex, not in sitemap)
+/industries/critical-infrastructure/  Industry page (copy pending, noindex, not in sitemap)
 /security-solutions/               + 17 capability pages (see §6)
 /technology/                       + 7 capability pages
 /cybersecurity/                    + 8 capability pages
@@ -153,8 +182,7 @@ unaffected and remain fully crawlable/linked.
 | Cybersecurity | Cyber-physical security for nuclear infrastructure |
 | Nuclear & SMR | Nuclear security, SMR security, new nuclear build security |
 | High Performance | Operational optimization, KPI development, high-performance culture |
-| Founder | GSS founder story, nuclear security legacy |
-| Leadership | GSS leadership, Wade Wilson |
+| About (incl. Founder & Legacy, Leadership Roles) | GSS founder story, Wade Wilson, team |
 | Global Experience | International nuclear security experience |
 
 Per-page `<title>`/meta description are unique and set alongside each page's content (see
@@ -178,8 +206,13 @@ assuming a gap.
 
 ## 10. Content Gaps
 
-- **Wade Wilson's full biography and LinkedIn URL** — not supplied; placeholder note shown on
-  the homepage and leadership page rather than invented.
+- **Wade Wilson's full biography and LinkedIn URL** — not supplied. The About page uses the
+  client-approved "Leadership Roles" paragraph (October 2026).
+- **Industry pages (Oil & Gas, Data Centers, Other Critical Infrastructure)** — no industry-specific
+  copy has been supplied, and no existing source material covers those industries. The pages use
+  general GSS copy only, show a visible "INDUSTRY-SPECIFIC COPY TO BE SUPPLIED" label, are
+  `noindex`, and are excluded from the sitemap. Do not add industry-specific experience claims
+  until the client supplies approved wording.
 - **Photography** — see §9.
 - **Insights articles** — the source transcript references eight drafted blog articles pending
   technical review; their content was not supplied to this build. The Insights section ships
@@ -203,7 +236,9 @@ excluded from every page, including capability pages, case studies, and insights
 - Fabricated statistics, testimonials, certifications, awards, or case studies. Every number on
   the site traces to §2 of this document, with one noted exception below.
 
-**Exception — KPI dashboard visualization (homepage, High Performance section):** per client
+**Exception — KPI dashboard visualization (formerly on the homepage, High Performance section):**
+the homepage High Performance section was removed in October 2026, so this chart no longer appears on
+the site. The note below is kept in case it is reinstated. per client
 correction, this represents real performance data, not an illustrative example, and the
 "ILLUSTRATIVE — NOT CLIENT DATA" label has been removed. Note for future editors: the specific
 bar heights in that chart (34/48/42/61/55/72/80/92%) were chosen at build time for visual
@@ -220,3 +255,7 @@ leaving the current placeholder heights presented as real data.
 - [ ] No named client, site, or utility anywhere in copy, alt text, or schema.
 - [ ] No Lorem Ipsum, no broken internal links, no unfilled template placeholders left un-labeled.
 - [ ] No fabricated testimonials, logos, certifications, awards, or case studies.
+- [ ] No em dashes in website copy; colons only where a label, code, or URL needs one.
+- [ ] No "authored the regulations" wording; NRC claim uses the October 2026 approved phrasing.
+- [ ] Founder record says "31 critical infrastructure facilities", not "31 nuclear facilities".
+- [ ] Industry pages still carry the "copy to be supplied" label and `noindex` until approved copy lands.

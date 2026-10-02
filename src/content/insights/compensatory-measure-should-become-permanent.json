@@ -9,20 +9,20 @@
     {
       "heading": "Interim measures are supposed to be temporary",
       "paragraphs": [
-        "A rapidly deployable intrusion detection system, a temporary barrier, or an interim wireless communications link usually goes in to close a specific gap fast — a degraded permanent system, a new vulnerability, a construction-phase boundary that doesn't exist yet in the final design. The deployment decision is easy because the need is obvious and immediate.",
+        "A rapidly deployable intrusion detection system, a temporary barrier, or an interim wireless communications link usually goes in to close a specific gap fast, such as a degraded permanent system, a new vulnerability, or a construction-phase boundary that doesn't exist yet in the final design. The deployment decision is easy because the need is obvious and immediate.",
         "The decision to make it permanent, or to replace it with a purpose-built permanent system, is a different decision with different criteria, and it often never formally happens. The interim system just stays, past the point where anyone re-evaluates whether it's still the right tool."
       ]
     },
     {
       "heading": "What the permanent decision should actually weigh",
       "paragraphs": [
-        "Three things generally matter more than the sunk cost of the interim install: total cost of ownership over the system's realistic remaining service life, whether the interim technology was ever validated against the site's actual Design Basis Threat or just deployed to close a gap under time pressure, and whether it still integrates cleanly with everything else in the protective strategy as that strategy evolves."
+        "Three things generally matter more than the sunk cost of the interim install. The first is total cost of ownership over the system's realistic remaining service life. The second is whether the interim technology was ever validated against the site's actual Design Basis Threat or just deployed to close a gap under time pressure. The third is whether it still integrates cleanly with everything else in the protective strategy as that strategy evolves."
       ]
     },
     {
       "heading": "Making it a decision instead of a default",
       "paragraphs": [
-        "GSS treats the interim-to-permanent question as a deliverable, not an afterthought — a specific point in a technology engagement where the client gets a clear recommendation instead of quiet inertia. Sometimes the answer is that the interim system earned its permanent status. Sometimes it's that a purpose-built system pays for itself within a defined period. Either answer is better than nobody deciding."
+        "GSS treats the interim-to-permanent question as a deliverable, not an afterthought. It is a specific point in a technology engagement where the client gets a clear recommendation instead of quiet inertia. Sometimes the answer is that the interim system earned its permanent status. Sometimes it's that a purpose-built system pays for itself within a defined period. Either answer is better than nobody deciding."
       ]
     }
   ],

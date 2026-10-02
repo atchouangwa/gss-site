@@ -6,13 +6,13 @@
   "title": "Vital Area Analysis",
   "shortTitle": "Vital Area Analysis",
   "metaDescription": "Sabotage and area-logic modeling used to identify the vital areas within a facility that require dedicated protection, and no more than that.",
-  "eyebrow": "SECURITY SOLUTIONS — 04",
+  "eyebrow": "SECURITY SOLUTIONS – 04",
   "heroDek": "Not every room is a vital area, and treating them all as one spends the protective budget on the wrong doors. GSS traces consequence back to its source to identify the areas that actually require it.",
   "contextHeading": "Not every room is a vital area, and treating them all as one wastes the protective budget",
   "contextParagraphs": [
-    "A vital area is a location containing structures, systems, or components whose sabotage could cause an unacceptable consequence — radiological, safety, or mission. Determining which locations meet that bar, and which do not, is a modeling exercise, not a walkthrough judgment call.",
-    "GSS traces sabotage logic from equipment failure through to consequence, screening systems and structures against a defined consequence threshold and aggregating the locations that contribute into a minimum candidate set of vital areas. The goal is precision: enough area protected to eliminate the consequence pathway, not more than that.",
-    "The resulting vital area set is the direct input to target set identification at the equipment level, and to the protective strategy — barriers, detection, response — built around it."
+    "A vital area is a location containing structures, systems, or components whose sabotage could cause an unacceptable consequence, whether radiological, safety, or mission. Determining which locations meet that bar, and which do not, is a modeling exercise, not a walkthrough judgment call.",
+    "GSS traces sabotage logic from equipment failure through to consequence, screening systems and structures against a defined consequence threshold and aggregating the locations that contribute into a minimum candidate set of vital areas. The goal is precision, with enough area protected to eliminate the consequence pathway, not more than that.",
+    "The resulting vital area set is the direct input to target set identification at the equipment level, and to the protective strategy (barriers, detection, response) built around it."
   ],
   "methodology": [
     { "label": "Consequence Threshold Definition", "body": "Radiological, safety, or mission-consequence criteria established as the basis for \"unacceptable.\"" },
@@ -44,9 +44,9 @@
   ],
   "faq": [
     { "q": "How is a vital area different from a target set?", "a": "A vital area is a location; a target set is the specific equipment, system, or material within it whose loss or sabotage causes the consequence. See Target Set Identification & Development." },
-    { "q": "Does the vital area set change over a facility's life?", "a": "Yes — it is re-run whenever the equipment configuration or consequence basis changes, not treated as fixed at commissioning." },
+    { "q": "Does the vital area set change over a facility's life?", "a": "Yes. It is re-run whenever the equipment configuration or consequence basis changes, not treated as fixed at commissioning." },
     { "q": "Who reviews the resulting vital area boundaries?", "a": "They are checked against the site's licensing basis and operational documentation, and GSS supports that documentation directly." }
   ],
   "ctaHeading": "Protect the areas that matter, not all of them equally",
-  "imageCaption": "Technical photo — facility floor plan with vital-area boundaries marked, reviewed on a drafting table or large monitor"
+  "imageCaption": "Technical photo, facility floor plan with vital-area boundaries marked, reviewed on a drafting table or large monitor"
 }

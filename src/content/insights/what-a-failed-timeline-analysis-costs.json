@@ -3,27 +3,27 @@
   "category": "Force-on-Force",
   "readMinutes": 7,
   "publishDate": "2026-06-02",
-  "metaDescription": "A timeline analysis that doesn't hold up in a force-on-force exercise is rarely a training problem — it's usually a data problem discovered too late.",
+  "metaDescription": "A timeline analysis that doesn't hold up in a force-on-force exercise is rarely a training problem. It's usually a data problem discovered too late.",
   "dek": "A timeline analysis that fails during a force-on-force exercise is rarely a training problem. It's usually a data problem that was already there, discovered at the worst possible moment.",
   "body": [
     {
       "heading": "The number everything else depends on",
       "paragraphs": [
-        "A protective strategy is built on a small number of load-bearing assumptions, and adversary timeline is the heaviest one. Response-force positioning, minimum complement, and the entire choreography of a response plan are all sized against how long the timeline says a site has — from detection to the adversary reaching a target.",
+        "A protective strategy is built on a small number of load-bearing assumptions, and adversary timeline is the heaviest one. Response-force positioning, minimum complement, and the entire choreography of a response plan are all sized against how long the timeline says a site has, from detection to the adversary reaching a target.",
         "When that number comes from a specification sheet instead of validated engineering and testing, everything downstream inherits the error silently. Nothing looks wrong until an exercise puts real people, real distances, and real timing against it."
       ]
     },
     {
       "heading": "Where the assumption usually breaks",
       "paragraphs": [
-        "The two most common failure points are barrier delay and detection-to-assessment time. A barrier's rated delay is a starting assumption, not a measured one, until it has been validated against the explosive and tool capability actually described in the site's Design Basis Threat. Detection-to-assessment time gets optimistic in planning documents and pessimistic under exercise conditions — alarm rates, nuisance filtering, and human response all move the real number away from the documented one.",
+        "The two most common failure points are barrier delay and detection-to-assessment time. A barrier's rated delay is a starting assumption, not a measured one, until it has been validated against the explosive and tool capability actually described in the site's Design Basis Threat. Detection-to-assessment time gets optimistic in planning documents and pessimistic under exercise conditions. Alarm rates, nuisance filtering, and human response all move the real number away from the documented one.",
         "Neither failure is visible in a paper review. Both are visible in the first exercise that tests them, which is the expensive way to find out."
       ]
     },
     {
       "heading": "What changes when the timeline is validated first",
       "paragraphs": [
-        "GSS builds timeline analysis on pathway analysis and, where barriers are load-bearing to the response plan, on engineering and explosive validation rather than manufacturer specifications. That sequencing costs more up front than trusting a spec sheet. It costs less than restructuring a response plan and a complement study after a failed exercise — and considerably less than the alternative most sites are actually trying to avoid."
+        "GSS builds timeline analysis on pathway analysis and, where barriers are load-bearing to the response plan, on engineering and explosive validation rather than manufacturer specifications. That sequencing costs more up front than trusting a spec sheet. It costs less than restructuring a response plan and a complement study after a failed exercise, and considerably less than the alternative most sites are actually trying to avoid."
       ]
     }
   ],

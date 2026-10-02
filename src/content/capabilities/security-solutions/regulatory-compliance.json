@@ -6,13 +6,13 @@
   "title": "Regulatory Compliance & Basis Documentation",
   "shortTitle": "Regulatory Compliance",
   "metaDescription": "Licensing-basis documentation and regulatory support that demonstrates the protective strategy to regulators, in the form they require.",
-  "eyebrow": "SECURITY SOLUTIONS — 12",
+  "eyebrow": "SECURITY SOLUTIONS – 12",
   "heroDek": "A protective strategy that isn't documented to the regulator's standard isn't finished. GSS translates the underlying technical analysis into a basis a regulator can actually review.",
   "contextHeading": "A protective strategy that isn't documented to the regulator's standard isn't finished",
   "contextParagraphs": [
-    "Regulators require the protective strategy to be demonstrated in a specific documented form — physical security plans, safeguards contingency plans, licensing basis submittals — not simply implemented in practice. A site can be genuinely well protected and still fail review because the documentation doesn't demonstrate it in the required structure.",
-    "GSS translates the underlying technical work — vital area and target set analysis, timeline analysis, response strategy — into documentation built to satisfy that review, and supports the site directly through the regulator's inspection and question-and-response process rather than handing over a document and stepping back.",
-    "The same capability applies at both ends of a facility's life: operating sites managing and revising an existing basis, and new-build or SMR programs establishing one from a green field."
+    "Regulators require the protective strategy to be demonstrated in a specific documented form, such as physical security plans, safeguards contingency plans, and licensing basis submittals, not simply implemented in practice. A site can be genuinely well protected and still fail review because the documentation doesn't demonstrate it in the required structure.",
+    "GSS translates the underlying technical work, including vital area and target set analysis, timeline analysis, and response strategy, into documentation built to satisfy that review, and supports the site directly through the regulator's inspection and question-and-response process rather than handing over a document and stepping back.",
+    "The same capability applies at both ends of a facility's life, for operating sites managing and revising an existing basis, and for new-build or SMR programs establishing one from a green field."
   ],
   "methodology": [
     { "label": "Basis Document Review", "body": "Existing licensing-basis and security-plan documentation reviewed against current analysis and regulation." },
@@ -42,10 +42,10 @@
     { "label": "Compliance & governance", "href": "/cybersecurity/compliance-governance/" }
   ],
   "faq": [
-    { "q": "Does GSS interact directly with regulators?", "a": "Yes — support extends through direct engagement and inspection response, not just document preparation." },
-    { "q": "Is this only for operating facilities?", "a": "No — new-build and SMR programs establishing a licensing basis from scratch are a significant part of this work." },
+    { "q": "Does GSS interact directly with regulators?", "a": "Yes. Support extends through direct engagement and inspection response, not just document preparation." },
+    { "q": "Is this only for operating facilities?", "a": "No. New-build and SMR programs establishing a licensing basis from scratch are a significant part of this work." },
     { "q": "How often does basis documentation need updating?", "a": "Whenever the underlying analysis or applicable regulation changes; it's integrated into change control rather than treated as a one-time deliverable." }
   ],
   "ctaHeading": "Document the strategy the way the regulator needs to see it",
-  "imageCaption": "Technical photo — licensing-basis documents and binders spread across a conference table during a review session"
+  "imageCaption": "Technical photo, licensing-basis documents and binders spread across a conference table during a review session"
 }

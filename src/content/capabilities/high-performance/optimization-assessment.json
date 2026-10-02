@@ -6,12 +6,12 @@
   "title": "Optimization Assessment",
   "shortTitle": "Optimization Assessment",
   "metaDescription": "A baseline assessment that measures current security and operational performance against defined Best-in-Class criteria before a roadmap is proposed.",
-  "eyebrow": "HIGH PERFORMANCE — 02",
+  "eyebrow": "HIGH PERFORMANCE – 02",
   "heroDek": "GSS does not propose a roadmap before establishing where the organization actually stands. The Optimization Assessment measures current state against defined Best-in-Class criteria, so every recommendation that follows is built against a real gap.",
   "contextHeading": "A roadmap without a baseline is a guess with a budget",
   "contextParagraphs": [
     "Improvement plans commonly start from a generic maturity model, or from whatever the last audit happened to flag. Neither reflects where a specific organization actually stands relative to the standard it is trying to reach, and both tend to produce roadmaps that are broad instead of prioritized.",
-    "The Optimization Assessment establishes that baseline directly: current performance across leadership practices, standards, self-assessment, corrective action, and existing KPI instrumentation, measured against defined Best-in-Class criteria drawn from INPO, WANO, and IAEA principles. The output is a gap analysis, not a scorecard — it identifies which gaps carry the most consequence and which are simplest to close first.",
+    "The Optimization Assessment establishes that baseline directly, measuring current performance across leadership practices, standards, self-assessment, corrective action, and existing KPI instrumentation against defined Best-in-Class criteria drawn from INPO, WANO, and IAEA principles. The output is a gap analysis, not a scorecard. It identifies which gaps carry the most consequence and which are simplest to close first.",
     "That prioritization is what turns the assessment into a roadmap leadership can actually fund and staff, rather than a list of everything that could theoretically be improved."
   ],
   "methodology": [
@@ -44,10 +44,10 @@
     { "label": "High-performance nuclear operations", "href": "/nuclear-security/high-performance-nuclear-operations/" }
   ],
   "faq": [
-    { "q": "How long does an assessment take?", "a": "Scope drives duration — a single-site assessment is a different engagement than a multi-site program review. GSS scopes duration and cost against the specific organization during an initial consultation rather than quoting a fixed timeline." },
+    { "q": "How long does an assessment take?", "a": "Scope drives duration. A single-site assessment is a different engagement than a multi-site program review. GSS scopes duration and cost against the specific organization during an initial consultation rather than quoting a fixed timeline." },
     { "q": "Does the assessment produce a public report?", "a": "No. Findings, including anything touching specific vulnerabilities or protective-strategy detail, are delivered directly to leadership and held internally." },
     { "q": "Can this run alongside a scheduled regulatory audit?", "a": "It can, though GSS typically recommends running it separately so the organization gets an honest baseline rather than an assessment shaped by preparing for the regulator." }
   ],
   "ctaHeading": "Know the gap before you fund the roadmap",
-  "imageCaption": "Photo — GSS assessor and site leadership reviewing a printed gap-analysis matrix at a conference table, working documents visible in frame but not legible"
+  "imageCaption": "Photo, GSS assessor and site leadership reviewing a printed gap-analysis matrix at a conference table, working documents visible in frame but not legible"
 }
