@@ -20,7 +20,18 @@ const techItems = [
   { n: '03', title: 'Drone Program Development', body: 'Threat assessment, airspace control, detection and tracking, countermeasures, and an escalation framework that stays inside regulation.', tags: 'RADAR · RF · GEO-FENCING · RESPONSE' },
 ];
 
-const cyberList = ['Security assessments', 'Risk-based security controls', 'Penetration testing', 'Risk & vulnerability management', 'Compliance advisory', 'Governance', 'Threat hunting', 'Incident response', 'Security operations', 'Training & education'];
+const cyberList = [
+  { label: 'Security assessments', href: '/cybersecurity/cyber-physical-security/' },
+  { label: 'Risk-based security controls', href: '/cybersecurity/risk-based-controls/' },
+  { label: 'Penetration testing', href: '/cybersecurity/penetration-testing/' },
+  { label: 'Risk & vulnerability management', href: '/cybersecurity/vulnerability-management/' },
+  { label: 'Compliance advisory', href: '/cybersecurity/compliance-governance/' },
+  { label: 'Governance', href: '/cybersecurity/compliance-governance/' },
+  { label: 'Threat hunting', href: '/cybersecurity/threat-hunting-incident-response/' },
+  { label: 'Incident response', href: '/cybersecurity/threat-hunting-incident-response/' },
+  { label: 'Security operations', href: '/cybersecurity/security-operations/' },
+  { label: 'Training & education', href: '/cybersecurity/training-education/' },
+];
 
 const jsonLd = [
   {
@@ -130,8 +141,8 @@ const jsonLd = [
       </div>
     </div>
     <div class="cyber-list">
-      {cyberList.map((label, i) => (
-        <div class="cyber-row"><span>{label}</span><span class="mono dim">{String(i + 1).padStart(2, '0')}</span></div>
+      {cyberList.map(({ label, href }, i) => (
+        <a class="cyber-row" href={href}><span>{label}</span><span class="mono dim">{String(i + 1).padStart(2, '0')}</span></a>
       ))}
     </div>
   </section>
@@ -229,6 +240,9 @@ const jsonLd = [
   .cyber-row { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid var(--paper-border-soft); font: 400 14px/1.4 var(--font-body); color: var(--text-on-paper-body-alt); }
   .cyber-row:first-child { border-top-color: var(--ink); }
   .cyber-row:last-child { border-bottom: 1px solid var(--ink); }
+  .cyber-row { text-decoration: none; transition: color .15s ease, padding .15s ease; }
+  .cyber-row:hover, .cyber-row:focus-visible { color: var(--ink); padding-left: 6px; }
+  .cyber-row:hover .dim, .cyber-row:focus-visible .dim { color: var(--accent-ink); }
 
   @media (max-width: 1080px) {
     .hero-grid { grid-template-columns: 1fr; }
