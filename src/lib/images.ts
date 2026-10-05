@@ -90,16 +90,23 @@ export const PEOPLE_PHOTOS = {
   wade: { src: '/assets/photos/wade-wilson.jpeg', alt: 'Wade Wilson, President of Global Security Solutions' },
 } as const;
 
-// Industry and Solutions overview pages: a hero photo (dark header, right) and a different
-// feature photo (darkened background of the black approach section), keyed by page path.
-// There is no oil and gas or data-center photography, so those pages use general security
-// imagery whose alt text describes what is actually shown, never a specific industry or site.
-type OverviewPhotos = { hero: keyof typeof PHOTOS; feature: keyof typeof PHOTOS };
+// Industry and Solutions overview pages: an optional hero photo (dark header, right) and an
+// optional feature photo (darkened background of the black approach section), keyed by page path.
+// A photo is used only when it clearly shows the page's subject; pages without one get a
+// photo-free layout rather than a generic image.
+// Industries: there is no oil and gas or data-center photography, so those pages use general
+// security imagery whose alt text describes what is actually shown, never a specific industry
+// or site.
+// Solutions: one photo each where a specific match exists (perimeter detection for Security, the
+// deployable comms mast for Technology, an analyst at a cyber dashboard for Cybersecurity).
+// High Performance (culture, KPIs, leadership) has no matching photo, so it uses none.
+type PhotoKey = keyof typeof PHOTOS;
+type OverviewPhotos = { hero?: PhotoKey; feature?: PhotoKey };
 const OVERVIEW: Record<string, OverviewPhotos> = {
-  '/security-solutions/': { hero: 'fenceCamera', feature: 'fieldTech' },
-  '/technology/': { hero: 'commsMast', feature: 'fenceSensor' },
-  '/cybersecurity/': { hero: 'cyberDesk', feature: 'socRoom' },
-  '/high-performance/': { hero: 'socRoom', feature: 'fieldTech' },
+  '/security-solutions/': { hero: 'fenceCamera' },
+  '/technology/': { hero: 'commsMast' },
+  '/cybersecurity/': { hero: 'cyberDesk' },
+  '/high-performance/': {},
   '/nuclear-security/': { hero: 'nuclearNight', feature: 'nuclearDusk' },
   '/industries/oil-gas/': { hero: 'fenceSensor', feature: 'fieldTech' },
   '/industries/data-centers/': { hero: 'socRoom', feature: 'cyberDesk' },
@@ -107,6 +114,6 @@ const OVERVIEW: Record<string, OverviewPhotos> = {
 };
 
 export function overviewImages(path: string) {
-  const o = OVERVIEW[path] ?? { hero: 'fenceCamera', feature: 'fieldTech' };
-  return { hero: PHOTOS[o.hero], feature: PHOTOS[o.feature] };
+  const o = OVERVIEW[path] ?? {};
+  return { hero: o.hero && PHOTOS[o.hero], feature: o.feature && PHOTOS[o.feature] };
 }

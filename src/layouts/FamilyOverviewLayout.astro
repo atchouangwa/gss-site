@@ -20,7 +20,7 @@ interface Props {
   metaDescription: string;
   /**
    * Content sections between the hero and the capability list. Backgrounds alternate:
-   * the first is cream, the second black over the page's feature photo. Every page
+   * the first is cream, the second black (over the page's feature photo, if it has one). Every page
    * currently has two, so the cream capability section always follows a black one.
    */
   sections: Section[];
@@ -50,8 +50,9 @@ const jsonLd = [
 <Layout title={`${title} | GSS`} description={metaDescription} path={path} jsonLd={jsonLd} noindex={noindex}>
   <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: title }]} />
 
-  <!-- 01 Introduction: compact black header in the home page's style, photo right. -->
-  <section class="hero">
+  <!-- 01 Introduction: compact black header in the home page's style. Photo right when the
+       page has a relevant one; otherwise a large capability count balances the copy. -->
+  <section class:list={['hero', { 'hero--no-photo': !photos.hero }]}>
     <div class="hero-copy">
       <div class="hero-eyebrow">
         <span class="mono">{eyebrow}</span>
@@ -62,19 +63,27 @@ const jsonLd = [
       {dek && <p class="dek">{dek}</p>}
       {pendingNote && <p class="pending mono">{pendingNote}</p>}
     </div>
-    <div class="hero-image">
-      <ImagePlaceholder caption={photos.hero.alt} dark src={photos.hero.src} alt={photos.hero.alt} loading="eager" />
-    </div>
+    {photos.hero ? (
+      <div class="hero-image">
+        <ImagePlaceholder caption={photos.hero.alt} dark src={photos.hero.src} alt={photos.hero.alt} loading="eager" />
+      </div>
+    ) : (
+      <a class="hero-panel" href="#capabilities">
+        <span class="panel-num">{pad2(children.length)}</span>
+        <span class="mono panel-label">{indexLabel} <span aria-hidden="true">↓</span></span>
+      </a>
+    )}
   </section>
 
-  <!-- 02, 03 Content sections: cream, then black over the feature photo. -->
+  <!-- 02, 03 Content sections: cream, then black (over the feature photo, if the page has one). -->
   {sections.map((s, i) => {
     const dark = i % 2 === 1;
+    const photo = dark && i === 1 ? photos.feature : undefined;
     return (
-      <section class:list={['content', dark ? 'content--dark' : 'content--paper', { 'has-photo': dark && i === 1 }]}>
-        {dark && i === 1 && (
+      <section class:list={['content', dark ? 'content--dark' : 'content--paper', { 'has-photo': photo }]}>
+        {photo && (
           <div class="content-photo" aria-hidden="true">
-            <img src={photos.feature.src} alt="" loading="lazy" decoding="async" />
+            <img src={photo.src} alt="" loading="lazy" decoding="async" />
           </div>
         )}
         <div class="content-inner" data-reveal>
@@ -90,7 +99,7 @@ const jsonLd = [
   })}
 
   <!-- Capabilities: the label sits directly above the numbered links. -->
-  <section class="index">
+  <section class="index" id="capabilities">
     {indexIntro && <p class="index-intro" data-reveal>{indexIntro}</p>}
     <div class="rule-row"><span class="mono">{indexLabel}</span><span class="rule"></span></div>
     <div class="grid">
@@ -119,6 +128,14 @@ const jsonLd = [
   .dek { margin: 20px 0 0; max-width: 56ch; font: 400 16.5px/1.6 var(--font-body); color: #a9afb5; }
   .pending { display: inline-block; align-self: flex-start; margin: 20px 0 0; padding: 12px 14px; border: 1px dashed var(--accent); color: var(--accent); font-size: 11px; letter-spacing: .14em; }
   .hero-image { position: relative; min-height: 360px; }
+
+  /* No relevant photo: a large orange capability count fills the right column instead. */
+  .hero--no-photo { grid-template-columns: minmax(0, 1fr) minmax(0, 34%); }
+  .hero--no-photo .hero-copy { padding-top: 64px; padding-bottom: 60px; }
+  .hero-panel { display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; padding: 48px var(--page-pad); background: var(--ink-raised); transition: background var(--dur-hover) ease; }
+  .hero-panel:hover { background: var(--ink-raised-2); }
+  .panel-num { font: 700 clamp(88px, 11vw, 168px)/.82 var(--font-display); letter-spacing: -.05em; color: var(--accent); }
+  .panel-label { padding-top: 14px; border-top: 1px solid var(--ink-border-strong); font-size: 11px; letter-spacing: .2em; color: var(--text-on-ink-primary); }
 
   /* CONTENT SECTIONS: sized to their content; heading, short orange rule, paragraph. */
   .content { position: relative; overflow: hidden; }
@@ -160,6 +177,11 @@ const jsonLd = [
     .hero-eyebrow .mono { white-space: normal; line-height: 1.6; }
     .title-rule { margin-top: 18px; }
     .hero-image { min-height: 200px; aspect-ratio: 16 / 9; border-top: 1px solid var(--ink-border); }
+    .hero--no-photo { grid-template-columns: 1fr; }
+    .hero--no-photo .hero-copy { padding-top: 36px; padding-bottom: 32px; }
+    .hero-panel { flex-direction: row; justify-content: flex-start; align-items: baseline; gap: 16px; padding: 20px var(--page-pad); border-top: 1px solid var(--ink-border); }
+    .panel-num { font-size: 56px; }
+    .panel-label { padding-top: 0; border-top: none; }
     .content-inner, .has-photo .content-inner { grid-template-columns: 1fr; gap: 10px; padding: 40px var(--page-pad) 44px; }
     .idx { padding-top: 0; }
     .heading-rule { margin: 16px 0; }
