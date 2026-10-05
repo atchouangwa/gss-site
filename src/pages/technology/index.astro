@@ -10,11 +10,11 @@ const family = NAV.find((n) => n.path === '/technology/')!;
   dek="Technology selected and integrated around the needs of the security program, with consideration for performance, reliability, and long-term operating cost."
   path="/technology/"
   metaDescription="GSS technology solutions, including secure wireless communications, rapidly deployable intrusion detection, drone security, systems integration, and remote security operations."
-  paragraphs={[
-    "GSS evaluates technology based on the role it serves within the security program. We consider what it needs to detect, delay, monitor, or control, how it integrates with existing systems, and what it will require to operate and maintain over time.",
-    "Technology recommendations are informed by the security assessment and the specific needs of the facility. This helps ensure investments address identified gaps, support the broader protective strategy, and provide value beyond the initial installation.",
-    "The capabilities below can be applied individually or integrated into a broader security program based on the needs of the facility.",
+  sections={[
+    { heading: 'Technology Within the Program', body: "GSS evaluates technology based on the role it serves within the security program. We consider what it needs to detect, delay, monitor, or control, how it integrates with existing systems, and what it will require to operate and maintain over time." },
+    { heading: 'Informed by Assessment', body: "Technology recommendations are informed by the security assessment and the specific needs of the facility. This helps ensure investments address identified gaps, support the broader protective strategy, and provide value beyond the initial installation." },
   ]}
+  indexIntro="The capabilities below can be applied individually or integrated into a broader security program based on the needs of the facility."
   children={family.children}
   ctaHeading="Tell us what the protective strategy still needs to detect or delay."
 />

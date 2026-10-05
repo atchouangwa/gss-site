@@ -57,6 +57,13 @@ further decisions, which supersede anything below that conflicts with them:
 - Website copy uses **no em dashes**, and avoids colons in marketing copy where a period, comma or
   rewrite reads more naturally (labels, code, URLs and similar are exempt).
 
+A later October 2026 client instruction changed the homepage statistic labels (the numbers are
+unchanged): **"50+ Critical infrastructure facilities supported"** and **"20+ Years of critical
+infrastructure security experience"** replace the earlier "nuclear" wording. The third statistic
+(national regulatory regimes) is unchanged. Other pages that cite the 50+ figure as nuclear
+facilities (the About page team paragraph and the Nuclear Security meta description) were not part
+of that instruction and still read "nuclear."
+
 A subsequent client instruction reversed an earlier design-session direction: the site no longer
 frames Wade as "Eric's son," and does not describe GSS as "family-led." Wade and Eric are
 presented as President and Founder respectively — related by the standard and methodology GSS

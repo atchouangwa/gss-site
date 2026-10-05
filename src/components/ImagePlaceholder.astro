@@ -9,13 +9,15 @@ interface Props {
   objectPosition?: string;
   grayscale?: boolean;
   zoom?: number;
+  /** 'eager' for above-the-fold photos (page heroes); defaults to lazy. */
+  loading?: 'lazy' | 'eager';
 }
-const { caption, ratio, minHeight, dark = false, src, alt, objectPosition = 'center', grayscale = false, zoom = 1 } = Astro.props;
+const { caption, ratio, minHeight, dark = false, src, alt, objectPosition = 'center', grayscale = false, zoom = 1, loading = 'lazy' } = Astro.props;
 const style = [ratio ? `aspect-ratio:${ratio};` : '', minHeight ? `min-height:${minHeight};` : ''].join('');
 ---
 {src ? (
   <div class="image-photo" style={style}>
-    <img src={src} alt={alt ?? caption} loading="lazy" decoding="async" style={`object-position:${objectPosition};${zoom !== 1 ? `transform:scale(${zoom});` : ''}`} class:list={{ grayscale }} />
+    <img src={src} alt={alt ?? caption} loading={loading} decoding="async" style={`object-position:${objectPosition};${zoom !== 1 ? `transform:scale(${zoom});` : ''}`} class:list={{ grayscale }} />
   </div>
 ) : (
   <div

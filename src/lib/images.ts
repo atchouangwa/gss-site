@@ -89,3 +89,24 @@ export const PEOPLE_PHOTOS = {
   eric: { src: '/assets/photos/eric-wilson.jpeg', alt: 'Eric F. Wilson, Founder of Global Security Solutions' },
   wade: { src: '/assets/photos/wade-wilson.jpeg', alt: 'Wade Wilson, President of Global Security Solutions' },
 } as const;
+
+// Industry and Solutions overview pages: a hero photo (dark header, right) and a different
+// feature photo (darkened background of the black approach section), keyed by page path.
+// There is no oil and gas or data-center photography, so those pages use general security
+// imagery whose alt text describes what is actually shown, never a specific industry or site.
+type OverviewPhotos = { hero: keyof typeof PHOTOS; feature: keyof typeof PHOTOS };
+const OVERVIEW: Record<string, OverviewPhotos> = {
+  '/security-solutions/': { hero: 'fenceCamera', feature: 'fieldTech' },
+  '/technology/': { hero: 'commsMast', feature: 'fenceSensor' },
+  '/cybersecurity/': { hero: 'cyberDesk', feature: 'socRoom' },
+  '/high-performance/': { hero: 'socRoom', feature: 'fieldTech' },
+  '/nuclear-security/': { hero: 'nuclearNight', feature: 'nuclearDusk' },
+  '/industries/oil-gas/': { hero: 'fenceSensor', feature: 'fieldTech' },
+  '/industries/data-centers/': { hero: 'socRoom', feature: 'cyberDesk' },
+  '/industries/critical-infrastructure/': { hero: 'fenceCamera', feature: 'commsMast' },
+};
+
+export function overviewImages(path: string) {
+  const o = OVERVIEW[path] ?? { hero: 'fenceCamera', feature: 'fieldTech' };
+  return { hero: PHOTOS[o.hero], feature: PHOTOS[o.feature] };
+}
