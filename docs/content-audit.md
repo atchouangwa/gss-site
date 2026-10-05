@@ -207,6 +207,12 @@ cybersecurity analyst workstation — each assigned to capability pages by theme
 headshots for Eric F. Wilson and Wade Wilson are used only on the founder/leadership sections —
 never reused as generic imagery elsewhere, per the client's instruction.
 
+**October 2026:** per client instruction, the Solutions area (the Security, Technology,
+Cybersecurity and High Performance overview pages and every capability page beneath them) uses no
+photography. Those pages use `SolutionCapabilityLayout` and the `solution` variant of
+`FamilyOverviewLayout`. Photos remain on the home page, the Industries pages (Nuclear, Oil & Gas,
+Data Centers, Other Critical Infrastructure) and the Nuclear capability pages.
+
 Any `ImagePlaceholder` still showing the dashed-frame placeholder (rather than a photo) has not
 been assigned an image and is intentionally left that way — check `src/lib/images.ts` before
 assuming a gap.

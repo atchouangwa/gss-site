@@ -1,9 +1,13 @@
 ---
 interface FAQItem { q: string; a: string }
-interface Props { items: FAQItem[] }
-const { items } = Astro.props;
+interface Props {
+  items: FAQItem[];
+  /** 'dark' for use on ink/charcoal sections; defaults to the paper styling. */
+  tone?: 'paper' | 'dark';
+}
+const { items, tone = 'paper' } = Astro.props;
 ---
-<div class="faq">
+<div class:list={['faq', { dark: tone === 'dark' }]}>
   {items.map((item) => (
     <div class="item">
       <span class="q">{item.q}</span>
@@ -17,4 +21,10 @@ const { items } = Astro.props;
   .item { display: flex; flex-direction: column; gap: 6px; }
   .q { font: 600 13.5px/1.4 var(--font-body); color: var(--text-on-paper-primary); }
   .a { font: 400 13px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  .faq.dark { gap: 0; }
+  .faq.dark .item { gap: 8px; padding: 20px 0; border-top: 1px solid var(--ink-border); }
+  .faq.dark .item:last-child { border-bottom: 1px solid var(--ink-border); }
+  .faq.dark .q { font: 600 16px/1.4 var(--font-body); color: var(--text-on-ink-primary); }
+  .faq.dark .a { font: 400 15px/1.7 var(--font-body); color: #b7bcc1; max-width: 72ch; }
 </style>

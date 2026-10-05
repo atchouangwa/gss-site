@@ -1,4 +1,5 @@
-// Real photography supplied by the client, mapped to capability pages by theme.
+// Real photography supplied by the client, mapped to Nuclear capability pages and Industries
+// pages by theme.
 // Wade Wilson's and Eric Wilson's photos are handled separately (leadership/founder only) —
 // never used as generic imagery.
 
@@ -13,48 +14,6 @@ const PHOTOS = {
   cyberDesk: { src: '/assets/photos/cyber-analyst-desk.webp', alt: 'Cybersecurity analyst monitoring threat intelligence dashboards' },
 } as const;
 
-const SECURITY_SOLUTIONS: Record<string, keyof typeof PHOTOS> = {
-  'security-assessment-design': 'fieldTech',
-  'avenues-of-approach-analysis': 'fenceSensor',
-  'adversary-pathway-analysis': 'fenceCamera',
-  'vital-area-analysis': 'fenceSensor',
-  'target-set-identification': 'fenceCamera',
-  'new-build-security-design': 'fieldTech',
-  'perimeter-security-intrusion-detection': 'fenceSensor',
-  'barrier-systems': 'fenceCamera',
-  'explosive-validation': 'fieldTech',
-  'access-control-assessment': 'fenceCamera',
-  'response-strategy-development': 'socRoom',
-  'regulatory-compliance': 'socRoom',
-  'security-program-audits': 'socRoom',
-  'systematic-approach-to-training': 'fieldTech',
-  'tactical-training': 'fieldTech',
-  'force-on-force-readiness': 'fenceSensor',
-  'human-factors-minimum-complement': 'fieldTech',
-  'security-policy-development': 'socRoom',
-};
-
-const TECHNOLOGY: Record<string, keyof typeof PHOTOS> = {
-  'secure-wireless-communications': 'commsMast',
-  'intrusion-detection': 'fenceSensor',
-  'monitoring-access-control': 'fenceCamera',
-  'drone-security': 'commsMast',
-  'systems-integration': 'socRoom',
-  'remote-security-operations': 'socRoom',
-  'kpi-performance-monitoring': 'socRoom',
-};
-
-const CYBERSECURITY: Record<string, keyof typeof PHOTOS> = {
-  'cyber-physical-security': 'socRoom',
-  'risk-based-controls': 'cyberDesk',
-  'penetration-testing': 'cyberDesk',
-  'vulnerability-management': 'cyberDesk',
-  'compliance-governance': 'cyberDesk',
-  'threat-hunting-incident-response': 'socRoom',
-  'security-operations': 'socRoom',
-  'training-education': 'cyberDesk',
-};
-
 const NUCLEAR_SECURITY: Record<string, keyof typeof PHOTOS> = {
   'nuclear-security-overview': 'nuclearNight',
   'small-modular-reactor-security': 'nuclearDusk',
@@ -63,20 +22,10 @@ const NUCLEAR_SECURITY: Record<string, keyof typeof PHOTOS> = {
   'high-performance-nuclear-operations': 'nuclearNight',
 };
 
-const HIGH_PERFORMANCE: Record<string, keyof typeof PHOTOS> = {
-  'high-performance-culture': 'socRoom',
-  'optimization-assessment': 'cyberDesk',
-  'kpi-development': 'socRoom',
-  'risk-based-decision-making': 'cyberDesk',
-  'leadership-cultural-transformation': 'socRoom',
-};
-
+// Only Nuclear capability pages (under Industries) show a photo; Solutions capability pages
+// use SolutionCapabilityLayout, which has none.
 const FAMILY_MAPS: Record<string, Record<string, keyof typeof PHOTOS>> = {
-  'security-solutions': SECURITY_SOLUTIONS,
-  technology: TECHNOLOGY,
-  cybersecurity: CYBERSECURITY,
   'nuclear-security': NUCLEAR_SECURITY,
-  'high-performance': HIGH_PERFORMANCE,
 };
 
 export function capabilityImage(family: string, slug: string) {
@@ -90,23 +39,14 @@ export const PEOPLE_PHOTOS = {
   wade: { src: '/assets/photos/wade-wilson.jpeg', alt: 'Wade Wilson, President of Global Security Solutions' },
 } as const;
 
-// Industry and Solutions overview pages: an optional hero photo (dark header, right) and an
-// optional feature photo (darkened background of the black approach section), keyed by page path.
-// A photo is used only when it clearly shows the page's subject; pages without one get a
-// photo-free layout rather than a generic image.
-// Industries: there is no oil and gas or data-center photography, so those pages use general
-// security imagery whose alt text describes what is actually shown, never a specific industry
-// or site.
-// Solutions: one photo each where a specific match exists (perimeter detection for Security, the
-// deployable comms mast for Technology, an analyst at a cyber dashboard for Cybersecurity).
-// High Performance (culture, KPIs, leadership) has no matching photo, so it uses none.
+// Industries overview pages: an optional hero photo (dark header, right) and an optional
+// feature photo (darkened background of the black approach section), keyed by page path.
+// There is no oil and gas or data-center photography, so those pages use general security
+// imagery whose alt text describes what is actually shown, never a specific industry or site.
+// The Solutions area (overview and capability pages) uses no photography.
 type PhotoKey = keyof typeof PHOTOS;
 type OverviewPhotos = { hero?: PhotoKey; feature?: PhotoKey };
 const OVERVIEW: Record<string, OverviewPhotos> = {
-  '/security-solutions/': { hero: 'fenceCamera' },
-  '/technology/': { hero: 'commsMast' },
-  '/cybersecurity/': { hero: 'cyberDesk' },
-  '/high-performance/': {},
   '/nuclear-security/': { hero: 'nuclearNight', feature: 'nuclearDusk' },
   '/industries/oil-gas/': { hero: 'fenceSensor', feature: 'fieldTech' },
   '/industries/data-centers/': { hero: 'socRoom', feature: 'cyberDesk' },

@@ -30,10 +30,17 @@ interface Props {
   indexLabel?: string;
   ctaHeading: string;
   noindex?: boolean;
+  /**
+   * 'industry' (default): photos from src/lib/images.ts, stacked heading over text, black
+   * second section. 'solution': no photography, heading and text side by side, charcoal
+   * second section (the Solutions overview pages).
+   */
+  variant?: 'industry' | 'solution';
 }
-const { eyebrow, title, dek, pendingNote, path, metaDescription, sections, indexIntro, children, indexLabel = 'CAPABILITIES', ctaHeading, noindex = false } = Astro.props;
+const { eyebrow, title, dek, pendingNote, path, metaDescription, sections, indexIntro, children, indexLabel = 'CAPABILITIES', ctaHeading, noindex = false, variant = 'industry' } = Astro.props;
 const hrefOf = (c: IndexItem) => c.href ?? `${path}${c.slug}/`;
-const photos = overviewImages(path);
+const isSolution = variant === 'solution';
+const photos = isSolution ? { hero: undefined, feature: undefined } : overviewImages(path);
 const pad2 = (n: number) => String(n).padStart(2, '0');
 
 const jsonLd = [
@@ -80,7 +87,7 @@ const jsonLd = [
     const dark = i % 2 === 1;
     const photo = dark && i === 1 ? photos.feature : undefined;
     return (
-      <section class:list={['content', dark ? 'content--dark' : 'content--paper', { 'has-photo': photo }]}>
+      <section class:list={['content', dark ? (isSolution ? 'content--charcoal' : 'content--dark') : 'content--paper', { 'has-photo': photo, 'content--split': isSolution }]}>
         {photo && (
           <div class="content-photo" aria-hidden="true">
             <img src={photo.src} alt="" loading="lazy" decoding="async" />
@@ -88,7 +95,7 @@ const jsonLd = [
         )}
         <div class="content-inner" data-reveal>
           <span class="mono idx">{pad2(i + 2)}</span>
-          <div>
+          <div class="content-body">
             <h2>{s.heading}</h2>
             <span class="heading-rule" aria-hidden="true"></span>
             <p>{s.body}</p>
@@ -147,9 +154,17 @@ const jsonLd = [
   .heading-rule { display: block; width: 64px; height: 2px; margin: 22px 0 22px; background: var(--accent); }
   .content p { margin: 0; max-width: 68ch; font: 400 16px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
 
-  .content--dark .idx { color: var(--accent); }
-  .content--dark h2 { color: var(--text-on-ink-primary); }
-  .content--dark p { color: #b7bcc1; }
+  .content--dark .idx, .content--charcoal .idx { color: var(--accent); }
+  .content--dark h2, .content--charcoal h2 { color: var(--text-on-ink-primary); }
+  .content--dark p, .content--charcoal p { color: #b7bcc1; }
+  .content--charcoal { background: var(--ink-raised); border-bottom: 1px solid var(--ink-border); }
+
+  /* Solution variant: heading column beside the text column. */
+  .content--split .content-inner { padding-top: 60px; padding-bottom: 64px; }
+  .content--split .content-body { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 56px; align-items: start; }
+  .content--split h2 { grid-column: 1; grid-row: 1; }
+  .content--split .heading-rule { grid-column: 1; grid-row: 2; margin-bottom: 0; }
+  .content--split p { grid-column: 2; grid-row: 1 / span 2; padding-top: 4px; }
 
   /* Feature photo behind the black section, darkened toward the text side. */
   .content-photo { position: absolute; inset: 0; }
@@ -182,7 +197,10 @@ const jsonLd = [
     .hero-panel { flex-direction: row; justify-content: flex-start; align-items: baseline; gap: 16px; padding: 20px var(--page-pad); border-top: 1px solid var(--ink-border); }
     .panel-num { font-size: 56px; }
     .panel-label { padding-top: 0; border-top: none; }
-    .content-inner, .has-photo .content-inner { grid-template-columns: 1fr; gap: 10px; padding: 40px var(--page-pad) 44px; }
+    .content-inner, .has-photo .content-inner, .content--split .content-inner { grid-template-columns: 1fr; gap: 10px; padding: 40px var(--page-pad) 44px; }
+    .content--split .content-body { display: block; }
+    .content--split .heading-rule { margin-bottom: 16px; }
+    .content--split p { padding-top: 0; }
     .idx { padding-top: 0; }
     .heading-rule { margin: 16px 0; }
     .content p { font-size: 15.5px; }
