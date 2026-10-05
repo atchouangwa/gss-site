@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import SolutionCapabilityLayout from '@/layouts/SolutionCapabilityLayout.astro';
+import CapabilityLayout from '@/layouts/CapabilityLayout.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('capabilities', (e) => e.data.family === 'security-solutions');
@@ -13,4 +13,4 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const slug = Astro.params.slug as string;
 ---
-<SolutionCapabilityLayout entry={entry} slug={slug} />
+<CapabilityLayout entry={entry} slug={slug} />

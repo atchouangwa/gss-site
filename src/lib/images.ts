@@ -1,5 +1,5 @@
-// Real photography supplied by the client, mapped to Nuclear capability pages and Industries
-// pages by theme.
+// Real photography supplied by the client, used on the home page and the Industries pages.
+// Capability pages and the Solutions overview pages use no photography.
 // Wade Wilson's and Eric Wilson's photos are handled separately (leadership/founder only) —
 // never used as generic imagery.
 
@@ -13,25 +13,6 @@ const PHOTOS = {
   socRoom: { src: '/assets/photos/soc-control-room.webp', alt: 'Security operations center with analysts monitoring global systems' },
   cyberDesk: { src: '/assets/photos/cyber-analyst-desk.webp', alt: 'Cybersecurity analyst monitoring threat intelligence dashboards' },
 } as const;
-
-const NUCLEAR_SECURITY: Record<string, keyof typeof PHOTOS> = {
-  'nuclear-security-overview': 'nuclearNight',
-  'small-modular-reactor-security': 'nuclearDusk',
-  'new-nuclear-build-security': 'nuclearNight',
-  'nuclear-regulatory-support': 'nuclearDusk',
-  'high-performance-nuclear-operations': 'nuclearNight',
-};
-
-// Only Nuclear capability pages (under Industries) show a photo; Solutions capability pages
-// use SolutionCapabilityLayout, which has none.
-const FAMILY_MAPS: Record<string, Record<string, keyof typeof PHOTOS>> = {
-  'nuclear-security': NUCLEAR_SECURITY,
-};
-
-export function capabilityImage(family: string, slug: string) {
-  const key = FAMILY_MAPS[family]?.[slug] ?? 'fieldTech';
-  return PHOTOS[key];
-}
 
 export const SITE_PHOTOS = PHOTOS;
 export const PEOPLE_PHOTOS = {

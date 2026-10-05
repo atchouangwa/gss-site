@@ -198,20 +198,19 @@ avoid thin/duplicate metadata.
 
 ## 9. Images
 
-Real photography is now in place for every non-personal image slot (`public/assets/photos/`,
-mapped per page in `src/lib/images.ts`): a nuclear facility exterior (two variants, night and
-dusk), a perimeter fence with mounted sensor/camera (two variants), a field technician servicing
-GSS equipment, a deployed secure-communications mast, a security operations center, and a
-cybersecurity analyst workstation — each assigned to capability pages by theme (see
-`capabilityImage()` in `src/lib/images.ts` for the exact family/slug mapping). Client-supplied
-headshots for Eric F. Wilson and Wade Wilson are used only on the founder/leadership sections —
-never reused as generic imagery elsewhere, per the client's instruction.
+Real photography is in place in `public/assets/photos/`, mapped per page in `src/lib/images.ts`:
+a nuclear facility exterior (two variants, night and dusk), a perimeter fence with mounted
+sensor/camera (two variants), a field technician servicing GSS equipment, a deployed
+secure-communications mast, a security operations center, and a cybersecurity analyst
+workstation. Client-supplied headshots for Eric F. Wilson and Wade Wilson are used only on the
+founder/leadership sections, never reused as generic imagery elsewhere, per the client's
+instruction.
 
-**October 2026:** per client instruction, the Solutions area (the Security, Technology,
-Cybersecurity and High Performance overview pages and every capability page beneath them) uses no
-photography. Those pages use `SolutionCapabilityLayout` and the `solution` variant of
-`FamilyOverviewLayout`. Photos remain on the home page, the Industries pages (Nuclear, Oil & Gas,
-Data Centers, Other Critical Infrastructure) and the Nuclear capability pages.
+**October 2026:** per client instruction, photography is used only on the home page and the
+Industries overview pages (Nuclear, Oil & Gas, Data Centers, Other Critical Infrastructure). The
+Solutions overview pages (`FamilyOverviewLayout` with `variant="solution"`) and every capability
+page, including the Nuclear capability pages (`CapabilityLayout`), use no photography. The
+`imageCaption` field in the capability content files is no longer displayed.
 
 Any `ImagePlaceholder` still showing the dashed-frame placeholder (rather than a photo) has not
 been assigned an image and is intentionally left that way — check `src/lib/images.ts` before

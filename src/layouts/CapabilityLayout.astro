@@ -1,12 +1,14 @@
 ---
+// Every capability page (Security, Technology, Cybersecurity, High Performance, and Nuclear
+// under Industries). Photo-free, in distinct full-width sections: black intro with an
+// "On this page" panel, cream operational context, charcoal methodology, cream capabilities
+// and related links, charcoal FAQ, then the dark consultation section.
 import type { CollectionEntry } from 'astro:content';
 import Layout from './Layout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import ImagePlaceholder from '@/components/ImagePlaceholder.astro';
 import FAQAccordion from '@/components/FAQAccordion.astro';
 import CTASection from '@/components/CTASection.astro';
 import { SITE } from '@/lib/site';
-import { capabilityImage } from '@/lib/images';
 import { capabilityJsonLd } from '@/lib/capabilityJsonLd';
 
 interface Props {
@@ -16,9 +18,15 @@ interface Props {
 const { entry, slug } = Astro.props;
 const d = entry.data;
 const path = `${d.familyPath}${slug}/`;
-const photo = capabilityImage(d.family, slug);
-
 const jsonLd = capabilityJsonLd(d, path);
+
+const onPage = [
+  { id: 'context', label: 'Operational context' },
+  { id: 'methodology', label: 'Methodology' },
+  { id: 'related', label: 'Related capabilities' },
+  { id: 'faq', label: 'FAQ' },
+];
+const pad2 = (n: number) => String(n).padStart(2, '0');
 ---
 <Layout
   title={`${d.title} | ${SITE.shortName}`}
@@ -28,131 +36,197 @@ const jsonLd = capabilityJsonLd(d, path);
 >
   <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: d.familyLabel, href: d.familyPath }, { label: d.shortTitle ?? d.title }]} />
 
-  <div class="cap-layout">
-    <div class="cap-main">
-      <section class="cap-hero">
-        <div class="mono eyebrow accent-ink">{d.eyebrow}</div>
-        <h1>{d.title}</h1>
-        <p class="dek">{d.heroDek}</p>
-        <div class="cap-ctas">
-          <a class="btn btn-ink" href="/contact/">Request a Consultation</a>
-          <a class="btn btn-outline-on-paper" href="/contact/">Capability sheet</a>
-        </div>
-      </section>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">
+        <span class="mono">{d.eyebrow}</span>
+        <span class="eyebrow-rule"></span>
+      </div>
+      <h1>{d.title}</h1>
+      <p class="dek">{d.heroDek}</p>
+      <div class="ctas">
+        <a class="btn btn-accent" href="/contact/">Request a Consultation</a>
+        <a class="btn btn-outline-on-ink" href="/contact/">Capability sheet</a>
+      </div>
+    </div>
+    <nav class="on-page" aria-label="On this page">
+      <div class="mono panel-heading">ON THIS PAGE</div>
+      <ol>
+        {onPage.map((l, i) => (
+          <li><a href={`#${l.id}`} data-on-page={l.id}><span class="mono">{pad2(i + 1)}</span>{l.label}</a></li>
+        ))}
+      </ol>
+    </nav>
+  </section>
 
-      <section class="cap-context">
-        <div class="rule-row"><span class="mono dim">OPERATIONAL CONTEXT</span><span class="rule"></span></div>
+  <section class="band paper" id="context">
+    <div class="inner context" data-reveal>
+      <div>
+        <div class="rule-row"><span class="mono label">OPERATIONAL CONTEXT</span><span class="rule"></span></div>
         <h2>{d.contextHeading}</h2>
-        <div class="context-cols">
-          {d.contextParagraphs.map((p) => <p>{p}</p>)}
-        </div>
-      </section>
+      </div>
+      <div class="context-text">
+        {d.contextParagraphs.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </section>
 
-      <section class="cap-methodology">
-        <div class="rule-row"><span class="mono dim">{d.methodologyHeading.toUpperCase()}</span><span class="rule"></span></div>
-        <div class="method-list">
-          {d.methodology.map((step, i) => (
-            <div data-reveal class="method-row">
-              <span class="mono accent-ink">{String(i + 1).padStart(2, '0')}</span>
-              <span class="method-label">{step.label}</span>
-              <span class="method-body">{step.body}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+  <section class="band charcoal" id="methodology">
+    <div class="inner">
+      <div class="rule-row"><span class="mono label">{d.methodologyHeading.toUpperCase()}</span><span class="rule"></span></div>
+      <ol class="steps">
+        {d.methodology.map((step, i) => (
+          <li class="step" data-reveal>
+            <span class="mono step-n">{pad2(i + 1)}</span>
+            <h3>{step.label}</h3>
+            <p>{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
 
-      <section class="cap-capabilities">
-        <div class="rule-row"><span class="mono dim">CORE CAPABILITIES</span><span class="rule"></span></div>
+  <section class="band paper">
+    <div class="inner caps">
+      <div class="caps-main" data-reveal>
+        <div class="rule-row"><span class="mono label">CORE CAPABILITIES</span><span class="rule"></span></div>
         <div class="tags">
           {d.coreCapabilities.map((c) => <span class="tag">{c}</span>)}
         </div>
-      </section>
-
-      {d.industries && d.industries.length > 0 && (
-        <section class="cap-industries">
-          <div class="rule-row"><span class="mono dim">RELEVANT ENVIRONMENTS</span><span class="rule"></span></div>
-          <div class="tags">
-            {d.industries.map((c) => <span class="tag outline">{c}</span>)}
+        {d.industries && d.industries.length > 0 && (
+          <div class="environments">
+            <div class="rule-row"><span class="mono label">RELEVANT ENVIRONMENTS</span><span class="rule"></span></div>
+            <div class="tags">
+              {d.industries.map((c) => <span class="tag outline">{c}</span>)}
+            </div>
           </div>
-        </section>
-      )}
-    </div>
-
-    <aside class="cap-aside">
-      <div class="aside-image"><ImagePlaceholder caption={d.imageCaption} src={photo.src} alt={photo.alt} /></div>
-      <div class="aside-block">
-        <div class="mono aside-heading">ON THIS PAGE</div>
-        <div class="on-page-links">
-          <span class="current">Operational context</span>
-          <span>Methodology</span>
-          <span>Related capabilities</span>
-          <span>FAQ</span>
-        </div>
+        )}
       </div>
-      <div class="aside-block">
-        <div class="mono aside-heading">RELATED CAPABILITIES</div>
+      <div class="related" id="related" data-reveal>
+        <div class="rule-row"><span class="mono label">RELATED CAPABILITIES</span><span class="rule"></span></div>
         <div class="related-list">
           {d.related.map((r) => (
-            <a href={r.href}><span>{r.label}</span><span class="accent-ink">→</span></a>
+            <a href={r.href}><span>{r.label}</span><span class="arrow" aria-hidden="true">→</span></a>
           ))}
         </div>
       </div>
-      <div class="aside-block">
-        <div class="mono aside-heading">FAQ</div>
-        <FAQAccordion items={d.faq} />
-      </div>
-    </aside>
-  </div>
+    </div>
+  </section>
+
+  <section class="band charcoal" id="faq">
+    <div class="inner faq-grid">
+      <div class="rule-row faq-label"><span class="mono label">FAQ</span><span class="rule"></span></div>
+      <div data-reveal><FAQAccordion items={d.faq} tone="dark" /></div>
+    </div>
+  </section>
 
   <CTASection variant="dark" heading={d.ctaHeading} />
 </Layout>
 
+<script>
+  // Highlight the "On this page" link for the section currently in view.
+  function initOnPage() {
+    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-on-page]'));
+    const sections = links
+      .map((l) => document.getElementById(l.dataset.onPage!))
+      .filter((s): s is HTMLElement => !!s);
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+    const setCurrent = (id: string) =>
+      links.forEach((l) => (l.dataset.onPage === id ? l.setAttribute('aria-current', 'true') : l.removeAttribute('aria-current')));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setCurrent(visible[0].target.id);
+      },
+      { rootMargin: '-30% 0px -60% 0px' },
+    );
+    sections.forEach((s) => observer.observe(s));
+  }
+  initOnPage();
+</script>
+
 <style>
-  .eyebrow { letter-spacing: .2em; font-size: 10px; margin-bottom: 24px; }
-  .cap-layout { display: grid; grid-template-columns: 1fr 380px; }
-  .cap-main { border-right: 1px solid var(--paper-border); }
-  section { padding: 56px var(--page-pad) 60px; border-bottom: 1px solid var(--paper-border); }
-  .cap-hero { padding-top: 64px; padding-bottom: 60px; }
-  .cap-hero h1 { margin: 0 0 26px; font: 700 clamp(38px, 6vw, 84px)/.92 var(--font-display); letter-spacing: -.045em; text-transform: uppercase; color: var(--ink); max-width: 18ch; }
-  .dek { margin: 0 0 30px; max-width: 60ch; font: 400 17px/1.65 var(--font-body); color: var(--text-on-paper-secondary); }
-  .cap-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-
-  .rule-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 26px; }
+  /* Shared */
+  .band { border-bottom: 1px solid var(--paper-border); scroll-margin-top: 72px; }
+  .band.paper { background: var(--paper); }
+  .band.charcoal { background: var(--ink-raised); border-bottom-color: var(--ink-border); }
+  .inner { max-width: var(--max-content); margin: 0 auto; padding: 56px var(--page-pad) 60px; }
+  .rule-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 22px; }
   .rule-row .rule { flex: 1; height: 1px; background: var(--paper-border-soft); }
-  .rule-row .mono { font-size: 10px; letter-spacing: .18em; }
+  .rule-row .label { font-size: 10.5px; letter-spacing: .2em; color: var(--text-on-paper-label); }
+  .charcoal .rule-row .rule { background: var(--ink-border-strong); }
+  .charcoal .rule-row .label { color: var(--accent); }
 
-  .cap-context h2 { margin: 0 0 22px; font: 700 clamp(24px, 3.4vw, 40px)/1.02 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--ink); max-width: 24ch; }
-  .context-cols { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 74ch; }
-  .context-cols p { margin: 0; font: 400 15px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
+  /* HERO: compact black intro; "On this page" panel on the right. */
+  .hero { background: var(--ink); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); border-bottom: 1px solid var(--ink-border); }
+  .hero-copy { padding: 52px var(--page-pad) 48px; border-right: 1px solid var(--ink-border); }
+  .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .hero-eyebrow .mono { color: var(--accent); letter-spacing: .22em; font-size: 10px; white-space: nowrap; }
+  .eyebrow-rule { flex: 1; max-width: 120px; height: 1px; background: var(--ink-border-strong); }
+  .hero h1 { margin: 0; max-width: 20ch; font: 700 clamp(32px, 4.6vw, 60px)/.98 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; color: var(--text-on-ink-primary); }
+  .dek { margin: 20px 0 0; max-width: 62ch; font: 400 16.5px/1.6 var(--font-body); color: #a9afb5; }
+  .ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
 
-  .method-list { display: flex; flex-direction: column; }
-  .method-row { display: grid; grid-template-columns: 60px 260px 1fr; gap: 22px; padding: 16px 0; border-top: 1px solid var(--paper-border-soft); }
-  .method-row:first-child { border-top-color: var(--ink); }
-  .method-row:last-child { border-bottom: 1px solid var(--ink); }
-  .method-row .mono { font-size: 10px; }
-  .method-label { font: 700 20px/1.05 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
-  .method-body { font: 400 13.5px/1.6 var(--font-body); color: var(--text-on-paper-tertiary); }
+  .on-page { padding: 52px var(--page-pad) 48px 32px; background: var(--ink-raised); display: flex; flex-direction: column; justify-content: center; }
+  .panel-heading { font-size: 10px; letter-spacing: .2em; color: var(--text-on-ink-secondary); margin-bottom: 14px; }
+  .on-page ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .on-page a { display: flex; align-items: baseline; gap: 12px; padding: 11px 0 11px 12px; border-top: 1px solid var(--ink-border); border-left: 2px solid transparent; font: 400 14px/1.3 var(--font-body); color: var(--text-on-ink-primary); transition: border-color var(--dur-hover) ease, color var(--dur-hover) ease, background var(--dur-hover) ease; }
+  .on-page li:last-child a { border-bottom: 1px solid var(--ink-border); }
+  .on-page a .mono { font-size: 10px; color: var(--accent); }
+  .on-page a:hover { background: var(--ink-raised-2); }
+  .on-page a[aria-current='true'] { border-left-color: var(--accent); }
 
-  .cap-capabilities, .cap-industries { border-bottom: none; }
+  /* OPERATIONAL CONTEXT: heading column and text column. */
+  .context { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: start; }
+  .context h2 { margin: 0; font: 700 clamp(24px, 2.8vw, 38px)/1.04 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; color: var(--ink); }
+  .context-text { display: flex; flex-direction: column; gap: 18px; padding-top: 38px; }
+  .context-text p { margin: 0; max-width: 68ch; font: 400 15.5px/1.75 var(--font-body); color: var(--text-on-paper-tertiary); }
+
+  /* METHODOLOGY: charcoal, ordered steps. */
+  .steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .step { display: grid; grid-template-columns: 56px minmax(0, 300px) minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--ink-border); }
+  .step:last-child { border-bottom: 1px solid var(--ink-border); }
+  .step-n { font-size: 13px; letter-spacing: .1em; color: var(--accent); }
+  .step h3 { margin: 0; font: 700 19px/1.1 var(--font-display); letter-spacing: -.015em; text-transform: uppercase; color: var(--text-on-ink-primary); }
+  .step p { margin: 0; max-width: 70ch; font: 400 15px/1.65 var(--font-body); color: #b7bcc1; }
+
+  /* CORE CAPABILITIES, ENVIRONMENTS, RELATED: two compact columns. */
+  .caps { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: start; }
+  .environments { margin-top: 36px; }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font: 500 11.5px/1 var(--font-body); letter-spacing: .06em; text-transform: uppercase; padding: 10px 13px; }
+  .tag { border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font: 500 11.5px/1.3 var(--font-body); letter-spacing: .06em; text-transform: uppercase; padding: 10px 13px; }
   .tag.outline { background: transparent; color: var(--text-on-paper-tertiary); border-color: #b8b4ad; }
-
-  .cap-aside { background: var(--paper); }
-  .aside-image { position: relative; height: 300px; border-bottom: 1px solid var(--paper-border); }
-  .aside-block { padding: 26px var(--page-pad) 30px 26px; border-bottom: 1px solid var(--paper-border); }
-  .aside-heading { font-size: 10px; letter-spacing: .18em; color: var(--text-on-paper-quiet); margin-bottom: 16px; }
-  .on-page-links { display: flex; flex-direction: column; gap: 10px; font: 400 13px/1.4 var(--font-body); color: var(--text-on-paper-tertiary); }
-  .on-page-links .current { color: var(--ink); border-left: 2px solid var(--accent); padding-left: 10px; }
-  .on-page-links span:not(.current) { padding-left: 12px; }
+  .related { scroll-margin-top: 72px; }
   .related-list { display: flex; flex-direction: column; }
-  .related-list a { display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid var(--paper-border); font: 400 13px/1.4 var(--font-body); color: var(--text-on-paper-body-alt); transition: padding-left 180ms var(--ease-out-strong), color 160ms ease; }
+  .related-list a { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-top: 1px solid var(--paper-border); font: 500 14.5px/1.4 var(--font-body); color: var(--text-on-paper-body-alt); transition: padding-left 180ms var(--ease-out-strong), color 160ms ease; }
   .related-list a:last-child { border-bottom: 1px solid var(--paper-border); }
   .related-list a:hover { padding-left: 8px; color: var(--accent-ink); }
+  .related-list .arrow { color: var(--accent-ink); }
+
+  /* FAQ: charcoal, label column and answers. */
+  .faq-grid { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 40px; align-items: start; }
+  .faq-label { margin: 22px 0 0; }
 
   @media (max-width: 1080px) {
-    .cap-layout { grid-template-columns: 1fr; }
-    .cap-main { border-right: none; }
-    .method-row { grid-template-columns: 1fr; gap: 6px; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-copy { border-right: none; }
+    .on-page { padding: 24px var(--page-pad) 28px; border-top: 1px solid var(--ink-border); }
+    .on-page ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+    .on-page li:nth-last-child(2) a { border-bottom: 1px solid var(--ink-border); }
+    .context, .caps { grid-template-columns: 1fr; gap: 28px; }
+    .context-text { padding-top: 0; }
+    .step { grid-template-columns: 44px minmax(0, 1fr); gap: 6px 14px; }
+    .step p { grid-column: 2; }
+    .faq-grid { grid-template-columns: 1fr; gap: 0; }
+    .faq-label { margin: 0 0 4px; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-copy { padding: 34px var(--page-pad) 30px; }
+    .hero-eyebrow .mono { white-space: normal; line-height: 1.6; }
+    .inner { padding: 40px var(--page-pad) 44px; }
+    .ctas .btn { flex: 1 1 auto; }
+    .on-page ol { grid-template-columns: 1fr; }
+    .on-page li:nth-last-child(2) a { border-bottom: none; }
   }
 </style>
