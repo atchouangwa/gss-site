@@ -1,4 +1,6 @@
 // Real photography supplied by the client, used on the home page and the Industries pages.
+// Exception: the two oil-gas photos are free Unsplash stock (Unsplash License, commercial use,
+// no attribution required): refinery by D Yang (vaHAD5kOBJ8), pipeline (L4gN0aeaPY4).
 // Capability pages and the Solutions overview pages use no photography.
 // Wade Wilson's and Eric Wilson's photos are handled separately (leadership/founder only) —
 // never used as generic imagery.
@@ -12,6 +14,8 @@ const PHOTOS = {
   commsMast: { src: '/assets/photos/comms-mast-sunset.webp', alt: 'Deployable secure communications mast at sunset' },
   socRoom: { src: '/assets/photos/soc-control-room.webp', alt: 'Security operations center with analysts monitoring global systems' },
   cyberDesk: { src: '/assets/photos/cyber-analyst-desk.webp', alt: 'Cybersecurity analyst monitoring threat intelligence dashboards' },
+  refineryNight: { src: '/assets/photos/oil-gas-refinery-night.webp', alt: 'Oil refinery storage tanks and flare stack lit up at night, reflected in the water' },
+  pipeline: { src: '/assets/photos/oil-gas-pipeline.webp', alt: 'Twin above-ground pipelines running through a forested valley' },
 } as const;
 
 export const SITE_PHOTOS = PHOTOS;
@@ -22,14 +26,14 @@ export const PEOPLE_PHOTOS = {
 
 // Industries overview pages: an optional hero photo (dark header, right) and an optional
 // feature photo (darkened background of the black approach section), keyed by page path.
-// There is no oil and gas or data-center photography, so those pages use general security
-// imagery whose alt text describes what is actually shown, never a specific industry or site.
+// There is no data-center photography, so that page uses general security imagery whose alt
+// text describes what is actually shown, never a specific industry or site.
 // The Solutions area (overview and capability pages) uses no photography.
 type PhotoKey = keyof typeof PHOTOS;
 type OverviewPhotos = { hero?: PhotoKey; feature?: PhotoKey };
 const OVERVIEW: Record<string, OverviewPhotos> = {
   '/nuclear-security/': { hero: 'nuclearNight', feature: 'nuclearDusk' },
-  '/industries/oil-gas/': { hero: 'fenceSensor', feature: 'fieldTech' },
+  '/industries/oil-gas/': { hero: 'refineryNight', feature: 'pipeline' },
   '/industries/data-centers/': { hero: 'socRoom', feature: 'cyberDesk' },
   '/industries/critical-infrastructure/': { hero: 'fenceCamera', feature: 'commsMast' },
 };
