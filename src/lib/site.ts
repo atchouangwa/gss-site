@@ -163,7 +163,7 @@ export const INDUSTRIES: NavLink[] = [
   { label: 'Nuclear', href: '/nuclear-security/' },
   { label: 'Oil & Gas', href: '/industries/oil-gas/' },
   { label: 'Data Centers', href: '/industries/data-centers/' },
-  { label: 'Other Critical Infrastructure', href: '/industries/critical-infrastructure/' },
+  { label: 'Alternative Critical Infrastructure', href: '/industries/critical-infrastructure/' },
 ];
 
 export type TopNavItem =
