@@ -100,9 +100,8 @@ const tabId = (path: string) => `sol-tab-${path.replace(/\//g, '')}`;
                   {SOLUTIONS.map((sol, i) => (
                     <div class="sol-pane" role="tabpanel" id={paneId(sol.path)} aria-labelledby={tabId(sol.path)} hidden={i !== 0}>
                       <div class="mega-lead">
-                        <div class="mega-lead-title">{sol.label}</div>
+                        <a class="mega-lead-title" href={sol.path}>{sol.label}</a>
                         <p>{SOLUTION_INTROS[sol.path]}</p>
-                        <a class="mega-lead-link" href={sol.path}>{sol.label} overview →</a>
                       </div>
                       {solutionGroups(sol.path, sol.children).map((group) => (
                         <div class="mega-col">
@@ -157,11 +156,10 @@ const tabId = (path: string) => `sol-tab-${path.replace(/\//g, '')}`;
             {SOLUTIONS.map((sol) => (
               <details class="mobile-subgroup">
                 <summary>
-                  <span>{sol.label}</span>
+                  <a class="mobile-sol-link" href={sol.path}>{sol.label}</a>
                   <span class="mobile-toggle small" aria-hidden="true"></span>
                 </summary>
                 <div class="mobile-subchildren">
-                  <a href={sol.path} class="mobile-view-all">{sol.label} overview →</a>
                   {sol.children.map((child) => (
                     <a href={`${sol.path}${child.slug}/`}>{child.label}</a>
                   ))}
@@ -408,8 +406,9 @@ const tabId = (path: string) => `sol-tab-${path.replace(/\//g, '')}`;
     text-transform: uppercase;
     color: var(--text-on-ink-primary);
   }
+  a.mega-lead-title:hover { color: var(--accent); }
+  a.mega-lead-title:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .mega-lead p { margin: 0; font: 400 12.5px/1.6 var(--font-body); color: var(--text-on-ink-secondary); }
-  .mega-lead-link { margin-top: auto; font: 500 11px/1 var(--font-mono); letter-spacing: .1em; color: var(--accent); }
   .mega-col {
     padding: 30px 26px 34px;
     border-right: 1px solid var(--ink-border-soft);
@@ -495,13 +494,13 @@ const tabId = (path: string) => `sol-tab-${path.replace(/\//g, '')}`;
     color: var(--text-on-ink-secondary);
     padding: 12px 0 12px 14px;
   }
-  .mobile-view-all { color: var(--accent) !important; font-weight: 600; }
   .mobile-subgroup summary {
     display: flex; align-items: center; justify-content: space-between;
     padding: 13px 0 13px 14px; cursor: pointer; list-style: none;
     font: 600 14px/1.2 var(--font-body); color: var(--text-on-ink-primary);
   }
   .mobile-subgroup summary::-webkit-details-marker { display: none; }
+  .mobile-children .mobile-sol-link { font: inherit; color: inherit; padding: 0; }
   .mobile-toggle.small { width: 10px; height: 10px; }
   .mobile-toggle.small::before { top: 4px; width: 10px; }
   .mobile-toggle.small::after { left: 4px; height: 10px; }
